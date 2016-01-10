@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>jspm / react / ts - starter kit</title>
+  <!-- libraries -->
   <script src="jspm_packages/system.js" charset="utf-8"></script>
   <script src="config.js" charset="utf-8"></script>
 </head>
@@ -12,10 +13,7 @@
   <div id="app-container"></div>
   <!-- app initialize -->
   <script type="text/javascript">
-      System.import('app/main').then(function(app) {
-          var appContainer = document.getElementById("app-container");
-          app.main(appContainer);
-      });
+      System.import('app/main');
   </script>
 </body>
 
