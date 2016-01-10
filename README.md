@@ -6,8 +6,7 @@ React / TypeScript / JSPM - Simple and clean starter kit to build web apps with 
 - tsconfig
 - React-TypeScript integration example code
 - server.js - browser-sync with live reload
-- bundle and minify with command - npm run bundler
-- bundle.html to run bundle build
+- bundle and minify with "npm run bundler" (~/bundle/ to run bundle build)
 
 ## Installation
 ### 1. Create new project folder
