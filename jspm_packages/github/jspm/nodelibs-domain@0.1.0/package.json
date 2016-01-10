@@ -1,6 +1,0 @@
-{
-  "registry": "npm",
-  "dependencies": {
-    "domain-browser": "^1.1.3"
-  }
-}
