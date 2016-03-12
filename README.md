@@ -1,33 +1,41 @@
 # react-ts-jspm-starter-kit
-React / TypeScript / JSPM - Simple and clean starter kit to build web apps with React, TypeScript and JSPM.
+React / TypeScript / JSPM - easy to use starter kit to build web apps with React & TypeScript powered by JSPM/SystemJS.
 
 ## Features
-- React & ReactDOM typings from DefinitelyTyped
-- tsconfig
-- React-TypeScript integration example code
-- server.js - browser-sync with live reload
-- bundle and minify with "npm run bundler" (~/bundle/ to run bundle build)
+- folder structure
+- default tsconfig for ES2015
+- typescript nightly version - @next
+- JSPM 0.17.X
+- hot-module reload with systemjs-hot-reloader
+- React-TypeScript usage example code
+- React & ReactDOM typings
+- development server with browser-sync (live-reload with css inject)
+- bundling for production in ~/dist/ folder - test productions on http://localhost/dist/
+- npm run scripts to automate bundling & dev server startup
+
+## NPM Commands
+npm start - start local development server with hot-reload
+npm run server - start local development w/o hot-reload
+npm run build-test - build for prod - debug version with source-maps
+npm run build-prod - build for prod - minified w/o source-maps
+
 
 ## Installation
+
+### Prerequisites
+- node.js and git
+- install jspm package globally to have jspm command available otherwise you can use local version from ~/node_modules/
+    npm install jspm -g
+
 ### 1. Create new project folder
     mkdir my-project
     cd my-project
 
-### 2. Install JSPM CLI (prefer local install to lock down JSPM)
-    npm install jspm --save-dev
+### 2. Clone repo
+    clone https://github.com/piotrwitek/react-ts-jspm-starter-kit.git
 
-### 3. Initialize JSPM
-    jspm init
-
-    Package.json file does not exist, create it? [yes]:
-    Would you like jspm to prefix the jspm package.json properties under jspm? [yes]:
-    Enter server baseURL (public folder path) [./]:
-    Enter jspm packages folder [.\jspm_packages]:
-    Enter config file path [.\config.js]:
-    Configuration file config.js doesn't exist, create it? [yes]:
-    Enter client baseURL (public folder URL) [/]:
-    Do you wish to use a transpiler? [yes]:
-    Which ES6 transpiler would you like to use, Babel, TypeScript or Traceur? [babel]:typescript
-
-### 4. Install React
-    jspm install react react-dom
+### 3. Install npm dependencies
+    npm install
+    
+### 4. Install jspm dependencies
+    jspm install
