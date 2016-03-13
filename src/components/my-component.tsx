@@ -1,8 +1,6 @@
-/// <reference path="../typings/tsd.d.ts" />
-
 import * as React from "react";
 
-interface IProps extends React.Props<MyView> {
+interface IProps extends React.Props<MyComponent> {
   name: string;
   age: number;
   some?: string;
@@ -13,7 +11,7 @@ interface IState {
   status?: string;
 }
 
-export class MyView extends React.Component<IProps, IState> {
+export class MyComponent extends React.Component<IProps, IState> {
   state: IState = {
     complete: false
   };
@@ -30,8 +28,8 @@ export class MyView extends React.Component<IProps, IState> {
   render(): JSX.Element {
     return (
       <div>
-      <div>{this.props.name} is {this.props.age}</div>
-      <div>Task: {this.getStatus()}</div>
+      <div>{this.props.name} is {this.props.age} years old.</div>
+      <div>Profile status: {this.getStatus()}</div>
       <button onClick={this.toggleCompletion}>Toggle completion</button>
       </div>
     );

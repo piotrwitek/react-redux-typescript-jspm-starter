@@ -3,23 +3,27 @@
     "target": "es5",
     "module": "system",
     "moduleResolution": "node",
-    "isolatedModules": false,
     "jsx": "react",
+    "noImplicitAny": false,
+    "isolatedModules": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "preserveConstEnums": true,
     "removeComments": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "declaration": false
   },
   "filesGlob": [
+    "../typings/main.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "!node_modules/**"
   ],
   "files": [
-    "main.tsx",
-    "my-first.tsx"
+    "../typings/main.d.ts",
+    "app.tsx",
+    "components/my-component.tsx"
   ],
-  "exclude": [],
   "atom": {
     "rewriteTsconfig": true
   }

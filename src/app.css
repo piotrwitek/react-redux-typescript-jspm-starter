@@ -1,0 +1,7 @@
+body {
+	background-color: #DDDDDD;
+}
+
+:local(.my-component) {
+	background-color: red;
+}

@@ -1,25 +1,97 @@
 {
   "name": "react-ts-jspm-starter-kit",
   "version": "0.1.0",
-  "description": "React / TypeScript / JSPM - Simple and clean starter kit to build web apps with React, TypeScript and JSPM.",
+  "description": "React / TypeScript / JSPM - easy to use starter kit to build web apps with React & TypeScript powered by JSPM/SystemJS",
   "repository": "https://github.com/piotrwitek/react-ts-jspm-starter-kit.git",
-  "author": "Piotr Witek <piotrek.witek@gmail.com> (http://witek.info)",
+  "author": "Piotr Witek <piotrek.witek@gmail.com> (https://twitter.com/witekinfo)",
   "license": "MIT",
   "homepage": "https://github.com/piotrwitek/react-ts-jspm-starter-kit",
   "bugs": "https://github.com/piotrwitek/react-ts-jspm-starter-kit/issues",
-  "scripts": {
-    "bundler": "jspm bundle-sfx app/main bundle/app.js --minify"
-  },
+	"scripts": {
+	    "start": "start npm run server && start npm run hot-reloading",
+	    "server": "node ./node_modules/browser-sync/bin/browser-sync.js start --server --startPath \"src\" --files \"src/index.html, src/**/*.css\"",
+	    "hot-reloading": "node ./node_modules/chokidar-socket-emitter/cli.js",
+	    "postinstall": "npm run install-jspm && npm run install-typings",
+			"install-jspm": "./node_modules/.bin/jspm install",
+			"install-typings": "./node_modules/.bin/typings install",
+	    "build-test": "./node_modules/.bin/jspm build src/app dist/app.js",
+			"build-prod": "./node_modules/.bin/jspm build src/app dist/app.js --minify --skip-source-maps",
+			"install-semantic-ui": "cd semantic && \"../node_modules/.bin/gulp\" build install && cd ..",
+			"build-semantic-ui": "cd semantic && \"../node_modules/.bin/gulp\" build && cd .."
+	  },
   "devDependencies": {
-    "jspm": "^0.16.20"
+    "browser-sync": "^2.11.1",
+    "chokidar-socket-emitter": "^0.5.0",
+    "jspm": "^0.17.0-beta.11",
+    "semantic-ui": "^2.1.8",
+		"typings": "^0.7.8"
   },
   "jspm": {
+    "name": "app",
     "dependencies": {
-      "react": "npm:react@^0.14.6",
-      "react-dom": "npm:react-dom@^0.14.6"
+      "css": "npm:jspm-loader-css@^1.0.1-beta1",
+      "react": "npm:react@^0.14.7",
+      "react-dom": "npm:react-dom@^0.14.7"
     },
     "devDependencies": {
-      "typescript": "npm:typescript@^1.7.5"
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^4.0.2",
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.6"
+    },
+    "peerDependencies": {
+      "assert": "github:jspm/nodelibs-assert@^0.2.0-alpha",
+      "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",
+      "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
+      "net": "github:jspm/nodelibs-net@^0.2.0-alpha",
+      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
+      "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "tty": "github:jspm/nodelibs-tty@^0.2.0-alpha",
+      "util": "github:jspm/nodelibs-util@^0.2.0-alpha"
+    },
+    "overrides": {
+      "npm:fbjs@0.6.1": {
+        "dependencies": {}
+      },
+      "npm:inherits@2.0.1": {
+        "ignore": [
+          "test.js"
+        ]
+      },
+      "npm:react@0.14.7": {
+        "dependencies": {
+          "fbjs": "^0.6.1"
+        },
+        "format": "cjs",
+        "meta": {
+          "*": {
+            "globals": {
+              "process": "process"
+            }
+          }
+        },
+        "map": {
+          "fbjs/lib/ExecutionEnvironment.js": {
+            "production": "@empty"
+          },
+          "./lib/ReactDefaultPerf.js": {
+            "production": "@empty"
+          },
+          "./lib/ReactTestUtils.js": {
+            "production": "@empty"
+          }
+        }
+      },
+      "npm:typescript@1.8.7": {
+        "browser": {},
+        "map": {
+          "buffer": "@empty",
+          "child_process": "@empty",
+          "fs": "@empty",
+          "os": "@empty",
+          "path": "@empty",
+          "process": "@empty",
+          "readline": "@empty"
+        }
+      }
     }
   }
 }
