@@ -1,7 +1,7 @@
 body {
-	background-color: #DDDDDD;
+  background-color: #aaaaaa;
 }
 
-:local(.my-component) {
-	background-color: red;
+.myComponent {
+  background-color: #379922;
 }
