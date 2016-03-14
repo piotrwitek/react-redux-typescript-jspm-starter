@@ -15,3 +15,5 @@ jspm css plugin
 remove semantic-ui dependency - don't have opinion on ui-kit
 ### 0.3.2
 usage experience update
+### 0.3.3
+added jspm clean-css dep for prod bundling
