@@ -11,3 +11,5 @@ added semantic-ui
 tsconfig update
 example code improvement
 jspm css plugin
+0.3.1
+remove semantic-ui dependency - don't have opinion on ui-kit
