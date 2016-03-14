@@ -1,4 +1,5 @@
-# React / TypeScript / JSPM - easy to use starter kit to build modular web apps with React & TypeScript powered by JSPM/SystemJS
+# React / TypeScript / JSPM starter-kit
+##### easy to use starter kit to build modular web apps with React & TypeScript powered by JSPM/SystemJS
 
 ## Features
 - folder structure
