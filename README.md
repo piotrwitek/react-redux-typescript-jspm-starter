@@ -32,7 +32,7 @@ npm run build-prod - build for prod - minified w/o source-maps
     cd my-project
 
 ### 2. Clone repo
-    clone https://github.com/piotrwitek/react-ts-jspm-starter-kit.git
+    git clone https://github.com/piotrwitek/react-ts-jspm-starter-kit.git
 
 ### 3. Install npm dependencies
     npm install
