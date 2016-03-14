@@ -37,5 +37,5 @@ npm run build-prod - build for prod - minified w/o source-maps
 ### 3. Install npm dependencies
     npm install
     
-### 4. Install jspm dependencies
-    jspm install
+### 4. Run development server and start developing
+    npm start

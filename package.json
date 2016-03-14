@@ -1,6 +1,6 @@
 {
   "name": "react-ts-jspm-starter-kit",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "React / TypeScript / JSPM - easy to use starter kit to build web apps with React & TypeScript powered by JSPM/SystemJS",
   "repository": "https://github.com/piotrwitek/react-ts-jspm-starter-kit.git",
   "author": "Piotr Witek <piotrek.witek@gmail.com> (https://github.com/piotrwitek)",
@@ -11,9 +11,10 @@
     "start": "start npm run server && start npm run hot-reloading",
     "server": "node ./node_modules/browser-sync/bin/browser-sync.js start --server --startPath \"src\" --files \"src/index.html, src/**/*.css\"",
     "hot-reloading": "node ./node_modules/chokidar-socket-emitter/cli.js",
-    "postinstall": "npm run install-jspm && npm run install-typings",
+    "postinstall": "npm run install-jspm && npm run install-typings && npm run postinstall-message",
     "install-jspm": "./node_modules/.bin/jspm install",
     "install-typings": "./node_modules/.bin/typings install",
+    "postinstall-message": "echo type \"npm start\" to run developer server and open app in the browser",
     "build-test": "./node_modules/.bin/jspm build src/app dist/app.js",
     "build-prod": "./node_modules/.bin/jspm build src/app dist/app.js --minify --skip-source-maps"
   },
