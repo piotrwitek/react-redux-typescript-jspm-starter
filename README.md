@@ -19,13 +19,13 @@ Unopinionated starter-kit to build modular web apps with React & TypeScript powe
 
 #### NPM Commands
 
-`npm start` - start local development server with hot-reload
+`npm start` - start local development server (with hot-reload)
     
-`npm run server` - start local development w/o hot-reload
+`npm run server` - start only local development server (w/o hot-reload)
     
-`npm run build-test` - build for prod - debug version with source-maps
+`npm run build-test` - build production bundle - debug version with source-maps
     
-`npm run build-prod` - build for prod - minified w/o source-maps
+`npm run build-prod` - build production bundle - optimized minified version w/o source-maps
 
 ---
 
