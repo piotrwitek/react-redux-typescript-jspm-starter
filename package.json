@@ -3,7 +3,7 @@
   "version": "0.3.2",
   "description": "React / TypeScript / JSPM - easy to use starter kit to build web apps with React & TypeScript powered by JSPM/SystemJS",
   "repository": "https://github.com/piotrwitek/react-ts-jspm-starter-kit.git",
-  "author": "Piotr Witek <piotrek.witek@gmail.com> (https://github.com/piotrwitek)",
+  "author": "Piotr Witek <piotrek.witek@gmail.com> (http://piotrwitek.github.io/)",
   "license": "MIT",
   "homepage": "https://github.com/piotrwitek/react-ts-jspm-starter-kit",
   "bugs": "https://github.com/piotrwitek/react-ts-jspm-starter-kit/issues",
@@ -101,4 +101,4 @@
       }
     }
   }
-}
+}
