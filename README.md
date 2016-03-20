@@ -19,8 +19,8 @@ Unopinionated starter-kit to build modular web apps with React & TypeScript powe
 
 #### NPM Commands
 
-`npm start` - start local development server with hot-reload (WARNING: currently only for windows, other platforms please `npm run server/hot-reloader` processes seperately, plan to fix it in the future)
-    
+`npm start` - start local development server with hot-reload `(WARNING: currently only for windows, other platforms please npm run server/hot-reloader processes seperately, plan to fix it in the future)`
+
 `npm run server` - start local development server (browser-sync - w/o hot-reload)
 
 `npm run hot-reloader` - start hot-reloader (chokidar-socket-emitter)
@@ -46,9 +46,13 @@ Unopinionated starter-kit to build modular web apps with React & TypeScript powe
 
 #### 3. Install npm dependencies
     npm install
-    
+
 #### 4. Run development server and start developing
+###### On windows
     npm start
+###### Other platforms
+    npm run server
+    npm run hot-reloader
 
 ---
 
