@@ -19,7 +19,8 @@ Unopinionated starter-kit to build modular web apps with React & TypeScript powe
 
 #### NPM Commands
 
-`npm start` - start local development server with hot-reload `(WARNING: currently only for windows, other platforms please npm run server/hot-reloader processes seperately, plan to fix it in the future)`
+`npm start` - start local development server with hot-reload **(WARNING: currently working only for windows)**
+*other platforms please npm run server & hot-reloader processes seperately, plan to fix it in the future*
 
 `npm run server` - start local development server (browser-sync - w/o hot-reload)
 
