@@ -15,8 +15,8 @@
     "install-jspm": "./node_modules/.bin/jspm install",
     "install-typings": "./node_modules/.bin/typings install",
     "postinstall-message": "echo type \"npm start\" to run developer server and open app in the browser",
-    "build-test": "./node_modules/.bin/jspm build src/app dist/app.js",
-    "build-prod": "./node_modules/.bin/jspm build src/app dist/app.js --minify --skip-source-maps"
+    "build-test": "./node_modules/.bin/jspm build src/main dist/app.js",
+    "build-prod": "./node_modules/.bin/jspm build src/main dist/app.js --minify --skip-source-maps"
   },
   "devDependencies": {
     "browser-sync": "^2.11.1",
