@@ -4,13 +4,13 @@ Unopinionated starter-kit to build modular web apps with React & TypeScript powe
 ## Features
 - unopinionated, just core stuff and dev server setup with hot-reload - the rest is up to you
 - fully automated - just npm install, npm start to run dev server and you're ready to code
-- pretty usual folder structure - src/dist
 - React-TypeScript usage example code
 - React & ReactDOM typings
 - typescript nightly version (@next) for coolest new features, default tsconfig for ES2015
-- JSPM 0.17.X with hot-module reload enabled and example code (systemjs-hot-reloader)
 - development server with browser-sync (live-reload & css inject)
-- bundling for production in ~/dist/ folder - test productions available on http://localhost/dist/
+- JSPM 0.17.X with hot-module reload enabled and example code (chokidar-socket-emitter/systemjs-hot-reloader)
+- bundling for production in `~/dist/` folder - test productions available on `http://localhost/dist/`
+- importing and bundling CSS dependencies using JSPM `plugin-css`
 - npm run scripts to automate bundling & dev server startup
 
 ---
@@ -19,9 +19,11 @@ Unopinionated starter-kit to build modular web apps with React & TypeScript powe
 
 #### NPM Commands
 
-`npm start` - start local development server (with hot-reload)
+`npm start` - start local development server with hot-reload (WARNING: currently only for windows, other platforms please `npm run server/hot-reloader` processes seperately, plan to fix it in the future)
     
-`npm run server` - start only local development server (w/o hot-reload)
+`npm run server` - start local development server (browser-sync - w/o hot-reload)
+
+`npm run hot-reloader` - start hot-reloader (chokidar-socket-emitter)
     
 `npm run build-test` - build production bundle - debug version with source-maps
     
@@ -47,6 +49,16 @@ Unopinionated starter-kit to build modular web apps with React & TypeScript powe
     
 #### 4. Run development server and start developing
     npm start
+
+---
+
+## Dependencies
+- https://github.com/Microsoft/TypeScript/
+- https://github.com/facebook/react/
+- https://github.com/Browsersync/browser-sync
+- https://github.com/capaj/chokidar-socket-emitter
+- https://github.com/jspm/jspm-cli
+- https://github.com/capaj/systemjs-hot-reloader
 
 ---
 
