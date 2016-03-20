@@ -8,9 +8,9 @@
   "homepage": "https://github.com/piotrwitek/react-ts-jspm-starter-kit",
   "bugs": "https://github.com/piotrwitek/react-ts-jspm-starter-kit/issues",
   "scripts": {
-    "start": "start npm run server && start npm run hot-reloading",
+    "start": "start npm run server && start npm run hot-reloader",
     "server": "node ./node_modules/browser-sync/bin/browser-sync.js start --server --startPath \"src\" --files \"src/index.html, src/**/*.css\"",
-    "hot-reloading": "node ./node_modules/chokidar-socket-emitter/cli.js",
+    "hot-reloader": "node ./node_modules/chokidar-socket-emitter/cli.js",
     "postinstall": "npm run install-jspm && npm run install-typings && npm run postinstall-message",
     "install-jspm": "./node_modules/.bin/jspm install",
     "install-typings": "./node_modules/.bin/typings install",
