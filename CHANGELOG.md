@@ -17,3 +17,6 @@ remove semantic-ui dependency - don't have opinion on ui-kit
 usage experience update
 ### 0.3.3
 added jspm clean-css dep for prod bundling
+### 0.4
+re-factored to more meaningful example
+added simple app store

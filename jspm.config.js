@@ -10,7 +10,7 @@ SystemJS.config({
   },
   packages: {
     "app": {
-      "main": "app.tsx",
+      "main": "main.tsx",
       "defaultExtension": "tsx",
       "meta": {
         "*.tsx": {

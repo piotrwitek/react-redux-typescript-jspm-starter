@@ -1,3 +1,6 @@
+// style imports
+import './user-profile.css!';
+// lib imports
 import * as React from "react";
 
 enum Texts {
@@ -14,38 +17,39 @@ function getTranslation(text: Texts) {
   }
 }
 
-interface IProps extends React.Props<MyComponent> {
+interface LocalProps extends React.Props<UserProfile> {
   name: string;
   age: number;
+  complete: boolean;
 }
 
-interface IState {
+interface LocalState {
   complete?: boolean;
 }
 
-export class MyComponent extends React.Component<IProps, IState> {
-  state: IState = {
-    complete: false
-  };
-
-  componentWillUpdate() {
+export class UserProfile extends React.Component<LocalProps, LocalState> {
+  constructor(props) {
+    super();
+    this.state = {
+      complete: props.complete
+    }
   }
 
   getStatusText = () => {
     return (this.state.complete ? getTranslation(Texts.Complete) : getTranslation(Texts.Incomplete));
   };
 
-  toggleCompletion = () => {
-    // debugger;
+  handleToggleCompletion = () => {
     this.setState({ complete: !this.state.complete });
   };
 
   render(): JSX.Element {
+    const {name, age} = this.props;
     return (
-      <div>
-        <div>{this.props.name} is {this.props.age} years old.</div>
+      <div className='myComponent'>
+        <div>{name} is {age} years old.</div>
         <div>Profile status: {this.getStatusText() }</div>
-        <button onClick={this.toggleCompletion}>Toggle completion</button>
+        <button onClick={this.handleToggleCompletion}>Toggle completion</button>
       </div>
     );
   }

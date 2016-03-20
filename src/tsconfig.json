@@ -21,8 +21,10 @@
   ],
   "files": [
     "../typings/main.d.ts",
-    "app.tsx",
-    "components/my-component.tsx"
+    "components/app.tsx",
+    "components/user-profile.tsx",
+    "main.tsx",
+    "stores/app-store.tsx"
   ],
   "atom": {
     "rewriteTsconfig": true,
