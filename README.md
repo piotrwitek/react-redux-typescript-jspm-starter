@@ -1,8 +1,8 @@
 # React / TypeScript / JSPM starter-kit
-Unopinionated starter-kit to build modular web apps with React & TypeScript powered by JSPM/SystemJS
+Modern, future-proof JavaScript Project Starter-Kit to build modular web apps with React & TypeScript using ES Modules powered by JSPM/SystemJS
 
 ## Features
-- unopinionated, just core stuff and dev server setup with hot-reload - the rest is up to you
+- just core stuff and dev server setup with hot-reload - the rest is up to you
 - fully automated - just npm install, npm start to run dev server and you're ready to code
 - React-TypeScript usage example code
 - React & ReactDOM typings
