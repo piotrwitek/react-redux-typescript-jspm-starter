@@ -1,5 +1,5 @@
 # React / TypeScript / JSPM starter-kit
-> Modern, clean & future-proof JavaScript Project boilerplate to build modular web apps utilizing power of ES2016, async/await, ES Modules with React & TypeScript powered by JSPM/SystemJS.
+> Modern & Minimalistic boilerplate for building modular apps with React - utilizing power of TypeScript, ES2016, async/await, ES Modules powered by JSPM/SystemJS.
 
 ## Features
 - clean with bare minimum dep to make React & TypeScript & dev server with hot-reload running - the rest is up to you
