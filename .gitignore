@@ -29,5 +29,5 @@ src/**/*.map
 node_modules
 jspm_packages
 typings
-dist/app.js
+dist/*bundle.js*
 out
