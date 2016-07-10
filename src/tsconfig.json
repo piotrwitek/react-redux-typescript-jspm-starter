@@ -1,20 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "declaration": false,
     "module": "system",
-    "moduleResolution": "node",
-    "jsx": "react",
-    "noImplicitAny": false,
-    "isolatedModules": false,
-    "experimentalDecorators": true,
+    "target": "es6",
     "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "isolatedModules": false,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "noResolve": false,
+    "outDir": "../out",
     "preserveConstEnums": true,
     "removeComments": true,
-    "sourceMap": true,
-    "declaration": false
+    "sourceMap": false,
+    "allowUnusedLabels": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
   "filesGlob": [
-    "../typings/main.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "!node_modules/**"
@@ -28,7 +34,7 @@
   ],
   "atom": {
     "rewriteTsconfig": true,
-    "formatOnSave": true
+    "formatOnSave": false
   },
   "formatCodeOptions": {
     "indentSize": 2,

@@ -16,6 +16,8 @@ function getTranslation(text: Texts) {
     case Texts.Incomplete:
       return 'incomplete';
   }
+
+  return '';
 }
 
 interface LocalProps extends React.Props<UserProfile> {
