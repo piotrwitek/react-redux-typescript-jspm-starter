@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>react / ts / jspm - starter kit</title>
+  <title>React / TypeScript / JSPM - Starter-Kit</title>
   <link rel="stylesheet" href="loader-style.css">
 </head>
 
@@ -27,7 +27,6 @@
   </div>
   <!-- body bottom scripts -->
   <script src="/jspm_packages/system.js"></script>
-  <script src="/jspm.browser.js"></script>
   <script src="/jspm.config.js"></script>
   <script type="text/javascript">
     System.import('systemjs-hot-reloader').then(function(HotReloader) {
@@ -35,6 +34,7 @@
       new HotReloader.default('http://localhost:8888');
     });
     // load main module of your app
+    System.trace = true;
     System.import('src/app');
   </script>
 </body>

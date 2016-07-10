@@ -30,3 +30,4 @@ node_modules
 jspm_packages
 typings
 dist/app.js
+out

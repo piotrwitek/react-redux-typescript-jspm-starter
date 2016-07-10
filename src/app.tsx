@@ -18,5 +18,5 @@ import * as ReactDOM from 'react-dom';
 // components imports
 import {Main} from './components/main';
 
-// todo: refactor name to appComponent
-export var appComponent: any = ReactDOM.render(<Main welcomeMessage="Welcome to React"/>, appContainer);
+const message = 'React / TypeScript / JSPM - Starter-Kit';
+export var appComponent: any = ReactDOM.render(<Main welcomeMessage={message} />, appContainer);
