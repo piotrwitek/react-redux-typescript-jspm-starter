@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>react / ts / jspm - starter kit</title>
+  <link rel="stylesheet" href="loader-style.css">
+</head>
+
+<body>
+  <div id="app-container">
+    <div class="loader-container">
+      <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
+    </div>
+  </div>
+  <!-- body bottom scripts -->
+  <script src="/jspm_packages/system.js"></script>
+  <script src="/jspm.browser.js"></script>
+  <script src="/jspm.config.js"></script>
+  <script type="text/javascript">
+    System.import('systemjs-hot-reloader').then(function(HotReloader) {
+      // if you're running server on custom port please remember to update below
+      new HotReloader.default('http://localhost:8888');
+    });
+    // load main module of your app
+    System.import('src/app');
+  </script>
+</body>
+
+</html>

@@ -20,10 +20,10 @@
     "!node_modules/**"
   ],
   "files": [
-    "../typings/main.d.ts",
+    "app-typings.d.ts",
+    "app.tsx",
     "components/app.tsx",
     "components/user-profile.tsx",
-    "main.tsx",
     "stores/app-store.tsx"
   ],
   "atom": {
