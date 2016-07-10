@@ -4,9 +4,9 @@ export function __reload(prevModule) {
     appComponent.setState(prevModule.appComponent.state);
 }
 
-// create app container
-var appContainer = document.getElementById('app-container');
-if (appContainer == undefined) {
+// auto create app container if missing
+let appContainer = document.getElementById('app-container');
+if (appContainer == null) {
   appContainer = document.createElement('div');
   appContainer.id = 'app-container';
   document.body.appendChild(appContainer);
@@ -16,7 +16,7 @@ if (appContainer == undefined) {
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 // components imports
-import {App} from './components/app';
+import {Main} from './components/main';
 
 // todo: refactor name to appComponent
-export var appComponent = ReactDOM.render(<App />, appContainer);
+export var appComponent: any = ReactDOM.render(<Main welcomeMessage="Welcome to React"/>, appContainer);

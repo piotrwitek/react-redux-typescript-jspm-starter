@@ -14,7 +14,7 @@ export class AppStore {
   userData: UserData;
 
   constructor() {
-    this.userData = new UserData("Piotr", 33);
+    this.userData = new UserData('Piotr', 33);
   }
 
 }

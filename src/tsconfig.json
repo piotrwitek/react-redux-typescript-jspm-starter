@@ -22,7 +22,7 @@
   "files": [
     "app-typings.d.ts",
     "app.tsx",
-    "components/app.tsx",
+    "components/main.tsx",
     "components/user-profile.tsx",
     "stores/app-store.tsx"
   ],

@@ -1,7 +1,7 @@
 // style imports
 import './user-profile.css!';
 // lib imports
-import * as React from "react";
+import * as React from 'react';
 
 enum Texts {
   Complete,
@@ -11,9 +11,9 @@ enum Texts {
 function getTranslation(text: Texts) {
   switch (text) {
     case Texts.Complete:
-      return "complete";
+      return 'complete';
     case Texts.Incomplete:
-      return "incomplete";
+      return 'incomplete';
   }
 }
 
@@ -32,7 +32,7 @@ export class UserProfile extends React.Component<LocalProps, LocalState> {
     super();
     this.state = {
       complete: props.complete
-    }
+    };
   }
 
   getStatusText = () => {
@@ -46,7 +46,7 @@ export class UserProfile extends React.Component<LocalProps, LocalState> {
   render(): JSX.Element {
     const {name, age} = this.props;
     return (
-      <div className='myComponent'>
+      <div className="user-profile-component">
         <div>{name} is {age} years old.</div>
         <div>Profile status: {this.getStatusText() }</div>
         <button onClick={this.handleToggleCompletion}>Toggle completion</button>
