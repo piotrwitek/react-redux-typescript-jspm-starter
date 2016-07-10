@@ -1,17 +1,33 @@
 # React / TypeScript / JSPM starter-kit
-Modern, future-proof JavaScript Project Starter-Kit to build modular web apps with React & TypeScript using ES Modules powered by JSPM/SystemJS
+Modern, clean & future-proof JavaScript Project boilerplate to build modular web apps utilizing power of ES2016, async/await, ES Modules with React & TypeScript powered by JSPM/SystemJS.
 
 ## Features
-- just core stuff and dev server setup with hot-reload - the rest is up to you
-- fully automated - just npm install, npm start to run dev server and you're ready to code
-- React-TypeScript usage example code
-- React & ReactDOM typings
-- typescript nightly version (@next) for coolest new features, default tsconfig for ES2015
-- development server with browser-sync (live-reload & css inject)
-- JSPM 0.17.X with hot-module reload enabled and example code (chokidar-socket-emitter/systemjs-hot-reloader)
-- bundling for production in `~/dist/` folder - test productions available on `http://localhost/dist/`
+- clean with bare minimum dep to make React & TypeScript & dev server with hot-reload running - the rest is up to you
+- easy start - just npm install && npm start to run dev server and you're ready to start coding
+- simple and clean dev server with hot-module-reload for JSPM - [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
+- added static dev-bundle (with external deps) setup for quick full-page reload, this is most important as this will make JSPM very fast
+- Typescript custom ambient definitions for external libraries - best-practices & example
+- React with TypeScript - best-practices & example code & typings
+- (async/await best practices with example code in progress)
+- typescript nightly builds (@next) for coolest new features, tsconfig setup for ES2016 support
+- JSPM 0.17.X - most recent beta version up stay up-to-date with best-practices
+- bundling for production in `~/dist/` folder - open production build on dev server `http://localhost/dist/`
 - importing and bundling CSS dependencies using JSPM `plugin-css`
-- npm run scripts to automate bundling & dev server startup
+- usefull npm run scripts to automate many development workflow tasks
+- github hooks using husky (in progress)
+- nice css loader while waiting for React to "kick in"
+- using regenerator to transpile generators/async/await to ES5 (soon with TypeScript 2.0 release it will be not needed)
+
+---
+
+## Making JSPM loading fast - Static Bundle for External Deps
+Important point to keep in mind when running dev server with JSPM is to create a static bundle of external dependencies. As they only change when updated through NPM, it is best to bundle them all together and load as one package instead of separately making hundreds of requests slowing down page reload.
+That way your only your modules from src are still loaded separately making possible to hot-reload them instantly without rebundling, and do full-page reload if necessary very quickly. This is the best of two development approaches (hot-reload vs. bundling) mixed together.
+
+Test:
+1. run `npm run unbundle` -> open network tab, reload page and check output
+2. run `npm run bundle-dev` -> open network tab, reload page and check output
+3. compare results
 
 ---
 
@@ -19,16 +35,27 @@ Modern, future-proof JavaScript Project Starter-Kit to build modular web apps wi
 
 #### NPM Commands
 
-`npm start` - start local development server with hot-reload **(WARNING: currently working only for windows)**
-*other platforms please npm run server & hot-reloader processes seperately, plan to fix it in the future*
+`npm start` - start local dev server with hot-module-reload for JSPM [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
 
-`npm run server` - start local development server (browser-sync - w/o hot-reload)
+`npm run bundle-dev` - inject static dev-bundle to JSPM config for quick full-page reload
 
-`npm run hot-reloader` - start hot-reloader (chokidar-socket-emitter)
-    
-`npm run build-test` - build production bundle - debug version with source-maps
-    
-`npm run build-prod` - build production bundle - optimized minified version w/o source-maps
+`npm run unbundle` - un-inject static dev-bundle from JSPM config
+
+`npm run build` - build production app bundle (only your app source) - optimized minified version w/o source-maps (dist/ folder)
+
+`npm run build-debug` - same as build but debug version with source-maps
+
+`npm run build-deps` - build production dependency bundle (only external dependencies) (dist/ folder)
+
+#### Dev Workflow
+1. `npm run bundle-dev` - _**OPTIONAL:** run only when your dependencies has changed_
+2. `npm start`
+
+#### Build for Production Workflow
+1. `npm run build`
+2. `npm run build-deps` - _**OPTIONAL:** run only when your dependencies has changed_
+3. open `http://localhost/dist/` to check
+4. deploy 'dist' contents on your server
 
 ---
 
@@ -36,8 +63,8 @@ Modern, future-proof JavaScript Project Starter-Kit to build modular web apps wi
 
 #### Prerequisites
 - node.js and git
-- install jspm package globally to have jspm command available: `npm install jspm -g` (otherwise you would have to use a local version from `~/node_modules/`)
-    
+- install JSPM with global flag to have jspm command available: `npm install jspm -g` (otherwise you'll have to use a local version from `~/node_modules/`)
+
 
 #### 1. Create new project folder
     mkdir my-project && cd my-project
@@ -49,21 +76,16 @@ Modern, future-proof JavaScript Project Starter-Kit to build modular web apps wi
     npm install
 
 #### 4. Run development server and start developing
-###### On windows
     npm start
-###### Other platforms
-    npm run server
-    npm run hot-reloader
+
 
 ---
 
 ## Dependencies
 - https://github.com/Microsoft/TypeScript/
 - https://github.com/facebook/react/
-- https://github.com/Browsersync/browser-sync
-- https://github.com/capaj/chokidar-socket-emitter
-- https://github.com/jspm/jspm-cli
-- https://github.com/capaj/systemjs-hot-reloader
+- https://github.com/jspm/jspm-cli/
+- https://github.com/piotrwitek/jspm-hmr/
 
 ---
 
