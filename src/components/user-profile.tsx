@@ -2,6 +2,7 @@
 import './user-profile.css!';
 // lib imports
 import * as React from 'react';
+import {UserData} from '../stores/app-store';
 
 enum Texts {
   Complete,
@@ -18,9 +19,7 @@ function getTranslation(text: Texts) {
 }
 
 interface LocalProps extends React.Props<UserProfile> {
-  name: string;
-  age: number;
-  complete: boolean;
+  userData: UserData;
 }
 
 interface LocalState {
@@ -28,11 +27,19 @@ interface LocalState {
 }
 
 export class UserProfile extends React.Component<LocalProps, LocalState> {
-  constructor(props) {
+  constructor(props: LocalProps) {
     super();
     this.state = {
-      complete: props.complete
+      complete: props.userData ? props.userData.complete : null
     };
+  }
+
+  componentDidMount() {
+    console.log('user-profile mounted!');
+  }
+
+  componentDidUpdate() {
+    console.log('user-profile updated!');
   }
 
   getStatusText = () => {
@@ -44,7 +51,12 @@ export class UserProfile extends React.Component<LocalProps, LocalState> {
   };
 
   render(): JSX.Element {
-    const {name, age} = this.props;
+    if (this.props.userData == null) {
+      return <div className="user-profile-component">User profile data is empty.</div>;
+    }
+
+    const {name, age} = this.props.userData;
+
     return (
       <div className="user-profile-component">
         <div>{name} is {age} years old.</div>

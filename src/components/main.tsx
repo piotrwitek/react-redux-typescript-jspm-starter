@@ -8,21 +8,24 @@ import {UserProfile} from './user-profile';
 
 interface LocalProps extends React.Props<Main> {
   welcomeMessage: string;
+  appStore: AppStore;
 }
 
 // App pure component
 export class Main extends React.Component<LocalProps, AppStore> {
-  constructor() {
-    super();
-    this.state = new AppStore();
+
+  componentDidMount() {
+    console.log('main mounted!');
   }
 
   render() {
-    const {userData} = this.state;
-    return (<div className="main-component">
-      <h2>{this.props.welcomeMessage}</h2>
-      <UserProfile name={userData.name} age={userData.age} complete={userData.complete} />
-    </div>
+    const {userData} = this.props.appStore;
+    return (
+      <div className="main-component">
+        <h2>{this.props.welcomeMessage}</h2>
+        <UserProfile userData={userData} />
+        <UserProfile userData={null} />
+      </div>
     );
   }
 }

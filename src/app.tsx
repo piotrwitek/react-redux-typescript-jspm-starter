@@ -17,6 +17,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 // components imports
 import {Main} from './components/main';
+import {AppStore, UserData} from './stores/app-store';
 
 const message = 'React / TypeScript / JSPM - Starter-Kit';
-export var appComponent: any = ReactDOM.render(<Main welcomeMessage={message} />, appContainer);
+const appStore = new AppStore(new UserData('Piotr', 32));
+export var appComponent: any = ReactDOM.render(<Main welcomeMessage={message} appStore={appStore} />, appContainer);

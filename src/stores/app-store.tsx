@@ -13,8 +13,8 @@ export class UserData {
 export class AppStore {
   userData: UserData;
 
-  constructor() {
-    this.userData = new UserData('Piotr', 33);
+  constructor(initialState?: UserData) {
+    this.userData = initialState || null;
   }
 
 }
