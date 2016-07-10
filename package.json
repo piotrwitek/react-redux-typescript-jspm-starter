@@ -32,8 +32,9 @@
   "devDependencies": {
     "husky": "^0.11.4",
     "jspm": "^0.17.0-beta.22",
+    "jspm-hmr": "^0.4.1",
     "regenerator": "^0.8.46",
-    "typings": "^0.7.8"
+    "typings": "^0.7.12"
   },
   "jspm": {
     "name": "app",
