@@ -1,5 +1,5 @@
 # React / TypeScript / JSPM starter-kit
-Modern, clean & future-proof JavaScript Project boilerplate to build modular web apps utilizing power of ES2016, async/await, ES Modules with React & TypeScript powered by JSPM/SystemJS.
+> Modern, clean & future-proof JavaScript Project boilerplate to build modular web apps utilizing power of ES2016, async/await, ES Modules with React & TypeScript powered by JSPM/SystemJS.
 
 ## Features
 - clean with bare minimum dep to make React & TypeScript & dev server with hot-reload running - the rest is up to you
@@ -24,10 +24,10 @@ Modern, clean & future-proof JavaScript Project boilerplate to build modular web
 Important point to keep in mind when running dev server with JSPM is to create a static bundle of external dependencies. As they only change when updated through NPM, it is best to bundle them all together and load as one package instead of separately making hundreds of requests slowing down page reload.
 That way your only your modules from src are still loaded separately making possible to hot-reload them instantly without rebundling, and do full-page reload if necessary very quickly. This is the best of two development approaches (hot-reload vs. bundling) mixed together.
 
-Test:
-1. run `npm run unbundle` -> open network tab, reload page and check output
-2. run `npm run bundle-dev` -> open network tab, reload page and check output
-3. compare results
+My test procedure:
+
+1. run `npm run unbundle` -> open network tab in chrome dev tools -> reload the page -> check logged results
+2. run `npm run bundle-dev` -> open network tab in chrome dev tools -> reload page -> compare logged results with previous
 
 ---
 
@@ -51,7 +51,7 @@ Test:
 1. `npm run bundle-dev` - _**OPTIONAL:** run only when your dependencies has changed_
 2. `npm start`
 
-#### Build for Production Workflow
+#### Build for Production Workflow (WIP -> in next release)
 1. `npm run build`
 2. `npm run build-deps` - _**OPTIONAL:** run only when your dependencies has changed_
 3. open `http://localhost/dist/` to check
