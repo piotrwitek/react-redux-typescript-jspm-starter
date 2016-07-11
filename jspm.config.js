@@ -330,7 +330,7 @@ SystemJS.config({
         "create-hash": "npm:create-hash@1.1.2",
         "pbkdf2": "npm:pbkdf2@3.0.4",
         "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
-        "asn1.js": "npm:asn1.js@4.6.2"
+        "asn1.js": "npm:asn1.js@4.8.0"
       }
     },
     "npm:sha.js@2.4.5": {
@@ -363,16 +363,16 @@ SystemJS.config({
         "inherits": "npm:inherits@2.0.1"
       }
     },
-    "npm:asn1.js@4.6.2": {
+    "npm:hash.js@1.0.3": {
+      "map": {
+        "inherits": "npm:inherits@2.0.1"
+      }
+    },
+    "npm:asn1.js@4.8.0": {
       "map": {
         "bn.js": "npm:bn.js@4.11.4",
         "inherits": "npm:inherits@2.0.1",
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
-      }
-    },
-    "npm:hash.js@1.0.3": {
-      "map": {
-        "inherits": "npm:inherits@2.0.1"
       }
     }
   }
