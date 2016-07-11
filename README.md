@@ -1,7 +1,7 @@
 # React / TypeScript / JSPM starter-kit
 > Modern & Minimalistic boilerplate for building modular apps with React - utilizing power of TypeScript, ES2016, async/await, ES Modules powered by JSPM/SystemJS.
 
-> Main goal of this boilerplate project is to keep up-to-date with new releases of React / TypeScript / JSPM, and to follow the best practices as they are constantly evolving.
+> Main goal of this boilerplate project is to keep up-to-date with the new releases of React / TypeScript / JSPM, and to follow changes in the best practices as they might change with a new updates.
 
 > TypeScript 2.0 on horizon - until the official release I will use beta branch for planned update.
 
