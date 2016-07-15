@@ -9,7 +9,7 @@
   "bugs": "https://github.com/piotrwitek/react-ts-jspm-starter-kit/issues",
   "license": "MIT",
   "scripts": {
-    "postinstall": "jspm install && typings install",
+    "postinstall": "jspm install",
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm test",
     "bundle-dev": "jspm bundle dev-bundle.config.js out/dev-bundle.js -id",
@@ -29,16 +29,19 @@
     "lint": "tslint ./src/**/*.ts*"
   },
   "devDependencies": {
+    "@types/react": "^0.14.27",
+    "@types/react-dom": "^0.14.13",
     "husky": "^0.11.4",
     "jspm": "^0.17.0-beta.22",
     "jspm-hmr": "^0.4.2",
     "regenerator": "^0.8.46",
     "tslint": "^3.13.0",
-    "typings": "^1.3.1"
+    "typescript": "^1.8.10"
   },
   "jspm": {
     "name": "app",
     "dependencies": {
+      "classnames": "npm:classnames@^2.2.5",
       "css": "github:systemjs/plugin-css@^0.1.23",
       "react-dom": "npm:react-dom@^15.2.1"
     },
