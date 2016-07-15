@@ -39,6 +39,7 @@
   "jspm": {
     "name": "app",
     "dependencies": {
+      "classnames": "npm:classnames@^2.2.5",
       "css": "github:systemjs/plugin-css@^0.1.23",
       "react-dom": "npm:react-dom@^15.2.1"
     },
@@ -117,4 +118,4 @@
       }
     }
   }
-}
+}
