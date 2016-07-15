@@ -6,6 +6,7 @@
 > TypeScript 2.0 on horizon - until the official release I will use beta branch for planned update.
 
 ## Features
+
 ##### Core
 - clean with minimal dependencies to make React & TypeScript work
 - dead-simple dev server with hot-module-reload and in-browser transpiling - [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
@@ -13,6 +14,7 @@
 - helpful npm scripts to automate development workflow tasks
 - github hooks using husky
 - nice css loader while waiting for React to "kick in"
+
 ##### TypeScript
 - Typescript custom ambient definitions for external libraries - best-practices & example
 - tsconfig setup for ES2016 support
@@ -20,10 +22,12 @@
 - unit testing examples in TypeScript with Tape
 - async/await - example code (WIP)
 - using regenerator instead of Babel to transpile generators/async/await to ES5 (soon with TypeScript 2.1 release it will be not needed anymore)
+
 ##### React 
 - React usage with TypeScript and ES6 - example code
 - Redux Store with TypeScript - example code (TODO)
 - Unit-testing behaviour and rendering of React Components (TODO)
+
 ##### JSPM
 - JSPM 0.17.X - most recent beta version up stay up-to-date with best-practices
 - added static dev-bundle (external deps) setup for quick full-page reload (this will make JSPM lighting fast)
