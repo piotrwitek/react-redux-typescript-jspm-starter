@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 declare const System: any;
 
 declare module 'example-module' {
