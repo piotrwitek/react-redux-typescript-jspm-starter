@@ -1,4 +1,4 @@
-# React / TypeScript / JSPM / Hot-Reload starter-kit
+# React / TypeScript / JSPM - starter-kit with Hot-Reload
 > Modern & Minimalistic boilerplate for building modular apps with React - utilizing power of TypeScript, ES2016, Hot-Reload, async/await, ES Modules & in-browser transpiling powered by JSPM/SystemJS.
 
 > Main goal of this boilerplate project is to keep up-to-date with the new releases of React / TypeScript / JSPM, and to follow changes in the best practices as they might change with a new updates.
