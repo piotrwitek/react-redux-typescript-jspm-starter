@@ -1,26 +1,34 @@
-# React / TypeScript / JSPM starter-kit
-> Modern & Minimalistic boilerplate for building modular apps with React - utilizing power of TypeScript, ES2016, async/await, ES Modules powered by JSPM/SystemJS.
+# React / TypeScript / JSPM / Hot-Reload starter-kit
+> Modern & Minimalistic boilerplate for building modular apps with React - utilizing power of TypeScript, ES2016, Hot-Reload, async/await, ES Modules & in-browser transpiling powered by JSPM/SystemJS.
 
 > Main goal of this boilerplate project is to keep up-to-date with the new releases of React / TypeScript / JSPM, and to follow changes in the best practices as they might change with a new updates.
 
 > TypeScript 2.0 on horizon - until the official release I will use beta branch for planned update.
 
 ## Features
-- clean with bare minimum dep to make React & TypeScript & dev server with hot-reload running - the rest is up to you
-- easy start - just npm install && npm start to run dev server and you're ready to start coding
-- simple and clean dev server with hot-module-reload for JSPM - [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
-- added static dev-bundle (with external deps) setup for quick full-page reload, this is most important as this will make JSPM very fast
+##### Core
+- clean with minimal dependencies to make React & TypeScript work
+- dead-simple dev server with hot-module-reload and in-browser transpiling - [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
+- easy start - npm install && npm start to start coding
+- helpful npm scripts to automate development workflow tasks
+- github hooks using husky
+- nice css loader while waiting for React to "kick in"
+##### TypeScript
 - Typescript custom ambient definitions for external libraries - best-practices & example
-- React with TypeScript - best-practices & example code & typings
-- (async/await best practices with example code in progress)
-- typescript nightly builds (@next) for coolest new features, tsconfig setup for ES2016 support
+- tsconfig setup for ES2016 support
+- using npm @types instead of typings
+- unit testing examples in TypeScript with Tape
+- async/await - example code (WIP)
+- using regenerator instead of Babel to transpile generators/async/await to ES5 (soon with TypeScript 2.1 release it will be not needed anymore)
+##### React 
+- React usage with TypeScript and ES6 - example code
+- Redux Store with TypeScript - example code (TODO)
+- Unit-testing behaviour and rendering of React Components (TODO)
+##### JSPM
 - JSPM 0.17.X - most recent beta version up stay up-to-date with best-practices
+- added static dev-bundle (external deps) setup for quick full-page reload (this will make JSPM lighting fast)
 - bundling for production in `~/dist/` folder - open production build on dev server `http://localhost/dist/`
 - importing and bundling CSS dependencies using JSPM `plugin-css`
-- usefull npm run scripts to automate many development workflow tasks
-- github hooks using husky (in progress)
-- nice css loader while waiting for React to "kick in"
-- using regenerator to transpile generators/async/await to ES5 (soon with TypeScript 2.0 release it will be not needed)
 
 ---
 
