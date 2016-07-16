@@ -14,12 +14,12 @@
 - helpful npm scripts to automate development workflow tasks
 - github hooks using husky
 - nice css loader while waiting for React to "kick in"
+- test harness setup with Tape (blue-tape) - included example code and @types
 
 ##### TypeScript
 - Typescript custom ambient definitions for external libraries - best-practices & example
 - tsconfig setup for ES2016 support
 - using npm @types instead of typings
-- unit testing examples in TypeScript with Tape
 - async/await - example code (WIP)
 - using regenerator instead of Babel to transpile generators/async/await to ES5 (soon with TypeScript 2.1 release it will be not needed anymore)
 
