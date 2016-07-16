@@ -1,6 +1,6 @@
 {
   "name": "react-ts-jspm-starter-kit",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Modern & Minimalistic boilerplate for building modular apps with React - utilizing power of TypeScript, ES2016, Hot-Reload, async/await, ES Modules & in-browser transpiling powered by JSPM/SystemJS.",
   "main": "server.js",
   "author": "Piotr Witek <piotrek.witek@gmail.com> (http://piotrwitek.github.io/)",
