@@ -4,22 +4,6 @@ import './user-profile.css!';
 import * as React from 'react';
 import {UserData} from '../stores/app-store';
 
-enum Texts {
-  Complete,
-  Incomplete
-}
-
-function getTranslation(text: Texts) {
-  switch (text) {
-    case Texts.Complete:
-      return 'complete';
-    case Texts.Incomplete:
-      return 'incomplete';
-  }
-
-  return '';
-}
-
 interface LocalProps extends React.Props<UserProfile> {
   userData: UserData;
 }
@@ -45,7 +29,7 @@ export class UserProfile extends React.Component<LocalProps, LocalState> {
   }
 
   getStatusText = () => {
-    return (this.state.complete ? getTranslation(Texts.Complete) : getTranslation(Texts.Incomplete));
+    return (this.state.complete ? 'complete' : 'incomplete');
   };
 
   handleToggleCompletion = () => {

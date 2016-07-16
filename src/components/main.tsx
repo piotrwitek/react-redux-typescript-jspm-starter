@@ -12,7 +12,7 @@ interface LocalProps extends React.Props<Main> {
 }
 
 // App pure component
-export class Main extends React.Component<LocalProps, AppStore> {
+export class Main extends React.Component<LocalProps, {}> {
 
   componentDidMount() {
     console.log('main mounted!');
