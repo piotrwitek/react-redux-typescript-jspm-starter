@@ -30,7 +30,9 @@
     "app.tsx",
     "components/main.tsx",
     "components/user-profile.tsx",
-    "stores/app-store.tsx"
+    "stores/app-store.spec.tsx",
+    "stores/app-store.tsx",
+    "test-runner.tsx"
   ],
   "atom": {
     "rewriteTsconfig": true,

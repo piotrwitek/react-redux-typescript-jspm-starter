@@ -25,12 +25,15 @@
     "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push",
     "bd": "npm run build && npm run deploy",
     "bdd": "npm run build-deps && npm run deploy",
-    "test": "echo \"Tests to be added soon!\"",
+    "test": "jspm run src/test-runner | faucet",
     "lint": "tslint ./src/**/*.ts*"
   },
   "devDependencies": {
+    "@types/blue-tape": "^0.1.29",
     "@types/react": "^0.14.27",
     "@types/react-dom": "^0.14.13",
+    "@types/tape": "^4.2.27",
+    "faucet": "0.0.1",
     "husky": "^0.11.4",
     "jspm": "^0.17.0-beta.22",
     "jspm-hmr": "^0.4.2",
@@ -46,6 +49,7 @@
       "react-dom": "npm:react-dom@^15.2.1"
     },
     "devDependencies": {
+      "blue-tape": "npm:blue-tape@^0.2.0",
       "plugin-typescript": "github:frankwallis/plugin-typescript@^4.0.16",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
     },
