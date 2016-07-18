@@ -1,7 +1,8 @@
-// enable hot-reloader
-export function __reload(prevModule) {
-  if (prevModule.appComponent.state)
-    appComponent.setState(prevModule.appComponent.state);
+// here you can customize hot-module-reload hook
+// you could also copy to other modules
+export function __reload(prev) {
+  if (prev.app.state)
+    app.setState(prev.app.state);
 }
 
 // auto create app container if missing
@@ -21,4 +22,4 @@ import {AppStore, UserData} from './stores/app-store';
 
 const message = 'React / TypeScript / JSPM - Starter-Kit';
 const appStore = new AppStore(new UserData('Piotr', 32));
-export var appComponent: any = ReactDOM.render(<Main welcomeMessage={message} appStore={appStore} />, appContainer);
+export var app: any = ReactDOM.render(<Main welcomeMessage={message} appStore={appStore} />, appContainer);
