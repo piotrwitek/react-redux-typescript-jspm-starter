@@ -1,29 +1,40 @@
 declare const System: any;
 
-// example ES Module declaration
+// example external ES Module declaration
 declare module 'example-module' {
+  
+  // public variables
   export const exampleVariable: number;
+  
+  // public functions
   export function exampleFunction(param: string): boolean;
+
+  // default export
   export default {
     exampleVariable: exampleVariable,
     exampleFunction: exampleFunction
   };
 }
 
-// example of external React Component declaration
-declare module 'example-react-external-component' {
+// example external React Module declaration
+declare module 'example-react-module' {
   import * as React from 'react';
 
-  export function fetchData(name: string): Promise<string[]>;
-
-  export class ReactExternalComponent extends React.Component<IProps, any> { }
-  interface IProps {
+  // public components
+  interface ReactComponentProps extends React.Props<ReactComponent> {
     name: string;
     age: number;
   }
+  export class ReactComponent extends React.Component<ReactComponentProps, any> {
+  	static somePrototypeMethod(param: string): boolean;
+  }
 
+  // public functions
+  export function fetchData(name: string): Promise<string[]>;
+
+  // default export
   export default {
-    fetchData: fetchData,
-    ReactExternalComponent: ReactExternalComponent
+    ReactComponent: ReactComponent,
+    fetchData: fetchData
   };
 }
