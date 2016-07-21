@@ -78,15 +78,15 @@ My test procedure:
 ## Installation
 
 #### Prerequisites
-- node.js and git
-- install JSPM with global flag to have jspm command available: `npm install jspm -g` (otherwise you'll have to use a local version from `~/node_modules/`)
+- Node.js and Git
+- Install JSPM with global flag to have jspm command available: `npm install jspm -g` (otherwise you'll have to use a local version from `~/node_modules/`)
 
 
 #### 1. Create new project folder
     mkdir my-project && cd my-project
 
 #### 2. Clone repo
-    git clone https://github.com/piotrwitek/react-ts-jspm-starter-kit.git
+    git clone https://github.com/piotrwitek/react-ts-jspm-starter-kit.git .
 
 #### 3. Install npm dependencies
     npm install
