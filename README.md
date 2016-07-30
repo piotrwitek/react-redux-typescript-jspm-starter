@@ -1,4 +1,4 @@
-# React / TypeScript / JSPM / Hot-Reload - starter-kit 
+# React / TypeScript / JSPM / Hot-Reload - starter-kit
 > Modern & Minimalistic boilerplate for building modular apps with React - utilizing power of TypeScript, ES2016, Hot-Reload, async/await, ES Modules & in-browser transpiling powered by JSPM/SystemJS.
 
 > Keeping up-to-date with new releases of React / TypeScript / JSPM, and to follow changes in the best practices as they might change with a new updates.
@@ -14,7 +14,7 @@
 - COMPLETE-WORKFLOW - helpful npm scripts and tasks, github hooks, linter, test-harness etc.
 - TDD-READY - test-harness setup with Tape (blue-tape) - included example code and @types
 - EXTRAS - css only loader while waiting for React to "kick in"
- 
+
 ##### Learn TypeScript from sample code
 - Typescript definitions for third-party libraries
 - solid tsconfig setup for ES2016 support
@@ -47,34 +47,6 @@ My test procedure:
 
 ---
 
-## Usage
-
-#### NPM Commands
-
-`npm start` - start local dev server with hot-module-reload for JSPM [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
-
-`npm run bundle-dev` - inject static dev-bundle to JSPM config for quick full-page reload
-
-`npm run unbundle` - un-inject static dev-bundle from JSPM config
-
-`npm run build` - build production app bundle (only your app source) - optimized minified version w/o source-maps (dist/ folder)
-
-`npm run build-debug` - same as build but debug version with source-maps
-
-`npm run build-deps` - build production dependency bundle (only external dependencies) (dist/ folder)
-
-#### Dev Workflow
-1. `npm run bundle-dev` - _**OPTIONAL:** run only when your dependencies has changed_
-2. `npm start`
-
-#### Build for Production Workflow (WIP -> in next release)
-1. `npm run build`
-2. `npm run build-deps` - _**OPTIONAL:** run only when your dependencies has changed_
-3. open `http://localhost/dist/` to check
-4. deploy 'dist' contents on your server
-
----
-
 ## Installation
 
 #### Prerequisites
@@ -82,18 +54,48 @@ My test procedure:
 - Install JSPM with global flag to have jspm command available: `npm install jspm -g` (otherwise you'll have to use a local version from `~/node_modules/`)
 
 
-#### 1. Create new project folder
-    mkdir my-project && cd my-project
+#### 1. Clone repo
+    git clone https://github.com/piotrwitek/react-ts-jspm-starter-kit.git my-project-folder
 
-#### 2. Clone repo
-    git clone https://github.com/piotrwitek/react-ts-jspm-starter-kit.git .
-
-#### 3. Install npm dependencies
+#### 2. Install npm dependencies
     npm install
 
-#### 4. Run development server and start developing
+#### 3. Run development server with HMR and enjoy best possible dev feedback-loop
     npm start
 
+---
+
+## Usage
+
+#### Dev Workflow
+1. `npm run bundle-dev` - _**OPTIONAL:** run only when your dependencies has changed_
+2. `npm start`
+
+#### Build for Production Workflow
+1. `npm run build`
+2. `npm run build-deps` - _**OPTIONAL:** run only when your dependencies has changed_
+3. open `http://localhost/dist/` to check
+4. deploy 'dist' contents on your server
+
+#### Npm Commands
+
+`npm start` - start local dev server with hot-module-reload for JSPM [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
+
+##### Development Bundling
+
+`npm run bundle-dev` - bundle static dependencies for quick full-page reload, app sources remain as seperate modules for on-the-fly HMR & transpilation
+
+`npm run unbundle` - un-bundle static dependencies (usefull when changing app dependencies)
+
+##### Production Bundling (`dist/` folder)
+
+`npm run build` - build app bundle (only your app source) - minified, no source-maps
+
+`npm run build-deps` - build dependency bundle (only external dependencies) - minified, no source-maps
+
+`npm run build-all` - build both app & dependecy bundle
+
+`npm run build-debug` - build app bundle - debug version with source-maps
 
 ---
 

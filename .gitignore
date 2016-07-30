@@ -28,6 +28,9 @@ src/**/*.map
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 jspm_packages
-typings
+
+# Build directory
 dist/*bundle.js*
+dist/jspm.config.js
+dist/system.js
 out
