@@ -31,14 +31,14 @@
   "devDependencies": {
     "@types/blue-tape": "^0.1.29",
     "@types/react": "^0.14.27",
-    "@types/react-dom": "^0.14.13",
+    "@types/react-dom": "^0.14.14",
     "@types/tape": "^4.2.27",
     "faucet": "0.0.1",
-    "husky": "^0.11.4",
-    "jspm": "^0.17.0-beta.22",
+    "husky": "^0.11.6",
+    "jspm": "^0.17.0-beta.24",
     "jspm-hmr": "^0.4.2",
     "regenerator": "^0.8.46",
-    "tslint": "^3.13.0",
+    "tslint": "^3.14.0",
     "typescript": "^1.8.10"
   },
   "jspm": {
