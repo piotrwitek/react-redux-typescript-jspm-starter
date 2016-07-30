@@ -3,7 +3,7 @@ import './main.css!';
 // lib imports
 import * as React from 'react';
 // components imports
-import {AppStore, UserData} from '../stores/app-store';
+import {AppStore } from '../stores/app-store';
 import {UserProfile} from './user-profile';
 
 interface LocalProps extends React.Props<Main> {

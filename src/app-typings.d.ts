@@ -2,10 +2,9 @@ declare const System: any;
 
 // example external ES Module declaration
 declare module 'example-module' {
-  
   // public variables
   export const exampleVariable: number;
-  
+
   // public functions
   export function exampleFunction(param: string): boolean;
 
@@ -26,7 +25,7 @@ declare module 'example-react-module' {
     age: number;
   }
   export class ReactComponent extends React.Component<ReactComponentProps, any> {
-  	static somePrototypeMethod(param: string): boolean;
+    static somePrototypeMethod(param: string): boolean;
   }
 
   // public functions
