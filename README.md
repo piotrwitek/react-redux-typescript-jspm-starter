@@ -68,26 +68,28 @@ My test procedure:
 ## Usage
 
 #### Dev Workflow
-1. `npm run bundle-dev` - _**OPTIONAL:** run only when your dependencies has changed_
+1. `npm run bundle-dev` - _**OPTIONAL:** re-run only when your dependencies has changed_
 2. `npm start`
 
 #### Build for Production Workflow
 1. `npm run build`
-2. `npm run build-deps` - _**OPTIONAL:** run only when your dependencies has changed_
+2. `npm run build-deps` - _**OPTIONAL:** re-run only when your dependencies has changed_
 3. open `http://localhost/dist/` to check
 4. deploy 'dist' contents on your server
 
-#### Npm Commands
+---
+
+## All Npm Commands & Scripts
 
 `npm start` - start local dev server with hot-module-reload for JSPM [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
 
-##### Development Bundling
+#### Development Bundling
 
 `npm run bundle-dev` - bundle static dependencies for quick full-page reload, app sources remain as seperate modules for on-the-fly HMR & transpilation
 
 `npm run unbundle` - un-bundle static dependencies (usefull when changing app dependencies)
 
-##### Production Bundling (`dist/` folder)
+#### Production Bundling (`dist/` folder)
 
 `npm run build` - build app bundle (only your app source) - minified, no source-maps
 
@@ -96,6 +98,26 @@ My test procedure:
 `npm run build-all` - build both app & dependecy bundle
 
 `npm run build-debug` - build app bundle - debug version with source-maps
+
+#### Deployment
+
+`npm run init-deploy` - initialize new git repository in `/dist` folder aiming at gh-pages branch
+
+`npm run deploy` - checkout, add, commit and push changes in `/dist` folder to gh-pages branch
+
+#### Utility & Git Hooks
+
+`npm run bd` - build and deploy your app bundle
+
+`npm run bdd` - build and deploy your deps bundle
+
+`npm run lint` - run linter
+
+`npm run test` - run test suites
+
+`npm run precommit` - pre commit git hook - runs linter
+    
+`npm run prepush` - pre push git hook - runs linter and tests
 
 ---
 
