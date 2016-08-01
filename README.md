@@ -13,7 +13,7 @@
 - NO-SETUP - npm install && npm start to start coding
 - COMPLETE-WORKFLOW - helpful npm scripts and tasks, github hooks, linter, test-harness etc.
 - TDD-READY - test-harness setup with Tape (blue-tape) - included example code and @types
-- EXTRAS - css only loader while waiting for React to "kick in"
+- EXTRAS - css loading indicator while loading React and other dependencies
 
 ##### Learn TypeScript from sample code
 - Typescript definitions for third-party libraries
