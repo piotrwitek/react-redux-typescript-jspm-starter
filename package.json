@@ -31,12 +31,13 @@
   },
   "devDependencies": {
     "@types/blue-tape": "^0.1.29",
+    "@types/classnames": "0.0.28",
     "@types/react": "^0.14.27",
     "@types/react-dom": "^0.14.14",
     "@types/tape": "^4.2.27",
     "faucet": "0.0.1",
     "husky": "^0.11.6",
-    "jspm": "^0.17.0-beta.24",
+    "jspm": "^0.17.0-beta.25",
     "jspm-hmr": "^0.4.2",
     "regenerator": "^0.8.46",
     "tslint": "^3.14.0",
@@ -46,11 +47,11 @@
     "name": "app",
     "dependencies": {
       "classnames": "npm:classnames@^2.2.5",
-      "css": "github:systemjs/plugin-css@^0.1.23",
-      "react-dom": "npm:react-dom@^15.2.1"
+      "react-dom": "npm:react-dom@^15.3.0"
     },
     "devDependencies": {
       "blue-tape": "npm:blue-tape@^0.2.0",
+      "css": "github:systemjs/plugin-css@^0.1.26",
       "plugin-typescript": "github:frankwallis/plugin-typescript@^4.0.16",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
     },
@@ -70,7 +71,7 @@
       "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
       "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
-      "react": "npm:react@^15.2.1",
+      "react": "npm:react@^15.3.0",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
       "tty": "github:jspm/nodelibs-tty@^0.2.0-alpha",
