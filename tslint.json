@@ -19,6 +19,7 @@
       true,
       "spaces"
     ],
+    "linebreak-style": [true, "LF"],
     "interface-name": false,
     "jsdoc-format": true,
     "label-position": true,

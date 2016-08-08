@@ -1,13 +1,9 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
     "declaration": false,
-    "module": "system",
-    "target": "es6",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "isolatedModules": false,
     "jsx": "react",
-    "moduleResolution": "node",
+    "module": "system",
     "noEmit": true,
     "noEmitOnError": true,
     "noImplicitAny": false,
@@ -15,28 +11,33 @@
     "outDir": "../out",
     "preserveConstEnums": true,
     "removeComments": true,
+    "isolatedModules": false,
     "sourceMap": false,
+    "target": "es6",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
     "allowUnusedLabels": false,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "allowUnreachableCode": false,
+    "noImplicitUseStrict": false,
+    "typeRoots": ["../node_modules/@types/"]
   },
-  "filesGlob": [
-    "**/*.ts",
-    "**/*.tsx",
-    "!node_modules/**"
+  "include": [
+    "**/*"
   ],
-  "files": [
-    "app-typings.d.ts",
-    "app.tsx",
-    "components/main.tsx",
-    "components/user-profile.tsx",
-    "stores/app-store.spec.tsx",
-    "stores/app-store.tsx",
-    "test-runner.tsx"
+  "exclude": [
+    "node_modules/**/",
+    "jspm_packages/**/",
+    "test-runner.tsx",
+    "**/*.spec.*"
   ],
   "atom": {
-    "rewriteTsconfig": true,
-    "formatOnSave": false
+    "rewriteTsconfig": true
+  },
+  "vscode": {
+    "rewriteTsconfig": true
   },
   "formatCodeOptions": {
     "indentSize": 2,
@@ -51,6 +52,5 @@
     "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
     "placeOpenBraceOnNewLineForFunctions": false,
     "placeOpenBraceOnNewLineForControlBlocks": false
-  },
-  "compileOnSave": false
+  }
 }
