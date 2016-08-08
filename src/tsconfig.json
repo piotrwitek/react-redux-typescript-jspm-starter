@@ -4,12 +4,17 @@
     "declaration": false,
     "jsx": "react",
     "module": "system",
+    "newLine": "LF",
     "noEmit": true,
     "noEmitOnError": true,
     "noImplicitAny": false,
-    "noResolve": false,
+    "noImplicitThis": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noResolve": true,
     "outDir": "../out",
     "preserveConstEnums": true,
+    "pretty": true,
     "removeComments": true,
     "isolatedModules": false,
     "sourceMap": false,
@@ -21,8 +26,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "allowUnreachableCode": false,
+    "typeRoots": ["../node_modules/@types/"],
+    "allowJs": false,
     "noImplicitUseStrict": false,
-    "typeRoots": ["../node_modules/@types/"]
+    "lib": ["es5", "es6", "es2016.array.include"],
+    "strictNullChecks": false
   },
   "include": [
     "**/*"
@@ -33,10 +41,10 @@
     "test-runner.tsx",
     "**/*.spec.*"
   ],
-  "atom": {
+	"vscode": {
     "rewriteTsconfig": true
   },
-  "vscode": {
+  "atom": {
     "rewriteTsconfig": true
   },
   "formatCodeOptions": {
