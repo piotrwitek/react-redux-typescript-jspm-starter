@@ -52,7 +52,7 @@
     "devDependencies": {
       "blue-tape": "npm:blue-tape@^0.2.0",
       "css": "github:systemjs/plugin-css@^0.1.26",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^4.0.16",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.0.9",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
     },
     "peerDependencies": {
@@ -113,7 +113,7 @@
         "jspmNodeConversion": false,
         "format": "cjs"
       },
-      "npm:typescript@1.8.10": {
+      "npm:typescript@2.0.0": {
         "browser": {},
         "map": {
           "buffer": "@empty",

@@ -9,16 +9,12 @@ SystemJS.config({
   },
   devConfig: {
     "map": {
-      "plugin-typescript": "github:frankwallis/plugin-typescript@4.0.16",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@5.0.9",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
-      "blue-tape": "npm:blue-tape@0.2.0"
+      "blue-tape": "npm:blue-tape@0.2.0",
+      "css": "github:systemjs/plugin-css@0.1.26"
     },
     "packages": {
-      "github:frankwallis/plugin-typescript@4.0.16": {
-        "map": {
-          "typescript": "npm:typescript@1.8.10"
-        }
-      },
       "npm:debug@2.2.0": {
         "map": {
           "ms": "npm:ms@0.7.1"
@@ -68,7 +64,7 @@ SystemJS.config({
         "map": {
           "inherits": "npm:inherits@2.0.1",
           "inflight": "npm:inflight@1.0.5",
-          "minimatch": "npm:minimatch@3.0.2",
+          "minimatch": "npm:minimatch@3.0.3",
           "once": "npm:once@1.3.3",
           "path-is-absolute": "npm:path-is-absolute@1.0.0",
           "fs.realpath": "npm:fs.realpath@1.0.0"
@@ -98,11 +94,6 @@ SystemJS.config({
           "wrappy": "npm:wrappy@1.0.2"
         }
       },
-      "npm:minimatch@3.0.2": {
-        "map": {
-          "brace-expansion": "npm:brace-expansion@1.1.6"
-        }
-      },
       "npm:define-properties@1.1.2": {
         "map": {
           "foreach": "npm:foreach@2.0.5",
@@ -121,15 +112,29 @@ SystemJS.config({
           "concat-map": "npm:concat-map@0.0.1",
           "balanced-match": "npm:balanced-match@0.4.2"
         }
+      },
+      "npm:minimatch@3.0.3": {
+        "map": {
+          "brace-expansion": "npm:brace-expansion@1.1.6"
+        }
+      },
+      "github:frankwallis/plugin-typescript@5.0.9": {
+        "map": {
+          "typescript": "npm:typescript@2.0.0"
+        }
       }
     }
   },
   transpiler: "plugin-typescript",
   typescriptOptions: {
-    "target": "es5",
-    "jsx": "react",
     "module": "system",
-    "noImplicitAny": false,
+    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "preserveConstEnums": true,
+    "removeComments": true,
     "typeCheck": false,
     "tsconfig": false
   },
@@ -160,7 +165,6 @@ SystemJS.config({
     "classnames": "npm:classnames@2.2.5",
     "constants": "github:jspm/nodelibs-constants@0.2.0-alpha",
     "crypto": "github:jspm/nodelibs-crypto@0.2.0-alpha",
-    "css": "github:systemjs/plugin-css@0.1.26",
     "domain": "github:jspm/nodelibs-domain@0.2.0-alpha",
     "events": "github:jspm/nodelibs-events@0.2.0-alpha",
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
@@ -184,7 +188,7 @@ SystemJS.config({
   packages: {
     "github:jspm/nodelibs-buffer@0.2.0-alpha": {
       "map": {
-        "buffer-browserify": "npm:buffer@4.7.1"
+        "buffer-browserify": "npm:buffer@4.9.0"
       }
     },
     "github:jspm/nodelibs-http@0.2.0-alpha": {
@@ -439,13 +443,6 @@ SystemJS.config({
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
       }
     },
-    "npm:buffer@4.7.1": {
-      "map": {
-        "isarray": "npm:isarray@1.0.0",
-        "base64-js": "npm:base64-js@1.1.2",
-        "ieee754": "npm:ieee754@1.1.6"
-      }
-    },
     "npm:react@15.3.0": {
       "map": {
         "fbjs": "npm:fbjs@0.8.3",
@@ -466,6 +463,13 @@ SystemJS.config({
       "map": {
         "is-stream": "npm:is-stream@1.1.0",
         "encoding": "npm:encoding@0.1.12"
+      }
+    },
+    "npm:buffer@4.9.0": {
+      "map": {
+        "isarray": "npm:isarray@1.0.0",
+        "ieee754": "npm:ieee754@1.1.6",
+        "base64-js": "npm:base64-js@1.1.2"
       }
     }
   }
