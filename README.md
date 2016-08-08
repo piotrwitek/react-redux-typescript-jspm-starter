@@ -1,9 +1,8 @@
-# React / TypeScript / JSPM / Hot-Reload - starter-kit
+# React 15.3.0 / TypeScript 2.0 / JSPM 0.17 / Hot-Reload - starter-kit
+
 > Modern & Minimalistic boilerplate for building modular apps with React - utilizing power of TypeScript, ES2016, Hot-Reload, async/await, ES Modules & in-browser transpiling powered by JSPM/SystemJS.
 
-> Keeping up-to-date with new releases of React / TypeScript / JSPM, and to follow changes in the best practices as they might change with a new updates.
-
-> TypeScript 2.0 on horizon - until the official release I will use beta branch for planned update.
+> Keeping up-to-date with new releases and adhering to changing standards and the best practices as they evolve based on the usage of new features.
 
 ## Features
 - CLEAN - keep at minimal dependencies
@@ -24,7 +23,7 @@
 ##### Learn React from sample code
 - React with TypeScript using ES6 classes
 - Redux with TypeScript (TODO)
-- Unit-testing the behaviour and rendering results of Components (TODO)
+- Unit-testing the behaviour + rendering results of Components (TODO)
 
 ##### JSPM
 - JSPM 0.17.X - most recent version, staying up-to-date with best-practices
