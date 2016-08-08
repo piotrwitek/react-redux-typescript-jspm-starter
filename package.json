@@ -9,7 +9,7 @@
   "bugs": "https://github.com/piotrwitek/react-ts-jspm-starter-kit/issues",
   "license": "MIT",
   "scripts": {
-    "postinstall": "jspm install",
+    "postinstall": "jspm install && npm run bundle-dev",
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm test",
     "bundle-dev": "jspm bundle dev-bundle.config.js out/dev-bundle.js -id",
