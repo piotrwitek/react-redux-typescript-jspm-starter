@@ -41,7 +41,7 @@
     "test-runner.tsx",
     "**/*.spec.*"
   ],
-	"vscode": {
+  "vscode": {
     "rewriteTsconfig": true
   },
   "atom": {
