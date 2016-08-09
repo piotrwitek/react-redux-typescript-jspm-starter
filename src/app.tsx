@@ -8,7 +8,6 @@ if (appContainer == null) {
 // IE Promise polyfill
 import Promise from 'es6-promise';
 Promise.polyfill();
-
 // lib imports
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
