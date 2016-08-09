@@ -1,4 +1,18 @@
-declare const System: any;
+// System Global
+type System = { global: Global, production: boolean };
+type Global = {};
+declare const System: System;
+declare module 'es6-promise' {
+  const def: any;
+  export default def;
+}
+
+// JSON Loader
+declare module '*!json' {
+  const def: any;
+  export default def;
+}
+
 
 // example external ES Module declaration
 declare module 'example-module' {
