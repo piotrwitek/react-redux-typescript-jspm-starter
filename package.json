@@ -32,7 +32,7 @@
   "devDependencies": {
     "@types/blue-tape": "^0.1.29",
     "@types/classnames": "0.0.28",
-    "@types/react": "^0.14.27",
+    "@types/react": "^0.14.29",
     "@types/react-dom": "^0.14.14",
     "@types/tape": "^4.2.27",
     "faucet": "0.0.1",
