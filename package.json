@@ -12,6 +12,7 @@
     "postinstall": "jspm install && npm run bundle-dev",
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm test",
+    "preversion": "npm run prepush",
     "unbundle": "jspm unbundle",
     "bundle-dev": "jspm bundle dev-bundle.config.js out/dev-bundle.js -id",
     "build-app": "jspm build src/app - react - react-dom - plugin-typescript dist/app-bundle.js --minify --skip-source-maps",
