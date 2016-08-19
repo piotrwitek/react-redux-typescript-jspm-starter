@@ -5,9 +5,6 @@ if (appContainer == null) {
   appContainer.id = 'app-container';
   document.body.appendChild(appContainer);
 }
-// IE Promise polyfill
-import Promise from 'es6-promise';
-Promise.polyfill();
 // lib imports
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';

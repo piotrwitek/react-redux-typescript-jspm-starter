@@ -48,7 +48,6 @@
     "name": "app",
     "dependencies": {
       "classnames": "npm:classnames@^2.2.5",
-      "es6-promise": "npm:es6-promise@^3.2.1",
       "react-dom": "npm:react-dom@^15.3.0"
     },
     "devDependencies": {
