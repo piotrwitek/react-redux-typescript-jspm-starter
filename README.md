@@ -2,47 +2,62 @@
 
 > Modern & Minimalistic boilerplate for building modular apps with React - utilizing power of TypeScript, ES2016, Hot-Reload, async/await, ES Modules & in-browser transpiling powered by JSPM/SystemJS.
 
-> Keeping up-to-date with new releases and adhering to changing standards and the best practices as they evolve based on the usage of new features.
-
 ## Features
-- CLEAN - keep at minimal dependencies
-- FAST-DEV-FEEDBACK-LOOP - dev server with hot-module-reload, bundle-free on-the-fly ES2016/TypeScript transpilation - using [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
-- BEST-TYPESCRIPT-DEV-WORKFLOW - in browser module loading / no pre-compilation / no bundling / blazing fast hot-module-reload
-- REACT-BEST-PRACTICES - no mixins, no ref string - ref callback, no bind - ES Class Fields, no new functions in render methods, render lists in dedicated components, don't use array index as key, ES6 style PureRenderMixin
-- NO-SETUP - npm install && npm start to start coding
-- COMPLETE-WORKFLOW - helpful npm scripts and tasks, github hooks, linter, test-harness etc.
-- TDD-READY - test-harness setup with Tape (blue-tape) - included example code and @types
-- EXTRAS - css loading indicator while loading React and other dependencies
+- CLEAN - minimal dependencies, no clutter!
+- NO-SETUP - check Usage section
+- REACT-BEST-PRACTICES - no mixins, no ref strings, no method binding - instead ES Class Fields, no function create in render methods, render lists in dedicated components, don't use array index as key, ES6 style PureRenderMixin with PureComponent
+- GREAT-TYPESCRIPT-EXPERIENCE - in browser (on-the-fly) loading / no transpilation step / no bundling step
+- FAST-FEEDBACK-LOOP - dev server with system.js hot-reload [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
+- RELIABLE HOT-RELOAD - highly scalable with increasing modules count and more reliable in contrary to Webpack/React-Hot-Reloader (read notes below)
+- COMPLETE-WORKFLOW - npm scripts for bundling & deploy, github-hooks, linter, test runner etc.
+- TDD-READY - simple testing with Tape (blue-tape) you can write and run test in TypeScript - no transpilation step!
 
-##### Learn TypeScript from sample code
-- Typescript definitions for third-party libraries
-- solid tsconfig setup for ES2016 support
-- get typings by `using npm i -D @types`
-- async/await
+## Code Examples
+- React with TypeScript - production ready
 
-##### Learn React from sample code
-- React with TypeScript using ES6 classes
-- Redux with TypeScript (TODO)
-- Unit-testing the behaviour + rendering results of Components (TODO)
+## Roadmap
 
-##### JSPM
-- JSPM 0.17.X - most recent version, staying up-to-date with best-practices
-- static dev-bundle setup for fast full-page reload (this will make JSPM/SystemJS workflow super fast in development, certainly as fast as webpack)
-- automatic bundle creation for production in `~/dist/` folder - accessible on dev server `http://localhost/dist/`
-- importing and bundling CSS files using `plugin-css`
-
-NB: - temporarily using regenerator (NO-BABEL) to transpile generators/async/await to ES5 for production bundle (soon with TypeScript 2.1 will be removed completely - only TS)
+- Redux with TypeScript - production ready
+- [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux)
+- Redux async flow with redux-saga
+- Testing with Enzyme (JSDOM)
+- Testing Component markup (shallowRender)
+- Testing Component behaviour/interactions (renderIntoDocument, Simulate)
+- Testing Redux (selectors, reducers, store)
 
 ---
 
-## Making JSPM loading fast - Static Bundle for External Deps
-Important point to keep in mind when running dev server with JSPM is to create a static bundle of external dependencies. As they only change when updated through NPM, it is best to bundle them all together and load as one package instead of separately making hundreds of requests slowing down page reload.
-That way your only your modules from src are still loaded separately making possible to hot-reload them instantly without rebundling, and do full-page reload if necessary very quickly. This is the best of two development approaches (hot-reload vs. bundling) mixed together.
+## JSPM (System.js / Rollup)
+- JSPM 0.17.X - most recent version with best-practices from real world projects
+- optimized full-page reload speed by utilizing `vendor` dev-bundle (read below)
+- internally using Rollup for bundling and optimizations
+- bundles for production - seperate vendor & app bundles
+- importing and bundling CSS or SCSS files using plugins
 
-My test procedure:
+### Optimized JSPM (SystemJS) for speed
+I saw people complaining about JSPM loading very slow in development when there are a lot of modules loaded in the project.
+This can be optimized in development using bundles.
+I have found that a lot of modules are external dependencies so we can speed up a page reload considerably by creating a `vendor` bundle. As external dependencies don't need to be hot-reloaded and they'll only change when updated through NPM, so it is obvious to bundle them all together and load as one file without any drawbacks.
+Using this approach you will have both faster full page reload and your own `src` modules loaded separately utilizing hot-reload.
+This is the best of two development approaches (hot-reload vs. bundling) mixed together.
+
+Check yourself using this easy test procedure:
 
 1. run `npm run unbundle` -> open network tab in chrome dev tools -> reload the page -> check logged results
 2. run `npm run bundle-dev` -> open network tab in chrome dev tools -> reload page -> compare logged results with previous
+
+---
+
+## Notes
+
+- I'm temporarily using regenerator transform to transpile async/generators to ES5 only in production build step (it's necessary for compatibility with older browsers, you can opt-out if not necessary)
+__I'll get rid of this clunky step soon enough with release of TypeScript 2.1 which will natively support it__
+
+- I've seen most boilerplates adding Babel transpilation into their dev workflow with TypeScript, which introduces additional and unnecessary costly full build step, my solution only adds async/generators transform (not a full transpilation) only when generating app bundle for production (not in development workflow so it stays fast)
+__It's worth to know that Babel is similarly using regenerator internally for async/generators transform https://babeljs.io/docs/usage/caveats/__
+
+- On Webpack Hot Module Reload: SystemJS hot-reloading works differently from Webpack HMR, it loads module files separately so there is no need for bundling step. Then it deletes the module from module registry and re-imports it with the modules that depend on it ensuring to always load latest changes.
+Because of this approach it is highly scalable with increasing modules count in your project and is more reliable in contrary to Webpack/React-Hot-Reloader - __Webpack is breaking it's HMR flow occasionally thus requiring you to do a full page reload__.
 
 ---
 
@@ -80,7 +95,7 @@ My test procedure:
 
 ## All Npm Commands & Scripts
 
-`npm start` - start local dev server with hot-module-reload for JSPM [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
+`npm start` - start local dev server with hot-reload for JSPM [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
 
 #### Development Bundling
 
