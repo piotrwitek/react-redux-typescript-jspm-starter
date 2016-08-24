@@ -18,8 +18,9 @@
 
 ## Roadmap
 - Redux with TypeScript - production ready
-- [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux)
-- Redux async flow with redux-saga
+- Flux Standard Actions for Redux - https://github.com/acdlite/redux-actions
+- Redux Reducer Bundles - https://github.com/erikras/ducks-modular-redux
+- Redux async flow with redux-saga - https://github.com/yelouafi/redux-saga/
 - Testing with Enzyme (JSDOM)
 - Testing Component markup (shallowRender)
 - Testing Component behaviour/interactions (renderIntoDocument, Simulate)
