@@ -1,8 +1,9 @@
-# _React v15.3.0 / Redux v3.5.2 / TypeScript v2.0_ - starter-kit (powered by JSPM / SystemJS / Rollup)
+## _React v15.3.0 / Redux v3.5.2 / TypeScript v2.0_ - starter-kit
+> ### (powered by JSPM / SystemJS / Rollup)
 
-> #### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES Modules, Linting, Reliable Hot-Reload, Git-Hooks, in browser (on-the-fly) transpilation, bundling with Rollup - powered by JSPM / SystemJS / Rollup.
+> ##### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES Modules, Linting, Reliable Hot-Reload, Git-Hooks, in browser (on-the-fly) transpilation, bundling with Rollup - powered by JSPM / SystemJS / Rollup.
 
-## Features
+### Features
 - CLEAN - minimal dependencies, no clutter!
 - NO-SETUP - read Usage section below
 - REACT-BEST-PRACTICES - no mixins / no ref strings / no method binding - instead ES Class Fields / no function creation in render methods / render lists in dedicated components / don't use array index as key / ES6 style PureRenderMixin with PureComponent
@@ -13,8 +14,10 @@
 - COMPLETE-WORKFLOW - npm scripts for bundling & deploy, github-hooks, linter, test runner etc.
 - EASY-TESTING - complete testing solution with Tape (blue-tape), Enzyme, JSDOM - functional approach makes it easy to test, you can even write and run test entirely in TypeScript - no transpilation step!
 
-## Code Examples
+### Code Examples
 - React with TypeScript - production ready
+
+---
 
 ## Roadmap
 - Redux with TypeScript - production ready
