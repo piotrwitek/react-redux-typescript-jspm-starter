@@ -13,6 +13,8 @@
 - RELIABLE HOT-RELOAD - highly scalable with increasing modules count and more reliable in contrary to Webpack/React-Hot-Reloader (read Notes section below)
 - COMPLETE-WORKFLOW - npm scripts for bundling & deploy, github-hooks, linter, test runner etc.
 - EASY-TESTING - complete testing solution with Tape (blue-tape), Enzyme, JSDOM - functional approach makes it easy to test, you can even write and run test entirely in TypeScript - no transpilation step!
+- CSS MODULES - simplest and reliable approach for local CSS styles using csjs - https://github.com/rtsao/csjs#faq
+- BEM and ITCSS - using BEM with Inverted Triangle conventions to give meaning and context to CSS classes
 
 ### Code Examples
 - React with TypeScript - production ready
@@ -20,6 +22,9 @@
 ---
 
 ## Roadmap
+> __work in progress at https://github.com/piotrwitek/react-currency-converter/tree/redux__
+
+- CSS Modules using csjs - https://github.com/rtsao/csjs#faq
 - Redux with TypeScript - production ready
 - Flux Standard Actions for Redux - https://github.com/acdlite/redux-actions
 - Redux Reducer Bundles - https://github.com/erikras/ducks-modular-redux
