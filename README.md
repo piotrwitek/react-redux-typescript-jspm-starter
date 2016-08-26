@@ -80,7 +80,7 @@ Because of this approach it is highly scalable with increasing modules count in 
 
 
 #### 1. Clone repo
-    git clone https://github.com/piotrwitek/react-ts-jspm-starter-kit.git my-project-folder
+    git clone https://github.com/piotrwitek/react-redux-typescript-starter-kit.git my-project-folder
 
 #### 2. Install npm dependencies
     npm install
@@ -93,14 +93,14 @@ Because of this approach it is highly scalable with increasing modules count in 
 ## Usage
 
 #### Dev Workflow
-1. `npm run bundle-dev` - _**OPTIONAL:** re-run only when your dependencies has changed_
-2. `npm start`
+1. `npm run bundle-dev` - bundle vendor packages for development _(re-run only when app dependencies has changed)_
+2. `npm start` - browser will open automatically
 
 #### Build for Production Workflow
-1. `npm run build`
-2. `npm run build-deps` - _**OPTIONAL:** re-run only when your dependencies has changed_
-3. open `http://localhost/dist/` to check
-4. deploy 'dist' contents on your server
+1. `npm run build` - package created in 'dist' folder
+  a) `npm run build:app` - build only app.js _(run when app source code has changed)_
+  b) `npm run build:vendor` - build only vendor.js _(run when app dependencies has changed)_
+2. open `http://localhost/dist/` - to check build on local server
 
 ---
 
@@ -116,13 +116,13 @@ Because of this approach it is highly scalable with increasing modules count in 
 
 #### Production Bundling (`dist/` folder)
 
-`npm run build` - build app bundle (only your app source) - minified, no source-maps
+`npm run build` - build both app & dependecy bundle
 
-`npm run build-deps` - build dependency bundle (only external dependencies) - minified, no source-maps
+`npm run build:app` - build app sources bundle (only app source code) - minified, no source-maps
 
-`npm run build-all` - build both app & dependecy bundle
+`npm run build:vendor` - build app dependencies bundle (only vendor dependencies) - minified, no source-maps
 
-`npm run build-debug` - build app bundle - debug version with source-maps
+`npm run build:debug` - build app sources bundle - debug version with source-maps
 
 #### Deployment
 
@@ -132,17 +132,19 @@ Because of this approach it is highly scalable with increasing modules count in 
 
 #### Utility & Git Hooks
 
-`npm run bd` - build and deploy your app bundle
+`npm run bad` - build app.js and deploy
 
-`npm run bdd` - build and deploy your deps bundle
+`npm run bvd` - build vendor.js and deploy
 
 `npm run lint` - run linter
 
 `npm run test` - run test suites
 
 `npm run precommit` - pre commit git hook - runs linter
-    
+
 `npm run prepush` - pre push git hook - runs linter and tests
+
+`npm run regenerator` - transpile your app.js through regenerator
 
 ---
 
