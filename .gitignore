@@ -30,7 +30,5 @@ node_modules
 jspm_packages
 
 # Build directory
-dist/*bundle.js*
-dist/jspm.config.js
-dist/system.js
-out
+dist
+temp
