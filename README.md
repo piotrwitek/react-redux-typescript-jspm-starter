@@ -124,13 +124,15 @@ Because of this approach it is highly scalable with increasing modules count in 
 
 `npm run build:debug` - build app sources bundle - debug version with source-maps
 
-#### Deployment
+#### Initialization
 
-`npm run init-deploy` - initialize new git repository in `/dist` folder aiming at gh-pages branch
+`npm run init:dist` - clean dist folder and copy assets
 
-`npm run deploy` - checkout, add, commit and push changes in `/dist` folder to gh-pages branch
+`npm run init:deploy` - clone git repository in `/dist` folder (gh-pages branch)
 
 #### Utility & Git Hooks
+
+`npm run deploy` - commit and push all changes found in `/dist` folder
 
 `npm run bad` - build app.js and deploy
 
