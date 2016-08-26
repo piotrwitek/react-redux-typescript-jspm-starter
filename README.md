@@ -98,8 +98,8 @@ Because of this approach it is highly scalable with increasing modules count in 
 
 #### Build for Production Workflow
 1. `npm run build` - package created in 'dist' folder
-  a) `npm run build:app` - build only app.js _(run when app source code has changed)_
-  b) `npm run build:vendor` - build only vendor.js _(run when app dependencies has changed)_
+  - `npm run build:app` - build only app.js _(run when app source code has changed)_
+  - `npm run build:vendor` - build only vendor.js _(run when app dependencies has changed)_
 2. open `http://localhost/dist/` - to check build on local server
 
 ---
