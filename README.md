@@ -59,6 +59,34 @@ Check yourself using this easy test procedure:
 
 ---
 
+## Project Structure
+
+```
+.
+├── assets                   # static assets included in prod package
+├── src                      # app source code
+│   ├── components           # global reusable presentational components
+│   ├── containers           # container components providing redux context
+│   ├── layouts              # components defining page layouts
+│   ├── reducers             # modules containing redux reducers/constants/action creators
+│   ├── services             # modules abstracting communication with web services
+│   ├── typings              # custom TypeScript definitions
+│   ├── utils                # app utility modules
+│   ├── app.tsx              # app entry module
+│   ├── router.tsx           # app routes module
+│   ├── store.tsx            # app store module
+│   ├── test-runner.tsx      # test suites config
+│   └── tsconfig.tsx         # TypeScript compiler config
+├── dev-bundle.config.js     # dev-bundle config
+├── index.html               # index.html
+├── jspm.config.js           # jspm config
+├── loader-style.css         # css loading indicator
+├── server.js                # dev-server entry module
+└── tslint.json              # linter config
+```
+
+---
+
 ## Notes
 
 - I'm temporarily using regenerator transform to transpile async/generators to ES5 only in production build step (it's necessary for compatibility with older browsers, you can opt-out if not necessary)
