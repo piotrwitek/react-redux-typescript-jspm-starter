@@ -1,3 +1,4 @@
+// development init import
 SystemJS.import('systemjs-hot-reloader').then(function(HotReloader) {
   // if you're running server on custom port please remember to update below
   new HotReloader.default('http://localhost:8888');

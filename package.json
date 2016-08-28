@@ -28,10 +28,11 @@
     "bvd": "npm run build:vendor && npm run deploy",
     "lint": "tslint ./src/**/*.ts*",
     "test": "jspm run src/test-runner | faucet",
-    "_jspm-build-app": "jspm build src/app - react - react-dom dist/app.js ",
+    "_jspm-build-app": "jspm build src/app - react - react-dom dist/app.js",
     "pre_jspm-bundle-vendor": "jspm unbundle",
-    "_jspm-bundle-vendor": "jspm bundle react + react-dom vendor.js --minify --skip-source-maps -i",
-    "post_jspm-bundle-vendor": "cp jspm.config.js dist/ && cp jspm_packages/system.js dist/ && mv vendor.js dist/ && jspm unbundle && npm run bundle-dev",
+    "_jspm-bundle-vendor": "jspm bundle react + react-dom vendor.js --minify --skip-source-maps -i && mv vendor.js dist/ && npm run _copy-jspm-configs",
+    "_copy-jspm-configs": "cp jspm.config.js jspm_packages/system.js dist/",
+    "post_jspm-bundle-vendor": "jspm unbundle && npm run bundle-dev",
     "regenerator": "cd temp && cp ../dist/app.js . && regenerator -r app.js > app.regenerator.js && mv app.regenerator.js ../dist/app.js "
   },
   "devDependencies": {
