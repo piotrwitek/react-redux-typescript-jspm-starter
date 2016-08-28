@@ -1,4 +1,4 @@
-// libs included in dev bundle
+// importing libs should be included in dev-bundle
 import 'react';
 import 'react-dom';
 import 'plugin-typescript';

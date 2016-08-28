@@ -63,7 +63,7 @@ Check yourself using this easy test procedure:
 
 ```
 .
-├── assets                   # static assets included in prod package
+├── assets                   # static assets copied to dist folder
 ├── src                      # app source code
 │   ├── components           # global reusable presentational components
 │   ├── containers           # container components providing redux context
@@ -77,10 +77,10 @@ Check yourself using this easy test procedure:
 │   ├── store.tsx            # app store module
 │   ├── test-runner.tsx      # test suites config
 │   └── tsconfig.tsx         # TypeScript compiler config
-├── dev-bundle.config.js     # dev-bundle config
+├── dev-bundle.config.js     # libs should be included in dev bundle
 ├── index.html               # index.html
-├── jspm.config.js           # jspm config
-├── loader-style.css         # css loading indicator
+├── jspm.config.js           # system.js config for app dependencies
+├── jspm.init.js             # system.js app import & hot-reload setup
 ├── server.js                # dev-server entry module
 └── tslint.json              # linter config
 ```
