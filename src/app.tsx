@@ -12,7 +12,7 @@ import * as ReactDOM from 'react-dom';
 import { Main } from './components/main';
 import { AppStore, UserData } from './stores/app-store';
 
-const message = 'React / Redux / TypeScript - Starter-Kit';
+const message = 'React / Redux / TypeScript - starter-kit';
 const appStore = new AppStore(new UserData('Piotr', 32));
 export var app: any = ReactDOM.render(<Main welcomeMessage={message} appStore={appStore} />, appContainer);
 

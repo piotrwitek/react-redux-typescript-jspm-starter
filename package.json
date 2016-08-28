@@ -56,14 +56,15 @@
   },
   "jspm": {
     "name": "app",
+    "main": "app.tsx",
     "dependencies": {
       "classnames": "npm:classnames@^2.2.5",
-      "react-dom": "npm:react-dom@^15.3.0"
+      "react-dom": "npm:react-dom@^15.3.1"
     },
     "devDependencies": {
       "blue-tape": "npm:blue-tape@^0.2.0",
-      "css": "github:systemjs/plugin-css@^0.1.26",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.0.9",
+      "css": "github:systemjs/plugin-css@^0.1.27",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.0.19",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
     },
     "peerDependencies": {
@@ -77,15 +78,12 @@
       "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
       "http": "github:jspm/nodelibs-http@^0.2.0-alpha",
       "https": "github:jspm/nodelibs-https@^0.2.0-alpha",
-      "module": "github:jspm/nodelibs-module@^0.2.0-alpha",
-      "net": "github:jspm/nodelibs-net@^0.2.0-alpha",
       "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
       "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
-      "react": "npm:react@^15.3.0",
+      "react": "npm:react@^15.3.1",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
-      "tty": "github:jspm/nodelibs-tty@^0.2.0-alpha",
       "url": "github:jspm/nodelibs-url@^0.2.0-alpha",
       "util": "github:jspm/nodelibs-util@^0.2.0-alpha",
       "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha",
