@@ -26,9 +26,12 @@
 
 - CSS Modules using csjs - https://github.com/rtsao/csjs#faq
 - Redux with TypeScript - production ready
+  - innovative approach using TS 2.0 - recently added Tagged Union Types - for solid Redux integration
+  (https://blogs.msdn.microsoft.com/typescript/2016/08/30/announcing-typescript-2-0-rc)
 - Flux Standard Actions for Redux - https://github.com/acdlite/redux-actions
-- Redux Reducer Bundles - https://github.com/erikras/ducks-modular-redux
+- Redux Reducer Modules - https://github.com/erikras/ducks-modular-redux
 - Redux async flow with redux-saga - https://github.com/yelouafi/redux-saga/
+- Immutable State using `seamless-immutable` - simple and backwards-compatible with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()`)
 - Testing with Enzyme (JSDOM)
 - Testing Component markup (shallowRender)
 - Testing Component behaviour/interactions (renderIntoDocument, Simulate)
