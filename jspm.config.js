@@ -5,6 +5,7 @@ SystemJS.config({
     "app/": "src/"
   },
   browserConfig: {
+    "baseURL": ".",
     "bundles": {
       "temp/dev-bundle.js": [
         "dev-bundle.config.js",
