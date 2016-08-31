@@ -7,8 +7,8 @@
 
 ### Features
 - CLEAN - minimal dependencies, no clutter!
-- NO-SETUP - working out-of-the-box (more in Usage section below...)
-- RELIABLE-HOT-RELOAD - dev server with hot-reload using [jspm-hmr](https://www.npmjs.com/package/jspm-hmr) - highly reliable and scalable with increasing modules count (more in Notes section below...)
+- NO-SETUP - working out-of-the-box (more in [Usage](#usage) section below...)
+- RELIABLE-HOT-RELOAD - dev server with hot-reload using [jspm-hmr](https://www.npmjs.com/package/jspm-hmr) - highly reliable and scalable with increasing modules count (more in [Notes](#notes) section below...)
 - TYPESCRIPT-WORKFLOW - in browser (on-the-fly) loading / no transpilation step / no bundling step
 - BEST-INTELLISENSE - statically typed entire JavaScript and DOM API with autocompletion and docs right in your editor - no more silly typos and runtime exceptions
 - TYPESAFE-API-CALLS - type checking the contracts of REST Service API calls - forget checking for API docs again
