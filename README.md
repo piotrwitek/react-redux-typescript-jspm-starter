@@ -1,14 +1,14 @@
 ## _React v15.3.1 / Redux v3.5.2 / TypeScript v2.0_ - starter-kit
-#### __(Hot-Reload / React-Router / Seamless-Immutable / Fetch API / JSPM / SystemJS / Rollup)__
+#### __Hot-Reload / React-Router / Seamless-Immutable / Fetch API / JSPM  (SystemJS & Rollup)__
 
-> ##### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES Modules, Linting, Reliable Hot-Reload, Git-Hooks, in browser (on-the-fly) transpilation, bundling with Rollup - powered by JSPM / SystemJS / Rollup.
+> ##### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES Modules, Linting, Reliable Hot-Reload, Git-Hooks, in browser (on-the-fly) transpilation, bundling with Rollup - powered by JSPM (SystemJS & Rollup).
 
 ### Demo: http://piotrwitek.github.io/react-redux-typescript-starter-kit/
 
 ### Features
 - CLEAN - minimal dependencies, no clutter!
 - NO-SETUP - working out-of-the-box (more in Usage section below...)
-- RELIABLE HOT-RELOAD - dev server with `systemjs-hot-reloader` - highly reliable and scalable with increasing modules count (more in Notes section below...)
+- RELIABLE HOT-RELOAD - dev server with hot-reload using [jspm-hmr](https://www.npmjs.com/package/jspm-hmr) - highly reliable and scalable with increasing modules count (more in Notes section below...)
 - GREAT-TYPESCRIPT-EXPERIENCE - in browser (on-the-fly) loading / no transpilation step / no bundling step
 - TYPESAFE-API-CALLS - type checking (request and response object) in calls to REST API, no more problems with service contracts
 - REACT-BEST-PRACTICES - no mixins / no ref strings / no method binding - instead ES Class Fields / no function creation in render methods / render lists in dedicated components / don't use array index as key / ES6 style PureRenderMixin with PureComponent
@@ -47,14 +47,14 @@
 
 ---
 
-## JSPM (System.js / Rollup)
-- JSPM 0.17.X - most recent version with best-practices from real world projects
-- optimized full-page reload speed by utilizing `vendor` dev-bundle (read below)
-- internally using Rollup for bundling and optimizations
+## JSPM / System.js / Rollup
+- JSPM 0.17.X - production ready set-up with best-practices from real-world projects
+- optimized loading speed by utilizing `vendor` dev-bundle (read below)
+- using Rollup for bundling and tree-shaking optimizations
 - bundles for production - seperate vendor & app bundles
-- importing and bundling CSS or SCSS files using plugins
+- importing and bundling CSS / SCSS / JSON / Image files using plugins
 
-### Optimized JSPM (SystemJS) for speed
+### Optimized JSPM (SystemJS) loading speed
 I saw people complaining about JSPM loading very slow in development when there are a lot of modules loaded in the project.
 This can be optimized in development using bundles.
 I have found that a lot of modules are external dependencies so we can speed up a page reload considerably by creating a `vendor` bundle. As external dependencies don't need to be hot-reloaded and they'll only change when updated through NPM, so it is obvious to bundle them all together and load as one file without any drawbacks.
@@ -103,7 +103,7 @@ __I'll get rid of this clunky step soon enough with release of TypeScript 2.1 wh
 - I've seen most boilerplates adding Babel transpilation into their dev workflow with TypeScript, which introduces additional and unnecessary costly full build step, my solution only adds async/generators transform (not a full transpilation) only when generating app bundle for production (not in development workflow so it stays fast)
 __It's worth to know that Babel is similarly using regenerator internally for async/generators transform https://babeljs.io/docs/usage/caveats/__
 
-- On Webpack Hot Module Reload: SystemJS hot-reloading works differently from Webpack HMR, it loads module files separately so there is no need for bundling step. Then it deletes the module from module registry and re-imports it with the modules that depend on it ensuring to always load latest changes.
+- Comparing to Webpack Hot Module Reload: SystemJS hot-reloading works differently from Webpack HMR, it loads module files separately so there is no need for bundling step. Then it deletes the module from module registry and re-imports it with the modules that depend on it ensuring to always load latest changes.
 Because of this approach it is highly scalable with increasing modules count in your project and is more reliable in contrary to Webpack/React-Hot-Reloader - __Webpack is breaking it's HMR flow occasionally thus requiring you to do a full page reload__.
 
 ---
@@ -142,7 +142,7 @@ Because of this approach it is highly scalable with increasing modules count in 
 
 ## All Npm Commands & Scripts
 
-`npm start` - start local dev server with hot-reload for JSPM [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
+`npm start` - start local dev server with hot-reload [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
 
 #### Development Bundling
 
