@@ -1,5 +1,5 @@
 // example external ES Module declaration
-declare module 'example-module' {
+declare module 'example-es6-module' {
   // public variables
   export const exampleVariable: number;
 
