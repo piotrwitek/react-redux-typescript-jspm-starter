@@ -1,5 +1,5 @@
 ## _React v15.3.1 / Redux v3.5.2 / TypeScript v2.0_ - starter-kit
-> ### (Hot-Reload / React-Router / Seamless-Immutable / Fetch / JSPM / SystemJS / Rollup)
+#### __(Hot-Reload / React-Router / Seamless-Immutable / Fetch API / JSPM / SystemJS / Rollup)__
 
 > ##### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES Modules, Linting, Reliable Hot-Reload, Git-Hooks, in browser (on-the-fly) transpilation, bundling with Rollup - powered by JSPM / SystemJS / Rollup.
 
@@ -81,8 +81,7 @@ Check yourself using this easy test procedure:
 │   ├── services             # modules abstracting communication with web services
 │   ├── typings              # custom TypeScript definitions
 │   ├── utils                # app utility modules
-│   ├── app.tsx              # app entry module
-│   ├── router.tsx           # app routes module
+│   ├── app.tsx              # app entry module with routing config
 │   ├── store.tsx            # app store module
 │   ├── test-runner.tsx      # test suites config
 │   └── tsconfig.tsx         # TypeScript compiler config
