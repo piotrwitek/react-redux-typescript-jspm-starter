@@ -1,1 +1,1 @@
-import './reducers/tests/currency-rates-reducer.tests';
+import './reducers/tests/currency-rates-reducer.test';
