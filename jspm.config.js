@@ -573,6 +573,7 @@ SystemJS.config({
     "url": "github:jspm/nodelibs-url@0.2.0-alpha",
     "util": "github:jspm/nodelibs-util@0.2.0-alpha",
     "vm": "github:jspm/nodelibs-vm@0.2.0-alpha",
+    "whatwg-fetch": "npm:whatwg-fetch@1.0.0",
     "zlib": "github:jspm/nodelibs-zlib@0.2.0-alpha"
   },
   packages: {
