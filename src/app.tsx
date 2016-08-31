@@ -1,24 +1,32 @@
-// auto create app container if missing
-let appContainer = document.getElementById('app-container');
-if (appContainer == null) {
-  appContainer = document.createElement('div');
-  appContainer.id = 'app-container';
-  document.body.appendChild(appContainer);
-}
 // lib imports
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-// components imports
-import { Main } from './components/main';
-import { AppStore, UserData } from './stores/app-store';
+import { Provider } from 'react-redux';
+import { Router, Route, hashHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+// app imports
+import { MainLayout } from './layouts/main-layout';
+import { HomeContainer } from './containers/home-container/index';
+import { AboutContainer } from './containers/about-container/index';
+import CurrencyConverterContainer from './containers/currency-converter-container/index';
 
-const message = 'React / Redux / TypeScript - starter-kit';
-const appStore = new AppStore(new UserData('Piotr', 32));
-export var app: any = ReactDOM.render(<Main welcomeMessage={message} appStore={appStore} />, appContainer);
+import { store } from './store';
+const history = syncHistoryWithStore(hashHistory, store) as any;
 
-// here you can customize hot-module-reload hook
-// you could also copy to other modules
-export function __reload(prev) {
-  if (prev.app.state)
-    app.setState(prev.app.state);
+function App() {
+  return (
+    <Provider store={store}>
+      <Router history={history}>
+        <Route component={MainLayout}>
+          <Route path="/" component={HomeContainer}/>
+          <Route path="/about" component={AboutContainer}/>
+          <Route path="/currency-converter" component={CurrencyConverterContainer}/>
+        </Route>
+      </Router>
+    </Provider>
+  );
 }
+
+export const app = ReactDOM.render(
+  <App />, document.getElementById('app-container')
+);

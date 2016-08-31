@@ -1,1 +1,1 @@
-import './stores/app-store.spec';
+import './reducers/tests/currency-rates-reducer.tests';
