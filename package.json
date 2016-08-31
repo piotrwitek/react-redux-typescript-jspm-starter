@@ -42,6 +42,7 @@
     "@types/react-dom": "^0.14.16",
     "@types/react-redux": "^4.4.31",
     "@types/react-router": "^2.0.33",
+    "@types/react-router-redux": "^4.0.32",
     "@types/redux": "^3.5.28",
     "@types/redux-actions": "^0.8.29",
     "@types/tape": "^4.2.27",
@@ -59,7 +60,9 @@
     "main": "app.tsx",
     "dependencies": {
       "classnames": "npm:classnames@^2.2.5",
-      "react-dom": "npm:react-dom@^15.3.1"
+      "react-dom": "npm:react-dom@^15.3.1",
+      "react-redux": "npm:react-redux@^4.4.5",
+      "redux-actions": "npm:redux-actions@^0.11.0"
     },
     "devDependencies": {
       "blue-tape": "npm:blue-tape@^0.2.0",
@@ -82,6 +85,7 @@
       "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
       "react": "npm:react@^15.3.1",
+      "redux": "npm:redux@^3.5.2",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
       "url": "github:jspm/nodelibs-url@^0.2.0-alpha",
@@ -117,6 +121,12 @@
         "ignore": [
           "test.js"
         ]
+      },
+      "npm:lodash@4.15.0": {
+        "map": {
+          "buffer": "@empty",
+          "process": "@empty"
+        }
       },
       "npm:ms@0.7.1": {
         "jspmNodeConversion": false,
