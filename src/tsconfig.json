@@ -3,7 +3,7 @@
   "compilerOptions": {
     "declaration": false,
     "jsx": "react",
-    "module": "system",
+    "module": "es6",
     "newLine": "LF",
     "noEmit": true,
     "noEmitOnError": true,
