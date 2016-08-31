@@ -563,6 +563,8 @@ SystemJS.config({
     "react": "npm:react@15.3.1",
     "react-dom": "npm:react-dom@15.3.1",
     "react-redux": "npm:react-redux@4.4.5",
+    "react-router": "npm:react-router@2.7.0",
+    "react-router-redux": "npm:react-router-redux@4.0.5",
     "redux": "npm:redux@3.5.2",
     "redux-actions": "npm:redux-actions@0.11.0",
     "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
@@ -884,6 +886,38 @@ SystemJS.config({
       "map": {
         "lodash": "npm:lodash@4.15.0",
         "reduce-reducers": "npm:reduce-reducers@0.1.2"
+      }
+    },
+    "npm:react-router@2.7.0": {
+      "map": {
+        "invariant": "npm:invariant@2.2.1",
+        "history": "npm:history@2.1.2",
+        "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
+        "warning": "npm:warning@3.0.0",
+        "loose-envify": "npm:loose-envify@1.2.0"
+      }
+    },
+    "npm:history@2.1.2": {
+      "map": {
+        "invariant": "npm:invariant@2.2.1",
+        "warning": "npm:warning@2.1.0",
+        "deep-equal": "npm:deep-equal@1.0.1",
+        "query-string": "npm:query-string@3.0.3"
+      }
+    },
+    "npm:warning@3.0.0": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.2.0"
+      }
+    },
+    "npm:warning@2.1.0": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.2.0"
+      }
+    },
+    "npm:query-string@3.0.3": {
+      "map": {
+        "strict-uri-encode": "npm:strict-uri-encode@1.1.0"
       }
     }
   }

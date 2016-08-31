@@ -62,6 +62,8 @@
       "classnames": "npm:classnames@^2.2.5",
       "react-dom": "npm:react-dom@^15.3.1",
       "react-redux": "npm:react-redux@^4.4.5",
+      "react-router": "npm:react-router@^2.7.0",
+      "react-router-redux": "npm:react-router-redux@^4.0.5",
       "redux-actions": "npm:redux-actions@^0.11.0"
     },
     "devDependencies": {
