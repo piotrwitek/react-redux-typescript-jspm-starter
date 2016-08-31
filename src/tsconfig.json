@@ -39,7 +39,8 @@
     "node_modules/**/",
     "jspm_packages/**/",
     "test-runner.tsx",
-    "**/*.spec.*"
+    "**/*.spec.*",
+    "**/*.test.*"
   ],
   "vscode": {
     "rewriteTsconfig": true
