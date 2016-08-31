@@ -122,7 +122,7 @@
         "jspmNodeConversion": false,
         "format": "cjs"
       },
-      "npm:typescript@2.0.0": {
+      "npm:typescript@2.0.2": {
         "browser": {},
         "map": {
           "buffer": "@empty",

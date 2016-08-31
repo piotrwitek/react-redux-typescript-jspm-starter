@@ -401,7 +401,7 @@ SystemJS.config({
     "packages": {
       "github:frankwallis/plugin-typescript@5.0.19": {
         "map": {
-          "typescript": "npm:typescript@2.0.0"
+          "typescript": "npm:typescript@2.0.2"
         }
       },
       "github:capaj/systemjs-hot-reloader@0.6.0": {
