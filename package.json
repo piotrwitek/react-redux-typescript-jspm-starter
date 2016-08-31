@@ -27,7 +27,7 @@
     "build:debug": "npm run _jspm-build-app",
     "bad": "npm run build:app && npm run deploy",
     "bvd": "npm run build:vendor && npm run deploy",
-    "lint": "tslint ./src/**/*.ts*",
+    "lint": "tslint ./src/**/*.ts[x]",
     "test": "jspm run src/test-runner | faucet",
     "_jspm-build-app": "jspm build src/app - react - react-dom dist/app.js",
     "pre_jspm-bundle-vendor": "jspm unbundle",
