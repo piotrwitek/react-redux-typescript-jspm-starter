@@ -1,5 +1,5 @@
-## _React v15.3.0 / Redux v3.5.2 / TypeScript v2.0_ - starter-kit
-> ### (powered by JSPM / SystemJS / Rollup / React-Router / Seamless-Immutable / Fetch)
+## _React v15.3.1 / Redux v3.5.2 / TypeScript v2.0_ - starter-kit
+> ### (Hot-Reload / React-Router / Seamless-Immutable / Fetch / JSPM / SystemJS / Rollup)
 
 > ##### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES Modules, Linting, Reliable Hot-Reload, Git-Hooks, in browser (on-the-fly) transpilation, bundling with Rollup - powered by JSPM / SystemJS / Rollup.
 
@@ -7,39 +7,43 @@
 
 ### Features
 - CLEAN - minimal dependencies, no clutter!
-- NO-SETUP - read Usage section below
-- REACT-BEST-PRACTICES - no mixins / no ref strings / no method binding - instead ES Class Fields / no function creation in render methods / render lists in dedicated components / don't use array index as key / ES6 style PureRenderMixin with PureComponent
+- NO-SETUP - working out-of-the-box (more in Usage section below...)
+- RELIABLE HOT-RELOAD - dev server with `systemjs-hot-reloader` - highly reliable and scalable with increasing modules count (more in Notes section below...)
 - GREAT-TYPESCRIPT-EXPERIENCE - in browser (on-the-fly) loading / no transpilation step / no bundling step
 - TYPESAFE-API-CALLS - type checking (request and response object) in calls to REST API, no more problems with service contracts
-- FAST-FEEDBACK-LOOP - dev server with system.js hot-reload [jspm-hmr](https://www.npmjs.com/package/jspm-hmr)
-- RELIABLE HOT-RELOAD - highly scalable with increasing modules count and more reliable in contrary to Webpack/React-Hot-Reloader (read Notes section below)
+- REACT-BEST-PRACTICES - no mixins / no ref strings / no method binding - instead ES Class Fields / no function creation in render methods / render lists in dedicated components / don't use array index as key / ES6 style PureRenderMixin with PureComponent
+- REACT-ROUTER - included `react-router-redux` to store your routing in state for Time-Travel capabilities
+- IMMUTABLE-STORE - using `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` in your containers and components)
 - COMPLETE-WORKFLOW - npm scripts for bundling & deploy, github-hooks, linter, test runner etc.
 - EASY-TESTING - complete testing solution with Tape (blue-tape), Enzyme, JSDOM - functional approach makes it easy to test, you can even write and run test entirely in TypeScript - no transpilation step!
 - CSS MODULES - simplest and reliable approach for local CSS styles using csjs - https://github.com/rtsao/csjs#faq
 - BEM and ITCSS - using BEM with Inverted Triangle conventions to give meaning and context to CSS classes
 
-### Code Examples
-- React with TypeScript - production ready
+---
+
+### Code Examples 
+- React and Redux with TypeScript - production ready code samples
+- Flux Standard Actions for Redux - https://github.com/acdlite/redux-actions
+- Redux Reducer Modules - https://github.com/erikras/ducks-modular-redux
+
+### Testing Examples
+- Testing Redux Action Creators
+- Testing Redux Async Actions
 
 ---
 
 ## Roadmap
-> __work in progress at https://github.com/piotrwitek/react-currency-converter/tree/redux__
-
-- CSS Modules using csjs - https://github.com/rtsao/csjs#faq
-- Redux with TypeScript - production ready
-  - innovative approach using TS 2.0 - recently added Tagged Union Types - for solid Redux integration
-  (https://blogs.msdn.microsoft.com/typescript/2016/08/30/announcing-typescript-2-0-rc)
-- Flux Standard Actions for Redux - https://github.com/acdlite/redux-actions
-- Redux Reducer Modules - https://github.com/erikras/ducks-modular-redux
 - Redux async flow with redux-saga - https://github.com/yelouafi/redux-saga/
-- Immutable State using `seamless-immutable` - simple and backwards-compatible with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()`)
+- Time Travel Debugging
+- CSS Modules using csjs - https://github.com/rtsao/csjs#faq
+
+- REDUX-INNOVATIVE-APPROACH - using TS 2.0 "Tagged Union Types" - for solid Redux integration
+  (https://blogs.msdn.microsoft.com/typescript/2016/08/30/announcing-typescript-2-0-rc)
+
 - Testing with Enzyme (JSDOM)
 - Testing Component markup (shallowRender)
 - Testing Component behaviour/interactions (renderIntoDocument, Simulate)
-- Testing Redux (selectors, reducers, action creators)
-- Integration Testing Redux Store
-- ReactRouter
+- Integration Testing in Redux Store
 
 ---
 
