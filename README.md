@@ -1,27 +1,28 @@
 ## _React v15.3.1 / Redux v3.5.2 / TypeScript v2.0_ - starter-kit
-#### __Hot-Reload / React-Router / Seamless-Immutable / Fetch API / JSPM  (SystemJS & Rollup)__
+#### __React-Router / Seamless-Immutable / Fetch API / JSPM  (SystemJS with Hot-Reload & Rollup)__
 
-> ##### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES Modules, Linting, Reliable Hot-Reload, Git-Hooks, in browser (on-the-fly) transpilation, bundling with Rollup - powered by JSPM (SystemJS & Rollup).
+> ##### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES6 Modules, Linting,  Git-Hooks, fast in browser (on-the-fly) transpilation, bundling with tree-shaking - powered by JSPM (SystemJS with Hot-Reload & Rollup).
 
 ### Demo: http://piotrwitek.github.io/react-redux-typescript-starter-kit/
 
 ### Features
 - CLEAN - minimal dependencies, no clutter!
 - NO-SETUP - working out-of-the-box (more in Usage section below...)
-- RELIABLE HOT-RELOAD - dev server with hot-reload using [jspm-hmr](https://www.npmjs.com/package/jspm-hmr) - highly reliable and scalable with increasing modules count (more in Notes section below...)
-- GREAT-TYPESCRIPT-EXPERIENCE - in browser (on-the-fly) loading / no transpilation step / no bundling step
-- TYPESAFE-API-CALLS - type checking (request and response object) in calls to REST API, no more problems with service contracts
-- REACT-BEST-PRACTICES - no mixins / no ref strings / no method binding - instead ES Class Fields / no function creation in render methods / render lists in dedicated components / don't use array index as key / ES6 style PureRenderMixin with PureComponent
+- RELIABLE-HOT-RELOAD - dev server with hot-reload using [jspm-hmr](https://www.npmjs.com/package/jspm-hmr) - highly reliable and scalable with increasing modules count (more in Notes section below...)
+- TYPESCRIPT-WORKFLOW - in browser (on-the-fly) loading / no transpilation step / no bundling step
+- BEST-INTELLISENSE - statically typed entire JavaScript and DOM API with autocompletion and docs right in your editor - no more silly typos and runtime exceptions
+- TYPESAFE-API-CALLS - type checking the contracts of REST Service API calls - forget checking for API docs again
+- REACT-BEST-PRACTICES - no mixins / no ref strings / no method binding - instead ES Class Fields / no function/objects creation in render methods / render lists in dedicated components / don't use array index as key / ES6 style PureRenderMixin with PureComponent
 - REACT-ROUTER - included `react-router-redux` to store your routing in state for Time-Travel capabilities
 - IMMUTABLE-STORE - using `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` in your containers and components)
-- COMPLETE-WORKFLOW - npm scripts for bundling & deploy, github-hooks, linter, test runner etc.
+- PRODUCTION-READY - npm scripts for bundling & deploy, github-hooks, linter, test runner etc.
 - EASY-TESTING - complete testing solution with Tape (blue-tape), Enzyme, JSDOM - functional approach makes it easy to test, you can even write and run test entirely in TypeScript - no transpilation step!
-- CSS MODULES - simplest and reliable approach for local CSS styles using csjs - https://github.com/rtsao/csjs#faq
-- BEM and ITCSS - using BEM with Inverted Triangle conventions to give meaning and context to CSS classes
+- CSS-MODULES - simplest and reliable approach for local CSS styles using csjs - https://github.com/rtsao/csjs#faq
+- BEM & ITCSS - using BEM with Inverted Triangle conventions to give meaning and context to CSS classes
 
 ---
 
-### Code Examples 
+### Code Examples
 - React and Redux with TypeScript - production ready code samples
 - Flux Standard Actions for Redux - https://github.com/acdlite/redux-actions
 - Redux Reducer Modules - https://github.com/erikras/ducks-modular-redux
