@@ -1,7 +1,9 @@
 ## _React v15.3.0 / Redux v3.5.2 / TypeScript v2.0_ - starter-kit
-> ### (powered by JSPM / SystemJS / Rollup)
+> ### (powered by JSPM / SystemJS / Rollup / React-Router / Seamless-Immutable / Fetch)
 
 > ##### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES Modules, Linting, Reliable Hot-Reload, Git-Hooks, in browser (on-the-fly) transpilation, bundling with Rollup - powered by JSPM / SystemJS / Rollup.
+
+### Demo: http://piotrwitek.github.io/react-redux-typescript-starter-kit/
 
 ### Features
 - CLEAN - minimal dependencies, no clutter!
