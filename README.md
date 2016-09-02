@@ -73,25 +73,26 @@ Check yourself using this easy test procedure:
 
 ```
 .
-├── assets                   # static assets copied to dist folder
-├── src                      # app source code
-│   ├── components           # global reusable presentational components
-│   ├── containers           # container components providing redux context
-│   ├── layouts              # components defining page layouts
-│   ├── reducers             # modules containing redux reducers/constants/action creators
-│   ├── services             # modules abstracting communication with web services
-│   ├── typings              # custom TypeScript definitions
-│   ├── utils                # app utility modules
-│   ├── app.tsx              # app entry module with routing config
-│   ├── store.tsx            # app store module
-│   ├── test-runner.tsx      # test suites config
-│   └── tsconfig.tsx         # TypeScript compiler config
-├── dev-bundle.config.js     # libs should be included in dev bundle
-├── index.html               # index.html
-├── jspm.config.js           # system.js config for app dependencies
-├── jspm.init.js             # system.js app import & hot-reload setup
-├── server.js                # dev-server entry module
-└── tslint.json              # linter config
+├── assets                      # static assets copied to dist folder
+├── src                         # app source code
+│   ├── components              # global reusable presentational components
+│   ├── containers              # container components providing redux context
+│   ├── layouts                 # components defining page layouts
+│   ├── reducers                # modules containing redux reducers/constants/action creators
+│   ├── services                # modules abstracting communication with web services
+│   ├── typings                 # custom TypeScript definitions
+│   ├── utils                   # app utility modules
+│   ├── app.tsx                 # app entry module with routing config
+│   ├── store.tsx               # app store module
+│   ├── test-runner.tsx         # test suites config
+│   └── tsconfig.tsx            # TypeScript compiler config
+├── bundle-config.vendor.dev.js # packages included in dev vendor bundle
+├── bundle-config.vendor.js     # packages included in prod vendor bundle
+├── index.html                  # index.html
+├── jspm.config.js              # system.js config for app dependencies
+├── jspm.init.js                # system.js app import & hot-reload setup
+├── server.js                   # dev-server entry module
+└── tslint.json                 # linter config
 ```
 
 ---
@@ -134,10 +135,10 @@ Because of this approach it is highly scalable with increasing modules count in 
 2. `npm start` - browser will open automatically
 
 #### Build for Production Workflow
-1. `npm run build` - package created in 'dist' folder
-  - `npm run build:app` - build only app.js _(run when app source code has changed)_
-  - `npm run build:vendor` - build only vendor.js _(run when app dependencies has changed)_
-2. open `http://localhost/dist/` - to check build on local server
+1. `npm run build` - create app.js & vendor.js bundles in 'dist' folder
+  - `npm run build:app` - build only app.js bundle _(run when app source code has changed)_
+  - `npm run build:vendor` - build only vendor.js bundle _(run when app dependencies has changed)_
+2. open `http://localhost/dist/` - check prod build on local server
 
 ---
 
@@ -147,9 +148,9 @@ Because of this approach it is highly scalable with increasing modules count in 
 
 #### Development Bundling
 
-`npm run bundle-dev` - bundle static dependencies for quick full-page reload, app sources remain as seperate modules for on-the-fly HMR & transpilation
+`npm run bundle-dev` - build vendor packages in single file bundle for quick full-page reload __(app sources remain as seperate modules for on-the-fly HMR & transpilation)__
 
-`npm run unbundle` - un-bundle static dependencies (usefull when changing app dependencies)
+`npm run unbundle` - delete vendor bundle package __(WARNING: it will result in loading all of vendor packages as seperate requests - use it only if you know what you are doing e.g. when experimenting with HTTP/2 multiplexing/pipelining)__
 
 #### Production Bundling (`dist/` folder)
 
@@ -159,7 +160,7 @@ Because of this approach it is highly scalable with increasing modules count in 
 
 `npm run build:vendor` - build app dependencies bundle (only vendor dependencies) - minified, no source-maps
 
-`npm run build:debug` - build app sources bundle - debug version with source-maps
+`npm run build:debug` - build app sources bundle - non-minified version with source-maps
 
 #### Initialization
 
