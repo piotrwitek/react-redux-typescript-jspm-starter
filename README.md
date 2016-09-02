@@ -14,6 +14,7 @@
 - TYPESAFE-API-CALLS - type checking the contracts of REST Service API calls - forget checking for API docs again
 - REACT-BEST-PRACTICES - no mixins / no ref strings / no method binding - instead ES Class Fields / no function/objects creation in render methods / render lists in dedicated components / don't use array index as key / ES6 style PureRenderMixin with PureComponent
 - REACT-ROUTER - included `react-router-redux` to store your routing in state for Time-Travel capabilities
+- REDUX-DEV-TOOLS - installed Redux DevTools capabilities with [chrome-extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 - IMMUTABLE-STORE - using `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` in your containers and components)
 - PRODUCTION-READY - npm scripts for bundling & deploy, github-hooks, linter, test runner etc.
 - EASY-TESTING - complete testing solution with Tape (blue-tape), Enzyme, JSDOM - functional approach makes it easy to test, you can even write and run test entirely in TypeScript - no transpilation step!
@@ -35,12 +36,10 @@
 
 ## Roadmap
 - Redux async flow with redux-saga - https://github.com/yelouafi/redux-saga/
-- Time Travel Debugging
-- CSS Modules using csjs - https://github.com/rtsao/csjs#faq
-
 - REDUX-INNOVATIVE-APPROACH - using TS 2.0 "Tagged Union Types" - for solid Redux integration
   (https://blogs.msdn.microsoft.com/typescript/2016/08/30/announcing-typescript-2-0-rc)
 
+- CSS Modules using csjs - https://github.com/rtsao/csjs#faq
 - Testing with Enzyme (JSDOM)
 - Testing Component markup (shallowRender)
 - Testing Component behaviour/interactions (renderIntoDocument, Simulate)
