@@ -1,5 +1,5 @@
 import test from 'blue-tape';
-import * as reducerModule from '../currency-rates-reducer';
+import * as currencyRatesActions from '../currency-rates-reducer';
 
 // testing action creators
 
@@ -16,9 +16,9 @@ test('testing action creator currencyRatesFetchSuccess', function(t) {
   // tslint:enable
 
   // act
-  const actual = reducerModule.loadCurrencyRatesSuccess(results);
+  const actual = currencyRatesActions.loadCurrencyRatesSuccess(results);
   const expected = {
-    type: reducerModule.LOAD_CURRENCY_RATES_SUCCESS,
+    type: 'currencyRates/LOAD_SUCCESS',
     payload: results
   };
 
@@ -33,9 +33,9 @@ test('testing action creator currencyRatesFetchError', function(t) {
   const errorMessage = 'Error Message';
 
   // act
-  const actual = reducerModule.loadCurrencyRatesError(errorMessage);
+  const actual = currencyRatesActions.loadCurrencyRatesError(errorMessage);
   const expected = {
-    type: reducerModule.LOAD_CURRENCY_RATES_ERROR,
+    type: 'currencyRates/LOAD_ERROR',
     payload: errorMessage
   };
 

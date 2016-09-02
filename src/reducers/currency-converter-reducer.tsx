@@ -2,10 +2,10 @@ import { createAction } from 'redux-actions';
 import Immutable from 'seamless-immutable';
 
 // Action Types - LOAD, CREATE, UPDATE, REMOVE
-export const UPDATE_BASE_CURRENCY = 'currencyConverter/UPDATE_BASE_CURRENCY';
-export const UPDATE_TARGET_CURRENCY = 'currencyConverter/UPDATE_TARGET_CURRENCY';
-export const UPDATE_BASE_VALUE = 'currencyConverter/UPDATE_BASE_VALUE';
-export const UPDATE_TARGET_VALUE = 'currencyConverter/UPDATE_TARGET_VALUE';
+const UPDATE_BASE_CURRENCY = 'currencyConverter/UPDATE_BASE_CURRENCY';
+const UPDATE_TARGET_CURRENCY = 'currencyConverter/UPDATE_TARGET_CURRENCY';
+const UPDATE_BASE_VALUE = 'currencyConverter/UPDATE_BASE_VALUE';
+const UPDATE_TARGET_VALUE = 'currencyConverter/UPDATE_TARGET_VALUE';
 
 // Action Creators
 export const updateBaseCurrency = createAction(UPDATE_BASE_CURRENCY, (event) => {

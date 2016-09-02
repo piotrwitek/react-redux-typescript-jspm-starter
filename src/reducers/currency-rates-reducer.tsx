@@ -4,9 +4,9 @@ import Immutable from 'seamless-immutable';
 const RATES_MOCK = { 'PLN': 1, 'SEK': 2.1919 };
 
 // Action Types - LOAD, CREATE, UPDATE, REMOVE
-export const LOAD_CURRENCY_RATES = 'currencyRates/LOAD';
-export const LOAD_CURRENCY_RATES_SUCCESS = 'currencyRates/LOAD_SUCCESS';
-export const LOAD_CURRENCY_RATES_ERROR = 'currencyRates/LOAD_ERROR';
+const LOAD_CURRENCY_RATES = 'currencyRates/LOAD';
+const LOAD_CURRENCY_RATES_SUCCESS = 'currencyRates/LOAD_SUCCESS';
+const LOAD_CURRENCY_RATES_ERROR = 'currencyRates/LOAD_ERROR';
 
 // Action Creators
 export const loadCurrencyRates = createAction(LOAD_CURRENCY_RATES);
