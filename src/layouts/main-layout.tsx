@@ -24,7 +24,8 @@ export class MainLayout extends React.Component<{}, {}> {
         </LayoutMain>
 
         <LayoutFooter>
-          2016 &copy; Piotr Witek
+          2016 &copy; Piotr Witek<br />
+          <a href="https://github.com/piotrwitek/react-redux-typescript-starter-kit">Back to GitHub Repo</a>
         </LayoutFooter>
       </div>
     );
