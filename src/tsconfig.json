@@ -28,6 +28,7 @@
     "allowUnreachableCode": false,
     "typeRoots": ["../node_modules/@types/"],
     "allowJs": false,
+    "allowSyntheticDefaultImports": true,
     "noImplicitUseStrict": false,
     "lib": ["es5", "es6", "es2016.array.include"],
     "strictNullChecks": false
