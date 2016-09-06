@@ -1,6 +1,6 @@
-interface FluxStandardAction<Payload> {
+interface FluxStandardAction<PayloadType> {
   type?: string;
-  payload?: Payload;
+  payload?: PayloadType;
   error?: boolean;
   meta?: any;
 }
