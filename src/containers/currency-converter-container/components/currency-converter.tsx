@@ -8,8 +8,8 @@ interface LocalProps {
   currencies: Object;
   baseCurrency: string;
   targetCurrency: string;
-  baseValue: string;
-  targetValue: string;
+  baseValue: number;
+  targetValue: number;
   onBaseCurrencyChange: (newCurrency: string) => void;
   onTargetCurrencyChange: (newCurrency: string) => void;
   onBaseValueChange: (newCurrency: string) => void;
