@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "skipLibCheck": true,
     "declaration": false,
     "jsx": "react",
     "module": "es6",
@@ -30,7 +31,7 @@
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "noImplicitUseStrict": false,
-    "lib": ["es5", "es6", "es2016.array.include"],
+    "lib": ["es5", "es6", "es2016.array.include", "dom", "es2016.array.include", "es2015.promise", "es2017.object", "es2015.iterable"],
     "strictNullChecks": false
   },
   "include": [
