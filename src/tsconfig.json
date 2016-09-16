@@ -1,10 +1,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "declaration": false,
     "jsx": "react",
-    "module": "es6",
+    "module": "commonjs",
     "newLine": "LF",
     "noEmit": true,
     "noEmitOnError": true,
@@ -12,7 +12,7 @@
     "noImplicitThis": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noResolve": true,
+    "noResolve": false,
     "outDir": "../out",
     "preserveConstEnums": true,
     "pretty": true,
