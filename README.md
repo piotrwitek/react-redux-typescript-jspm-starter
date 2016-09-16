@@ -5,16 +5,16 @@
 
 ### Demo: http://piotrwitek.github.io/react-redux-typescript-starter-kit/
 
-Table of Contents
-1. [Innovations](#innovations)
-2. [Features](#features)
-3. [Roadmap](#roadmap)
-4. [JSPM integration](#jspm--systemjs--rollup)
-5. [Pros & Cons](#pros--cons)
-6. [Project Structure](#project-structure)
-7. [Installation](#installation)
-8. [Usage](#usage)
-9. [CLI Commands](#cli-commands)
+Table of Contents  
+1. [Innovations](#innovations)  
+2. [Features](#features)  
+3. [Roadmap](#roadmap)  
+4. [JSPM integration](#jspm--systemjs--rollup)  
+5. [Pros & Cons](#pros--cons)  
+6. [Project Structure](#project-structure)  
+7. [Installation](#installation)  
+8. [Usage](#usage)  
+9. [CLI Commands](#cli-commands)  
 
 
 ## Innovations
