@@ -23,7 +23,7 @@ const initialState = Immutable({
   currencies: Object.keys(RATES_MOCK)
 });
 
-export default function reducer(state = initialState, action: FluxStandardAction<any> = {}) {
+export default function reducer(state = initialState, action: FluxStandardAction<any>) {
   switch (action.type) {
     case LOAD_CURRENCY_RATES:
       return state.merge({
