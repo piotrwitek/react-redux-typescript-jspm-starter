@@ -21,7 +21,7 @@ const initialState = Immutable({
   targetValue: 0
 });
 
-export default function reducer(state = initialState, action: FluxStandardAction<any> = {}) {
+export default function reducer(state = initialState, action: FluxStandardAction<any>) {
   switch (action.type) {
     case UPDATE_BASE_CURRENCY:
       return state.merge({

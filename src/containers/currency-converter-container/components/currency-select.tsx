@@ -1,9 +1,21 @@
 import * as React from 'react';
+interface IProps {
+  currencies: string[];
+  value: string;
+  onChange: (newValue: string) => FluxStandardAction<string>;
+}
 
-export function CurrencySelect({currencies, selectedCurrency, onChange}) {
+export function CurrencySelect({currencies = [], value = null, onChange = null}: IProps) {
+
+  const handleChange = (ev) => {
+    onChange(ev.target.value);
+  };
+
   return (
-    <select className="c-choice c-choice--padded"
-      value={selectedCurrency} onChange={onChange}>
+    <select
+      className="c-choice c-choice--padded"
+      value={value}
+      onChange={handleChange}>
       {currencies.map(currency =>
         <option key={currency}>{currency}</option>
       )}
