@@ -30,6 +30,7 @@
     "lint": "tslint ./src/**/*.ts[x]",
     "test": "jspm run src/test-runner | faucet",
     "tsc": "tsc -p src",
+    "tsc:watch": "tsc -p src -w",
     "_jspm-bundle-vendor-dev": "jspm bundle bundle-config.vendor.dev.js temp/vendor.dev.js -d",
     "_jspm-bundle-vendor": "jspm bundle bundle-config.vendor.js dist/vendor.js -ms",
     "post_jspm-bundle-vendor": "cp jspm.config.js jspm_packages/system.js dist/",
