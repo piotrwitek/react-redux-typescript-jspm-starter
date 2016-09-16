@@ -4,7 +4,7 @@
     "skipLibCheck": false,
     "declaration": false,
     "jsx": "react",
-    "module": "commonjs",
+    "module": "es6",
     "newLine": "LF",
     "noEmit": true,
     "noEmitOnError": true,
@@ -31,7 +31,7 @@
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "noImplicitUseStrict": false,
-    "lib": ["es5", "es6", "es2016.array.include", "dom", "es2016.array.include", "es2015.promise", "es2017.object", "es2015.iterable"],
+    "lib": ["es5", "es6", "dom", "es2016.array.include", "es2015.promise", "es2017.object", "es2015.iterable"],
     "strictNullChecks": false
   },
   "include": [
