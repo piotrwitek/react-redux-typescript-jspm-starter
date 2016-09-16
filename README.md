@@ -18,7 +18,7 @@ Table of Contents
 
 
 ## Innovations
-- __TYPESCRIPT RAPID-SPEED NO-TRANSPILATION WORKFLOW - loading TS files in the browser (on-the-fly), not emitting intermediate JS files, it's OK to use only TS files for speed, also for writing your tests, so it means no transpilation step & no bundling step required during development__ _(bundling step is only necessary to create app.js & vendor.js bundles for production)_
+- __TYPESCRIPT RAPID-SPEED NO-TRANSPILATION WORKFLOW - loading TS files in the browser (on-the-fly), not emitting intermediate JS files, it's OK to use only TS files for speed, also when writing your tests, so it means no transpilation step & no bundling step required during development__ _(bundling step is only necessary to create app.js & vendor.js bundles for production)_
 - RELIABLE-HOT-RELOAD - dev server with hot-reload using [jspm-hmr](https://www.npmjs.com/package/jspm-hmr) - highly reliable and scalable for speed with increasing modules count (more in [Pros & Cons](#pros--cons)...)
 - TYPESCRIPT-TESTING - complete testing solution with Tape (blue-tape) - write and run tests only in TS - no transpilation required!
 - NO-IDE-NO-PROBLEM - you can code in Notepad and run `tsc -p src --watch` in command line for fast incremental CLI type-checking or run `tsc -p src` for project-wide type-check, there is no JS emit so it never breaks reliable hot-reload :)
