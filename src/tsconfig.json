@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "skipLibCheck": false,
     "declaration": false,
     "jsx": "react",
     "module": "es6",
