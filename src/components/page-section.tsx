@@ -6,7 +6,7 @@ import classNames from 'classnames';
 export function PageSection({className = '', children = undefined}) {
 
   const parentClass = classNames(
-    className,
+    className.toString(),
     'o-grid'
   );
   const cellClass = classNames(

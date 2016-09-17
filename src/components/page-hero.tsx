@@ -7,7 +7,7 @@ export function PageHero({className = '', children = undefined,
   title = '', subtitle = ''}) {
 
   const parentClass = classNames(
-    className,
+    className.toString(),
     'c-hero',
     'u-letter-box--super u-centered'
   );
