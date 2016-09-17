@@ -1,5 +1,5 @@
-## _React v15.3.1 / Redux v3.5.2 / TypeScript v2.0_ - starter-kit
-#### __React-Router / Seamless-Immutable / Fetch API / JSPM  (SystemJS with Hot-Reload & Rollup)__
+## _React v15.3.1 / Redux v3.6.0 / TypeScript v2.0.2_ - starter-kit
+#### __React-Router v2.8.1 / Seamless-Immutable / Fetch API / JSPM  (SystemJS with Hot-Reload & Rollup)__
 
 > ##### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES6 Modules, Linting,  Git-Hooks, fast in browser (on-the-fly) transpilation, bundling with tree-shaking - powered by JSPM (SystemJS with Hot-Reload & Rollup).
 

@@ -67,7 +67,7 @@
       "insert-css": "npm:insert-css@^1.0.0",
       "react-dom": "npm:react-dom@^15.3.1",
       "react-redux": "npm:react-redux@^4.4.5",
-      "react-router": "npm:react-router@^2.7.0",
+      "react-router": "npm:react-router@^2.8.1",
       "react-router-redux": "npm:react-router-redux@^4.0.5",
       "redux-actions": "npm:redux-actions@^0.11.0",
       "seamless-immutable": "npm:seamless-immutable@^6.1.1",
@@ -76,7 +76,7 @@
     "devDependencies": {
       "blue-tape": "npm:blue-tape@^0.2.0",
       "css": "github:systemjs/plugin-css@^0.1.27",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.0.19",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.1.2",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
     },
     "peerDependencies": {
@@ -94,7 +94,7 @@
       "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
       "react": "npm:react@^15.3.1",
-      "redux": "npm:redux@^3.5.2",
+      "redux": "npm:redux@^3.6.0",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
       "url": "github:jspm/nodelibs-url@^0.2.0-alpha",
@@ -126,7 +126,7 @@
           "util": "@node/util"
         }
       },
-      "npm:inherits@2.0.1": {
+      "npm:inherits@2.0.3": {
         "ignore": [
           "test.js"
         ]
