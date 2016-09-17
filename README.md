@@ -151,7 +151,9 @@ __Soon with release of TypeScript 2.1 proper transpilation will be provided elim
 1. `npm run bundle-dev` - bundle vendor packages for development _(re-run only when app dependencies has changed)_
 2. `npm start` - browser will open automatically
 
-No IDE Option: `npm run tsc:watch` - if you don't use IDE with typescript integration, run tsc in watch mode for fast incremental type-checking (NOTE: this will not emit any JS files, only type-checking - it's OK because you load ts file on-the-fly)
+#### NO-IDE Workflow - command line type checking
+1. `npm run tsc:watch` - if you don't use IDE with typescript integration, run tsc compiler in watch mode for fast incremental type-checking (NOTE: this will not emit any JS files, only type-checking - it's OK because you load ts file on-the-fly)
+2. `npm run tsc` - one-time project wide type-safety check
 
 #### Build for Production Workflow
 1. `npm run build` - create app.js & vendor.js bundles in 'dist' folder
