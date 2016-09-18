@@ -18,19 +18,39 @@ Table of Contents
 
 
 ## Innovations
-- __TYPESCRIPT RAPID-SPEED NO-TRANSPILATION WORKFLOW - loading TS files in the browser (on-the-fly), not emitting intermediate JS files, it's OK to use only TS files for speed, also when writing your tests, so it means no transpilation step & no bundling step required during development__ _(bundling step is only necessary to create app.js & vendor.js bundles for production)_
-- RELIABLE-HOT-RELOAD - dev server with hot-reload using [jspm-hmr](https://www.npmjs.com/package/jspm-hmr) - highly reliable and scalable for speed with increasing modules count (more in [Pros & Cons](#pros--cons)...)
-- TYPESCRIPT-TESTING - complete testing solution with Tape (blue-tape) - write and run tests only in TS - no transpilation required!
-- NO-IDE-NO-PROBLEM - you can code in Notepad and run `tsc -p src --watch` in command line for fast incremental CLI type-checking or run `tsc -p src` for project-wide type-check, there is no JS emit so it never breaks reliable hot-reload :)
+
+### TYPESCRIPT RAPID-SPEED NO-TRANSPILATION WORKFLOW
+Fast development experience by loading TS files directly in the browser (with typescript-plugin), type-checking concurrently in IDE or in CLI with watch mode, no intermediate JS files transpilation, gives you speed as there is no transpilation or bundling step required _(bundling & transpilation expected only to create app.js & vendor.js bundles for production)_
+(animated gif placeholder...)
+
+### WRITE TESTS IN TYPESCRIPT
+Write tests in TypeScript - no transpilation required, running directly from TS source files in a command line (`npm test`).
+Test harness using (Tape)[https://github.com/substack/tape] also with Promise support from (blue-tape)[https://github.com/spion/blue-tape]
+(animated gif placeholder...)
+
+### RELIABLE-HOT-RELOAD
+Local HTTP dev server with hot-reload out-of-the-box - highly reliable and scalable for speed with increasing modules count (explained in [Pros & Cons](#pros--cons)...)
+(animated gif placeholder...)
+
+### NO-IDE-NO-PROBLEM
+If you are coding in a NO-IDE environment (notepad/vim) or expecting to have a common way across a team to target a specific version of typescript compiler even while using different Editors/IDEs, you can utilize __CLI type-checking workflow__ using `tsc -p src --watch` command for fast incremental type-checking or `tsc -p src` command for project-wide type-check, there is no JS emit so it will not clutter your project or disrupt different build processes based on various IDE plugins or gulp/grunt based tasks.
+(animated gif placeholder...)
+
+### TYPED-CSS-MODULES
+My concept to achieve locally scoped CSS styles with some enhancements using (csjs)[https://github.com/rtsao/csjs#faq]
+Full CSS support with all features like pseudo-classes & media queries, encapsulated in TypeScript (ES6 modules) can be easily imported by your UI components.
+BONUS: statically typed class names helping with auto-completion, simple type-checking, easy refactoring and doc comments.
+EXAMPLE: (about-container component)[src/containers/about-container/index.tsx] and it's (about-styles css-module)[src/containers/about-container/about-styles.tsx]
+(animated gif placeholder...)
 
 ## Features
+
 - PRODUCTION-WORKFLOW - npm scripts for production bundling & deployment, github-hooks, linter, test runner etc.
 - TYPESAFE-API-CALLS - type checking contracts of REST API calls - forget constantly checking for API docs and let your IDE guide you
 - GREAT-TOOLING - type cheking for JavaScript and DOM API with autocompletion and docs right in your editor - no more silly typos and runtime exceptions
 - REACT-ROUTER - included `react-router-redux` to store your routing in state for Time-Travel capabilities
 - REDUX-DEV-TOOLS - installed Redux DevTools capabilities with [chrome-extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 - IMMUTABLE-STORE - using `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` in your containers and components)
-- CSS-MODULES - simplest and reliable approach for local CSS styles using csjs - https://github.com/rtsao/csjs#faq
 - BEM & ITCSS - using BEM with Inverted Triangle conventions to give meaning and context to CSS classes
 
 #### React Best Practices & Optimizations
@@ -48,11 +68,11 @@ Table of Contents
 ---
 
 ## Roadmap
+
 - Redux async flow with redux-saga - https://github.com/yelouafi/redux-saga/
 - Testing async flow in redux sagas
 - REDUX INNOVATION - using TS 2.0 "Tagged Union Types" - for solid Redux integration
   (https://blogs.msdn.microsoft.com/typescript/2016/08/30/announcing-typescript-2-0-rc)
-- CSS Modules using csjs - https://github.com/rtsao/csjs#faq
 - Reactive Programming with RxJS
 - Testing with Enzyme (JSDOM)
 - Testing Component markup (shallowRender)
@@ -62,6 +82,7 @@ Table of Contents
 ---
 
 ## JSPM / System.js / Rollup
+
 - JSPM 0.17.X - production ready set-up with best-practices from real-world projects
 - optimized loading speed by utilizing `vendor` dev-bundle (read below)
 - using Rollup for bundling and tree-shaking optimizations
@@ -84,18 +105,18 @@ Check yourself using this easy test procedure:
 
 ## Pros / Cons
 
-- If you are using TypeScript compiler built-in in the editor/IDE you can experience some quirks and limitations. You should always use a local npm TypeScript installation. For the best IDE experience I suggest to use Atom Editor with atom-typescript plugin (include single file compilation feature) or any other Editor with `npm run tsc:watch` starter-kit CLI Command for fast incremental type-checking.
+- If you are depending on TypeScript compiler built-in into the editor/IDE you're using, you can experience some issues and limitations because of older compiler version over which you don't have control. Instead you should depend on a local npm TypeScript installation included in project. Visual Studio Code and alm.tools allows the possibility to use local TS npm package.
+In case you want to stick to using IDE with "baked-in TS" you could turn off it's compilation process and check your types in command line with either `npm run tsc` or `npm run tsc:watch` commands for one-time or continuous-incremental type-checking.
 
-- You should never emit intermediate JS files during development workflow, because you'll lose Hot-Reload capability (new files emitted after each change) and experience much slower workflow without any advantages.
+- During development there is no need to emit intermediate JS files, this workflow will load your TS files directly in-browser, otherwise you'll lose Hot-Reload capability (new files emitted after each change) and experience much slower workflow without any advantages.
 
-- I've seen most boilerplates adding Babel transpilation into their dev workflow with TypeScript, which introduces additional and unnecessary costly full build step, my solution only adds async/generators transform (not a full transpilation) only when generating app bundle for production (not in development workflow so it stays fast)
-__It's worth to know that Babel is similarly using regenerator internally for async/generators transform https://babeljs.io/docs/usage/caveats/__
+- A lot of boilerplates add Babel transpilation step into their dev-workflow with TypeScript, which introduces additional costly build step which slows you down, this workflow only adds async/generators transform (Babel internally doing the same!) only during creation of production bundle (not during development, so it is fast)
+__It's worth to know that Babel is similarly using regenerator internally for async/generators transform__ (https://babeljs.io/docs/usage/caveats/)
 
-- Comparing to Webpack Hot Module Reload: SystemJS hot-reloading works differently from Webpack HMR, it loads module files separately so there is no need for bundling step. Then it deletes the module from module registry and re-imports it with the modules that depend on it ensuring to always load latest changes.
-Because of this approach it is highly scalable with increasing modules count in your project and is more reliable in contrary to Webpack/React-Hot-Reloader - __Webpack is breaking it's HMR flow occasionally thus requiring you to do a full page reload__.
+- SystemJS vs Webpack Hot-Module-Reload: SystemJS hot-reloading works differently from Webpack HMR, it loads each src file separately so there is no need for bundling step. During hot-reload it delete updated module from the System registry and re-imports it and other modules that import this module, ensuring to always have the latest changes.
+This approach gives you great scalability with increasing modules count as you reload only concerned modules and it is also very reliable because of it's simple concept.
 
-- Ttemporarily using regenerator transform to transpile async/generators to ES5 only in production build step (it's necessary for compatibility with older browsers without generators support, you can opt-out if not necessary)
-__Soon with release of TypeScript 2.1 proper transpilation will be provided eliminating this step__
+- If you are using async/generator functions for production and want to transpile to ES5 for old browsers support, you can use `npm run regenerator` command. (I'm working to provide alternative solution which will use typescript@next nightly release.)
 
 ---
 
@@ -203,7 +224,7 @@ __Soon with release of TypeScript 2.1 proper transpilation will be provided elim
 
 `npm run lint` - run linter
 
-`npm run test` - run test suites
+`npm run test` or `npm test` - run test suites
 
 `npm run precommit` - pre commit git hook - runs linter
 
