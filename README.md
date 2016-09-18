@@ -36,10 +36,10 @@ Local HTTP dev server with hot-reload out-of-the-box - highly reliable and scala
 If you are coding in a NO-IDE environment (notepad/vim) or expecting to have a common way across a team to target a specific version of typescript compiler even while using different Editors/IDEs, you can utilize __CLI type-checking workflow__ using `tsc -p src --watch` command for fast incremental type-checking or `tsc -p src` command for project-wide type-check, there is no JS emit so it will not clutter your project or disrupt different build processes based on various IDE plugins or gulp/grunt based tasks.
 (animated gif placeholder...)
 
-### TYPED-CSS-MODULES
-My concept to achieve locally scoped CSS styles with some enhancements using (csjs)[https://github.com/rtsao/csjs#faq]
-Full CSS support with all features like pseudo-classes & media queries, encapsulated in TypeScript (ES6 modules) can be easily imported by your UI components.
-BONUS: statically typed class names helping with auto-completion, simple type-checking, easy refactoring and doc comments.
+### CSS-MODULES WITH TYPED CLASS-NAMES
+My concept to achieve locally scoped CSS styles with some TypeScript enhancements using (csjs)[https://github.com/rtsao/csjs#faq]
+Full CSS support with all features like pseudo-classes & media queries, encapsulated in ES6 modules can be easily imported by your UI components.
+BONUS: statically typed class names - solid auto-completion, type-checking, easy refactoring. You can also add doc comments and auto-generate docs of your styles library for your team or utilize some powerful IDE support.
 EXAMPLE: (about-container component)[src/containers/about-container/index.tsx] and it's (about-styles css-module)[src/containers/about-container/about-styles.tsx]
 (animated gif placeholder...)
 
