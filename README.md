@@ -13,35 +13,36 @@ Table of Contents
 5. [Pros & Cons](#pros--cons)  
 6. [Project Structure](#project-structure)  
 7. [Installation](#installation)  
-8. [Usage](#usage)  
+8. [Workflows Guide](#workflows-guide)  
 9. [CLI Commands](#cli-commands)  
 
 
 ## Innovations
 
-### TYPESCRIPT RAPID-SPEED NO-TRANSPILATION WORKFLOW
-Fast development experience by loading TS files directly in the browser (with typescript-plugin), type-checking concurrently in IDE or in CLI with watch mode, no intermediate JS files transpilation, gives you speed as there is no transpilation or bundling step required _(bundling & transpilation expected only to create app.js & vendor.js bundles for production)_
-(animated gif placeholder...)
+### RAPID-SPEED DEVELOPMENT WORKFLOW - TypeScript source file hot-reload and in-the-browser transpilation
+Super-fast development experience by loading TypeScript source files directly in the browser (using (plugin-typescript)[https://github.com/frankwallis/plugin-typescript]) while seperately type-checking them in the IDE or in the command-line in watch mode, without transpilation for intermediate JS files or bundling.
+Joined together with single-file hot-reload gives you almost instant feedback-loop as there is no costly project-wide transpilation or bundling step involved.
 
-### WRITE TESTS IN TYPESCRIPT
-Write tests in TypeScript - no transpilation required, running directly from TS source files in a command line (`npm test`).
-Test harness using (Tape)[https://github.com/substack/tape] also with Promise support from (blue-tape)[https://github.com/spion/blue-tape]
-(animated gif placeholder...)
-
-### RELIABLE-HOT-RELOAD
-Local HTTP dev server with hot-reload out-of-the-box - highly reliable and scalable for speed with increasing modules count (explained in [Pros & Cons](#pros--cons)...)
-(animated gif placeholder...)
+### SCALABLE-HOT-RELOAD
+Local HTTP dev server with hot-reload out-of-the-box - highly reliable leveraging SystemJS import feature and scalable for speed with increasing modules count using (systemjs-hot-reloader)[https://github.com/capaj/systemjs-hot-reloader]
+It can load each src file separately eliminating extra bundling step. First it will delete old module from the SystemJS registry and then re-imports updated module with additional modules which have imported the updated module, ensuring to always have the latest changes.
+This approach gives you great scalability with increasing modules count as you reload only necessary modules.
 
 ### NO-IDE-NO-PROBLEM
 If you are coding in a NO-IDE environment (notepad/vim) or expecting to have a common way across a team to target a specific version of typescript compiler even while using different Editors/IDEs, you can utilize __CLI type-checking workflow__ using `tsc -p src --watch` command for fast incremental type-checking or `tsc -p src` command for project-wide type-check, there is no JS emit so it will not clutter your project or disrupt different build processes based on various IDE plugins or gulp/grunt based tasks.
-(animated gif placeholder...)
 
 ### CSS-MODULES WITH TYPED CLASS-NAMES
-My concept to achieve locally scoped CSS styles with some TypeScript enhancements using (csjs)[https://github.com/rtsao/csjs#faq]
-Full CSS support with all features like pseudo-classes & media queries, encapsulated in ES6 modules can be easily imported by your UI components.
-BONUS: statically typed class names - solid auto-completion, type-checking, easy refactoring. You can also add doc comments and auto-generate docs of your styles library for your team or utilize some powerful IDE support.
-EXAMPLE: (about-container component)[src/containers/about-container/index.tsx] and it's (about-styles css-module)[src/containers/about-container/about-styles.tsx]
+Own concept to achieve locally scoped CSS styles with statically typed CSS class-names using TypeScript.
+- Full CSS support with pseudo-classes & media queries, encapsulated in ES6 Modules that can be nicely imported by your UI components.  
+- Define interfaces with your CSS classes and you get className property type-checking, solid auto-completion and easy refactoring. You can also add doc comments and auto-generate docs of your styles library for your team and utilize IntelliSense features of your IDE.  
+EXAMPLE: (css-modules-container component)[src/containers/about-container/index.tsx] and it's (about-styles css-module)[src/containers/about-container/about-styles.tsx]
 (animated gif placeholder...)
+
+### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (without Babel)
+Many TS boilerplates are using Babel transpilation step after the TypeScript compiler output to get support for "async & generator functions transformation" when targeting ES3/ES5. This is costly process and introduces additional build step into the build workflow.
+My solution promote using only (Facebook Regenerator Project)[https://github.com/facebook/regenerator] (Babel internally doing the same!) which is executed only when running build for production. Use CLI command `npm run regenerator` after building for production.
+__NOTE: This is the same as Babel, because Babel is using "regenerator runtime" internally for async/generator functions transformations. So, why in the TS world we shouldn't be doing the same?__  (reference: https://babeljs.io/docs/usage/caveats/)
+__NOTE (06/10/2016): As TypeScript Team have dropped adding support for downlevel (ES3/ES5) generator transformation in the near future, I believe this is the most optimal solution to use at the moment__ (reference: https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415)
 
 ## Features
 
@@ -52,6 +53,8 @@ EXAMPLE: (about-container component)[src/containers/about-container/index.tsx] a
 - REDUX-DEV-TOOLS - installed Redux DevTools capabilities with [chrome-extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 - IMMUTABLE-STORE - using `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` in your containers and components)
 - BEM & ITCSS - using BEM with Inverted Triangle conventions to give meaning and context to CSS classes
+- EASY TESTING IN TYPESCRIPT - write your tests only in TypeScript - don't worry about transpilation, easily import and run your TS source files from a command line (use `npm test` CLI command).
+Test harness with (Tape)[https://github.com/substack/tape] with Promise support from (blue-tape)[https://github.com/spion/blue-tape]
 
 #### React Best Practices & Optimizations
 - no mixins -> use ES6 style PureRenderMixin with PureComponent
@@ -105,18 +108,10 @@ Check yourself using this easy test procedure:
 
 ## Pros / Cons
 
-- If you are depending on TypeScript compiler built-in into the editor/IDE you're using, you can experience some issues and limitations because of older compiler version over which you don't have control. Instead you should depend on a local npm TypeScript installation included in project. Visual Studio Code and alm.tools allows the possibility to use local TS npm package.
-In case you want to stick to using IDE with "baked-in TS" you could turn off it's compilation process and check your types in command line with either `npm run tsc` or `npm run tsc:watch` commands for one-time or continuous-incremental type-checking.
+- be aware that using TypeScript compiler built-in into the editor/IDE like in WebStorm, can give you some trouble because of compiler version over which you don't have any control. Instead you should depend on a local npm TypeScript installation included in project. Visual Studio Code and alm.tools allows the possibility to use a locally installed TS package in your project.
+In case you want to stick to using IDE with "baked-in TS" you could turn off it's compilation process and run type-checking from a command line utilizing provided helper scripts `npm run tsc` or `npm run tsc:watch` commands for one-time check or a continuous-incremental type-checking.
 
 - During development there is no need to emit intermediate JS files, this workflow will load your TS files directly in-browser, otherwise you'll lose Hot-Reload capability (new files emitted after each change) and experience much slower workflow without any advantages.
-
-- A lot of boilerplates add Babel transpilation step into their dev-workflow with TypeScript, which introduces additional costly build step which slows you down, this workflow only adds async/generators transform (Babel internally doing the same!) only during creation of production bundle (not during development, so it is fast)
-__It's worth to know that Babel is similarly using regenerator internally for async/generators transform__ (https://babeljs.io/docs/usage/caveats/)
-
-- SystemJS vs Webpack Hot-Module-Reload: SystemJS hot-reloading works differently from Webpack HMR, it loads each src file separately so there is no need for bundling step. During hot-reload it delete updated module from the System registry and re-imports it and other modules that import this module, ensuring to always have the latest changes.
-This approach gives you great scalability with increasing modules count as you reload only concerned modules and it is also very reliable because of it's simple concept.
-
-- If you are using async/generator functions for production and want to transpile to ES5 for old browsers support, you can use `npm run regenerator` command. (I'm working to provide alternative solution which will use typescript@next nightly release.)
 
 ---
 
@@ -125,6 +120,9 @@ This approach gives you great scalability with increasing modules count as you r
 ```
 .
 ├── assets                      # static assets copied to dist folder
+├── configs                     # dev / prod bundle config
+|   ├── vendor.config.dev.js    # packages included in "vendor" bundle for dev
+|   └── vendor.config.prod.js   # packages included in "vendor" bundle for prod
 ├── src                         # app source code
 │   ├── components              # global reusable presentational components
 │   ├── containers              # container components providing redux context
@@ -137,11 +135,9 @@ This approach gives you great scalability with increasing modules count as you r
 │   ├── store.tsx               # app store module
 │   ├── test-runner.tsx         # test suites config
 │   └── tsconfig.tsx            # TypeScript compiler config
-├── bundle-config.vendor.dev.js # packages included in dev vendor bundle
-├── bundle-config.vendor.js     # packages included in prod vendor bundle
 ├── index.html                  # index.html
+├── index.prod.html             # index.html configured for production use
 ├── jspm.config.js              # system.js config for app dependencies
-├── jspm.init.js                # system.js app import & hot-reload setup
 ├── server.js                   # dev-server entry module
 └── tslint.json                 # linter config
 ```
@@ -166,10 +162,11 @@ This approach gives you great scalability with increasing modules count as you r
 
 ---
 
-## Usage
+## Workflows Guide
+__NOTE: Use index.prod.html for production, it have slightly different loading logic. Add references to your static assets like links/scripts and copy to the dist folder during a build process.__
 
-#### Dev Workflow
-1. `npm run bundle-dev` - bundle vendor packages for development _(re-run only when app dependencies has changed)_
+#### Development Workflow
+1. `npm run bundle-dev` - create bundle of vendor packages to speed-up full-page reload during development _(re-run only when project dependencies has changed)_
 2. `npm start` - browser will open automatically
 
 #### NO-IDE Workflow - command line type checking
@@ -178,10 +175,10 @@ This approach gives you great scalability with increasing modules count as you r
 
 #### Build for Production Workflow
 1. `npm run build` - create app.js & vendor.js bundles in 'dist' folder
-  - `npm run build:app` - build only app.js bundle _(run when app source code has changed)_
-  - `npm run build:vendor` - build only vendor.js bundle _(run when app dependencies has changed)_
+  - `npm run build:app` - build only app.js bundle _(run when project source code has changed)_
+  - `npm run build:vendor` - build only vendor.js bundle _(run when project dependencies has changed)_
 2. open `http://localhost/dist/` - check prod build on local server
-
+3. `npm run regenerator` - if you want to add "async/generator functions" downlevel transformation - use when targeting ES3/ES5
 ---
 
 ## CLI Commands
@@ -194,19 +191,23 @@ This approach gives you great scalability with increasing modules count as you r
 
 `npm run tsc:watch` - start TypeScript CLI in watch mode for fast incremental type-checking (`/src` folder)
 
-`npm run bundle-dev` - build vendor packages in single file bundle for quick full-page reload __(app sources remain as seperate modules for on-the-fly HMR & transpilation)__
+#### Dev Bundling (`temp/` folder)
 
-`npm run unbundle` - delete vendor bundle package __(WARNING: it will result in loading all of vendor packages as seperate requests - use it only if you know what you are doing e.g. when experimenting with HTTP/2 multiplexing/pipelining)__
+`npm run build:dev` - build vendor packages into vendor.dev.js bundle to speed-up full-page reload during development - non-minified with source-maps (dev bundle)
+
+`npm run unbundle` - delete vendor.dev.js bundle package __(WARNING: it will result in loading all of vendor packages as seperate requests - use it only if you know what you are doing e.g. when leveraging HTTP/2 multiplexing/pipelining)__
 
 #### Production Bundling (`dist/` folder)
 
-`npm run build` - build both app & dependecy bundle
+`npm run build` - build both app.js & vendor.js bundle for production
 
-`npm run build:app` - build app sources bundle (only app source code) - minified, no source-maps
+`npm run build:app` - build app source code into app.js (prod bundle) - minified, no source-maps
 
-`npm run build:vendor` - build app dependencies bundle (only vendor dependencies) - minified, no source-maps
+`npm run build:vendor` - build vendor packages into vendor.prod.js (prod bundle) - minified, no source-maps
 
-`npm run build:debug` - build app sources bundle - non-minified version with source-maps
+`npm run build:debug` - build app source code into app.js (dev bundle) - non-minified with source-maps
+
+`npm run regenerator` - transpile your app.js through regenerator for async/generator functions when targeting ES3/ES5
 
 #### Initialization
 
@@ -229,8 +230,6 @@ This approach gives you great scalability with increasing modules count as you r
 `npm run precommit` - pre commit git hook - runs linter
 
 `npm run prepush` - pre push git hook - runs linter and tests
-
-`npm run regenerator` - transpile your app.js through regenerator
 
 ---
 
