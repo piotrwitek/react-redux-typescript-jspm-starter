@@ -1,5 +1,5 @@
 const DARK_THEME = 'darkTheme';
-const selectedTheme = null;
+const selectedTheme = DARK_THEME;
 
 export default {
   get textColor() {
@@ -9,7 +9,7 @@ export default {
     }
   },
   borderColor: '#222',
-  backgroundColor: '#444',
+  backgroundColor: 'gold',
   shadowColor: '#000',
   shadowColorLight: '#888'
 };

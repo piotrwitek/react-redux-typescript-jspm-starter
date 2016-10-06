@@ -27,7 +27,7 @@ export function CssModulesContainer() {
       </ul>
       <br />
       <PageSection className={containerStyles.textCentered}>
-        <div className={containerStyles.effect__hideOnMobile}>
+        <div className={containerStyles.effect__hideOnTablet}>
           <div className={[containerStyles.darkBg, containerStyles.effect__elevate].join(' ')}>
             <p className={containerStyles.glowingText}>
               <br />
@@ -37,7 +37,7 @@ export function CssModulesContainer() {
             </p>
           </div>
         </div>
-        <div className={containerStyles.effect__showOnMobile}>
+        <div className={containerStyles.effect__showOnTablet}>
           <div className={[containerStyles.darkBg, containerStyles.effect__elevate].join(' ')}>
             <p className={containerStyles.glowingText}>
               SUPRISE!!!

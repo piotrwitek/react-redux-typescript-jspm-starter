@@ -13,9 +13,9 @@ interface ContainerStyles {
   /** elevate element using box-shadow */
   effect__elevate: string;
   /** hide element on mobile screen  */
-  effect__hideOnMobile: string;
+  effect__hideOnTablet: string;
   /** show element on mobile screen  */
-  effect__showOnMobile: string;
+  effect__showOnTablet: string;
 }
 
 export const containerStyles: ContainerStyles = csjs`
@@ -36,13 +36,13 @@ export const containerStyles: ContainerStyles = csjs`
 
   .effect__elevate {
     box-shadow: none;
-    transition: box-shadow 0.5s linear;
+    transition: box-shadow 0.6s ease-out;
   }
   .effect__elevate:hover {
     box-shadow: 0 6px 20px 0 ${colors.shadowColor};
   }
 
-  .effect__hideOnMobile {
+  .effect__hideOnTablet {
     margin: 0px 30px;
     opacity: 1;
     transition:
@@ -50,7 +50,7 @@ export const containerStyles: ContainerStyles = csjs`
       opacity 1s 0.5s;
   }
 
-  .effect__showOnMobile {
+  .effect__showOnTablet {
     margin: 0px 50px;
     opacity: 0;
     transition:
@@ -58,8 +58,8 @@ export const containerStyles: ContainerStyles = csjs`
       opacity 1s;
   }
 
-  @media (max-width: 450px) {
-    .effect__hideOnMobile {
+  @media (max-width: 740px) {
+    .effect__hideOnTablet {
       margin: 0px 50px;
       opacity: 0;
       transition:
@@ -68,7 +68,7 @@ export const containerStyles: ContainerStyles = csjs`
       box-shadow 0.5s linear;
     }
 
-    .effect__showOnMobile {
+    .effect__showOnTablet {
       margin: 0px 30px;
       opacity: 1;
       transition:
