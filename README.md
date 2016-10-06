@@ -36,13 +36,17 @@ Own concept to achieve locally scoped CSS styles using [csjs](https://github.com
 - Full CSS support with pseudo-classes & media queries, encapsulated in ES6 Modules that can be nicely imported by your UI components.  
 - Define interfaces with your CSS classes and you get className property type-checking, solid auto-completion and easy refactoring. You can also add doc comments and auto-generate docs of your styles library for your team and utilize IntelliSense features of your IDE.  
 __EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and it's [CSS Module Styles in TypeScript Format with Class-Names Interface](src/containers/css-modules-container/container-styles.tsx)
-(animated gif placeholder...)
+__Overview Video:__ https://youtu.be/67pPYqom2a0
 
 ### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (without Babel)
 Many TS boilerplates are using Babel transpilation step after the TypeScript compiler output to get support for "async & generator functions transformation" when targeting ES3/ES5. This is costly process and introduces additional build step into the build workflow.
 My solution promote using only [Facebook Regenerator Project](https://github.com/facebook/regenerator) (Babel internally doing the same!) which is executed only when running build for production. Use CLI command `npm run regenerator` after building for production.
-__NOTE: This is the same as Babel, because Babel is using "regenerator runtime" internally for async/generator functions transformations. So, why in the TS world we shouldn't be doing the same?__  (reference: https://babeljs.io/docs/usage/caveats/)
-__NOTE (06/10/2016): As TypeScript Team have dropped adding support for downlevel (ES3/ES5) generator transformation in the near future, I believe this is the most optimal solution to use at the moment__ (reference: https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415)
+
+__NOTE: This is the same as Babel, because Babel is using "regenerator runtime" internally for async/generator functions transformations. So, why in the TS world we shouldn't be doing the same?__  
+(reference: https://babeljs.io/docs/usage/caveats/)
+
+__NOTE (06/10/2016): As TypeScript Team have dropped adding support for downlevel (ES3/ES5) generator transformation in the near future, I believe this is the most optimal solution to use at the moment__  
+(reference: https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415)
 
 ## Features
 
@@ -179,6 +183,7 @@ __NOTE: Use index.prod.html for production, it have slightly different loading l
   - `npm run build:vendor` - build only vendor.js bundle _(run when project dependencies has changed)_
 2. open `http://localhost/dist/` - check prod build on local server
 3. `npm run regenerator` - if you want to add "async/generator functions" downlevel transformation - use when targeting ES3/ES5
+
 ---
 
 ## CLI Commands
