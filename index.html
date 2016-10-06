@@ -27,10 +27,22 @@
     </div>
   </div>
   <!-- body bottom scripts -->
+  <!-- below section could be auto-generated and overwritten during build for prod -->
+  <!-- loading-app:start -->
   <script src="jspm_packages/system.js"></script>
   <script src="jspm.config.js"></script>
   <script src="temp/vendor.dev.js"></script>
-  <script src="jspm.init.js"></script>
+  <script>
+    // hot-reload config
+    SystemJS.import('systemjs-hot-reloader').then(function(HotReloader) {
+      // if you're running server on custom port please remember to update below
+      new HotReloader.default('http://localhost:8888');
+    });
+    // load main module of your app with SystemJS
+    SystemJS.trace = true;
+    SystemJS.import('src/app');
+  </script>
+  <!-- loading-app:end -->
 </body>
 
 </html>

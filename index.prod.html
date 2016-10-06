@@ -27,11 +27,17 @@
     </div>
   </div>
   <!-- body bottom scripts -->
+  <!-- loading-app:start -->
   <script src="shim.min.js"></script>
   <script src="system.js"></script>
   <script src="jspm.config.js"></script>
-  <script src="vendor.js"></script>
-  <script src="jspm.init.js"></script>
+  <script src="vendor.prod.js"></script>
+  <script>
+    // load main module of your app with SystemJS
+    SystemJS.production = true;
+    SystemJS.import('app.js');
+  </script>
+  <!-- loading-app:end -->
 </body>
 
 </html>
