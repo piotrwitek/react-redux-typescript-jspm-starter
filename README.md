@@ -16,6 +16,7 @@ Table of Contents
 8. [Workflows Guide](#workflows-guide)  
 9. [CLI Commands](#cli-commands)  
 
+---
 
 ## Innovations
 
@@ -24,7 +25,7 @@ Super-fast development experience by loading TypeScript source files directly in
 Joined together with single-file hot-reload gives you almost instant feedback-loop as there is no costly project-wide transpilation or bundling step involved.
 
 ### SCALABLE-HOT-RELOAD
-Local HTTP dev server with hot-reload out-of-the-box - highly reliable leveraging SystemJS import feature and scalable for speed with increasing modules count using (systemjs-hot-reloader)[https://github.com/capaj/systemjs-hot-reloader]
+Local HTTP dev server with hot-reload out-of-the-box - highly reliable leveraging SystemJS import feature and scalable for speed with increasing modules count using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)
 It can load each src file separately eliminating extra bundling step. First it will delete old module from the SystemJS registry and then re-imports updated module with additional modules which have imported the updated module, ensuring to always have the latest changes.
 This approach gives you great scalability with increasing modules count as you reload only necessary modules.
 
@@ -48,6 +49,8 @@ __NOTE: This is the same as Babel, because Babel is using "regenerator runtime" 
 
 __NOTE (06/10/2016): As TypeScript Team have dropped adding support for downlevel (ES3/ES5) generator transformation in the near future, I believe this is the most optimal solution to use at the moment__  
 (reference: https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415)
+
+---
 
 ## Features
 
