@@ -20,7 +20,7 @@ Table of Contents
 ## Innovations
 
 ### RAPID-SPEED DEVELOPMENT WORKFLOW - TypeScript source file hot-reload and in-the-browser transpilation
-Super-fast development experience by loading TypeScript source files directly in the browser (using (plugin-typescript)[https://github.com/frankwallis/plugin-typescript]) while seperately type-checking them in the IDE or in the command-line in watch mode, without transpilation for intermediate JS files or bundling.
+Super-fast development experience by loading TypeScript source files directly in the browser (using [plugin-typescript](https://github.com/frankwallis/plugin-typescript)) while seperately type-checking them in the IDE or in the command-line in watch mode, without transpilation for intermediate JS files or bundling.
 Joined together with single-file hot-reload gives you almost instant feedback-loop as there is no costly project-wide transpilation or bundling step involved.
 
 ### SCALABLE-HOT-RELOAD
@@ -32,15 +32,15 @@ This approach gives you great scalability with increasing modules count as you r
 If you are coding in a NO-IDE environment (notepad/vim) or expecting to have a common way across a team to target a specific version of typescript compiler even while using different Editors/IDEs, you can utilize __CLI type-checking workflow__ using `tsc -p src --watch` command for fast incremental type-checking or `tsc -p src` command for project-wide type-check, there is no JS emit so it will not clutter your project or disrupt different build processes based on various IDE plugins or gulp/grunt based tasks.
 
 ### CSS-MODULES WITH TYPED CLASS-NAMES
-Own concept to achieve locally scoped CSS styles with statically typed CSS class-names using TypeScript.
+Own concept to achieve locally scoped CSS styles using [csjs](https://github.com/rtsao/csjs#faq) with statically typed CSS class-names using TypeScript.
 - Full CSS support with pseudo-classes & media queries, encapsulated in ES6 Modules that can be nicely imported by your UI components.  
 - Define interfaces with your CSS classes and you get className property type-checking, solid auto-completion and easy refactoring. You can also add doc comments and auto-generate docs of your styles library for your team and utilize IntelliSense features of your IDE.  
-EXAMPLE: (css-modules-container component)[src/containers/about-container/index.tsx] and it's (about-styles css-module)[src/containers/about-container/about-styles.tsx]
+__EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and it's [CSS Module Styles in TypeScript Format with Class-Names Interface](src/containers/css-modules-container/container-styles.tsx)
 (animated gif placeholder...)
 
 ### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (without Babel)
 Many TS boilerplates are using Babel transpilation step after the TypeScript compiler output to get support for "async & generator functions transformation" when targeting ES3/ES5. This is costly process and introduces additional build step into the build workflow.
-My solution promote using only (Facebook Regenerator Project)[https://github.com/facebook/regenerator] (Babel internally doing the same!) which is executed only when running build for production. Use CLI command `npm run regenerator` after building for production.
+My solution promote using only [Facebook Regenerator Project](https://github.com/facebook/regenerator) (Babel internally doing the same!) which is executed only when running build for production. Use CLI command `npm run regenerator` after building for production.
 __NOTE: This is the same as Babel, because Babel is using "regenerator runtime" internally for async/generator functions transformations. So, why in the TS world we shouldn't be doing the same?__  (reference: https://babeljs.io/docs/usage/caveats/)
 __NOTE (06/10/2016): As TypeScript Team have dropped adding support for downlevel (ES3/ES5) generator transformation in the near future, I believe this is the most optimal solution to use at the moment__ (reference: https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415)
 
@@ -54,7 +54,7 @@ __NOTE (06/10/2016): As TypeScript Team have dropped adding support for downleve
 - IMMUTABLE-STORE - using `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` in your containers and components)
 - BEM & ITCSS - using BEM with Inverted Triangle conventions to give meaning and context to CSS classes
 - EASY TESTING IN TYPESCRIPT - write your tests only in TypeScript - don't worry about transpilation, easily import and run your TS source files from a command line (use `npm test` CLI command).
-Test harness with (Tape)[https://github.com/substack/tape] with Promise support from (blue-tape)[https://github.com/spion/blue-tape]
+Test harness with [Tape](https://github.com/substack/tape) with Promise support from [blue-tape](https://github.com/spion/blue-tape)
 
 #### React Best Practices & Optimizations
 - no mixins -> use ES6 style PureRenderMixin with PureComponent

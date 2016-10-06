@@ -9,13 +9,21 @@ export function CssModulesContainer() {
     <article>
       <PageHeader>CSS Modules</PageHeader>
       <p>
-        Own concept to achieve locally scoped CSS styles with statically typed CSS class names using TypeScript.
+        Own concept to achieve locally scoped CSS styles
+        using <a href="https://github.com/rtsao/csjs#faq">(csjs)</a> with
+        statically typed CSS class-names using TypeScript.
       </p>
       <ul>
         <li>
-          Full CSS support with pseudo-classes & media queries, encapsulated in ES6 Modules that can be nicely imported by your UI components.
+          Full CSS support with pseudo-classes & media queries, encapsulated in
+          ES6 Modules that can be nicely imported by your UI components.
         </li>
-        <li>Define interfaces with your CSS classes and you get className property type-checking, solid auto-completion and easy refactoring. You can also add doc comments and auto-generate docs of your styles library for your team and utilize IntelliSense features of your IDE.</li>
+        <li>
+          Define interfaces with your CSS classes and you get className property
+          type-checking, solid auto-completion and easy refactoring.
+          You can also add doc comments and auto-generate docs of your styles
+          library for your team and utilize IntelliSense features of your IDE.
+        </li>
       </ul>
       <br />
       <PageSection className={containerStyles.textCentered}>
@@ -36,7 +44,10 @@ export function CssModulesContainer() {
       </PageSection>
       <br />
       <p className="u-centered">
-        Source code: <a href="https://github.com/piotrwitek/react-redux-typescript-starter-kit/tree/master/src/containers/css-modules-container">Link to GitHub</a>
+        Source code: <a
+          href="https://github.com/piotrwitek/react-redux-typescript-starter-kit/tree/master/src/containers/css-modules-container">
+          Link to GitHub
+        </a>
       </p>
       <br />
     </article>
