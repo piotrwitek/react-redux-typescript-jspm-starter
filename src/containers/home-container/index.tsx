@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router';
 import { PageSection } from '../../components/page-section';
 import { PageHero } from '../../components/page-hero';
 
@@ -11,14 +12,18 @@ export function HomeContainer() {
           Below you can find a few examples created using concepts of this starter-kit:
         </p>
         <ul>
-          <li><a href="/#/currency-converter"> Currency Converter App</a> - (work in progress)</li>
-          <li><a href="/#/about"> CSS Modules </a></li>
+          <li>
+            <Link to="/currency-converter">Currency Converter App</Link> - (work in progress)
+          </li>
+          <li>
+            <Link to="/css-modules">CSS Modules</Link>
+          </li>
         </ul>
+        <br />
         <div className="c-alerts__alert c-alerts__alert--primary">
           Note: Open Redux DevTools Inspector
         </div>
       </PageSection>
-      <br />
       <br />
     </article>
   );

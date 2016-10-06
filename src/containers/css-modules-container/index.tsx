@@ -30,7 +30,10 @@ export function CssModulesContainer() {
         <div className={containerStyles.effect__hideOnMobile}>
           <div className={[containerStyles.darkBg, containerStyles.effect__elevate].join(' ')}>
             <p className={containerStyles.glowingText}>
-              Shrink your window
+              <br />
+              Hover me!
+              <br />
+              <small className="c-text--quiet">(narrow your window)</small>
             </p>
           </div>
         </div>

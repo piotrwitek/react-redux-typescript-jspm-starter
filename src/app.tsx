@@ -19,8 +19,8 @@ function App() {
       <Router history={history}>
         <Route component={MainLayout}>
           <Route path="/" component={HomeContainer}/>
-          <Route path="/about" component={CssModulesContainer}/>
           <Route path="/currency-converter" component={CurrencyConverterContainer}/>
+          <Route path="/css-modules" component={CssModulesContainer}/>
         </Route>
       </Router>
     </Provider>
