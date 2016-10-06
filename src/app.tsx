@@ -7,7 +7,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 // app imports
 import { MainLayout } from './layouts/main-layout';
 import { HomeContainer } from './containers/home-container/index';
-import { AboutContainer } from './containers/about-container/index';
+import { CssModulesContainer } from './containers/css-modules-container/index';
 import CurrencyConverterContainer from './containers/currency-converter-container/index';
 
 import { store } from './store';
@@ -19,7 +19,7 @@ function App() {
       <Router history={history}>
         <Route component={MainLayout}>
           <Route path="/" component={HomeContainer}/>
-          <Route path="/about" component={AboutContainer}/>
+          <Route path="/about" component={CssModulesContainer}/>
           <Route path="/currency-converter" component={CurrencyConverterContainer}/>
         </Route>
       </Router>

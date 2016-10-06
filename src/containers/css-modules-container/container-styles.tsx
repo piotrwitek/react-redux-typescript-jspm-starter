@@ -2,7 +2,7 @@ import csjs from 'csjs';
 import insertCss from 'insert-css';
 import colors from '../../themes/colors';
 
-interface AboutStyles {
+interface ContainerStyles {
   /** main content container */
   container: string;
   textCentered: string;
@@ -18,7 +18,7 @@ interface AboutStyles {
   effect__showOnMobile: string;
 }
 
-export const aboutStyles: AboutStyles = csjs`
+export const containerStyles: ContainerStyles = csjs`
 
   .textCentered {
     text-align: center;
@@ -80,4 +80,4 @@ export const aboutStyles: AboutStyles = csjs`
 
 `;
 
-insertCss(csjs.getCss(aboutStyles));
+insertCss(csjs.getCss(containerStyles));

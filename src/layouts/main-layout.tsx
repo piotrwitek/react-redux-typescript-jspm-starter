@@ -15,7 +15,7 @@ export class MainLayout extends React.Component<{}, {}> {
           <LayoutTopNav>
             <LayoutTopNavLink href="/" isPrimary> Home </LayoutTopNavLink>
             <LayoutTopNavLink href="/currency-converter"> Currency Converter </LayoutTopNavLink>
-            <LayoutTopNavLink href="/about" isRight> About </LayoutTopNavLink>
+            <LayoutTopNavLink href="/about"> CSS Modules </LayoutTopNavLink>
           </LayoutTopNav>
         </LayoutHeader>
 
