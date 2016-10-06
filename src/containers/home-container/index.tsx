@@ -16,7 +16,7 @@ export function HomeContainer() {
             <Link to="/currency-converter">Currency Converter App</Link> - (work in progress)
           </li>
           <li>
-            <Link to="/css-modules">CSS Modules</Link>
+            <Link to="/css-modules">CSS Modules</Link> - <a href="https://youtu.be/67pPYqom2a0">Overview Video on Youtube</a>
           </li>
         </ul>
         <br />
