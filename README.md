@@ -35,7 +35,8 @@ If you are coding in a NO-IDE environment (notepad/vim) or expecting to have a c
 Own concept to achieve locally scoped CSS styles using [csjs](https://github.com/rtsao/csjs#faq) with statically typed CSS class-names using TypeScript.
 - Full CSS support with pseudo-classes & media queries, encapsulated in ES6 Modules that can be nicely imported by your UI components.  
 - Define interfaces with your CSS classes and you get className property type-checking, solid auto-completion and easy refactoring. You can also add doc comments and auto-generate docs of your styles library for your team and utilize IntelliSense features of your IDE.  
-__EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and it's [CSS Module Styles in TypeScript Format with Class-Names Interface](src/containers/css-modules-container/container-styles.tsx)
+
+__EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and it's [CSS Module Styles in TypeScript Format with Class-Names Interface](src/containers/css-modules-container/container-styles.tsx)  
 __Overview Video:__ https://youtu.be/67pPYqom2a0
 
 ### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (without Babel)
