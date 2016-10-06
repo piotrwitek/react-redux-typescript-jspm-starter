@@ -33,7 +33,7 @@ export function CssModulesContainer() {
               <br />
               Hover me!
               <br />
-              <small className="c-text--quiet">(narrow your window)</small>
+              <small><i>(narrow your window)</i></small>
             </p>
           </div>
         </div>

@@ -8,9 +8,8 @@ export default {
       default: return '#fff';
     }
   },
-  borderColor: '#111111',
-  backgroundColor: '#474747',
-  backgroundColorLight: '#a7a7a7',
+  borderColor: '#222',
+  backgroundColor: '#444',
   shadowColor: '#000',
   shadowColorLight: '#888'
 };
