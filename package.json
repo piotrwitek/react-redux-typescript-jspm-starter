@@ -68,9 +68,9 @@
       "react-dom": "npm:react-dom@^15.3.2",
       "react-redux": "npm:react-redux@^4.4.5",
       "react-router": "npm:react-router@^2.8.1",
-      "react-router-redux": "npm:react-router-redux@^4.0.5",
+      "react-router-redux": "npm:react-router-redux@^4.0.6",
       "redux-actions": "npm:redux-actions@^0.11.0",
-      "seamless-immutable": "npm:seamless-immutable@^6.1.1",
+      "seamless-immutable": "npm:seamless-immutable@^6.1.3",
       "whatwg-fetch": "npm:whatwg-fetch@^1.0.0"
     },
     "devDependencies": {
