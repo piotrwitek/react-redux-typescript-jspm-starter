@@ -65,7 +65,7 @@
       "classnames": "npm:classnames@^2.2.5",
       "csjs": "npm:csjs@^1.0.6",
       "insert-css": "npm:insert-css@^1.0.0",
-      "react-dom": "npm:react-dom@^15.3.1",
+      "react-dom": "npm:react-dom@^15.3.2",
       "react-redux": "npm:react-redux@^4.4.5",
       "react-router": "npm:react-router@^2.8.1",
       "react-router-redux": "npm:react-router-redux@^4.0.5",
@@ -75,8 +75,8 @@
     },
     "devDependencies": {
       "blue-tape": "npm:blue-tape@^0.2.0",
-      "css": "github:systemjs/plugin-css@^0.1.27",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.1.2",
+      "css": "github:systemjs/plugin-css@^0.1.30",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.2.7",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
     },
     "peerDependencies": {
@@ -93,7 +93,7 @@
       "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
       "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
-      "react": "npm:react@^15.3.1",
+      "react": "npm:react@^15.3.2",
       "redux": "npm:redux@^3.6.0",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
@@ -103,6 +103,9 @@
       "zlib": "github:jspm/nodelibs-zlib@^0.2.0-alpha"
     },
     "overrides": {
+      "github:socketio/socket.io-client@1.5.0": {
+        "main": "socket.io.js"
+      },
       "npm:browserify-zlib@0.1.4": {
         "dependencies": {
           "readable-stream": "^2.0.2",
@@ -131,7 +134,7 @@
           "test.js"
         ]
       },
-      "npm:lodash@4.15.0": {
+      "npm:lodash@4.16.4": {
         "map": {
           "buffer": "@empty",
           "process": "@empty"
@@ -141,7 +144,7 @@
         "jspmNodeConversion": false,
         "format": "cjs"
       },
-      "npm:typescript@2.0.2": {
+      "npm:typescript@2.0.3": {
         "browser": {},
         "map": {
           "buffer": "@empty",
