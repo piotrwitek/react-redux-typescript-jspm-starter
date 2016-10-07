@@ -35,7 +35,8 @@
     "_jspm-bundle-vendor-prod": "jspm bundle configs/vendor.config.prod.js dist/vendor.prod.js -ms",
     "post_jspm-bundle-vendor-prod": "cp jspm.config.js jspm_packages/system.js dist/",
     "_jspm-build-app": "jspm build src/app - configs/vendor.config.prod.js dist/app.js",
-    "regenerator": "cd temp && cp ../dist/app.js . && regenerator -r app.js > app.regenerator.js && mv app.regenerator.js ../dist/app.js "
+    "regenerator": "cd temp && cp ../dist/app.js . && regenerator -r app.js > app.regenerator.js && mv app.regenerator.js ../dist/app.js",
+    "build:regenerator": "npm run build:app && npm run regenerator"
   },
   "devDependencies": {
     "@types/blue-tape": "^0.1.30",
