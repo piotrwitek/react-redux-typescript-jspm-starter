@@ -38,6 +38,7 @@ Own concept to achieve locally scoped CSS styles using [csjs](https://github.com
 - Define interfaces with your CSS classes and you get className property type-checking, solid auto-completion and easy refactoring. You can also add doc comments and auto-generate docs of your styles library for your team and utilize IntelliSense features of your IDE.  
 
 __EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and it's [CSS Module Styles in TypeScript Format with Class-Names Interface](src/containers/css-modules-container/container-styles.tsx)  
+__DEMO:__ http://piotrwitek.github.io/react-redux-typescript-starter-kit/#/css-modules  
 __Overview Video:__ https://youtu.be/67pPYqom2a0
 
 ### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (without Babel)
