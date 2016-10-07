@@ -47,11 +47,9 @@ Beware of TypeScript boilerplates using Babel transformation step after the Type
 - Generators - TypeScript Team have dropped adding support for generator transformation to (ES3/ES5) so consider alternative solution covered below (https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415)  
 
 __Alternative solution to resolve Generator transformation to ES3/ES5:__
-My solution promote using [Facebook Regenerator Project](https://github.com/facebook/regenerator) (as Babel internally doing the same!) which is executed only for app.js bundle after building for production.
-Use seperate CLI command `npm run regenerator` to transform app.js generated eariler with `npm run build:app` command, or run an alias command to run it automatically with each build `npm run build:regenerator`.
+My solution prefer using only [Facebook Regenerator Project](https://github.com/facebook/regenerator) instead of adding Babel as dependency _(__NOTE:__ Babel internally is using the same approach, running "regenerator runtime" internally for async and generator functions transformations - https://babeljs.io/docs/usage/caveats/)_
 
-__NOTE: This is the same as Babel, because Babel is using "regenerator runtime" internally for async/generator functions transformations. So, why TS shouldn't be doing the same?__  
-(reference: https://babeljs.io/docs/usage/caveats/)
+When building for production use seperate CLI command `npm run regenerator` just after a build command to apply transform to app.js bundle, or run an alias command instead to run it automatically with each build `npm run build:regenerator`.
 
 ---
 
