@@ -42,14 +42,16 @@ __DEMO:__ http://piotrwitek.github.io/react-redux-typescript-starter-kit/#/css-m
 __Overview Video:__ https://youtu.be/67pPYqom2a0
 
 ### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (without Babel)
-Many TS boilerplates are using Babel transpilation step after the TypeScript compiler output to get support for "async & generator functions transformation" when targeting ES3/ES5. This is costly process and introduces additional build step into the build workflow.
-My solution promote using only [Facebook Regenerator Project](https://github.com/facebook/regenerator) (Babel internally doing the same!) which is executed only when running build for production. Use CLI command `npm run regenerator` after building for production.
+Beware of TypeScript boilerplates using Babel transformation step after the TypeScript compiler to transform "async & generator functions" when targeting ES3/ES5. This is costly process and introduces additional build step into the build workflow.
+- Async/Await - starting from version 2.1 TypeScript provide native support for transformation to ES3/ES5, so in this case you are fine using only TS (https://github.com/Microsoft/TypeScript/pull/9175)  
+- Generators - TypeScript Team have dropped adding support for generator transformation to (ES3/ES5) so consider alternative solution covered below (https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415)  
 
-__NOTE: This is the same as Babel, because Babel is using "regenerator runtime" internally for async/generator functions transformations. So, why in the TS world we shouldn't be doing the same?__  
+__Alternative solution to resolve Generator transformation to ES3/ES5:__
+My solution promote using [Facebook Regenerator Project](https://github.com/facebook/regenerator) (as Babel internally doing the same!) which is executed only for app.js bundle after building for production.
+Use seperate CLI command `npm run regenerator` to transform app.js generated eariler with `npm run build:app` command, or run an alias command to run it automatically with each build `npm run build:regenerator`.
+
+__NOTE: This is the same as Babel, because Babel is using "regenerator runtime" internally for async/generator functions transformations. So, why TS shouldn't be doing the same?__  
 (reference: https://babeljs.io/docs/usage/caveats/)
-
-__NOTE (06/10/2016): As TypeScript Team have dropped adding support for downlevel (ES3/ES5) generator transformation in the near future, I believe this is the most optimal solution to use at the moment__  
-(reference: https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415)
 
 ---
 
@@ -217,7 +219,9 @@ __NOTE: Use index.prod.html for production, it have slightly different loading l
 
 `npm run build:debug` - build app source code into app.js (dev bundle) - non-minified with source-maps
 
-`npm run regenerator` - transpile your app.js through regenerator for async/generator functions when targeting ES3/ES5
+`npm run regenerator` - transform "generator functions" in app.js (prod bundle) to ES3/ES5 using regenerator runtime (not supported natively by TypeScript)
+
+`npm run build:regenerator` - alias to run both `npm run build:app` and `npm run regenerator`.
 
 #### Initialization
 
