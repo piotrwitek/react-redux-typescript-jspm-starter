@@ -9,7 +9,7 @@
   "bugs": "https://github.com/piotrwitek/react-redux-typescript-starter-kit/issues",
   "license": "MIT",
   "scripts": {
-    "postinstall": "jspm install && npm run bundle-dev",
+    "postinstall": "jspm install && npm run build:dev",
     "preinit:dist": "rimraf dist/**/* && mkdir dist || true",
     "init:dist": "cp assets/* dist/ && cp index.prod.html dist/index.html",
     "preinit:deploy": "npm run init:dist",
