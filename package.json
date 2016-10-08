@@ -1,6 +1,6 @@
 {
   "name": "react-redux-typescript-starter-kit",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "Futuristic, production-ready development environment for building Component-Driven, Flux Single Page Applications with React, Redux and TypeScript - powered by JSPM (SystemJS with Hot-Reload & Rollup).",
   "main": "server.js",
   "author": "Piotr Witek <piotrek.witek@gmail.com> (http://piotrwitek.github.io/)",
