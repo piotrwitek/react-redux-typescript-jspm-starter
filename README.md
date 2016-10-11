@@ -22,8 +22,8 @@ Table of Contents
 
 ### RAPID-SPEED DEVELOPMENT WORKFLOW - TypeScript source file hot-reload and in-the-browser transpilation
 Super-fast development experience by loading TypeScript source files directly in the browser (using [plugin-typescript](https://github.com/frankwallis/plugin-typescript)) while seperately type-checking them in the IDE or in the command-line in watch mode, without transpilation for intermediate JS files or bundling.
-Joined together with single-file hot-reload gives you almost instant feedback-loop as there is no costly project-wide transpilation or bundling step involved.
-Great explanation from @jonaskello of how this works compared to Webpack workflow: https://github.com/Microsoft/TypeScript/issues/1564#issuecomment-252903932
+Joined together with single-file hot-reload gives you almost instant feedback-loop as there is no costly project-wide transpilation or bundling step involved.  
+Great explanation from [@jonaskello](https://github.com/jonaskello) of how this works compared to Webpack workflow: https://github.com/Microsoft/TypeScript/issues/1564#issuecomment-252903932
 
 ### SCALABLE-HOT-RELOAD
 Local HTTP dev server with hot-reload out-of-the-box - highly reliable leveraging SystemJS import feature and scalable for speed with increasing modules count using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)
