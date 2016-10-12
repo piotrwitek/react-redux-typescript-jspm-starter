@@ -23,6 +23,8 @@ export class CurrencyConverterContainer extends React.Component<IProps, IState> 
 
     return (
       <section className="u-letter-box--super">
+        <p className="u-centered">(work in progress)</p>
+        <br />
         <CurrencyConverter currencies={currencies}
           baseCurrency={baseCurrency} targetCurrency={targetCurrency}
           baseValue={baseValue} targetValue={targetValue}

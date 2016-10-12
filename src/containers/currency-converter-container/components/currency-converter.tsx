@@ -5,15 +5,15 @@ import { CurrencySelect } from './currency-select';
 import { CurrencyInput } from './currency-input';
 
 interface LocalProps {
-  currencies: Object;
+  currencies: string[];
   baseCurrency: string;
   targetCurrency: string;
-  baseValue: string;
-  targetValue: string;
-  onBaseCurrencyChange: (newCurrency: string) => void;
-  onTargetCurrencyChange: (newCurrency: string) => void;
-  onBaseValueChange: (newCurrency: string) => void;
-  onTargetValueChange: (newCurrency: string) => void;
+  baseValue: number;
+  targetValue: number;
+  onBaseCurrencyChange: (newCurrency: string) => FluxStandardAction<string>;
+  onTargetCurrencyChange: (newCurrency: string) => FluxStandardAction<string>;
+  onBaseValueChange: (newCurrency: string) => FluxStandardAction<string>;
+  onTargetValueChange: (newCurrency: string) => FluxStandardAction<string>;
 }
 
 interface LocalState {
@@ -38,7 +38,7 @@ export class CurrencyConverter extends React.Component<LocalProps, LocalState> {
         <div className="o-grid__cell">
           <CurrencySelect
             currencies={currencies}
-            selectedCurrency={baseCurrency}
+            value={baseCurrency}
             onChange={onBaseCurrencyChange}
             />
           <CurrencyInput
@@ -49,7 +49,7 @@ export class CurrencyConverter extends React.Component<LocalProps, LocalState> {
         <div className="o-grid__cell">
           <CurrencySelect
             currencies={currencies}
-            selectedCurrency={targetCurrency}
+            value={targetCurrency}
             onChange={onTargetCurrencyChange}
             />
           <CurrencyInput

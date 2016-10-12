@@ -1,6 +1,6 @@
 {
   "name": "react-redux-typescript-starter-kit",
-  "version": "0.9.1",
+  "version": "0.11.1",
   "description": "Futuristic, production-ready development environment for building Component-Driven, Flux Single Page Applications with React, Redux and TypeScript - powered by JSPM (SystemJS with Hot-Reload & Rollup).",
   "main": "server.js",
   "author": "Piotr Witek <piotrek.witek@gmail.com> (http://piotrwitek.github.io/)",
@@ -9,9 +9,9 @@
   "bugs": "https://github.com/piotrwitek/react-redux-typescript-starter-kit/issues",
   "license": "MIT",
   "scripts": {
-    "postinstall": "jspm install && npm run bundle-dev",
-    "preinit:dist": "rimraf dist/",
-    "init:dist": "mkdir dist && cp assets/* dist/",
+    "postinstall": "jspm install && npm run build:dev",
+    "preinit:dist": "rimraf dist/**/* && mkdir dist || true",
+    "init:dist": "cp assets/* dist/ && cp index.prod.html dist/index.html",
     "preinit:deploy": "npm run init:dist",
     "init:deploy": "git clone https://github.com/piotrwitek/react-redux-typescript-starter-kit --branch gh-pages gh-pages-clone",
     "postinit:deploy": "mv gh-pages-clone/.git dist/.git && rimraf gh-pages-clone/",
@@ -19,60 +19,65 @@
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm test",
     "preversion": "npm run lint && npm test",
+    "build:dev": "npm run _jspm-bundle-vendor-dev",
     "unbundle": "rimraf temp/vendor.dev.js",
-    "bundle-dev": "npm run _jspm-bundle-vendor-dev",
     "build": "npm run build:app && npm run build:vendor",
     "build:app": "npm run _jspm-build-app -- --skip-source-maps --minify",
-    "build:vendor": "npm run _jspm-bundle-vendor",
+    "build:vendor": "npm run _jspm-bundle-vendor-prod",
     "build:debug": "npm run _jspm-build-app",
     "bad": "npm run build:app && npm run deploy",
     "bvd": "npm run build:vendor && npm run deploy",
     "lint": "tslint ./src/**/*.ts[x]",
     "test": "jspm run src/test-runner | faucet",
-    "_jspm-bundle-vendor-dev": "jspm bundle bundle-config.vendor.dev.js temp/vendor.dev.js -d",
-    "_jspm-bundle-vendor": "jspm bundle bundle-config.vendor.js dist/vendor.js -ms",
-    "post_jspm-bundle-vendor": "cp jspm.config.js jspm_packages/system.js dist/",
-    "_jspm-build-app": "jspm build src/app - bundle-config.vendor.js dist/app.js",
-    "regenerator": "cd temp && cp ../dist/app.js . && regenerator -r app.js > app.regenerator.js && mv app.regenerator.js ../dist/app.js "
+    "tsc": "tsc -p src",
+    "tsc:watch": "tsc -p src -w",
+    "_jspm-bundle-vendor-dev": "jspm bundle configs/vendor.config.dev.js temp/vendor.dev.js -d",
+    "_jspm-bundle-vendor-prod": "jspm bundle configs/vendor.config.prod.js dist/vendor.prod.js -ms",
+    "post_jspm-bundle-vendor-prod": "cp jspm.config.js jspm_packages/system.js dist/",
+    "_jspm-build-app": "jspm build src/app - configs/vendor.config.prod.js dist/app.js",
+    "regenerator": "cd temp && cp ../dist/app.js . && regenerator -r app.js > app.regenerator.js && mv app.regenerator.js ../dist/app.js",
+    "build:regenerator": "npm run build:app && npm run regenerator"
   },
   "devDependencies": {
-    "@types/blue-tape": "^0.1.29",
-    "@types/classnames": "^0.0.28",
-    "@types/react": "^0.14.33",
-    "@types/react-dom": "^0.14.16",
-    "@types/react-redux": "^4.4.31",
-    "@types/react-router": "^2.0.33",
-    "@types/react-router-redux": "^4.0.32",
-    "@types/redux": "^3.5.28",
-    "@types/redux-actions": "^0.8.29",
-    "@types/tape": "^4.2.27",
-    "@types/whatwg-fetch": "^0.0.30",
+    "@types/blue-tape": "^0.1.30",
+    "@types/classnames": "^0.0.31",
+    "@types/react": "^0.14.39",
+    "@types/react-dom": "^0.14.11",
+    "@types/react-redux": "^4.4.32",
+    "@types/react-router": "^2.0.37",
+    "@types/react-router-redux": "^4.0.34",
+    "@types/redux": "^3.6.31",
+    "@types/redux-actions": "^0.8.30",
+    "@types/tape": "^4.2.28",
+    "@types/whatwg-fetch": "^0.0.32",
     "faucet": "^0.0.1",
-    "husky": "^0.11.6",
-    "jspm": "^0.17.0-beta.28",
+    "husky": "^0.11.8",
+    "jspm": "^0.17.0-beta.29",
     "jspm-hmr": "^0.4.2",
     "regenerator": "^0.8.46",
     "rimraf": "^2.5.4",
-    "tslint": "^3.15.0",
-    "typescript": "^2.0.2"
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.3"
   },
   "jspm": {
     "name": "app",
     "main": "app.tsx",
     "dependencies": {
       "classnames": "npm:classnames@^2.2.5",
-      "react-dom": "npm:react-dom@^15.3.1",
+      "csjs": "npm:csjs@^1.0.6",
+      "insert-css": "npm:insert-css@^1.0.0",
+      "react-dom": "npm:react-dom@^15.3.2",
       "react-redux": "npm:react-redux@^4.4.5",
-      "react-router": "npm:react-router@^2.7.0",
-      "react-router-redux": "npm:react-router-redux@^4.0.5",
+      "react-router": "npm:react-router@^2.8.1",
+      "react-router-redux": "npm:react-router-redux@^4.0.6",
       "redux-actions": "npm:redux-actions@^0.11.0",
-      "seamless-immutable": "npm:seamless-immutable@^6.1.1",
+      "seamless-immutable": "npm:seamless-immutable@^6.1.3",
       "whatwg-fetch": "npm:whatwg-fetch@^1.0.0"
     },
     "devDependencies": {
       "blue-tape": "npm:blue-tape@^0.2.0",
-      "css": "github:systemjs/plugin-css@^0.1.27",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.0.19",
+      "css": "github:systemjs/plugin-css@^0.1.30",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.2.7",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
     },
     "peerDependencies": {
@@ -89,8 +94,8 @@
       "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
       "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
-      "react": "npm:react@^15.3.1",
-      "redux": "npm:redux@^3.5.2",
+      "react": "npm:react@^15.3.2",
+      "redux": "npm:redux@^3.6.0",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
       "url": "github:jspm/nodelibs-url@^0.2.0-alpha",
@@ -99,6 +104,9 @@
       "zlib": "github:jspm/nodelibs-zlib@^0.2.0-alpha"
     },
     "overrides": {
+      "github:socketio/socket.io-client@1.5.0": {
+        "main": "socket.io.js"
+      },
       "npm:browserify-zlib@0.1.4": {
         "dependencies": {
           "readable-stream": "^2.0.2",
@@ -122,12 +130,12 @@
           "util": "@node/util"
         }
       },
-      "npm:inherits@2.0.1": {
+      "npm:inherits@2.0.3": {
         "ignore": [
           "test.js"
         ]
       },
-      "npm:lodash@4.15.0": {
+      "npm:lodash@4.16.4": {
         "map": {
           "buffer": "@empty",
           "process": "@empty"
@@ -137,7 +145,7 @@
         "jspmNodeConversion": false,
         "format": "cjs"
       },
-      "npm:typescript@2.0.2": {
+      "npm:typescript@2.0.3": {
         "browser": {},
         "map": {
           "buffer": "@empty",

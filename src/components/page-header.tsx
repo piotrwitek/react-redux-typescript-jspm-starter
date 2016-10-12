@@ -6,7 +6,7 @@ import classNames from 'classnames';
 export function PageHeader({className = '', children = undefined}) {
 
   const parentClass = classNames(
-    className,
+    className.toString(),
     'c-heading c-heading--medium',
     'u-centered'
   );
