@@ -10,8 +10,8 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "jspm install && npm run build:dev",
-    "preinit:dist": "rimraf dist/**/* && mkdir dist || true",
-    "init:dist": "cp assets/* dist/ && cp index.prod.html dist/index.html",
+    "preinit:dist": "rimraf dist",
+    "init:dist": "ncp assets dist && ncp index.prod.html dist/index.html",
     "preinit:deploy": "npm run init:dist",
     "init:deploy": "git clone https://github.com/piotrwitek/react-redux-typescript-starter-kit --branch gh-pages gh-pages-clone",
     "postinit:deploy": "mv gh-pages-clone/.git dist/.git && rimraf gh-pages-clone/",
@@ -33,9 +33,9 @@
     "tsc:watch": "tsc -p src -w",
     "_jspm-bundle-vendor-dev": "jspm bundle configs/vendor.config.dev.js temp/vendor.dev.js -d",
     "_jspm-bundle-vendor-prod": "jspm bundle configs/vendor.config.prod.js dist/vendor.prod.js -ms",
-    "post_jspm-bundle-vendor-prod": "cp jspm.config.js jspm_packages/system.js dist/",
+    "post_jspm-bundle-vendor-prod": "ncp jspm.config.js dist/jspm.config.js && ncp jspm_packages/system.js dist/system.js",
     "_jspm-build-app": "jspm build src/app - configs/vendor.config.prod.js dist/app.js",
-    "regenerator": "cd temp && cp ../dist/app.js . && regenerator -r app.js > app.regenerator.js && mv app.regenerator.js ../dist/app.js",
+    "regenerator": "ncp dist/app.js temp/app.js && regenerator -r app.js > app.regenerator.js && mv app.regenerator.js ../dist/app.js",
     "build:regenerator": "npm run build:app && npm run regenerator"
   },
   "devDependencies": {
@@ -54,6 +54,7 @@
     "husky": "^0.11.8",
     "jspm": "^0.17.0-beta.29",
     "jspm-hmr": "^0.4.2",
+    "npc": "0.0.1",
     "regenerator": "^0.8.46",
     "rimraf": "^2.5.4",
     "tslint": "^3.15.1",
