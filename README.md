@@ -9,7 +9,6 @@ Table of Contents
 1. [Innovations](#innovations)  
 2. [Features](#features)  
 3. [Roadmap](#roadmap)  
-4. [JSPM integration](#jspm--systemjs--rollup)  
 5. [Pros & Cons](#pros--cons)  
 6. [Project Structure](#project-structure)  
 7. [Installation](#installation)  
@@ -20,18 +19,36 @@ Table of Contents
 
 ## Innovations
 
-### RAPID-SPEED DEVELOPMENT WORKFLOW - TypeScript source file hot-reload and in-the-browser transpilation
-Super-fast development experience by loading TypeScript source files directly in the browser (using [plugin-typescript](https://github.com/frankwallis/plugin-typescript)) while seperately type-checking them in the IDE or in the command-line in watch mode, without transpilation for intermediate JS files or bundling.
-Joined together with single-file hot-reload gives you almost instant feedback-loop as there is no costly project-wide transpilation or bundling step involved.  
-Great explanation from [@jonaskello](https://github.com/jonaskello) of how this works compared to Webpack workflow: https://github.com/Microsoft/TypeScript/issues/1564#issuecomment-252903932
+### RAPID-SPEED DEVELOPMENT WORKFLOW - ES modules loaded in browser / no bundling!
+It is loading original TypeScript source files (no bundling / no type checking) directly in the browser (using [plugin-typescript](https://github.com/frankwallis/plugin-typescript))
+No bundling allows instant hot-reload that's concerned with only the changed files.
 
-### SCALABLE-HOT-RELOAD
-Local HTTP dev server with hot-reload out-of-the-box - highly reliable leveraging SystemJS import feature and scalable for speed with increasing modules count using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)
-It can load each src file separately eliminating extra bundling step. First it will delete old module from the SystemJS registry and then re-imports updated module with additional modules which have imported the updated module, ensuring to always have the latest changes.
-This approach gives you great scalability with increasing modules count as you reload only necessary modules.
+__Comparing with Webpack + TypeScript Workflow__ from real project perspective by [@jonaskello](https://github.com/jonaskello)  https://github.com/Microsoft/TypeScript/issues/1564#issuecomment-252903932
+
+
+### SEPERATING TYPE-CHECKING CONCERN FOR DEVELOPMENT
+It is best to run TSC type-checking on seperate process with seperate tsconfig for development (if targeting ES6+ e.g. developing in chrome - almost no transpilation just cleaning the TS annotations).
+For type checking do the following:
+- in CLI use TSC compiler process running in watch mode: [instruction here](#no-ide-no-problem)  
+- in Editor/IDE use internal TypeScript Language Service (Webstorm, VS Code, Atom, Sublime Text, alm.tools and more...)
+_This provide an unique way to quickly deliver changes in source files without typechecking to the browser._
+
+__NOTE:__ There are seperate __tsconfig__ for development and for production build:
+- tsconfig for development: https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/src/tsconfig.json
+- tsconfig for production build: https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129
+
+
+### SCALABLE-HOT-RELOAD WITH DEV-SERVER
+Local HTTP dev server with hot-reload out-of-the-box - using SystemJS it can load each module separately eliminating slow and not scalable bundling step while hot-reloading (using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)).
+
+It works by removing old module from the SystemJS module registry and then re-importing updated module and re-evaluating only concerned modules that was using the changed module, this process ensure to always resolve to the latest changes.
+This approach scale really well with increasing modules count as you reload only what has changed.
+__This is a solution for problems with scalability in big projects using bundling development workflows like Webpack.__
+
 
 ### NO-IDE-NO-PROBLEM
 If you are coding in a NO-IDE environment (notepad/vim) or expecting to have a common way across a team to target a specific version of typescript compiler even while using different Editors/IDEs, you can utilize __CLI type-checking workflow__ using `tsc -p src --watch` command for fast incremental type-checking or `tsc -p src` command for project-wide type-check, there is no JS emit so it will not clutter your project or disrupt different build processes based on various IDE plugins or gulp/grunt based tasks.
+
 
 ### CSS-MODULES WITH TYPED CLASS-NAMES
 Own concept to achieve locally scoped CSS styles using [csjs](https://github.com/rtsao/csjs#faq) with statically typed CSS class-names using TypeScript.
@@ -42,6 +59,7 @@ __EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx
 __DEMO:__ http://piotrwitek.github.io/react-redux-typescript-starter-kit/#/css-modules  
 __Overview Video:__ https://youtu.be/67pPYqom2a0
 
+
 ### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (without Babel)
 Beware of TypeScript boilerplates using Babel transformation step after the TypeScript compiler to transform "async & generator functions" when targeting ES3/ES5. This is costly process and introduces additional build step into the build workflow.
 - Async/Await - starting from version 2.1 TypeScript provide native support for transformation to ES3/ES5, so in this case you are fine using only TS (https://github.com/Microsoft/TypeScript/pull/9175)  
@@ -51,6 +69,14 @@ __Alternative solution to resolve Generator transformation to ES3/ES5:__
 My solution prefer using only [Facebook Regenerator Project](https://github.com/facebook/regenerator) instead of adding Babel as dependency _(NOTE: Babel internally is using the same approach, running "regenerator runtime" internally for async and generator functions transformations - https://babeljs.io/docs/usage/caveats/)_
 
 When building for production use `npm run regenerator` CLI command just after a build command to apply transform to app.js bundle, or use an alias command `npm run build:regenerator` to run it automatically with each build.
+
+
+### Optimized JSPM (SystemJS) loading speed
+It is possible to create a static dev vendor bundle for dependencies loaded from node_modules to minimize request count and speed up a full page reload considerably. Because external dependencies don't need to be hot-reloaded and they'll only change when updated through NPM, it is best practice to bundle them all together and load as one file without any drawbacks.
+
+Test reload speed improvement using this simple test procedure:
+1. run `npm run unbundle` -> open network tab in chrome dev tools -> reload the page -> check logged results
+2. run `npm run build:dev` -> open network tab in chrome dev tools -> reload page -> compare logged results with previous
 
 ---
 
@@ -78,6 +104,14 @@ Test harness with [Tape](https://github.com/substack/tape) with Promise support 
 - Flux Standard Actions for Redux - https://github.com/acdlite/redux-actions
 - Redux Reducer Modules - https://github.com/erikras/ducks-modular-redux
 
+#### JSPM / System.js / Rollup
+
+- JSPM 0.17.X - production ready set-up with best-practices from real-world projects
+- optimized loading speed by utilizing `vendor` dev-bundle (read below)
+- using Rollup for bundling and tree-shaking optimizations
+- bundles for production - seperate vendor & app bundles
+- importing and bundling CSS / SCSS / JSON / Image files using plugins
+
 ---
 
 ## Roadmap
@@ -94,34 +128,10 @@ Test harness with [Tape](https://github.com/substack/tape) with Promise support 
 
 ---
 
-## JSPM / System.js / Rollup
-
-- JSPM 0.17.X - production ready set-up with best-practices from real-world projects
-- optimized loading speed by utilizing `vendor` dev-bundle (read below)
-- using Rollup for bundling and tree-shaking optimizations
-- bundles for production - seperate vendor & app bundles
-- importing and bundling CSS / SCSS / JSON / Image files using plugins
-
-### Optimized JSPM (SystemJS) loading speed
-I saw people complaining about JSPM loading very slow in development when there are a lot of modules loaded in the project.
-This can be optimized in development using bundles.
-I have found that a lot of modules are external dependencies so we can speed up a page reload considerably by creating a `vendor` bundle. As external dependencies don't need to be hot-reloaded and they'll only change when updated through NPM, so it is obvious to bundle them all together and load as one file without any drawbacks.
-Using this approach you will have both faster full page reload and your own `src` modules loaded separately utilizing hot-reload.
-This is the best of two development approaches (hot-reload vs. bundling) mixed together.
-
-Check yourself using this easy test procedure:
-
-1. run `npm run unbundle` -> open network tab in chrome dev tools -> reload the page -> check logged results
-2. run `npm run bundle-dev` -> open network tab in chrome dev tools -> reload page -> compare logged results with previous
-
----
-
 ## Pros / Cons
 
-- be aware that using TypeScript compiler built-in into the editor/IDE like in WebStorm, can give you some trouble because of compiler version over which you don't have any control. Instead you should depend on a local npm TypeScript installation included in project. Visual Studio Code and alm.tools allows the possibility to use a locally installed TS package in your project.
-In case you want to stick to using IDE with "baked-in TS" you could turn off it's compilation process and run type-checking from a command line utilizing provided helper scripts `npm run tsc` or `npm run tsc:watch` commands for one-time check or a continuous-incremental type-checking.
-
-- During development there is no need to emit intermediate JS files, this workflow will load your TS files directly in-browser, otherwise you'll lose Hot-Reload capability (new files emitted after each change) and experience much slower workflow without any advantages.
+- I discourage using internal IDE TypeScript support to compile your source code, because the compiler version there could be a different version than what you should have locally installed in the project by npm. Visual Studio Code and alm.tools allows to use a locally installed TypeScript package in your project or use TSC cli command to compile your source code.
+It is OK to use type-checking in the IDE because it will not emit any code.
 
 ---
 
@@ -176,7 +186,7 @@ In case you want to stick to using IDE with "baked-in TS" you could turn off it'
 __NOTE: Use index.prod.html for production, it have slightly different loading logic. Add references to your static assets like links/scripts and copy to the dist folder during a build process.__
 
 #### Development Workflow
-1. `npm run bundle-dev` - create bundle of vendor packages to speed-up full-page reload during development _(re-run only when project dependencies has changed)_
+1. `npm run build:dev` - create bundle of vendor packages to speed-up full-page reload during development _(re-run only when project dependencies has changed)_
 2. `npm start` - browser will open automatically
 
 #### NO-IDE Workflow - command line type checking
