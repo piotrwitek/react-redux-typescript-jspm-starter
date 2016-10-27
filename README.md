@@ -20,30 +20,33 @@ Table of Contents
 ## Innovations
 
 ### RAPID-SPEED DEVELOPMENT WORKFLOW - ES modules loaded in browser / no bundling!
-It is loading original TypeScript source files (no bundling / no type checking) directly in the browser (using [plugin-typescript](https://github.com/frankwallis/plugin-typescript))
-No bundling allows instant hot-reload that's concerned with only the changed files.
+It is loading original TypeScript source files (no bundling / no type checking) directly in the browser (using [plugin-typescript](https://github.com/frankwallis/plugin-typescript))  
+No bundling allows to hot-reload only the source files that was changed or referenced by them minimizing reload impact.
 
 __Comparing with Webpack + TypeScript Workflow__ from real project perspective by [@jonaskello](https://github.com/jonaskello)  https://github.com/Microsoft/TypeScript/issues/1564#issuecomment-252903932
 
 
-### SEPERATING TYPE-CHECKING CONCERN FOR DEVELOPMENT
-It is best to run TSC type-checking on seperate process with seperate tsconfig for development (if targeting ES6+ e.g. developing in chrome - almost no transpilation just cleaning the TS annotations).
-For type checking do the following:
+### SCALABLE-HOT-RELOAD WITH DEV-SERVER
+Local HTTP dev server with hot-reload out-of-the-box - using SystemJS it can load each module separately eliminating slow and not scalable bundling step while hot-reloading (using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)).
+It uses SystemJS module registry to work, by removing old module and then re-importing updated module and re-evaluating only those modules that was referencing the changed module.  
+This approach scale really well with increasing modules count as you reload only what has changed.
+
+__This is a solution for problems with scalability in big projects using bundling development workflows like Webpack.__
+
+
+### SEPERATING TYPE-CHECKING CONCERN
+It is best to run TSC type-checking on a seperate process with a seperate tsconfig for development (if targeting ES6+ e.g. developing in chrome - minimizing transpilation to mainly cleaning the TS annotations).
+
+To run type checking use the following approach:
 - in CLI use TSC compiler process running in watch mode: [instruction here](#no-ide-no-problem)  
 - in Editor/IDE use internal TypeScript Language Service (Webstorm, VS Code, Atom, Sublime Text, alm.tools and more...)
 _This provide an unique way to quickly deliver changes in source files without typechecking to the browser._
 
 __NOTE:__ There are seperate __tsconfig__ for development and for production build:
-- tsconfig for development: https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/src/tsconfig.json
-- tsconfig for production build: https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129
 
+[tsconfig for development](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/src/tsconfig.json)
 
-### SCALABLE-HOT-RELOAD WITH DEV-SERVER
-Local HTTP dev server with hot-reload out-of-the-box - using SystemJS it can load each module separately eliminating slow and not scalable bundling step while hot-reloading (using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)).
-
-It works by removing old module from the SystemJS module registry and then re-importing updated module and re-evaluating only concerned modules that was using the changed module, this process ensure to always resolve to the latest changes.
-This approach scale really well with increasing modules count as you reload only what has changed.
-__This is a solution for problems with scalability in big projects using bundling development workflows like Webpack.__
+[tsconfig for production build](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129)
 
 
 ### NO-IDE-NO-PROBLEM
