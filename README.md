@@ -1,7 +1,7 @@
 ## _React v15.3.2 / Redux v3.6.0 / TypeScript v2.0.3_ - starter-kit
-#### __React-Router v2.8.1 / Seamless-Immutable / Fetch API / JSPM  (SystemJS with Hot-Reload & Rollup)__
+#### __React-Router v2.8.1 / Seamless-Immutable / JSPM (SystemJS & Rollup with tree-shaking)__
 
-> ##### Futuristic, production-ready development environment for building _Component-Driven, Flux Single Page Applications with React, Redux and TypeScript_ - utilizing power of Static Type Checking, ES2016, Async/Await, ES6 Modules, Linting,  Git-Hooks, fast in browser (on-the-fly) transpilation, bundling with tree-shaking - powered by JSPM (SystemJS with Hot-Reload & Rollup).
+> ##### Futuristic, bundle-free development environment for building _Component-Driven SPA with React, Redux and TypeScript_ - utilizing power of Static Type-checking, ES.Next, CSS-Modules, Hot-reload, in-browser transpilation, tree-shaking - powered by JSPM (SystemJS & Rollup with tree-shaking).
 
 ### Demo: http://piotrwitek.github.io/react-redux-typescript-starter-kit/
 
@@ -34,13 +34,12 @@ __NOTE:__ There are two seperate __tsconfig__ - for development type-checking an
 
 [tsconfig for production](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129)
 
-__Differences with Webpack workflow explained__ from real project perspective by [@jonaskello](https://github.com/jonaskello)  https://github.com/Microsoft/TypeScript/issues/1564#issuecomment-252903932
-
 ### HOT-RELOAD THAT SCALE
 Local dev server with hot-reloading out-of-the-box (using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)).  
 __How:__ Loading each module separately and using SystemJS module registry, on changes it's removing old module from registry and re-importing updated one then re-evaluating only those modules that was importing the changed module.  
 
 __This solution scale really well with increasing modules count because you reload only modules that has changed.__
+> __Differences with Webpack workflow explained__ from real project perspective by [@jonaskello](https://github.com/jonaskello)  https://github.com/Microsoft/TypeScript/issues/1564#issuecomment-252903932
 
 ### CLI WORKFLOW
 Most often your team is using different Editors/IDE's so you'll need to have a common way to run type-checking using a specific version of TypeScript compiler for consistent results and avoid Editor specific issues.  
@@ -56,16 +55,17 @@ __EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx
 __DEMO:__ http://piotrwitek.github.io/react-redux-typescript-starter-kit/#/css-modules  
 __Overview Video:__ https://youtu.be/67pPYqom2a0
 
-### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (without Babel)
-Support "async & generator functions" when targeting ES3/ES5 without Babel!  
+### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (No Babel)
+Support "async & generator functions" when targeting ES3/ES5 __without Babel!__  
 - Async/Await - starting from version 2.1 TypeScript provide native support for transformation to ES3/ES5 (https://github.com/Microsoft/TypeScript/pull/9175)  
 - Generators - TypeScript Team have dropped request to support generator transformation to (ES3/ES5) so consider alternative solution covered below (https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415)  
 
 __Generators transformation to ES3/ES5:__
-Use [Facebook Regenerator Project](https://github.com/facebook/regenerator) instead of __Babel__ as dependency to transform Generators.  
-_(NOTE: Internally __Babel__ is using the same method, running "regenerator runtime" for async and generator functions transformations - https://babeljs.io/docs/usage/caveats/)_
 
-When building production bundle use `npm run regenerator` command after completing build step, to run `regenerator` on app.js bundle. Alternatively use `npm run build:regenerator` command to automatically run regenerator with each production build.
+Use [Facebook Regenerator Project](https://github.com/facebook/regenerator) instead of __Babel__ as dependency to transform Generators.  
+_(NOTE: Internally **Babel** is also running "regenerator runtime" for async and generator functions transformations - https://babeljs.io/docs/usage/caveats/)_
+
+When building for production use `npm run regenerator` command after completion of build step, this will run "regenerator" on app.js bundle. Alternatively use `npm run build:regenerator` command to automatically run "regenerator" with each production build.
 
 ### Optimized JSPM (SystemJS) loading speed
 To speed up a full page reload by minimizing request count it is possible to create a development "vendor bundle" for external dependencies loaded from node_modules.  
