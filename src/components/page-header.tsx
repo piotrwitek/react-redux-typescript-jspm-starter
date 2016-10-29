@@ -12,8 +12,8 @@ export function PageHeader({className = '', children = undefined}) {
   );
 
   return (
-    <header className={mainClass}>
+    <h1 className={mainClass}>
       {children}
-    </header>
+    </h1>
   );
 }
