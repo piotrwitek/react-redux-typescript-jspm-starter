@@ -9,7 +9,7 @@ const inlineStyles = {
 
 export function LayoutMain({className = '', children = undefined}) {
 
-  const parentClass = classNames(
+  const mainClass = classNames(
     className
   );
   const innerClass = classNames(
@@ -17,7 +17,7 @@ export function LayoutMain({className = '', children = undefined}) {
   );
 
   return (
-    <main className={parentClass} style={inlineStyles.background}>
+    <main className={mainClass} style={inlineStyles.background}>
       <div className={innerClass}>
         {children}
       </div>

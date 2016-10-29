@@ -9,13 +9,13 @@ const inlineStyles = {
 
 export function LayoutFooter({className = '', children = undefined}) {
 
-  const parentClass = classNames(
-    className,
+  const mainClass = classNames(
+    className.toString(),
     'u-letter-box--medium u-centered'
   );
 
   return (
-    <footer className={parentClass} style={inlineStyles.topBorder}>
+    <footer className={mainClass} style={inlineStyles.topBorder}>
       {children}
     </footer>
   );

@@ -5,12 +5,12 @@ import classNames from 'classnames';
 
 export function LayoutHeader({className = '', children = undefined}) {
 
-  const parentClass = classNames(
-    className
+  const mainClass = classNames(
+    className.toString()
   );
 
   return (
-    <header className={parentClass}>
+    <header className={mainClass}>
       {children}
     </header>
   );

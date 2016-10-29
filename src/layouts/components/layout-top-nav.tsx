@@ -6,13 +6,13 @@ import { Link } from 'react-router';
 
 export function LayoutTopNav({className = '', children = undefined}) {
 
-  const parentClass = classNames(
+  const mainClass = classNames(
     className,
     'c-nav c-nav--inline'
   );
 
   return (
-    <nav className={parentClass}>
+    <nav className={mainClass}>
       {children}
     </nav>
   );
@@ -21,16 +21,16 @@ export function LayoutTopNav({className = '', children = undefined}) {
 export function LayoutTopNavLink({className = '', children = undefined,
   href = '/', isRight = false, isPrimary = false}) {
 
-  const parentClass = classNames(className, 'c-nav__item', {
+  const mainClass = classNames(className, 'c-nav__item', {
     'c-nav__item--info': isPrimary,
     'c-nav__item--right': isRight
   });
-  const parentActiveClass = classNames(
+  const activeClass = classNames(
     'c-nav__item--active'
   );
 
   return (
-    <Link to={href} className={parentClass} activeClassName={parentActiveClass}>
+    <Link to={href} className={mainClass} activeClassName={activeClass}>
       {children}
     </Link>
   );
