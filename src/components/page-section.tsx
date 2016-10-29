@@ -5,17 +5,17 @@ import classNames from 'classnames';
 
 export function PageSection({className = '', children = undefined}) {
 
-  const parentClass = classNames(
+  const mainClass = classNames(
     className.toString(),
-    'o-grid'
+    'o-grid',
   );
-  const cellClass = classNames(
-    'o-grid__cell'
+  const innerClass = classNames(
+    'o-grid__cell',
   );
 
   return (
-    <section className={parentClass}>
-      <div className={cellClass}>{children}</div>
+    <section className={mainClass}>
+      <div className={innerClass}>{children}</div>
     </section>
   );
 }

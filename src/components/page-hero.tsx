@@ -6,13 +6,14 @@ import classNames from 'classnames';
 export function PageHero({className = '', children = undefined,
   title = '', subtitle = ''}) {
 
-  const parentClass = classNames(
+  const mainClass = classNames(
     className.toString(),
-    'u-letter-box--super u-centered'
+    'u-centered',
+    'u-letter-box--super',
   );
 
   return (
-    <section className={parentClass}>
+    <section className={mainClass}>
       <h1 className="c-heading u-window-box--none">
         {title}
       </h1>

@@ -5,13 +5,15 @@ import classNames from 'classnames';
 
 export function PageHeader({className = '', children = undefined}) {
 
-  const parentClass = classNames(
+  const mainClass = classNames(
     className.toString(),
-    'c-heading c-heading--medium',
-    'u-centered'
+    'c-heading',
+    'u-centered',
   );
 
   return (
-    <header className={parentClass}>{children}</header>
+    <header className={mainClass}>
+      {children}
+    </header>
   );
 }
