@@ -35,29 +35,44 @@ export class CurrencyConverter extends React.Component<LocalProps, LocalState> {
 
     return (
       <div className="o-grid o-grid--small-full o-grid--medium-full">
-        <div className="o-grid__cell">
-          <CurrencySelect
-            currencies={currencies}
-            value={baseCurrency}
-            onChange={onBaseCurrencyChange}
-            />
-          <CurrencyInput
-            value={baseValue}
-            onChange={onBaseValueChange}
+        <div className="o-grid__cell u-window-box--medium">
+          <CurrencyInputGroup currencies={currencies}
+            currencyType={baseCurrency}
+            onCurrencyTypeChange={onBaseCurrencyChange}
+            currencyValue={baseValue}
+            onCurrencyValueChange={onBaseValueChange}
             />
         </div>
-        <div className="o-grid__cell">
-          <CurrencySelect
-            currencies={currencies}
-            value={targetCurrency}
-            onChange={onTargetCurrencyChange}
-            />
-          <CurrencyInput
-            value={targetValue}
-            onChange={onTargetValueChange}
+        <div className="o-grid__cell u-window-box--medium">
+          <CurrencyInputGroup currencies={currencies}
+            currencyType={targetCurrency}
+            onCurrencyTypeChange={onTargetCurrencyChange}
+            currencyValue={targetValue}
+            onCurrencyValueChange={onTargetValueChange}
             />
         </div>
       </div>
     );
   }
+}
+
+function CurrencyInputGroup({currencies, currencyType, currencyValue,
+  onCurrencyTypeChange, onCurrencyValueChange}) {
+  return (
+    <div className="c-input-group">
+      <div className="o-field o-field--fixed" style={{ width: '80px' }}>
+        <CurrencySelect
+          currencies={currencies}
+          value={currencyType}
+          onChange={onCurrencyTypeChange}
+          />
+      </div>
+      <div className="o-field">
+        <CurrencyInput
+          value={currencyValue}
+          onChange={onCurrencyValueChange}
+          />
+      </div>
+    </div>
+  );
 }
