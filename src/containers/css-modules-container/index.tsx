@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { PageSection } from '../../components/page-section';
 import { PageHeader } from '../../components/page-header';
+import { PageSection } from '../../components/page-section';
 import { containerStyles } from './container-styles';
 
 
@@ -9,25 +9,26 @@ export function CssModulesContainer() {
     <article>
       <PageHeader>Typed CSS-Modules</PageHeader>
       <PageSection className={''}>
-        <p className={'c-text--loud'}>
+        <p>
           Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components,
           with capability to type-check CSS class-names in your components using interfaces
-          and leverage TypeScript IntelliSense features in Editor/IDE.
+          and leverage TypeScript IntelliSense features in Editor/IDE
         </p>
         <ul>
           <li>
             Define available CSS classes as interfaces in CSS-Modules to get className property
-            auto-completion, type-checking and easy refactoring in your entire codebase.
+            auto-completion, type-checking and easy refactoring in your entire codebase
           </li>
           <li>
-            Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces.
+            Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces
           </li>
           <li>
             Full CSS support - including pseudo classes, media queries & more...
+            (using <a href="https://github.com/rtsao/csjs#faq">csjs</a>)
           </li>
         </ul>
         <p>
-          Using <a href="https://github.com/rtsao/csjs#faq">(csjs)</a>.
+
         </p>
       </PageSection>
       <br />

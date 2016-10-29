@@ -3,6 +3,8 @@ import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 // components imports
+import { PageHeader } from '../../components/page-header';
+import { PageSection } from '../../components/page-section';
 import * as currencyConverterActions from '../../reducers/currency-converter-reducer';
 import { CurrencyConverter } from './components/currency-converter';
 
@@ -22,18 +24,20 @@ export class CurrencyConverterContainer extends React.Component<IProps, IState> 
     const { actions } = this.props;
 
     return (
-      <section className="u-letter-box--super">
-        <p className="u-centered">(work in progress)</p>
-        <br />
-        <CurrencyConverter currencies={currencies}
-          baseCurrency={baseCurrency} targetCurrency={targetCurrency}
-          baseValue={baseValue} targetValue={targetValue}
-          onBaseCurrencyChange={actions.updateBaseCurrency}
-          onTargetCurrencyChange={actions.updateTargetCurrency}
-          onBaseValueChange={actions.updateBaseValue}
-          onTargetValueChange={actions.updateTargetValue}
-          />
-      </section>
+      <article>
+        <PageHeader>Currency Converter</PageHeader>
+        <PageSection className="u-centered">(work in progress)</PageSection>
+        <section className="u-letter-box--xlarge">
+          <CurrencyConverter currencies={currencies}
+            baseCurrency={baseCurrency} targetCurrency={targetCurrency}
+            baseValue={baseValue} targetValue={targetValue}
+            onBaseCurrencyChange={actions.updateBaseCurrency}
+            onTargetCurrencyChange={actions.updateTargetCurrency}
+            onBaseValueChange={actions.updateBaseValue}
+            onTargetValueChange={actions.updateTargetValue}
+            />
+        </section>
+      </article>
     );
   }
 }
