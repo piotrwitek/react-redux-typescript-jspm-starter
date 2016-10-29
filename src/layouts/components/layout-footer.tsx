@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 const inlineStyles = {
   topBorder: {
-    borderTop: '1px solid #ddd'
+    borderTop: '1px solid #ddd',
   }
 };
 
@@ -11,7 +11,8 @@ export function LayoutFooter({className = '', children = undefined}) {
 
   const mainClass = classNames(
     className.toString(),
-    'u-letter-box--medium u-centered'
+    'u-centered',
+    'u-letter-box--medium',
   );
 
   return (

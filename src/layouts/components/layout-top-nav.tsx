@@ -7,8 +7,8 @@ import { Link } from 'react-router';
 export function LayoutTopNav({className = '', children = undefined}) {
 
   const mainClass = classNames(
-    className,
-    'c-nav c-nav--inline'
+    className.toString(),
+    'c-nav c-nav--inline',
   );
 
   return (
@@ -23,10 +23,10 @@ export function LayoutTopNavLink({className = '', children = undefined,
 
   const mainClass = classNames(className, 'c-nav__item', {
     'c-nav__item--info': isPrimary,
-    'c-nav__item--right': isRight
+    'c-nav__item--right': isRight,
   });
   const activeClass = classNames(
-    'c-nav__item--active'
+    'c-nav__item--active',
   );
 
   return (

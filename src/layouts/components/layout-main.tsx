@@ -3,17 +3,17 @@ import classNames from 'classnames';
 
 const inlineStyles = {
   background: {
-    backgroundColor: '#f7f7f7'
+    backgroundColor: '#f7f7f7',
   }
 };
 
 export function LayoutMain({className = '', children = undefined}) {
 
   const mainClass = classNames(
-    className
+    className.toString(),
   );
   const innerClass = classNames(
-    'o-container o-container--medium'
+    'o-container o-container--medium',
   );
 
   return (

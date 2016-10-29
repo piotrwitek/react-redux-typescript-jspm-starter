@@ -6,7 +6,7 @@ import classNames from 'classnames';
 export function LayoutHeader({className = '', children = undefined}) {
 
   const mainClass = classNames(
-    className.toString()
+    className.toString(),
   );
 
   return (
