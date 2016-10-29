@@ -3,13 +3,12 @@ import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
 import { containerStyles } from './container-styles';
 
-
 export function CssModulesContainer() {
   return (
     <article>
       <PageHeader>Typed CSS-Modules</PageHeader>
-      <PageSection className={''}>
-        <p>
+      <PageSection>
+        <p style={{ textAlign: 'justify' }}>
           Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components,
           with capability to type-check CSS class-names in your components using interfaces
           and leverage TypeScript IntelliSense features in Editor/IDE
