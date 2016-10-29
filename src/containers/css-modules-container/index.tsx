@@ -7,24 +7,29 @@ import { containerStyles } from './container-styles';
 export function CssModulesContainer() {
   return (
     <article>
-      <PageHeader>CSS Modules</PageHeader>
-      <p>
-        Own concept to achieve locally scoped CSS styles
-        using <a href="https://github.com/rtsao/csjs#faq">(csjs)</a> with
-        statically typed CSS class-names using TypeScript.
-      </p>
-      <ul>
-        <li>
-          Full CSS support with pseudo-classes & media queries, encapsulated in
-          ES6 Modules that can be nicely imported by your UI components.
-        </li>
-        <li>
-          Define interfaces with your CSS classes and you get className property
-          type-checking, solid auto-completion and easy refactoring.
-          You can also add doc comments and auto-generate docs of your styles
-          library for your team and utilize IntelliSense features of your IDE.
-        </li>
-      </ul>
+      <PageHeader>Typed CSS-Modules</PageHeader>
+      <PageSection className={''}>
+        <p className={'c-text--loud'}>
+          Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components,
+          with capability to type-check CSS class-names in your components using interfaces
+          and leverage TypeScript IntelliSense features in Editor/IDE.
+        </p>
+        <ul>
+          <li>
+            Define available CSS classes as interfaces in CSS-Modules to get className property
+            auto-completion, type-checking and easy refactoring in your entire codebase.
+          </li>
+          <li>
+            Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces.
+          </li>
+          <li>
+            Full CSS support - including pseudo classes, media queries & more...
+          </li>
+        </ul>
+        <p>
+          Using <a href="https://github.com/rtsao/csjs#faq">(csjs)</a>.
+        </p>
+      </PageSection>
       <br />
       <PageSection className={containerStyles.textCentered}>
         <div className={containerStyles.effect__hideOnTablet}>
