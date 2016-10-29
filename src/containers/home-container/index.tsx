@@ -20,7 +20,7 @@ export function HomeContainer() {
           </li>
         </ul>
         <br />
-        <div className="c-alerts__alert c-alerts__alert--primary">
+        <div className="c-alert c-alert--info">
           Note: Open Redux DevTools Inspector
         </div>
       </PageSection>

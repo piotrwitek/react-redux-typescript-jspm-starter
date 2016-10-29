@@ -13,7 +13,7 @@ export function CurrencySelect({currencies = [], value = null, onChange = null}:
 
   return (
     <select
-      className="c-choice c-choice--padded"
+      className="c-field u-xlarge"
       value={value}
       onChange={handleChange}>
       {currencies.map(currency =>

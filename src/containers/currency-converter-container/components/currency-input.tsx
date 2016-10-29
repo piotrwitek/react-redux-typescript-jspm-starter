@@ -11,14 +11,12 @@ export function CurrencyInput({value = 0, onChange = null}: IProps) {
   };
 
   return (
-    <div className="u-letter-box--medium">
-      <input
-        className="c-field c-field--xlarge"
-        type="text"
-        value={value}
-        onChange={handleChange}
-        onBlur={handleChange}
-        />
-    </div>
+    <input
+      className="c-field u-xlarge"
+      type="text"
+      value={value}
+      onChange={handleChange}
+      onBlur={handleChange}
+      />
   );
 }

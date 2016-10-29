@@ -8,7 +8,7 @@ export function LayoutTopNav({className = '', children = undefined}) {
 
   const parentClass = classNames(
     className,
-    'c-nav c-nav--inline c-nav--high'
+    'c-nav c-nav--inline'
   );
 
   return (
@@ -22,7 +22,7 @@ export function LayoutTopNavLink({className = '', children = undefined,
   href = '/', isRight = false, isPrimary = false}) {
 
   const parentClass = classNames(className, 'c-nav__item', {
-    'c-nav__item--primary': isPrimary,
+    'c-nav__item--info': isPrimary,
     'c-nav__item--right': isRight
   });
   const parentActiveClass = classNames(

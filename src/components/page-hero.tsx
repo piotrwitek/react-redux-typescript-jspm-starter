@@ -8,18 +8,17 @@ export function PageHero({className = '', children = undefined,
 
   const parentClass = classNames(
     className.toString(),
-    'c-hero',
     'u-letter-box--super u-centered'
   );
 
   return (
     <section className={parentClass}>
-      <header className="c-heading c-heading--xlarge u-window-box--none">
+      <h1 className="c-heading u-window-box--none">
         {title}
-      </header>
-      <header className="c-heading c-heading--small u-window-box--none">
+      </h1>
+      <h3 className="c-heading u-window-box--none">
         {subtitle}
-      </header>
+      </h3>
       <div>
         {children}
       </div>
