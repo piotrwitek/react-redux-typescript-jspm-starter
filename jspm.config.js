@@ -10,7 +10,7 @@ SystemJS.config({
   devConfig: {
     "map": {
       "plugin-typescript": "github:frankwallis/plugin-typescript@5.2.7",
-      "css": "github:systemjs/plugin-css@0.1.30",
+      "css": "github:systemjs/plugin-css@0.1.32",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
       "blue-tape": "npm:blue-tape@0.2.0"
     },
@@ -19,7 +19,7 @@ SystemJS.config({
         "map": {
           "weakee": "npm:weakee@1.0.0",
           "debug": "npm:debug@2.2.0",
-          "socket.io-client": "github:socketio/socket.io-client@1.5.0"
+          "socket.io-client": "github:socketio/socket.io-client@1.5.1"
         }
       },
       "npm:debug@2.2.0": {
@@ -70,12 +70,6 @@ SystemJS.config({
           "foreach": "npm:foreach@2.0.5"
         }
       },
-      "npm:inflight@1.0.5": {
-        "map": {
-          "once": "npm:once@1.4.0",
-          "wrappy": "npm:wrappy@1.0.2"
-        }
-      },
       "npm:minimatch@3.0.3": {
         "map": {
           "brace-expansion": "npm:brace-expansion@1.1.6"
@@ -94,13 +88,13 @@ SystemJS.config({
       },
       "github:frankwallis/plugin-typescript@5.2.7": {
         "map": {
-          "typescript": "npm:typescript@2.0.3"
+          "typescript": "npm:typescript@2.0.6"
         }
       },
       "npm:tape@4.6.2": {
         "map": {
           "inherits": "npm:inherits@2.0.3",
-          "glob": "npm:glob@7.1.0",
+          "glob": "npm:glob@7.1.1",
           "deep-equal": "npm:deep-equal@1.0.1",
           "through": "npm:through@2.3.8",
           "function-bind": "npm:function-bind@1.1.0",
@@ -113,14 +107,20 @@ SystemJS.config({
           "has": "npm:has@1.0.1"
         }
       },
-      "npm:glob@7.1.0": {
+      "npm:glob@7.1.1": {
         "map": {
           "inherits": "npm:inherits@2.0.3",
           "minimatch": "npm:minimatch@3.0.3",
           "fs.realpath": "npm:fs.realpath@1.0.0",
-          "once": "npm:once@1.4.0",
           "path-is-absolute": "npm:path-is-absolute@1.0.1",
-          "inflight": "npm:inflight@1.0.5"
+          "once": "npm:once@1.4.0",
+          "inflight": "npm:inflight@1.0.6"
+        }
+      },
+      "npm:inflight@1.0.6": {
+        "map": {
+          "once": "npm:once@1.4.0",
+          "wrappy": "npm:wrappy@1.0.2"
         }
       }
     }
@@ -173,10 +173,11 @@ SystemJS.config({
     "events": "npm:jspm-nodelibs-events@0.2.0",
     "fs": "npm:jspm-nodelibs-fs@0.2.0",
     "http": "npm:jspm-nodelibs-http@0.2.0",
-    "https": "npm:jspm-nodelibs-https@0.2.0",
+    "https": "npm:jspm-nodelibs-https@0.2.1",
     "insert-css": "npm:insert-css@1.0.0",
+    "net": "npm:jspm-nodelibs-net@0.2.0",
     "os": "npm:jspm-nodelibs-os@0.2.0",
-    "path": "npm:jspm-nodelibs-path@0.2.0",
+    "path": "npm:jspm-nodelibs-path@0.2.1",
     "process": "npm:jspm-nodelibs-process@0.2.0",
     "react": "npm:react@15.3.2",
     "react-dom": "npm:react-dom@15.3.2",
@@ -185,11 +186,11 @@ SystemJS.config({
     "react-router-redux": "npm:react-router-redux@4.0.6",
     "redux": "npm:redux@3.6.0",
     "redux-actions": "npm:redux-actions@0.11.0",
-    "seamless-immutable": "npm:seamless-immutable@6.1.3",
+    "seamless-immutable": "npm:seamless-immutable@6.3.0",
     "stream": "npm:jspm-nodelibs-stream@0.2.0",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",
     "url": "npm:jspm-nodelibs-url@0.2.0",
-    "util": "npm:jspm-nodelibs-util@0.2.0",
+    "util": "npm:jspm-nodelibs-util@0.2.1",
     "vm": "npm:jspm-nodelibs-vm@0.2.0",
     "whatwg-fetch": "npm:whatwg-fetch@1.0.0",
     "zlib": "npm:jspm-nodelibs-zlib@0.2.0"
@@ -351,11 +352,6 @@ SystemJS.config({
         "punycode": "npm:punycode@1.3.2"
       }
     },
-    "npm:loose-envify@1.2.0": {
-      "map": {
-        "js-tokens": "npm:js-tokens@1.0.3"
-      }
-    },
     "npm:promise@7.1.1": {
       "map": {
         "asap": "npm:asap@2.0.5"
@@ -383,12 +379,12 @@ SystemJS.config({
         "invariant": "npm:invariant@2.2.1",
         "lodash": "npm:lodash@4.16.4",
         "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
-        "loose-envify": "npm:loose-envify@1.2.0"
+        "loose-envify": "npm:loose-envify@1.3.0"
       }
     },
     "npm:invariant@2.2.1": {
       "map": {
-        "loose-envify": "npm:loose-envify@1.2.0"
+        "loose-envify": "npm:loose-envify@1.3.0"
       }
     },
     "npm:redux-actions@0.11.0": {
@@ -407,12 +403,12 @@ SystemJS.config({
     },
     "npm:warning@3.0.0": {
       "map": {
-        "loose-envify": "npm:loose-envify@1.2.0"
+        "loose-envify": "npm:loose-envify@1.3.0"
       }
     },
     "npm:warning@2.1.0": {
       "map": {
-        "loose-envify": "npm:loose-envify@1.2.0"
+        "loose-envify": "npm:loose-envify@1.3.0"
       }
     },
     "npm:query-string@3.0.3": {
@@ -423,7 +419,7 @@ SystemJS.config({
     "npm:react-router@2.8.1": {
       "map": {
         "invariant": "npm:invariant@2.2.1",
-        "loose-envify": "npm:loose-envify@1.2.0",
+        "loose-envify": "npm:loose-envify@1.3.0",
         "warning": "npm:warning@3.0.0",
         "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
         "history": "npm:history@2.1.2"
@@ -431,19 +427,10 @@ SystemJS.config({
     },
     "npm:redux@3.6.0": {
       "map": {
-        "loose-envify": "npm:loose-envify@1.2.0",
+        "loose-envify": "npm:loose-envify@1.3.0",
         "lodash": "npm:lodash@4.16.4",
-        "symbol-observable": "npm:symbol-observable@1.0.2",
+        "symbol-observable": "npm:symbol-observable@1.0.4",
         "lodash-es": "npm:lodash-es@4.16.4"
-      }
-    },
-    "npm:stream-http@2.4.0": {
-      "map": {
-        "inherits": "npm:inherits@2.0.3",
-        "readable-stream": "npm:readable-stream@2.1.5",
-        "builtin-status-codes": "npm:builtin-status-codes@2.0.0",
-        "xtend": "npm:xtend@4.0.1",
-        "to-arraybuffer": "npm:to-arraybuffer@1.0.1"
       }
     },
     "npm:cipher-base@1.0.3": {
@@ -463,13 +450,13 @@ SystemJS.config({
       "map": {
         "object-assign": "npm:object-assign@4.1.0",
         "fbjs": "npm:fbjs@0.8.5",
-        "loose-envify": "npm:loose-envify@1.2.0"
+        "loose-envify": "npm:loose-envify@1.3.0"
       }
     },
     "npm:fbjs@0.8.5": {
       "map": {
         "object-assign": "npm:object-assign@4.1.0",
-        "loose-envify": "npm:loose-envify@1.2.0",
+        "loose-envify": "npm:loose-envify@1.3.0",
         "isomorphic-fetch": "npm:isomorphic-fetch@2.2.1",
         "core-js": "npm:core-js@1.2.7",
         "promise": "npm:promise@7.1.1",
@@ -512,7 +499,7 @@ SystemJS.config({
     },
     "npm:jspm-nodelibs-http@0.2.0": {
       "map": {
-        "http-browserify": "npm:stream-http@2.4.0"
+        "http-browserify": "npm:stream-http@2.4.1"
       }
     },
     "npm:jspm-nodelibs-url@0.2.0": {
@@ -538,6 +525,20 @@ SystemJS.config({
     "npm:jspm-nodelibs-zlib@0.2.0": {
       "map": {
         "zlib-browserify": "npm:browserify-zlib@0.1.4"
+      }
+    },
+    "npm:loose-envify@1.3.0": {
+      "map": {
+        "js-tokens": "npm:js-tokens@2.0.0"
+      }
+    },
+    "npm:stream-http@2.4.1": {
+      "map": {
+        "xtend": "npm:xtend@4.0.1",
+        "inherits": "npm:inherits@2.0.3",
+        "readable-stream": "npm:readable-stream@2.1.5",
+        "builtin-status-codes": "npm:builtin-status-codes@2.0.0",
+        "to-arraybuffer": "npm:to-arraybuffer@1.0.1"
       }
     }
   }
