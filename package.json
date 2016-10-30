@@ -10,32 +10,25 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "jspm install && npm run build:dev",
-    "preinit:dist": "rimraf dist/**/* && mkdir dist || true",
-    "init:dist": "cp assets/* dist/ && cp index.prod.html dist/index.html",
-    "preinit:deploy": "npm run init:dist",
-    "init:deploy": "git clone https://github.com/piotrwitek/react-redux-typescript-starter-kit --branch gh-pages gh-pages-clone",
-    "postinit:deploy": "mv gh-pages-clone/.git dist/.git && rimraf gh-pages-clone/",
+    "clean": "node scripts/clean.js",
+    "init:deploy": "node scripts/init.js deploy",
     "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push",
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm test",
     "preversion": "npm run lint && npm test",
-    "build:dev": "npm run _jspm-bundle-vendor-dev",
     "unbundle": "rimraf temp/vendor.dev.js",
     "build": "npm run build:app && npm run build:vendor",
-    "build:app": "npm run _jspm-build-app -- --skip-source-maps --minify",
-    "build:vendor": "npm run _jspm-bundle-vendor-prod",
-    "build:debug": "npm run _jspm-build-app",
+    "build:app": "node scripts/build.js app",
+    "build:vendor": "node scripts/build.js vendor",
+    "build:dev": "node scripts/build.js dev",
+    "build:debug": "node scripts/build.js debug",
     "bad": "npm run build:app && npm run deploy",
     "bvd": "npm run build:vendor && npm run deploy",
     "lint": "tslint ./src/**/*.ts[x]",
     "test": "jspm run src/test-runner | faucet",
     "tsc": "tsc -p src",
     "tsc:watch": "tsc -p src -w",
-    "_jspm-bundle-vendor-dev": "jspm bundle configs/vendor.config.dev.js temp/vendor.dev.js -d",
-    "_jspm-bundle-vendor-prod": "jspm bundle configs/vendor.config.prod.js dist/vendor.prod.js -ms",
-    "post_jspm-bundle-vendor-prod": "cp jspm.config.js jspm_packages/system.js dist/",
-    "_jspm-build-app": "jspm build src/app - configs/vendor.config.prod.js dist/app.js",
-    "regenerator": "cd temp && cp ../dist/app.js . && regenerator -r app.js > app.regenerator.js && mv app.regenerator.js ../dist/app.js",
+    "regenerator": "node scripts/regenerator.js",
     "build:regenerator": "npm run build:app && npm run regenerator"
   },
   "devDependencies": {
@@ -56,6 +49,7 @@
     "jspm-hmr": "^0.4.2",
     "regenerator": "^0.8.46",
     "rimraf": "^2.5.4",
+    "shelljs": "^0.7.5",
     "tslint": "^3.15.1",
     "typescript": "^2.0.3"
   },
@@ -159,3 +153,4 @@
     }
   }
 }
+
