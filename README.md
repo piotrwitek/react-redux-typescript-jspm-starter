@@ -229,19 +229,15 @@ __NOTE: Use index.prod.html for production, it have slightly different loading l
 
 `npm run build:regenerator` - alias to run both `npm run build:app` and `npm run regenerator`.
 
-#### Initialization
-
-`npm run init:dist` - clean dist folder and copy assets
+#### Deployment
 
 `npm run init:deploy` - clone git repository in `/dist` folder (gh-pages branch)
 
-#### Utility & Git Hooks
-
 `npm run deploy` - commit and push all changes found in `/dist` folder
 
-`npm run bad` - build app.js and deploy
+#### Utility & Git Hooks
 
-`npm run bvd` - build vendor.js and deploy
+`npm run clean` - clean dist folder
 
 `npm run lint` - run linter
 
