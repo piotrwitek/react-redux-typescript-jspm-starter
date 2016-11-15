@@ -122,6 +122,16 @@ SystemJS.config({
         "map": {
           "typescript": "npm:typescript@2.1.1"
         }
+      },
+      "npm:typescript@2.1.1": {
+        "map": {
+          "source-map-support": "npm:source-map-support@0.4.6"
+        }
+      },
+      "npm:source-map-support@0.4.6": {
+        "map": {
+          "source-map": "npm:source-map@0.5.6"
+        }
       }
     }
   },
@@ -175,6 +185,7 @@ SystemJS.config({
     "http": "npm:jspm-nodelibs-http@0.2.0",
     "https": "npm:jspm-nodelibs-https@0.2.1",
     "insert-css": "npm:insert-css@1.1.0",
+    "module": "npm:jspm-nodelibs-module@0.2.0",
     "net": "npm:jspm-nodelibs-net@0.2.0",
     "os": "npm:jspm-nodelibs-os@0.2.0",
     "path": "npm:jspm-nodelibs-path@0.2.1",
