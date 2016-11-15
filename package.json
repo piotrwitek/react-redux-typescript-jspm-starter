@@ -4,7 +4,7 @@
   "description": "Futuristic, production-ready development environment for building Component-Driven, Flux Single Page Applications with React, Redux and TypeScript - powered by JSPM (SystemJS with Hot-Reload & Rollup).",
   "main": "server.js",
   "author": "Piotr Witek <piotrek.witek@gmail.com> (http://piotrwitek.github.io/)",
-  "homepage": "https://github.com/piotrwitek/react-redux-typescript-starter-kit",
+  "homepage": "http://piotrwitek.github.io/react-redux-typescript-starter-kit/",
   "repository": "https://github.com/piotrwitek/react-redux-typescript-starter-kit.git",
   "bugs": "https://github.com/piotrwitek/react-redux-typescript-starter-kit/issues",
   "license": "MIT",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@types/blue-tape": "^0.1.30",
-    "@types/classnames": "^0.0.31",
+    "@types/classnames": "^0.0.32",
     "@types/react": "^0.14.39",
     "@types/react-dom": "^0.14.11",
     "@types/react-redux": "^4.4.32",
@@ -45,13 +45,13 @@
     "@types/whatwg-fetch": "^0.0.32",
     "faucet": "^0.0.1",
     "husky": "^0.11.8",
-    "jspm": "^0.17.0-beta.31",
+    "jspm": "^0.17.0-beta.32",
     "jspm-hmr": "^0.5.0",
     "regenerator": "^0.8.46",
     "rimraf": "^2.5.4",
     "shelljs": "^0.7.5",
     "tslint": "^3.15.1",
-    "typescript": "^2.0.3"
+    "typescript": "^2.0.9"
   },
   "jspm": {
     "name": "app",
@@ -59,19 +59,19 @@
     "dependencies": {
       "classnames": "npm:classnames@^2.2.5",
       "csjs": "npm:csjs@^1.0.6",
-      "insert-css": "npm:insert-css@^1.0.0",
+      "insert-css": "npm:insert-css@^1.1.0",
       "react-dom": "npm:react-dom@^15.3.2",
-      "react-redux": "npm:react-redux@^4.4.5",
+      "react-redux": "npm:react-redux@^4.4.6",
       "react-router": "npm:react-router@^2.8.1",
-      "react-router-redux": "npm:react-router-redux@^4.0.6",
+      "react-router-redux": "npm:react-router-redux@^4.0.7",
       "redux-actions": "npm:redux-actions@^0.11.0",
       "seamless-immutable": "npm:seamless-immutable@^6.3.0",
-      "whatwg-fetch": "npm:whatwg-fetch@^1.0.0"
+      "whatwg-fetch": "npm:whatwg-fetch@^1.1.0"
     },
     "devDependencies": {
       "blue-tape": "npm:blue-tape@^0.2.0",
       "css": "github:systemjs/plugin-css@^0.1.32",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.2.7",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.2.9",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
     },
     "peerDependencies": {
@@ -111,7 +111,7 @@
           "_stream_transform": "readable-stream/transform"
         }
       },
-      "npm:debug@2.2.0": {
+      "npm:debug@2.3.2": {
         "main": "browser.js",
         "jspmNodeConversion": false,
         "format": "cjs",
@@ -130,17 +130,17 @@
           "test.js"
         ]
       },
-      "npm:lodash@4.16.4": {
+      "npm:lodash@4.17.1": {
         "map": {
           "buffer": "@empty",
           "process": "@empty"
         }
       },
-      "npm:ms@0.7.1": {
+      "npm:ms@0.7.2": {
         "jspmNodeConversion": false,
         "format": "cjs"
       },
-      "npm:typescript@2.0.6": {
+      "npm:typescript@2.1.1": {
         "browser": {},
         "map": {
           "buffer": "@empty",
