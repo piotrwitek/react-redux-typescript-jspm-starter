@@ -1,4 +1,4 @@
-## _React v15.3 / Redux v3.6 / TypeScript v2.0_ - starter-kit
+## _React v15.3 / Redux v3.6 / TypeScript v2.1_ - starter-kit
 #### __React-Router v2.8 / Seamless-Immutable / JSPM (SystemJS & Rollup with tree-shaking)__
 
 > ##### Futuristic, bundle-free development environment for building _Component-Driven SPA with React, Redux and TypeScript_ - utilizing power of Static Type-checking, ES.Next, CSS-Modules, Hot-reload, in-browser transpilation, tree-shaking - powered by JSPM (SystemJS & Rollup with tree-shaking).
@@ -28,11 +28,11 @@ Type-checking is delegated to a seperate process using following options:
 - __CLI__ - TSC compiler process running in watch mode: [instruction here](#cli-workflow)  
 - __Editor/IDE__ - use internal TypeScript Language Service (e.g. Webstorm, VS Code, Atom, Sublime Text, alm.tools and more...)
 
-__NOTE:__ There are two seperate __tsconfig__ - for development type-checking and for production bundle build:
+__NOTE:__ There are two seperate __tsconfig__ - one for type-checking during development and other for source-code transpilation to create production bundle:
 
-[tsconfig for development](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/src/tsconfig.json)
+[tsconfig for type-checking during development](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/src/tsconfig.json)
 
-[tsconfig for production](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129)
+[tsconfig for building production bundle](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129)
 
 ### HOT-RELOAD THAT SCALE
 Local dev server with hot-reloading out-of-the-box (using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)).  
@@ -45,7 +45,7 @@ __This solution scale really well with increasing modules count because you relo
 Most often your team is using different Editors/IDE's so you'll need to have a common way to run type-checking using a specific version of TypeScript compiler for consistent results and avoid Editor specific issues.  
 Run `tsc -p src --watch` command for quick incremental type-checking or `tsc -p src` command for one-time complete check (JS emit is disabled to not clutter your project with intermediate JS files)
 
-### CSS-MODULES WITH TYPED CLASS-NAMES
+### CSS-MODULES WITH TYPED CLASS-NAMES EXPERIMENT
 Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components, with capability to type-check CSS class-names in your components using interfaces and leverage TypeScript IntelliSense features in Editor/IDE (using [csjs](https://github.com/rtsao/csjs#faq)):  
 - Define available CSS classes as interfaces in CSS-Modules to get className property auto-completion, type-checking and easy refactoring in your entire codebase.  
 - Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces.  
@@ -57,8 +57,8 @@ __Overview Video:__ https://youtu.be/67pPYqom2a0
 
 ### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (No Babel)
 Support "async & generator functions" when targeting ES3/ES5 __without Babel!__  
-- Async/Await - starting from version 2.1 TypeScript provide native support for transformation to ES3/ES5 (https://github.com/Microsoft/TypeScript/pull/9175)  
-- Generators - TypeScript Team have dropped request to support generator transformation to (ES3/ES5) so consider alternative solution covered below (https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415)  
+- Async/Await - TypeScript v2.1 provide native support for ES3/ES5 transformation (https://github.com/Microsoft/TypeScript/pull/9175)  
+- Generators - for the moment TypeScript DevTeam have declined to support generators downlevel transformation (to ES3/ES5) (https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415), but you can use an alternative solution covered below:
 
 __Generators transformation to ES3/ES5:__
 
@@ -86,15 +86,18 @@ Test reload speed improvement using this simple test procedure:
 - REDUX-DEV-TOOLS - installed Redux DevTools capabilities with [chrome-extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 - IMMUTABLE-STORE - using `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` in your containers and components)
 - BEM & ITCSS - using BEM with Inverted Triangle conventions to give meaning and context to CSS classes
-- EASY TESTING IN TYPESCRIPT - write your tests only in TypeScript - don't worry about transpilation, easily import and run your TS source files from a command line (use `npm test` CLI command).
-Test harness with [Tape](https://github.com/substack/tape) with Promise support from [blue-tape](https://github.com/spion/blue-tape)
+- EASY TESTING IN TYPESCRIPT - write your tests in TypeScript - without transpilation to run your test, easily import and run your TS source files from a command line (use `npm test` CLI command).
+Test harness using [Tape](https://github.com/substack/tape) - with Promise support using [blue-tape](https://github.com/spion/blue-tape)
+
+#### React-Redux TypeScript Typing Conventions
+- ???
 
 #### React Best Practices & Optimizations
 - no mixins -> use ES6 style PureRenderMixin with PureComponent
 - no ref strings -> use ref callbacks
 - no method binding -> use ES Class Fields
-- no new function/objects creation in render methods -> declare them in outer scope and use a reference
-- render big collections in separate dedicated components -> omit re-renders invoked by other prop changes
+- no function/objects instantiation in render method -> instantiate in outer scope and use references
+- render big collections in separate, dedicated components -> no unfortunate re-renders when other props changes
 - don't use array index as key property -> use item unique id property to eliminate bugs
 
 #### React Patterns
@@ -127,7 +130,6 @@ Test harness with [Tape](https://github.com/substack/tape) with Promise support 
 
 ## Pros / Cons
 
-- I discourage using internal IDE TypeScript support to compile your source code, because the compiler version there could be a different version than what you should have locally installed in the project by npm. Visual Studio Code and alm.tools allows to use a locally installed TypeScript package in your project or use TSC cli command to compile your source code.
 It is OK to use type-checking in the IDE because it will not emit any code.
 
 ---
