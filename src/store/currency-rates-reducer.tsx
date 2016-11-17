@@ -1,5 +1,5 @@
-import { createAction } from 'redux-actions';
-import Immutable from 'seamless-immutable';
+import { createAction, Action } from 'redux-actions';
+import * as Immutable from 'seamless-immutable';
 
 const RATES_MOCK = { 'PLN': 1, 'SEK': 2.1919 };
 
@@ -14,16 +14,24 @@ export const loadCurrencyRatesSuccess = createAction(LOAD_CURRENCY_RATES_SUCCESS
 export const loadCurrencyRatesError = createAction(LOAD_CURRENCY_RATES_ERROR);
 
 // Reducer
-const initialState = Immutable({
+export interface ICurrencyRates {
+  isLoading: boolean;
+  errorMessage: string | null;
+  lastUpdated: Date | null;
+  base: string;
+  rates: any;
+  currencies: string[];
+}
+const initialState: ICurrencyRates = {
   isLoading: false,
   errorMessage: null,
   lastUpdated: null,
   base: 'PLN',
   rates: RATES_MOCK,
   currencies: Object.keys(RATES_MOCK)
-});
+};
 
-export default function reducer(state = initialState, action: FluxStandardAction<any>) {
+export default function reducer(state = Immutable.from(initialState), action: Action<any>) {
   switch (action.type) {
     case LOAD_CURRENCY_RATES:
       return state.merge({

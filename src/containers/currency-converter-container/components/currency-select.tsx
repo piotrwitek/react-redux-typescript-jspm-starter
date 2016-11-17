@@ -1,13 +1,15 @@
 import * as React from 'react';
+import { Action } from 'redux-actions';
+
 interface IProps {
   currencies: string[];
   value: string;
-  onChange: (newValue: string) => FluxStandardAction<string>;
+  onChange: (newValue: string) => Action<string>;
 }
 
-export function CurrencySelect({currencies = [], value = null, onChange = null}: IProps) {
+export function CurrencySelect({currencies = [], value, onChange}: IProps) {
 
-  const handleChange = (ev) => {
+  const handleChange = (ev: React.SyntheticEvent<HTMLSelectElement>) => {
     onChange(ev.target.value);
   };
 

@@ -1,19 +1,24 @@
 // lib imports
 import * as React from 'react';
-import { bindActionCreators } from 'redux';
+import { Action } from 'redux-actions';
 import { connect } from 'react-redux';
 // components imports
+import { IRootReducer } from '../../store';
+import { ICurrencyRates } from '../../store/currency-rates-reducer';
+import { ICurrencyConverter } from '../../store/currency-converter-reducer';
 import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
-import * as currencyConverterActions from '../../reducers/currency-converter-reducer';
+import * as currencyConverterActions from '../../store/currency-converter-reducer';
 import { CurrencyConverter } from './components/currency-converter';
 
 interface IProps {
-  currencyConverter: any;
-  currencyRates: any;
-  actions: any;
+  currencyRates: ICurrencyRates;
+  currencyConverter: ICurrencyConverter;
+  updateBaseCurrency: (payload: string) => Action<string>;
+  updateBaseValue: (payload: string) => Action<string>;
+  updateTargetCurrency: (payload: string) => Action<string>;
+  updateTargetValue: (payload: string) => Action<string>;
 }
-
 interface IState {
 }
 
@@ -21,7 +26,7 @@ export class CurrencyConverterContainer extends React.Component<IProps, IState> 
   render() {
     const { baseCurrency, targetCurrency, baseValue, targetValue } = this.props.currencyConverter;
     const { currencies } = this.props.currencyRates;
-    const { actions } = this.props;
+    const { updateBaseCurrency, updateBaseValue, updateTargetCurrency, updateTargetValue } = this.props;
 
     return (
       <article>
@@ -31,10 +36,10 @@ export class CurrencyConverterContainer extends React.Component<IProps, IState> 
           <CurrencyConverter currencies={currencies}
             baseCurrency={baseCurrency} targetCurrency={targetCurrency}
             baseValue={baseValue} targetValue={targetValue}
-            onBaseCurrencyChange={actions.updateBaseCurrency}
-            onTargetCurrencyChange={actions.updateTargetCurrency}
-            onBaseValueChange={actions.updateBaseValue}
-            onTargetValueChange={actions.updateTargetValue}
+            onBaseCurrencyChange={updateBaseCurrency}
+            onTargetCurrencyChange={updateTargetCurrency}
+            onBaseValueChange={updateBaseValue}
+            onTargetValueChange={updateTargetValue}
             />
         </section>
       </article>
@@ -42,18 +47,11 @@ export class CurrencyConverterContainer extends React.Component<IProps, IState> 
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    currencyConverter: state.currencyConverter,
-    currencyRates: state.currencyRates
-  };
-}
+const stateToProps = (storeState: IRootReducer) => ({
+  currencyRates: storeState.currencyRates,
+  currencyConverter: storeState.currencyConverter
+});
 
-const actions = Object.assign({}, currencyConverterActions);
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
+const actionsToProps = Object.assign({}, currencyConverterActions);
 
-export default connect(mapStateToProps, mapDispatchToProps)(CurrencyConverterContainer);
+export default connect(stateToProps, actionsToProps)(CurrencyConverterContainer);

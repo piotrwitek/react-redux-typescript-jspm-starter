@@ -4,6 +4,7 @@ const INITIAL_DATE = (new Date()).toISOString();
 
 export class AppStore {
   // initial state
+  [key: string]: any;
   currencies = '{}';
   fromCurrency = 'SEK';
   toCurrency = 'EUR';
@@ -16,9 +17,9 @@ export class AppStore {
     this.load();
   }
 
-  save(stateObject) {
+  save(stateObject: any) {
     // remember to stringify the objects that you want to store
-    Object.keys(stateObject).forEach(key => {
+    Object.keys(stateObject).forEach((key) => {
       const storageKey = STORAGE_PREFIX + key;
       const stateItem = stateObject[key];
       if (stateItem) {

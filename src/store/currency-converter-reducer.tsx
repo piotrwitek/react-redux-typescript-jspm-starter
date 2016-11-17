@@ -1,5 +1,5 @@
-import { createAction } from 'redux-actions';
-import Immutable from 'seamless-immutable';
+import { createAction, Action } from 'redux-actions';
+import * as Immutable from 'seamless-immutable';
 
 // Action Types - LOAD, CREATE, UPDATE, REMOVE
 const UPDATE_BASE_CURRENCY = 'currencyConverter/UPDATE_BASE_CURRENCY';
@@ -10,18 +10,24 @@ const UPDATE_TARGET_VALUE = 'currencyConverter/UPDATE_TARGET_VALUE';
 // Action Creators
 export const updateBaseCurrency = createAction<string>(UPDATE_BASE_CURRENCY);
 export const updateTargetCurrency = createAction<string>(UPDATE_TARGET_CURRENCY);
-export const updateBaseValue = createAction<number>(UPDATE_BASE_VALUE);
-export const updateTargetValue = createAction<number>(UPDATE_TARGET_VALUE);
+export const updateBaseValue = createAction<string>(UPDATE_BASE_VALUE);
+export const updateTargetValue = createAction<string>(UPDATE_TARGET_VALUE);
 
 // Reducer
-const initialState = Immutable({
+export interface ICurrencyConverter {
+  baseCurrency: string;
+  targetCurrency: string;
+  baseValue: string;
+  targetValue: string;
+}
+const initialState: ICurrencyConverter = {
   baseCurrency: 'PLN',
   targetCurrency: 'SEK',
-  baseValue: 0,
-  targetValue: 0
-});
+  baseValue: '0',
+  targetValue: '0'
+};
 
-export default function reducer(state = initialState, action: FluxStandardAction<any>) {
+export default function reducer(state = Immutable.from(initialState), action: Action<any>) {
   switch (action.type) {
     case UPDATE_BASE_CURRENCY:
       return state.merge({

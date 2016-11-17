@@ -1,14 +1,15 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
     "declaration": false,
     "jsx": "react",
     "module": "es6",
     "newLine": "LF",
     "noEmit": true,
-    "noEmitOnError": false,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
+    "noEmitOnError": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noResolve": false,
@@ -23,15 +24,14 @@
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
     "allowUnusedLabels": false,
-    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "allowUnreachableCode": false,
     "typeRoots": ["../node_modules/@types/**/*"],
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "noImplicitUseStrict": false,
-    "lib": ["es5", "es6", "dom", "es2015.iterable", "es2015.promise", "es2016.array.include", "es2017.object"],
-    "strictNullChecks": false
+    "lib": ["dom", "es6", "es2015.iterable", "es2015.promise",
+      "es2016.array.include", "es2017.object"
+    ]
   },
   "include": [
     "**/*"
@@ -40,6 +40,7 @@
     "node_modules/**/",
     "jspm_packages/**/"
   ],
+  "compileOnSave": false,
   "vscode": {
     "rewriteTsconfig": true
   },

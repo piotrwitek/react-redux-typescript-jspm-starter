@@ -6,7 +6,7 @@ const FIXER_API_URL = 'https://api.fixer.io/';
 
 // http://api.fixer.io/latest
 export async function getLatest(baseCurrency?: string):
-  Promise<IFixerServiceResponse> {
+  Promise<IFixerServiceResponse | null> {
   let fixerLatestRates = FIXER_API_URL + 'latest';
   if (baseCurrency) {
     fixerLatestRates += '?base=' + baseCurrency;
@@ -18,13 +18,13 @@ export async function getLatest(baseCurrency?: string):
     return response.json();
   } catch (err) {
     logRejection(err);
-    return undefined;
+    return null;
   }
 }
 
 // http://api.fixer.io/2000-01-03
 export async function getByDate(date: Date, baseCurrency?: string):
-  Promise<IFixerServiceResponse> {
+  Promise<IFixerServiceResponse | null> {
   let fixerRatesByDate = FIXER_API_URL + date.toISOString().slice(0, 10);
   if (baseCurrency) {
     fixerRatesByDate += '?base=' + baseCurrency;
@@ -36,6 +36,6 @@ export async function getByDate(date: Date, baseCurrency?: string):
     return response.json();
   } catch (err) {
     logRejection(err);
-    return undefined;
+    return null;
   }
 }

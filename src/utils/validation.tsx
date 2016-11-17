@@ -1,8 +1,8 @@
-export function isInputFocused(target) {
+export function isInputFocused(target: Element) {
   return target === document.activeElement;
 }
 
-export function isNotValidCurrency(value) {
+export function isNotValidCurrency(value: string) {
   if (value && (isNaN(parseFloat(value)) || !/^[0-9,.\s]+$/.test(value))) return true;
 
   const parts = value.toString().split('.');
@@ -12,7 +12,7 @@ export function isNotValidCurrency(value) {
   return decimal && decimal.length > 2;
 }
 
-export function validateStatusCode(response) {
+export function validateStatusCode(response: Response) {
   if (response.status >= 200 && response.status < 300) {
     return true;
   } else {

@@ -1,25 +1,26 @@
 // lib imports
 import * as React from 'react';
+import { Action } from 'redux-actions';
 
 import { CurrencySelect } from './currency-select';
 import { CurrencyInput } from './currency-input';
 
-interface LocalProps {
+interface IProps {
   currencies: string[];
   baseCurrency: string;
   targetCurrency: string;
-  baseValue: number;
-  targetValue: number;
-  onBaseCurrencyChange: (newCurrency: string) => FluxStandardAction<string>;
-  onTargetCurrencyChange: (newCurrency: string) => FluxStandardAction<string>;
-  onBaseValueChange: (newCurrency: string) => FluxStandardAction<string>;
-  onTargetValueChange: (newCurrency: string) => FluxStandardAction<string>;
+  baseValue: string;
+  targetValue: string;
+  onBaseCurrencyChange: (payload: string) => Action<string>;
+  onTargetCurrencyChange: (payload: string) => Action<string>;
+  onBaseValueChange: (payload: string) => Action<string>;
+  onTargetValueChange: (payload: string) => Action<string>;
 }
 
-interface LocalState {
+interface IState {
 }
 
-export class CurrencyConverter extends React.Component<LocalProps, LocalState> {
+export class CurrencyConverter extends React.Component<IProps, IState> {
   render(): JSX.Element {
     const {
       currencies,
@@ -56,8 +57,15 @@ export class CurrencyConverter extends React.Component<LocalProps, LocalState> {
   }
 }
 
+interface ICurrencyInputGroup {
+  currencies: string[];
+  currencyType: string;
+  currencyValue: string;
+  onCurrencyTypeChange: (payload: string) => Action<string>;
+  onCurrencyValueChange: (payload: string) => Action<string>;
+}
 function CurrencyInputGroup({currencies, currencyType, currencyValue,
-  onCurrencyTypeChange, onCurrencyValueChange}) {
+  onCurrencyTypeChange, onCurrencyValueChange}: ICurrencyInputGroup) {
   return (
     <div className="c-input-group">
       <div className="o-field o-field--fixed" style={{ width: '80px' }}>
