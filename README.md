@@ -81,16 +81,12 @@ Test reload speed improvement using this simple test procedure:
 
 - PRODUCTION-WORKFLOW - npm scripts for production bundling & deployment, github-hooks, linter, test runner etc.
 - TYPESAFE-API-CALLS - type checking contracts of REST API calls - forget constantly checking for API docs and let your IDE guide you
-- GREAT-TOOLING - type cheking for JavaScript and DOM API with autocompletion and docs right in your editor - no more silly typos and runtime exceptions
 - REACT-ROUTER - included `react-router-redux` to store your routing in state for Time-Travel capabilities
 - REDUX-DEV-TOOLS - installed Redux DevTools capabilities with [chrome-extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 - IMMUTABLE-STORE - using `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` in your containers and components)
 - BEM & ITCSS - using BEM with Inverted Triangle conventions to give meaning and context to CSS classes
-- EASY TESTING IN TYPESCRIPT - write your tests in TypeScript - without transpilation to run your test, easily import and run your TS source files from a command line (use `npm test` CLI command).
-Test harness using [Tape](https://github.com/substack/tape) - with Promise support using [blue-tape](https://github.com/spion/blue-tape)
-
-#### React-Redux TypeScript Typing Conventions
-- ???
+- TESTING IN TYPESCRIPT - writing and running tests from TypeScript source files without transpilation complexity (use `npm test` CLI command) - test harness using [tape](https://github.com/substack/tape) and [blue-tape](https://github.com/spion/blue-tape).
+- Type-safe React-Redux with TypeScript
 
 #### React Best Practices & Optimizations
 - no mixins -> use ES6 style PureRenderMixin with PureComponent
@@ -99,8 +95,9 @@ Test harness using [Tape](https://github.com/substack/tape) - with Promise suppo
 - no function/objects instantiation in render method -> instantiate in outer scope and use references
 - render big collections in separate, dedicated components -> no unfortunate re-renders when other props changes
 - don't use array index as key property -> use item unique id property to eliminate bugs
+- remove `bindActionCreators` boilerplate using object literal with actions instead of `mapDispatchToProps` function [issue #32](/../../issues/32)
 
-#### React Patterns
+#### React-Redux Patterns
 - Flux Standard Actions for Redux - https://github.com/acdlite/redux-actions
 - Redux Reducer Modules - https://github.com/erikras/ducks-modular-redux
 
@@ -118,19 +115,13 @@ Test harness using [Tape](https://github.com/substack/tape) - with Promise suppo
 
 - Redux async flow with redux-saga - https://github.com/yelouafi/redux-saga/
 - Testing async flow in redux sagas
-- REDUX INNOVATION - using TS 2.0 "Tagged Union Types" - for solid Redux integration
-  (https://blogs.msdn.microsoft.com/typescript/2016/08/30/announcing-typescript-2-0-rc)
-- Reactive Programming with RxJS
 - Testing with Enzyme (JSDOM)
-- Testing Component markup (shallowRender)
-- Testing Component behaviour/interactions (renderIntoDocument, Simulate)
-- Integration Testing in Redux Store
+- Testing with Snapshots
+- Reactive Programming with RxJS
 
 ---
 
 ## Pros / Cons
-
-It is OK to use type-checking in the IDE because it will not emit any code.
 
 ---
 
@@ -146,12 +137,11 @@ It is OK to use type-checking in the IDE because it will not emit any code.
 │   ├── components              # global reusable presentational components
 │   ├── containers              # container components providing redux context
 │   ├── layouts                 # components defining page layouts
-│   ├── reducers                # modules containing redux reducers/constants/action creators
+│   ├── store                   # modules containing redux modules (reducers/constants/action creators)
 │   ├── services                # modules abstracting communication with web services
-│   ├── typings                 # custom TypeScript definitions
+│   ├── types                   # custom TypeScript definitions
 │   ├── utils                   # app utility modules
 │   ├── app.tsx                 # app entry module with routing config
-│   ├── store.tsx               # app store module
 │   ├── test-runner.tsx         # test suites config
 │   └── tsconfig.tsx            # TypeScript compiler config
 ├── index.html                  # index.html
