@@ -20,11 +20,11 @@ Table of Contents
 
 ## Innovations
 
-### RAPID-SPEED DEVELOPMENT WORKFLOW - no bundling!
+### - RAPID-SPEED DEVELOPMENT WORKFLOW - no bundling!
 No bundling during development, instead loading source files (.ts/.tsx) directly in the browser (using [plugin-typescript](https://github.com/frankwallis/plugin-typescript)).  
 When file changes - skipping type-checking (which is delegated to seperate process) and reloading only the changed file with hot-reload.
 
-### DELEGATED TYPE-CHECKING
+### - DELEGATED TYPE-CHECKING
 Type-checking is delegated to a seperate process using following options:
 - __CLI__ - TSC compiler process running in watch mode: [instruction here](#cli-workflow)  
 - __Editor/IDE__ - use internal TypeScript Language Service (e.g. Webstorm, VS Code, Atom, Sublime Text, alm.tools and more...)
@@ -35,40 +35,33 @@ __NOTE:__ There are two seperate __tsconfig__ - one for type-checking during dev
 
 [tsconfig for building production bundle](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129)
 
-### HOT-RELOAD THAT SCALE
+### - HOT-RELOAD THAT SCALE
 Local dev server with hot-reloading out-of-the-box (using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)).  
 __How:__ Loading each module separately and using SystemJS module registry, on changes it's removing old module from registry and re-importing updated one then re-evaluating only those modules that was importing the changed module.  
 
-__This solution scale really well with increasing modules count because you reload only modules that has changed.__
+__Scale well with increasing modules count because you reload only modules that has changed.__
 > __Differences with Webpack workflow explained__ from real project perspective by [@jonaskello](https://github.com/jonaskello)  https://github.com/Microsoft/TypeScript/issues/1564#issuecomment-252903932
 
-### CLI WORKFLOW
+### - CLI WORKFLOW
 Most often your team is using different Editors/IDE's so you'll need to have a common way to run type-checking using a specific version of TypeScript compiler for consistent results and avoid Editor specific issues.  
 Run `tsc -p src --watch` command for quick incremental type-checking or `tsc -p src` command for one-time complete check (JS emit is disabled to not clutter your project with intermediate JS files)
 
-### Strict Null Checks Enabled
+### - STRICT NULL CHECKS - Enabled
 Enabled strictNullChecks with noImplicitAny tsc flags, to increase type safety and grant better tooling support using Non-nullable Types (v2.0) and Smarter Type Inference (v2.1) [Source](https://blogs.msdn.microsoft.com/typescript/2016/11/08/typescript-2-1-rc-better-inference-async-functions-and-more/)
 
-### ASYNC/AWAIT/GENERATORS transformation when targeting ES3/ES5 (No Babel)
-Support "async & generator functions" when targeting ES3/ES5 __without Babel!__  
-- Async/Await - TypeScript v2.1 provide native support for ES3/ES5 transformation (https://github.com/Microsoft/TypeScript/pull/9175)  
-- Generators - for the moment TypeScript DevTeam have declined to support generators downlevel transformation (to ES3/ES5) (https://github.com/Microsoft/TypeScript/issues/3975#issuecomment-250859415), but you can use an alternative solution covered below:
+### - ASYNC/AWAIT/GENERATORS transformation when targeting ES5 (No Babel)
+Support for "async & generator functions" when targeting ES5 __without Babel!__  
+- Async/Await - TypeScript v2.1 provide native support for ES5 transformation (https://github.com/Microsoft/TypeScript/pull/9175)  
+- Generators - generators downlevel transformation (to ES5) is a work in progress ([Source](https://github.com/Microsoft/TypeScript/pull/12346)
+also [here](https://github.com/Microsoft/TypeScript/issues/3975) and [here](https://github.com/Microsoft/TypeScript/issues/1564))
 
-__Generators transformation to ES3/ES5:__
-Use [Facebook Regenerator Project](https://github.com/facebook/regenerator) instead of __Babel__ as dependency to transform Generators.  
-_(NOTE: Internally **Babel** is also running "regenerator runtime" for async and generator functions transformations - https://babeljs.io/docs/usage/caveats/)_
+__Until then use an alternative solution covered below:__
 
-When building for production use `npm run regenerator` command after completion of build step, this will run "regenerator" on app.js bundle. Alternatively use `npm run build:regenerator` command to automatically run "regenerator" with each production build.
+[Facebook Regenerator Project](https://github.com/facebook/regenerator) instead of __Babel__ to transform Generator Functions. _(NOTE: Internally **Babel** is also running "regenerator runtime" for async and generator functions transformations - https://babeljs.io/docs/usage/caveats/)_
 
-### Optimized JSPM (SystemJS) loading speed
-To speed up a full page reload by minimizing request count it is possible to create a development "vendor bundle" for external dependencies loaded from node_modules.  
-If not leveraging HTTP/2, it is a best practice to bundle all external dependencies together and load as a one bundle.
+> When building for production use `npm run regenerator` command after completion of build step, this will run "regenerator" on app.js bundle. Alternatively use `npm run build:regenerator` command to automatically run "regenerator" with each production build.
 
-Test reload speed improvement using this simple test procedure:  
-1. run `npm run unbundle` -> open network tab in chrome dev tools -> reload the page -> check logged results  
-2. run `npm run build:dev` -> open network tab in chrome dev tools -> reload page -> compare logged results with previous  
-
-### CSS-MODULES WITH TYPED CLASS-NAMES EXPERIMENT
+### - CSS-MODULES WITH TYPED CLASS-NAMES EXPERIMENT
 Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components, with capability to type-check CSS class-names in your components using interfaces and leverage TypeScript IntelliSense features in Editor/IDE (using [csjs](https://github.com/rtsao/csjs#faq)):  
 - Define available CSS classes as interfaces in CSS-Modules to get className property auto-completion, type-checking and easy refactoring in your entire codebase.  
 - Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces.  
@@ -76,6 +69,14 @@ Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in U
 
 __EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and it's [CSS Module Styles in TypeScript Format with Class-Names Interface](src/containers/css-modules-container/container-styles.tsx)  
 __DEMO:__ http://piotrwitek.github.io/react-redux-typescript-starter-kit/#/css-modules
+
+### - Optimized JSPM (SystemJS) loading speed
+To speed up a full page reload by minimizing request count it is possible to create a development "vendor bundle" for external dependencies loaded from node_modules.  
+If not leveraging HTTP/2, it is a best practice to bundle all external dependencies together and load as a one bundle.
+
+Test reload speed improvement using this simple test procedure:  
+1. run `npm run unbundle` -> open network tab in chrome dev tools -> reload the page -> check logged results  
+2. run `npm run build:dev` -> open network tab in chrome dev tools -> reload page -> compare logged results with previous  
 
 ---
 
