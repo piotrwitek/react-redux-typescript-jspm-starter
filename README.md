@@ -3,7 +3,8 @@
 
 > ##### Futuristic, bundle-free development environment for building _Component-Driven SPA with React, Redux and TypeScript_ - utilizing power of Static Type-checking, ES.Next, CSS-Modules, Hot-reload, in-browser transpilation, tree-shaking - powered by JSPM (SystemJS & Rollup with tree-shaking).
 
-### Demo: http://piotrwitek.github.io/react-redux-typescript-starter-kit/
+### _Demo Page:_ http://piotrwitek.github.io/react-redux-typescript-starter-kit/
+### _Minimal React-like + Redux starter-kit EVER (13KB Min+Gzip):_ https://github.com/piotrwitek/preact-typescript-rollup-starter-kit 
 
 Table of Contents  
 1. [Innovations](#innovations)  
