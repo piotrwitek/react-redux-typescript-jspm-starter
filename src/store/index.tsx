@@ -4,16 +4,16 @@ import { routerReducer } from 'react-router-redux';
 import { createStore } from 'redux';
 
 import {
-  default as currencyRatesReducer, ICurrencyRates
+  default as currencyRatesReducer, ICurrencyRatesReducer
 } from './currency-rates-reducer';
 import {
-  default as currencyConverterReducer, ICurrencyConverter
+  default as currencyConverterReducer, ICurrencyConverterReducer
 } from './currency-converter-reducer';
 
 export interface IRootReducer {
   routing: any;
-  currencyRates: ICurrencyRates;
-  currencyConverter: ICurrencyConverter;
+  currencyRates: ICurrencyRatesReducer;
+  currencyConverter: ICurrencyConverterReducer;
 }
 
 export const rootReducer = combineReducers({

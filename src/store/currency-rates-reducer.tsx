@@ -1,7 +1,11 @@
-import { createAction, Action } from 'redux-actions';
+import { createAction, handleActions, Action } from 'redux-actions';
 import * as Immutable from 'seamless-immutable';
 
-const RATES_MOCK = { 'PLN': 1, 'SEK': 2.1919 };
+const RESPONSE_MOCK: IFixerServiceResponse = {
+  base: 'PLN',
+  date: Date.now().toString(),
+  rates: { 'PLN': 1, 'SEK': 2.1919 },
+};
 
 // Action Types - LOAD, CREATE, UPDATE, REMOVE
 const LOAD_CURRENCY_RATES = 'currencyRates/LOAD_CURRENCY_RATES';
@@ -9,47 +13,40 @@ const LOAD_CURRENCY_RATES_SUCCESS = 'currencyRates/LOAD_CURRENCY_RATES_SUCCESS';
 const LOAD_CURRENCY_RATES_ERROR = 'currencyRates/LOAD_CURRENCY_RATES_ERROR';
 
 // Action Creators
-export const loadCurrencyRates = createAction(LOAD_CURRENCY_RATES);
-export const loadCurrencyRatesSuccess = createAction(LOAD_CURRENCY_RATES_SUCCESS);
-export const loadCurrencyRatesError = createAction(LOAD_CURRENCY_RATES_ERROR);
+export const loadCurrencyRates = createAction<void>(LOAD_CURRENCY_RATES);
+export const loadCurrencyRatesSuccess = createAction<IFixerServiceResponse>(LOAD_CURRENCY_RATES_SUCCESS);
+export const loadCurrencyRatesError = createAction<string>(LOAD_CURRENCY_RATES_ERROR);
+
 
 // Reducer
-export interface ICurrencyRates {
+export interface ICurrencyRatesReducer {
   isLoading: boolean;
   errorMessage: string | null;
   lastUpdated: Date | null;
   base: string;
   rates: any;
-  currencies: string[];
 }
-const initialState: ICurrencyRates = {
+
+const initialState = Immutable.from<ICurrencyRatesReducer>({
   isLoading: false,
   errorMessage: null,
   lastUpdated: null,
   base: 'PLN',
-  rates: RATES_MOCK,
-  currencies: Object.keys(RATES_MOCK)
-};
+  rates: RESPONSE_MOCK.rates,
+});
 
-export default function reducer(state = Immutable.from(initialState), action: Action<any>) {
-  switch (action.type) {
-    case LOAD_CURRENCY_RATES:
-      return state.merge({
-        isLoading: true
-      });
-    case LOAD_CURRENCY_RATES_SUCCESS:
-      return state.merge({
-        isLoading: false,
-        errorMessage: null,
-        results: action.payload,
-        lastUpdated: Date.now()
-      });
-    case LOAD_CURRENCY_RATES_ERROR:
-      return state.merge({
-        isLoading: false,
-        errorMessage: action.payload
-      });
-
-    default: return state;
-  }
-}
+export default handleActions<any, any>({
+  [LOAD_CURRENCY_RATES]: (state: typeof initialState, action: Action<void>) => state.merge({
+    isLoading: true,
+  }),
+  [LOAD_CURRENCY_RATES_SUCCESS]: (state: typeof initialState, action: Action<IFixerServiceResponse>) => state.merge({
+    isLoading: false,
+    errorMessage: null,
+    rates: action.payload && action.payload.rates,
+    lastUpdated: Date.now(),
+  }),
+  [LOAD_CURRENCY_RATES_ERROR]: (state: typeof initialState, action: Action<string>) => state.merge({
+    isLoading: false,
+    errorMessage: action.payload,
+  }),
+}, initialState);

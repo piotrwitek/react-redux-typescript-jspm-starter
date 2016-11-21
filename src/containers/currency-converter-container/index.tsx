@@ -4,16 +4,16 @@ import { Action } from 'redux-actions';
 import { connect } from 'react-redux';
 // components imports
 import { IRootReducer } from '../../store';
-import { ICurrencyRates } from '../../store/currency-rates-reducer';
-import { ICurrencyConverter } from '../../store/currency-converter-reducer';
+import { ICurrencyRatesReducer } from '../../store/currency-rates-reducer';
+import { ICurrencyConverterReducer } from '../../store/currency-converter-reducer';
 import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
 import * as currencyConverterActions from '../../store/currency-converter-reducer';
 import { CurrencyConverter } from './components/currency-converter';
 
 interface IProps {
-  currencyRates: ICurrencyRates;
-  currencyConverter: ICurrencyConverter;
+  currencyRates: ICurrencyRatesReducer;
+  currencyConverter: ICurrencyConverterReducer;
   updateBaseCurrency: (payload: string) => Action<string>;
   updateBaseValue: (payload: string) => Action<string>;
   updateTargetCurrency: (payload: string) => Action<string>;
@@ -25,7 +25,8 @@ interface IState {
 export class CurrencyConverterContainer extends React.Component<IProps, IState> {
   render() {
     const { baseCurrency, targetCurrency, baseValue, targetValue } = this.props.currencyConverter;
-    const { currencies } = this.props.currencyRates;
+    const { rates } = this.props.currencyRates;
+    const currencies = Object.keys(rates);
     const { updateBaseCurrency, updateBaseValue, updateTargetCurrency, updateTargetValue } = this.props;
 
     return (

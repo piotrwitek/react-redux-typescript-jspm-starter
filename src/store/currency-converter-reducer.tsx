@@ -14,13 +14,13 @@ export const updateBaseValue = createAction<string>(UPDATE_BASE_VALUE);
 export const updateTargetValue = createAction<string>(UPDATE_TARGET_VALUE);
 
 // Reducer
-export interface ICurrencyConverter {
+export interface ICurrencyConverterReducer {
   baseCurrency: string;
   targetCurrency: string;
   baseValue: string;
   targetValue: string;
 }
-const initialState: ICurrencyConverter = {
+const initialState: ICurrencyConverterReducer = {
   baseCurrency: 'PLN',
   targetCurrency: 'SEK',
   baseValue: '0',
