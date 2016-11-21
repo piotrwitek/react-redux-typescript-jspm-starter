@@ -1,5 +1,5 @@
 interface IFixerServiceResponse {
   base: string;
   date: string;
-  rates: Object;
+  rates: { [key: string]: number };
 }
