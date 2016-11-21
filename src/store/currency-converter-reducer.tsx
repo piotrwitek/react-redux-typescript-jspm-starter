@@ -24,26 +24,26 @@ const initialState: ICurrencyConverterReducer = {
   baseCurrency: 'PLN',
   targetCurrency: 'SEK',
   baseValue: '0',
-  targetValue: '0'
+  targetValue: '0',
 };
 
 export default function reducer(state = Immutable.from(initialState), action: Action<any>) {
   switch (action.type) {
     case UPDATE_BASE_CURRENCY:
       return state.merge({
-        baseCurrency: action.payload
+        baseCurrency: action.payload,
       });
     case UPDATE_TARGET_CURRENCY:
       return state.merge({
-        targetCurrency: action.payload
+        targetCurrency: action.payload,
       });
     case UPDATE_BASE_VALUE:
       return state.merge({
-        baseValue: action.payload
+        baseValue: action.payload,
       });
     case UPDATE_TARGET_VALUE:
       return state.merge({
-        targetValue: action.payload
+        targetValue: action.payload,
       });
 
     default: return state;
