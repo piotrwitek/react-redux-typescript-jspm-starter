@@ -159,18 +159,19 @@ Test reload speed improvement using this simple test procedure:
 ## Installation
 
 #### Prerequisites
-- Node.js and Git
-- Install JSPM with global flag to have jspm command available: `npm install jspm -g` (otherwise you'll have to use a local version from `~/node_modules/`)
+- Node.js `>=6.0.0`
+- Global [JSPM](http://jspm.io/) installation for CLI commands - `npm i -g jspm`
 
+```
+// Clone repo
+git clone https://github.com/piotrwitek/react-redux-typescript-starter-kit.git my-project-folder
 
-#### 1. Clone repo
-    git clone https://github.com/piotrwitek/react-redux-typescript-starter-kit.git my-project-folder
+// Install dependencies
+npm install
 
-#### 2. Install npm dependencies
-    npm install
-
-#### 3. Run development server with HMR and enjoy best possible dev feedback-loop
-    npm start
+// Run development server with HMR
+npm start
+```
 
 ---
 
