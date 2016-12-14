@@ -11,7 +11,7 @@
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
     "allowJs": false,
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "noEmitOnError": true,
     "noEmitHelpers": false,

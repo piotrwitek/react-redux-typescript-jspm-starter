@@ -58,6 +58,7 @@ SystemJS.config({
     "removeComments": true,
     "noEmitHelpers": false,
     "importHelpers": false,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true
   },
   packages: {
