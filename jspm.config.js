@@ -12,7 +12,8 @@ SystemJS.config({
       "plugin-typescript": "github:frankwallis/plugin-typescript@5.2.9",
       "css": "github:systemjs/plugin-css@0.1.32",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
-      "blue-tape": "npm:blue-tape@0.2.0"
+      "blue-tape": "npm:blue-tape@0.2.0",
+      "tslib": "npm:tslib@1.2.0"
     },
     "packages": {
       "github:capaj/systemjs-hot-reloader@0.6.0": {
@@ -137,6 +138,8 @@ SystemJS.config({
   },
   transpiler: "plugin-typescript",
   typescriptOptions: {
+    "tsconfig": false,
+    "typeCheck": false,
     "module": "system",
     "target": "es5",
     "emitDecoratorMetadata": true,
@@ -145,10 +148,8 @@ SystemJS.config({
     "moduleResolution": "node",
     "preserveConstEnums": true,
     "removeComments": true,
-    "typeCheck": false,
-    "tsconfig": false,
-    "noEmitHelpers": true,
-    "importHelpers": true,
+    "noEmitHelpers": false,
+    "importHelpers": false,
     "sourceMap": true
   },
   packages: {

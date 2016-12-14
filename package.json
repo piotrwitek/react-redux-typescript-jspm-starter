@@ -25,9 +25,9 @@
     "bad": "npm run build:app && npm run deploy",
     "bvd": "npm run build:vendor && npm run deploy",
     "lint": "tslint './src/**/*.ts[x]'",
-    "test": "jspm run src/test-runner | faucet",
     "tsc": "tsc -p src",
     "tsc:watch": "tsc -p src -w",
+    "test": "jspm run src/test-runner | faucet",
     "regenerator": "node scripts/regenerator.js",
     "build:regenerator": "npm run build:app && npm run regenerator"
   },
@@ -73,7 +73,8 @@
       "blue-tape": "npm:blue-tape@^0.2.0",
       "css": "github:systemjs/plugin-css@^0.1.32",
       "plugin-typescript": "github:frankwallis/plugin-typescript@^5.2.9",
-      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0",
+      "tslib": "npm:tslib@^1.2.0"
     },
     "peerDependencies": {
       "assert": "npm:jspm-nodelibs-assert@^0.2.0",
