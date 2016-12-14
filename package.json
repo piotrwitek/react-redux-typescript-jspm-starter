@@ -9,8 +9,8 @@
   "license": "MIT",
   "main": "server.js",
   "scripts": {
-    "postinstall": "jspm install && npm run build:dev",
     "clean": "shx rm -rf dist node_modules jspm_packages",
+    "init": "jspm install && npm run build:dev",
     "init:deploy": "node scripts/init.js deploy",
     "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push",
     "precommit": "npm run lint && npm run tsc",
@@ -27,12 +27,11 @@
     "lint": "tslint 'src/**/*.ts[x]'",
     "tsc": "tsc -p src",
     "tsc:watch": "tsc -p src -w",
-    "test": "jspm run src/test-runner | faucet",
+    "test": "echo 'migrating to jest'",
     "regenerator": "node scripts/regenerator.js",
     "build:regenerator": "npm run build:app && npm run regenerator"
   },
   "devDependencies": {
-    "@types/blue-tape": "^0.1.30",
     "@types/classnames": "^0.0.32",
     "@types/react": "^0.14.43",
     "@types/react-dom": "^0.14.11",
@@ -41,9 +40,8 @@
     "@types/react-router-redux": "^4.0.34",
     "@types/redux-actions": "^0.8.32",
     "@types/seamless-immutable": "^6.1.2",
-    "@types/tape": "^4.2.28",
+    "@types/systemjs": "^0.19.32",
     "@types/whatwg-fetch": "^0.0.32",
-    "faucet": "^0.0.1",
     "husky": "^0.11.8",
     "jspm": "^0.17.0-beta.32",
     "jspm-hmr": "^0.5.0",
@@ -69,7 +67,6 @@
       "whatwg-fetch": "npm:whatwg-fetch@^1.1.0"
     },
     "devDependencies": {
-      "blue-tape": "npm:blue-tape@^0.2.0",
       "css": "github:systemjs/plugin-css@^0.1.32",
       "plugin-typescript": "github:frankwallis/plugin-typescript@^5.2.9",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0",
