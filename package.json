@@ -10,7 +10,7 @@
   "main": "server.js",
   "scripts": {
     "postinstall": "jspm install && npm run build:dev",
-    "clean": "node scripts/clean.js",
+    "clean": "shx rm -rf dist node_modules jspm_packages",
     "init:deploy": "node scripts/init.js deploy",
     "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push",
     "precommit": "npm run lint",
