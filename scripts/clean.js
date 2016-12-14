@@ -1,4 +1,3 @@
 require('shelljs/global');
 
-rm('-rf', 'dist/*');
-
+rm('-rf', ['dist/*', 'node_modules', 'jspm_packages']);
