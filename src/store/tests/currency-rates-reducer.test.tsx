@@ -3,7 +3,7 @@ import * as currencyRatesActions from '../currency-rates-reducer';
 
 // testing action creators
 
-test('testing action creator currencyRatesFetchSuccess', function(t) {
+test('testing action creator currencyRatesFetchSuccess', function (t) {
   // arrange
   // tslint:disable
   const results = {
@@ -19,7 +19,7 @@ test('testing action creator currencyRatesFetchSuccess', function(t) {
   const actual = currencyRatesActions.loadCurrencyRatesSuccess(results);
   const expected = {
     type: 'currencyRates/LOAD_CURRENCY_RATES_SUCCESS',
-    payload: results
+    payload: results,
   };
 
   // assert
@@ -28,7 +28,7 @@ test('testing action creator currencyRatesFetchSuccess', function(t) {
 
 });
 
-test('testing action creator currencyRatesFetchError', function(t) {
+test('testing action creator currencyRatesFetchError', function (t) {
   // arrange
   const errorMessage = 'Error Message';
 
@@ -36,7 +36,7 @@ test('testing action creator currencyRatesFetchError', function(t) {
   const actual = currencyRatesActions.loadCurrencyRatesError(errorMessage);
   const expected = {
     type: 'currencyRates/LOAD_CURRENCY_RATES_ERROR',
-    payload: errorMessage
+    payload: errorMessage,
   };
 
   // assert

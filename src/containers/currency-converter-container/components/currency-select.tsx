@@ -19,7 +19,7 @@ export function CurrencySelect({currencies = [], value, onChange}: IProps) {
       value={value}
       onChange={handleChange}>
       {currencies.map(currency =>
-        <option key={currency}>{currency}</option>
+        <option key={currency}>{currency}</option>,
       )}
     </select>
   );

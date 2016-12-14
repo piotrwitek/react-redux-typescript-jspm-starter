@@ -4,10 +4,10 @@ import { routerReducer } from 'react-router-redux';
 import { createStore } from 'redux';
 
 import {
-  default as currencyRatesReducer, ICurrencyRatesReducer
+  default as currencyRatesReducer, ICurrencyRatesReducer,
 } from './currency-rates-reducer';
 import {
-  default as currencyConverterReducer, ICurrencyConverterReducer
+  default as currencyConverterReducer, ICurrencyConverterReducer,
 } from './currency-converter-reducer';
 
 export interface IRootReducer {
@@ -19,7 +19,7 @@ export interface IRootReducer {
 export const rootReducer = combineReducers({
   routing: routerReducer,
   currencyRates: currencyRatesReducer,
-  currencyConverter: currencyConverterReducer
+  currencyConverter: currencyConverterReducer,
 });
 
 // rehydrating state on app start: implement here...
@@ -28,7 +28,7 @@ const recoverState = () => ({});
 export const store = createStore(
   rootReducer,
   recoverState(),
-  window.devToolsExtension && window.devToolsExtension()
+  window.devToolsExtension && window.devToolsExtension(),
 );
 
 // systemjs-hot-reloader hook, rehydrating the state of redux store

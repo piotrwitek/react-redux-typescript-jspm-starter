@@ -4,7 +4,7 @@ import classNames from 'classnames';
 const inlineStyles = {
   topBorder: {
     borderTop: '1px solid #ddd',
-  }
+  },
 };
 
 export function LayoutFooter({className = '', children = undefined}) {

@@ -50,7 +50,7 @@ export class CurrencyConverterContainer extends React.Component<IProps, IState> 
 
 const stateToProps = (storeState: IRootReducer) => ({
   currencyRates: storeState.currencyRates,
-  currencyConverter: storeState.currencyConverter
+  currencyConverter: storeState.currencyConverter,
 });
 
 const actionsToProps = Object.assign({}, currencyConverterActions);
