@@ -1,4 +1,4 @@
-import test from 'blue-tape';
+import * as test from 'blue-tape';
 import * as currencyRatesActions from '../currency-rates-reducer';
 
 // testing action creators

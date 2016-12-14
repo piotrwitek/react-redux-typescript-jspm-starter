@@ -10,7 +10,7 @@ interface IProps {
 export function CurrencySelect({currencies = [], value, onChange}: IProps) {
 
   const handleChange = (ev: React.SyntheticEvent<HTMLSelectElement>) => {
-    onChange(ev.target.value);
+    onChange(ev.currentTarget.value);
   };
 
   return (
