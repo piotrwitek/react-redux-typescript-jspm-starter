@@ -148,7 +148,8 @@ SystemJS.config({
     "typeCheck": false,
     "tsconfig": false,
     "noEmitHelpers": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "sourceMap": true
   },
   packages: {
     "app": {
