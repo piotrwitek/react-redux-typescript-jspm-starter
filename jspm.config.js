@@ -146,7 +146,9 @@ SystemJS.config({
     "preserveConstEnums": true,
     "removeComments": true,
     "typeCheck": false,
-    "tsconfig": false
+    "tsconfig": false,
+    "noEmitHelpers": true,
+    "importHelpers": true
   },
   packages: {
     "app": {
