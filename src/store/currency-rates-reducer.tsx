@@ -1,4 +1,4 @@
-import { createAction, handleActions, Action } from 'redux-actions';
+import { handleActions, Action } from 'redux-actions';
 import * as Immutable from 'seamless-immutable';
 
 const RESPONSE_MOCK: IFixerServiceResponse = {
@@ -13,9 +13,15 @@ const LOAD_CURRENCY_RATES_SUCCESS = 'currencyRates/LOAD_CURRENCY_RATES_SUCCESS';
 const LOAD_CURRENCY_RATES_ERROR = 'currencyRates/LOAD_CURRENCY_RATES_ERROR';
 
 // Action Creators
-export const loadCurrencyRates = createAction<void>(LOAD_CURRENCY_RATES);
-export const loadCurrencyRatesSuccess = createAction<IFixerServiceResponse>(LOAD_CURRENCY_RATES_SUCCESS);
-export const loadCurrencyRatesError = createAction<string>(LOAD_CURRENCY_RATES_ERROR);
+export const loadCurrencyRates = () => ({ type: LOAD_CURRENCY_RATES });
+export const loadCurrencyRatesSuccess = (payload: any) => ({
+  type: LOAD_CURRENCY_RATES_SUCCESS,
+  payload: payload,
+});
+export const loadCurrencyRatesError = (payload: any) => ({
+  type: LOAD_CURRENCY_RATES_ERROR,
+  payload: payload,
+});
 
 
 // Reducer

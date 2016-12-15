@@ -1,9 +1,20 @@
-import * as test from 'blue-tape';
+// MOCKING
+jest.mock('redux-actions', () => {
+  return {
+    handleActions: () => ({}),
+  };
+}, { virtual: true });
+jest.mock('seamless-immutable', () => {
+  return {
+    from: () => ({}),
+  };
+}, { virtual: true });
+
 import * as currencyRatesActions from '../currency-rates-reducer';
 
 // testing action creators
 
-test('testing action creator currencyRatesFetchSuccess', function (t) {
+test('testing action creator currencyRatesFetchSuccess', () => {
   // arrange
   // tslint:disable
   const results = {
@@ -23,12 +34,10 @@ test('testing action creator currencyRatesFetchSuccess', function (t) {
   };
 
   // assert
-  t.deepEqual(actual, expected, 'should deep equal expected action');
-  t.end();
-
+  expect(actual).toEqual(expected);
 });
 
-test('testing action creator currencyRatesFetchError', function (t) {
+test('testing action creator currencyRatesFetchError', () => {
   // arrange
   const errorMessage = 'Error Message';
 
@@ -40,8 +49,7 @@ test('testing action creator currencyRatesFetchError', function (t) {
   };
 
   // assert
-  t.deepEqual(actual, expected, 'should deep equal expected action');
-  t.end();
+  expect(actual).toEqual(expected);
 });
 
 // testing reducer

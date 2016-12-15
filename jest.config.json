@@ -1,0 +1,26 @@
+{
+  "automock": false,
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js"
+  ],
+  "unmockedModulePathPatterns": [
+    "<rootDir>/node_modules/react",
+    "<rootDir>/node_modules/react-redux",
+    "<rootDir>/node_modules/react-dom",
+    "<rootDir>/node_modules/react-addons-test-utils",
+    "<rootDir>/node_modules/fbjs"
+  ],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+  },
+  "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
+  "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
+  "notify": false,
+  "verbose": true,
+  "globals": {
+    "window": {},
+    "__TS_CONFIG__": "<rootDir>/src/tsconfig.json"
+  }
+}
