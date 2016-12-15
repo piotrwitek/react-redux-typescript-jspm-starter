@@ -1,7 +1,8 @@
-// SystemJS 
-type System = { global: Global, production: boolean };
-type Global = {};
-declare const System: System;
+declare namespace SystemJSLoader {
+  interface System {
+    production: boolean;
+  }
+}
 
 // JSON Loader
 declare module '*!json' {

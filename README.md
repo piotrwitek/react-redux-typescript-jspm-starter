@@ -1,10 +1,13 @@
 ## _React v15.3 / Redux v3.6 / TypeScript v2.1_ - starter-kit
 #### __React-Router v2.8 / Seamless-Immutable / JSPM (SystemJS & Rollup with tree-shaking)__
 
-> ##### Futuristic, bundle-free development environment for building _Component-Driven SPA with React, Redux and TypeScript_ - utilizing power of Static Type-checking, ES.Next, CSS-Modules, Hot-reload, in-browser transpilation, tree-shaking - powered by JSPM (SystemJS & Rollup with tree-shaking).
+> ##### Futuristic, bundle-free development environment for building _Component-Driven SPA with React, Redux and TypeScript_ - utilizing power of Static Type-checking, ES.Next, CSS-Modules, Hot-reload, in-browser transpilation, tree-shaking - powered by JSPM (SystemJS & Rollup with tree-shaking)
 
-### _Demo Page:_ http://piotrwitek.github.io/react-redux-typescript-starter-kit/
-### _Minimal React-like + Redux starter-kit EVER (13KB Min+Gzip):_ https://github.com/piotrwitek/preact-typescript-rollup-starter-kit 
+**Demo Page:**  
+*- http://piotrwitek.github.io/react-redux-typescript-starter-kit/*
+
+**Check also minimal [Preact](https://github.com/developit/preact) + Redux starter-kit (13KB Min+Gzip):**  
+*- https://github.com/piotrwitek/preact-typescript-rollup-starter-kit*
 
 Table of Contents  
 1. [Innovations](#innovations)  
@@ -22,7 +25,7 @@ Table of Contents
 
 ### - RAPID-SPEED DEVELOPMENT WORKFLOW - no bundling!
 No bundling during development, instead loading source files (.ts/.tsx) directly in the browser (using [plugin-typescript](https://github.com/frankwallis/plugin-typescript)).  
-When file changes - skipping type-checking (which is delegated to seperate process) and reloading only the changed file with hot-reload.
+When file changes - skipping type-checking (which is delegated to seperate process) and reloading only the changed file with hot-reload
 
 ### - DELEGATED TYPE-CHECKING
 Type-checking is delegated to a seperate process using following options:
@@ -35,19 +38,19 @@ __NOTE:__ There are two seperate __tsconfig__ - one for type-checking during dev
 
 [tsconfig for building production bundle](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129)
 
+### - STRICT NULL CHECKS - Enabled
+Enabled strictNullChecks with noImplicitAny tsc flags, to increase type safety and grant better tooling support using Non-nullable Types (v2.0) and Smarter Type Inference (v2.1) [Source](https://blogs.msdn.microsoft.com/typescript/2016/11/08/typescript-2-1-rc-better-inference-async-functions-and-more/)
+
 ### - HOT-RELOAD THAT SCALE
 Local dev server with hot-reloading out-of-the-box (using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)).  
-__How:__ Loading each module separately and using SystemJS module registry, on changes it's removing old module from registry and re-importing updated one then re-evaluating only those modules that was importing the changed module.  
+__How:__ Loading each module separately and using SystemJS module registry, on changes it's removing old module from registry and re-importing updated one then re-evaluating only those modules that was importing the changed module  
 
-__Scale well with increasing modules count because you reload only modules that has changed.__
+__Great scaling capability with increasing module count because you reload single module files that has changed without rebuilding anything.__
 > __Differences with Webpack workflow explained__ from real project perspective by [@jonaskello](https://github.com/jonaskello)  https://github.com/Microsoft/TypeScript/issues/1564#issuecomment-252903932
 
 ### - CLI WORKFLOW
 Most often your team is using different Editors/IDE's so you'll need to have a common way to run type-checking using a specific version of TypeScript compiler for consistent results and avoid Editor specific issues.  
 Run `tsc -p src --watch` command for quick incremental type-checking or `tsc -p src` command for one-time complete check (JS emit is disabled to not clutter your project with intermediate JS files)
-
-### - STRICT NULL CHECKS - Enabled
-Enabled strictNullChecks with noImplicitAny tsc flags, to increase type safety and grant better tooling support using Non-nullable Types (v2.0) and Smarter Type Inference (v2.1) [Source](https://blogs.msdn.microsoft.com/typescript/2016/11/08/typescript-2-1-rc-better-inference-async-functions-and-more/)
 
 ### - ASYNC/AWAIT/GENERATORS transformation when targeting ES5 (No Babel)
 Support for "async & generator functions" when targeting ES5 __without Babel!__  
@@ -59,7 +62,11 @@ __Until then use an alternative solution covered below:__
 
 [Facebook Regenerator Project](https://github.com/facebook/regenerator) instead of __Babel__ to transform Generator Functions. _(NOTE: Internally **Babel** is also running "regenerator runtime" for async and generator functions transformations - https://babeljs.io/docs/usage/caveats/)_
 
-> When building for production use `npm run regenerator` command after completion of build step, this will run "regenerator" on app.js bundle. Alternatively use `npm run build:regenerator` command to automatically run "regenerator" with each production build.
+> When building for production use `npm run regenerator` command after completion of build step, this will run "regenerator" on app.js bundle. Alternatively use `npm run build:regenerator` command to automatically run "regenerator" with each production build
+
+### - TESTING WITH TYPESCRIPT
+- Writing and running tests in TypeScript runtime using source files, abstracting complicated setups and transpilation complexity (use `npm test` CLI command)
+- Test harness using [jest](https://github.com/facebook/jest)
 
 ### - CSS-MODULES WITH TYPED CLASS-NAMES EXPERIMENT
 Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components, with capability to type-check CSS class-names in your components using interfaces and leverage TypeScript IntelliSense features in Editor/IDE (using [csjs](https://github.com/rtsao/csjs#faq)):  
@@ -72,7 +79,7 @@ __DEMO:__ http://piotrwitek.github.io/react-redux-typescript-starter-kit/#/css-m
 
 ### - Optimized JSPM (SystemJS) loading speed
 To speed up a full page reload by minimizing request count it is possible to create a development "vendor bundle" for external dependencies loaded from node_modules.  
-If not leveraging HTTP/2, it is a best practice to bundle all external dependencies together and load as a one bundle.
+If not leveraging HTTP/2, it is a best practice to bundle all external dependencies together and load as a one bundle
 
 Test reload speed improvement using this simple test procedure:  
 1. run `npm run unbundle` -> open network tab in chrome dev tools -> reload the page -> check logged results  
@@ -82,14 +89,12 @@ Test reload speed improvement using this simple test procedure:
 
 ## Features
 
-- PRODUCTION-WORKFLOW - npm scripts for production bundling & deployment, github-hooks, linter, test runner etc.
+- PRODUCTION-WORKFLOW - cross-platform npm scripts for production bundling & deployment, github-hooks, linter, test runner etc.
 - TYPESAFE-API-CALLS - type checking contracts of REST API calls - forget constantly checking for API docs and let your IDE guide you
 - REACT-ROUTER - included `react-router-redux` to store your routing in state for Time-Travel capabilities
 - REDUX-DEV-TOOLS - installed Redux DevTools capabilities with [chrome-extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 - IMMUTABLE-STORE - using `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` in your containers and components)
 - BEM & ITCSS - using BEM with Inverted Triangle conventions to give meaning and context to CSS classes
-- TESTING IN TYPESCRIPT - writing and running tests from TypeScript source files without transpilation complexity (use `npm test` CLI command) - test harness using [tape](https://github.com/substack/tape) and [blue-tape](https://github.com/spion/blue-tape).
-- Type-safe React-Redux with TypeScript
 
 #### React Best Practices & Optimizations
 - no mixins -> use ES6 style PureRenderMixin with PureComponent
@@ -140,12 +145,11 @@ Test reload speed improvement using this simple test procedure:
 │   ├── components              # global reusable presentational components
 │   ├── containers              # container components providing redux context
 │   ├── layouts                 # components defining page layouts
-│   ├── store                   # modules containing redux modules (reducers/constants/action creators)
 │   ├── services                # modules abstracting communication with web services
+│   ├── store                   # modules containing redux modules (reducers/constants/action creators)
 │   ├── types                   # custom TypeScript definitions
 │   ├── utils                   # app utility modules
 │   ├── app.tsx                 # app entry module with routing config
-│   ├── test-runner.tsx         # test suites config
 │   └── tsconfig.tsx            # TypeScript compiler config
 ├── index.html                  # index.html
 ├── index.prod.html             # index.html configured for production use
@@ -168,6 +172,9 @@ git clone https://github.com/piotrwitek/react-redux-typescript-starter-kit.git m
 
 // Install dependencies
 npm install
+
+// Initiate JSPM and dev-bundle
+npm init
 
 // Run development server with HMR
 npm start
@@ -227,13 +234,15 @@ __NOTE: Use index.prod.html for production, it have slightly different loading l
 
 #### Deployment
 
+`npm run init` - install jspm packages and prebuilds vendor.dev.js bundle
+
 `npm run init:deploy` - clone git repository in `/dist` folder (gh-pages branch)
 
 `npm run deploy` - commit and push all changes found in `/dist` folder
 
 #### Utility & Git Hooks
 
-`npm run clean` - clean dist folder
+`npm run clean` - clean dist, node_modules, jspm_packages folder
 
 `npm run lint` - run linter
 

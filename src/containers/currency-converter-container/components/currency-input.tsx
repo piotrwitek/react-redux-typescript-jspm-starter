@@ -9,7 +9,7 @@ interface IProps {
 export function CurrencyInput({value = 0, onChange}: IProps) {
 
   const handleChange = (ev: React.SyntheticEvent<HTMLInputElement>) => {
-    onChange(ev.target.value);
+    onChange(ev.currentTarget.value);
   };
 
   return (

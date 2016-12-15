@@ -12,7 +12,7 @@ SystemJS.config({
       "plugin-typescript": "github:frankwallis/plugin-typescript@5.2.9",
       "css": "github:systemjs/plugin-css@0.1.32",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
-      "blue-tape": "npm:blue-tape@0.2.0"
+      "tslib": "npm:tslib@1.2.0"
     },
     "packages": {
       "github:capaj/systemjs-hot-reloader@0.6.0": {
@@ -20,97 +20,6 @@ SystemJS.config({
           "weakee": "npm:weakee@1.0.0",
           "debug": "npm:debug@2.3.2",
           "socket.io-client": "github:socketio/socket.io-client@1.5.1"
-        }
-      },
-      "npm:blue-tape@0.2.0": {
-        "map": {
-          "tape": "npm:tape@4.6.2"
-        }
-      },
-      "npm:resumer@0.0.0": {
-        "map": {
-          "through": "npm:through@2.3.8"
-        }
-      },
-      "npm:string.prototype.trim@1.1.2": {
-        "map": {
-          "function-bind": "npm:function-bind@1.1.0",
-          "es-abstract": "npm:es-abstract@1.6.1",
-          "define-properties": "npm:define-properties@1.1.2"
-        }
-      },
-      "npm:es-abstract@1.6.1": {
-        "map": {
-          "function-bind": "npm:function-bind@1.1.0",
-          "es-to-primitive": "npm:es-to-primitive@1.1.1",
-          "is-callable": "npm:is-callable@1.1.3",
-          "is-regex": "npm:is-regex@1.0.3"
-        }
-      },
-      "npm:has@1.0.1": {
-        "map": {
-          "function-bind": "npm:function-bind@1.1.0"
-        }
-      },
-      "npm:es-to-primitive@1.1.1": {
-        "map": {
-          "is-callable": "npm:is-callable@1.1.3",
-          "is-date-object": "npm:is-date-object@1.0.1",
-          "is-symbol": "npm:is-symbol@1.0.1"
-        }
-      },
-      "npm:define-properties@1.1.2": {
-        "map": {
-          "object-keys": "npm:object-keys@1.0.11",
-          "foreach": "npm:foreach@2.0.5"
-        }
-      },
-      "npm:minimatch@3.0.3": {
-        "map": {
-          "brace-expansion": "npm:brace-expansion@1.1.6"
-        }
-      },
-      "npm:brace-expansion@1.1.6": {
-        "map": {
-          "balanced-match": "npm:balanced-match@0.4.2",
-          "concat-map": "npm:concat-map@0.0.1"
-        }
-      },
-      "npm:once@1.4.0": {
-        "map": {
-          "wrappy": "npm:wrappy@1.0.2"
-        }
-      },
-      "npm:tape@4.6.2": {
-        "map": {
-          "inherits": "npm:inherits@2.0.3",
-          "glob": "npm:glob@7.1.1",
-          "deep-equal": "npm:deep-equal@1.0.1",
-          "through": "npm:through@2.3.8",
-          "function-bind": "npm:function-bind@1.1.0",
-          "resumer": "npm:resumer@0.0.0",
-          "minimist": "npm:minimist@1.2.0",
-          "object-inspect": "npm:object-inspect@1.2.1",
-          "resolve": "npm:resolve@1.1.7",
-          "string.prototype.trim": "npm:string.prototype.trim@1.1.2",
-          "defined": "npm:defined@1.0.0",
-          "has": "npm:has@1.0.1"
-        }
-      },
-      "npm:glob@7.1.1": {
-        "map": {
-          "inherits": "npm:inherits@2.0.3",
-          "minimatch": "npm:minimatch@3.0.3",
-          "fs.realpath": "npm:fs.realpath@1.0.0",
-          "path-is-absolute": "npm:path-is-absolute@1.0.1",
-          "once": "npm:once@1.4.0",
-          "inflight": "npm:inflight@1.0.6"
-        }
-      },
-      "npm:inflight@1.0.6": {
-        "map": {
-          "once": "npm:once@1.4.0",
-          "wrappy": "npm:wrappy@1.0.2"
         }
       },
       "npm:debug@2.3.2": {
@@ -137,6 +46,8 @@ SystemJS.config({
   },
   transpiler: "plugin-typescript",
   typescriptOptions: {
+    "tsconfig": false,
+    "typeCheck": false,
     "module": "system",
     "target": "es5",
     "emitDecoratorMetadata": true,
@@ -145,8 +56,10 @@ SystemJS.config({
     "moduleResolution": "node",
     "preserveConstEnums": true,
     "removeComments": true,
-    "typeCheck": false,
-    "tsconfig": false
+    "noEmitHelpers": false,
+    "importHelpers": false,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true
   },
   packages: {
     "app": {

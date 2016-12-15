@@ -29,6 +29,9 @@ src/**/*.map
 node_modules
 jspm_packages
 
+# Test snapshots
+__snapshots__
+
 # Build directory
 dist
 temp

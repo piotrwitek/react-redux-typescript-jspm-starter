@@ -28,5 +28,5 @@ function App() {
 }
 
 export const app = ReactDOM.render(
-  <App />, document.getElementById('app-container')
+  <App />, document.getElementById('app-container'),
 );

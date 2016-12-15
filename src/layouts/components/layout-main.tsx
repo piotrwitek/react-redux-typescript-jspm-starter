@@ -4,7 +4,7 @@ import classNames from 'classnames';
 const inlineStyles = {
   background: {
     backgroundColor: '#f7f7f7',
-  }
+  },
 };
 
 export function LayoutMain({className = '', children = undefined}) {
