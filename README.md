@@ -3,8 +3,10 @@
 
 > ##### Futuristic, bundle-free development environment for building _Component-Driven SPA with React, Redux and TypeScript_ - utilizing power of Static Type-checking, ES.Next, CSS-Modules, Hot-reload, in-browser transpilation, tree-shaking - powered by JSPM (SystemJS & Rollup with tree-shaking)
 
-#### _Demo Page:_ http://piotrwitek.github.io/react-redux-typescript-starter-kit/
-#### _Check also minimal [Preact](https://github.com/developit/preact) + Redux starter-kit (13KB Min+Gzip):_ https://github.com/piotrwitek/preact-typescript-rollup-starter-kit 
+#### _Demo Page:_
+#### - http://piotrwitek.github.io/react-redux-typescript-starter-kit/
+#### _Check also minimal [Preact](https://github.com/developit/preact) + Redux starter-kit (13KB Min+Gzip):_ 
+#### - https://github.com/piotrwitek/preact-typescript-rollup-starter-kit 
 
 Table of Contents  
 1. [Innovations](#innovations)  
@@ -61,7 +63,9 @@ __Until then use an alternative solution covered below:__
 
 > When building for production use `npm run regenerator` command after completion of build step, this will run "regenerator" on app.js bundle. Alternatively use `npm run build:regenerator` command to automatically run "regenerator" with each production build
 
-### - TESTING WITH TYPESCRIPT - writing and running tests in TypeScript runtime using source files, abstracting complicated setups and transpilation complexity (use `npm test` CLI command) - test harness using [jest](https://github.com/facebook/jest)
+### - TESTING WITH TYPESCRIPT
+- Writing and running tests in TypeScript runtime using source files, abstracting complicated setups and transpilation complexity (use `npm test` CLI command)
+- Test harness using [jest](https://github.com/facebook/jest)
 
 ### - CSS-MODULES WITH TYPED CLASS-NAMES EXPERIMENT
 Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components, with capability to type-check CSS class-names in your components using interfaces and leverage TypeScript IntelliSense features in Editor/IDE (using [csjs](https://github.com/rtsao/csjs#faq)):  
