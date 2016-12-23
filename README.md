@@ -174,7 +174,7 @@ git clone https://github.com/piotrwitek/react-redux-typescript-starter-kit.git m
 npm install
 
 // Initiate JSPM and dev-bundle
-npm init
+npm run init
 
 // Run development server with HMR
 npm start
