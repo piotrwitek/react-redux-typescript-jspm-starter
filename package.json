@@ -34,25 +34,23 @@
   },
   "devDependencies": {
     "@types/classnames": "^0.0.32",
-    "@types/jest": "^16.0.1",
+    "@types/jest": "^16.0.3",
     "@types/react": "^0.14.43",
-    "@types/react-dom": "^0.14.11",
+    "@types/react-dom": "^0.14.20",
     "@types/react-redux": "^4.4.32",
     "@types/react-router": "^2.0.39",
-    "@types/react-router-redux": "^4.0.34",
-    "@types/redux-actions": "^0.8.32",
-    "@types/seamless-immutable": "^6.1.2",
-    "@types/systemjs": "^0.19.32",
-    "@types/whatwg-fetch": "^0.0.32",
-    "husky": "^0.11.8",
-    "jest": "^17.0.3",
+    "@types/react-router-redux": "^4.0.36",
+    "@types/systemjs": "^0.19.33",
+    "@types/whatwg-fetch": "^0.0.33",
+    "husky": "^0.12.0",
+    "jest": "^18.1.0",
     "jspm": "^0.17.0-beta.32",
-    "jspm-hmr": "^0.5.0",
+    "jspm-hmr": "^0.7.0",
     "regenerator": "^0.9.5",
     "shelljs": "^0.7.5",
     "shx": "^0.2.1",
-    "ts-jest": "^17.0.3",
-    "tslint": "^4.0.2",
+    "ts-jest": "^18.0.1",
+    "tslint": "^4.2.0",
     "typescript": "^2.1.4"
   },
   "jspm": {
@@ -62,19 +60,19 @@
       "classnames": "npm:classnames@^2.2.5",
       "csjs": "npm:csjs@^1.0.6",
       "insert-css": "npm:insert-css@^1.1.0",
-      "react-dom": "npm:react-dom@^15.3.2",
-      "react-redux": "npm:react-redux@^4.4.6",
+      "react-dom": "npm:react-dom@^15.4.1",
+      "react-redux": "npm:react-redux@^5.0.1",
       "react-router": "npm:react-router@^2.8.1",
       "react-router-redux": "npm:react-router-redux@^4.0.7",
-      "redux-actions": "npm:redux-actions@^0.11.0",
-      "seamless-immutable": "npm:seamless-immutable@^6.3.0",
-      "whatwg-fetch": "npm:whatwg-fetch@^1.1.0"
+      "redux-observable": "npm:redux-observable@^0.12.2",
+      "rxjs": "npm:rxjs@^5.0.2",
+      "whatwg-fetch": "npm:whatwg-fetch@^1.1.1"
     },
     "devDependencies": {
       "css": "github:systemjs/plugin-css@^0.1.32",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.2.9",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.3.3",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0",
-      "tslib": "npm:tslib@^1.2.0"
+      "tslib": "npm:tslib@^1.4.0"
     },
     "peerDependencies": {
       "assert": "npm:jspm-nodelibs-assert@^0.2.0",
@@ -92,7 +90,7 @@
       "os": "npm:jspm-nodelibs-os@^0.2.0",
       "path": "npm:jspm-nodelibs-path@^0.2.0",
       "process": "npm:jspm-nodelibs-process@^0.2.0",
-      "react": "npm:react@^15.3.2",
+      "react": "npm:react@^15.4.1",
       "redux": "npm:redux@^3.6.0",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
       "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
@@ -102,7 +100,7 @@
       "zlib": "npm:jspm-nodelibs-zlib@^0.2.0"
     },
     "overrides": {
-      "github:socketio/socket.io-client@1.5.1": {
+      "github:socketio/socket.io-client@1.7.2": {
         "main": "socket.io.js"
       },
       "npm:browserify-zlib@0.1.4": {
@@ -114,7 +112,7 @@
           "_stream_transform": "readable-stream/transform"
         }
       },
-      "npm:debug@2.3.2": {
+      "npm:debug@2.6.0": {
         "main": "browser.js",
         "jspmNodeConversion": false,
         "format": "cjs",
@@ -133,7 +131,7 @@
           "test.js"
         ]
       },
-      "npm:lodash@4.17.1": {
+      "npm:lodash@4.17.4": {
         "map": {
           "buffer": "@empty",
           "process": "@empty"
@@ -143,7 +141,7 @@
         "jspmNodeConversion": false,
         "format": "cjs"
       },
-      "npm:typescript@2.1.1": {
+      "npm:typescript@2.1.4": {
         "browser": {},
         "map": {
           "buffer": "@empty",
