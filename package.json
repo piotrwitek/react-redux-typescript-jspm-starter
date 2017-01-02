@@ -65,7 +65,6 @@
       "react-router": "npm:react-router@^2.8.1",
       "react-router-redux": "npm:react-router-redux@^4.0.7",
       "redux-observable": "npm:redux-observable@^0.12.2",
-      "rxjs": "npm:rxjs@^5.0.2",
       "whatwg-fetch": "npm:whatwg-fetch@^1.1.1"
     },
     "devDependencies": {
@@ -92,6 +91,7 @@
       "process": "npm:jspm-nodelibs-process@^0.2.0",
       "react": "npm:react@^15.4.1",
       "redux": "npm:redux@^3.6.0",
+      "rxjs": "npm:rxjs@^5.0.2",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
       "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
       "url": "npm:jspm-nodelibs-url@^0.2.0",
@@ -101,7 +101,7 @@
     },
     "overrides": {
       "github:socketio/socket.io-client@1.7.2": {
-        "main": "socket.io.js"
+        "main": "dist/socket.io.js"
       },
       "npm:browserify-zlib@0.1.4": {
         "dependencies": {
@@ -113,17 +113,14 @@
         }
       },
       "npm:debug@2.6.0": {
-        "main": "browser.js",
+        "main": "src/browser.js",
         "jspmNodeConversion": false,
         "format": "cjs",
         "map": {
-          "./browser.js": {
-            "node": "./node.js"
-          },
-          "fs": "@node/fs",
-          "net": "@node/net",
-          "tty": "@node/tty",
-          "util": "@node/util"
+          "fs": "@empty",
+          "net": "@empty",
+          "tty": "@empty",
+          "util": "@empty"
         }
       },
       "npm:inherits@2.0.3": {

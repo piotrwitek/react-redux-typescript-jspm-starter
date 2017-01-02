@@ -11,22 +11,10 @@ SystemJS.config({
     "map": {
       "plugin-typescript": "github:frankwallis/plugin-typescript@5.3.3",
       "css": "github:systemjs/plugin-css@0.1.32",
-      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
-      "tslib": "npm:tslib@1.4.0"
+      "tslib": "npm:tslib@1.4.0",
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0"
     },
     "packages": {
-      "github:capaj/systemjs-hot-reloader@0.6.0": {
-        "map": {
-          "weakee": "npm:weakee@1.0.0",
-          "debug": "npm:debug@2.6.0",
-          "socket.io-client": "github:socketio/socket.io-client@1.7.2"
-        }
-      },
-      "npm:debug@2.6.0": {
-        "map": {
-          "ms": "npm:ms@0.7.2"
-        }
-      },
       "github:frankwallis/plugin-typescript@5.3.3": {
         "map": {
           "typescript": "npm:typescript@2.1.4"
@@ -40,6 +28,18 @@ SystemJS.config({
       "npm:source-map-support@0.4.8": {
         "map": {
           "source-map": "npm:source-map@0.5.6"
+        }
+      },
+      "github:capaj/systemjs-hot-reloader@0.6.0": {
+        "map": {
+          "debug": "npm:debug@2.6.0",
+          "weakee": "npm:weakee@1.0.0",
+          "socket.io-client": "github:socketio/socket.io-client@1.7.2"
+        }
+      },
+      "npm:debug@2.6.0": {
+        "map": {
+          "ms": "npm:ms@0.7.2"
         }
       }
     }
