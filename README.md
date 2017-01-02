@@ -68,11 +68,8 @@ __Until then use an alternative solution covered below:__
 - Writing and running tests in TypeScript runtime using source files, abstracting complicated setups and transpilation complexity (use `npm test` CLI command)
 - Test harness using [jest](https://github.com/facebook/jest)
 
-### - CSS-MODULES WITH TYPED CLASS-NAMES EXPERIMENT
-Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components, with capability to type-check CSS class-names in your components using interfaces and leverage TypeScript IntelliSense features in Editor/IDE (using [csjs](https://github.com/rtsao/csjs#faq)):  
-- Define available CSS classes as interfaces in CSS-Modules to get className property auto-completion, type-checking and easy refactoring in your entire codebase.  
-- Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces.  
-- Full CSS support - including pseudo classes, media queries & more...
+### - CSS-MODULES WITH TYPED CLASS-NAMES
+Local CSS styles (using [csjs](https://github.com/rtsao/csjs#faq)), with capability to leverage TypeScript IntelliSense features in Editor/IDE, for autocompletion and easy refactoring of available class-names:  
 
 __EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and it's [CSS Module Styles in TypeScript Format with Class-Names Interface](src/containers/css-modules-container/container-styles.tsx)  
 __DEMO:__ http://piotrwitek.github.io/react-redux-typescript-starter-kit/#/css-modules

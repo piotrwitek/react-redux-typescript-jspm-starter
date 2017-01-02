@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
-import { containerStyles } from './container-styles';
+import styles from './container-styles';
 
 export function CssModulesContainer() {
   return (
@@ -31,10 +31,10 @@ export function CssModulesContainer() {
         </p>
       </PageSection>
       <br />
-      <PageSection className={containerStyles.textCentered}>
-        <div className={containerStyles.effect__hideOnTablet}>
-          <div className={[containerStyles.darkBg, containerStyles.effect__elevate].join(' ')}>
-            <p className={containerStyles.glowingText}>
+      <PageSection className={styles.uCentered}>
+        <div className={styles.uHideOnTablet}>
+          <div className={[styles.uBordered, styles.eElevate].join(' ')}>
+            <p className={styles.cText__glowing}>
               <br />
               Hover me!
               <br />
@@ -42,25 +42,21 @@ export function CssModulesContainer() {
             </p>
           </div>
         </div>
-        <div className={containerStyles.effect__showOnTablet}>
-          <div className={[containerStyles.darkBg, containerStyles.effect__elevate].join(' ')}>
-            <p className={containerStyles.glowingText}>
+        <div className={styles.uShowOnTablet}>
+          <div className={[styles.uBordered, styles.eElevate].join(' ')}>
+            <p className={styles.cText__glowing}>
               SUPRISE!!!
             </p>
           </div>
         </div>
       </PageSection>
       <br />
-      <p className="u-centered">
+      <p className={styles.uCentered}>
         Source code: <a
           href="https://github.com/piotrwitek/react-redux-typescript-starter-kit/tree/master/src/containers/css-modules-container">
           Link to GitHub
         </a>
       </p>
-      <br />
-      <div className="u-centered">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/67pPYqom2a0" frameBorder="0" allowFullScreen></iframe>
-      </div>
       <br />
     </article>
   );

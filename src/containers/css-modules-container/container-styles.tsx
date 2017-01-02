@@ -1,74 +1,57 @@
 import csjs from 'csjs';
 import insertCss from 'insert-css';
-import colors from '../../themes/colors';
+import colors from '../../theme/colors';
+import dimensions from '../../theme/dimensions';
 
-interface ContainerStyles {
-  /** main content container */
-  container: string;
-  textCentered: string;
+const Styles = {
+
+  // COMPONENTS
   /** text with fancy highlight */
-  glowingText: string;
-  /** dark background with border */
-  darkBg: string;
-  /** elevate element using box-shadow */
-  effect__elevate: string;
-  /** hide element on mobile screen  */
-  effect__hideOnTablet: string;
-  /** show element on mobile screen  */
-  effect__showOnTablet: string;
-}
-
-export const containerStyles: ContainerStyles = csjs`
-
-  .textCentered {
-    text-align: center;
-  }
-  .glowingText {
+  cText__glowing: `.cText__glowing {
     color: ${colors.textColor};
     text-shadow: ${colors.textColor} 0 0 10px;
     white-space: nowrap;
-  }
-  .darkBg {
+  }`,
+
+  // UTILITIES
+  /** centered text */
+  uCentered: `.uCentered {
+    text-align: center;
+  }`,
+  /** dark background with border */
+  uBordered: `.uBordered {
     border-radius: 5px;
     border: 1px solid ${colors.borderColor};
     background-color: ${colors.backgroundColor};
-  }
-
-  .effect__elevate {
-    box-shadow: none;
-    transition: box-shadow 0.6s ease-out;
-  }
-  .effect__elevate:hover {
-    box-shadow: 0 6px 20px 0 ${colors.shadowColor};
-  }
-
-  .effect__hideOnTablet {
+  }`,
+  /** hide element on certain screen width */
+  uHideOnTablet: `.uHideOnTablet {
     margin: 0px 30px;
     opacity: 1;
     transition:
       margin 1s 0.5s,
       opacity 1s 0.5s;
   }
-
-  .effect__showOnTablet {
+  @media (max-width: ${dimensions.tablet}) {
+    .uHideOnTablet {
+      margin: 0px 50px;
+      opacity: 0;
+      transition:
+        margin 1s,
+        opacity 1s,
+        box-shadow 0.5s linear;
+    }
+  }`,
+  /** show element on certain screen width */
+  uShowOnTablet: `.uShowOnTablet {
     margin: 0px 50px;
     opacity: 0;
     transition:
       margin 1s,
       opacity 1s;
   }
-
-  @media (max-width: 740px) {
-    .effect__hideOnTablet {
-      margin: 0px 50px;
-      opacity: 0;
-      transition:
-      margin 1s,
-      opacity 1s,
-      box-shadow 0.5s linear;
-    }
-
-    .effect__showOnTablet {
+  @media (max-width: ${dimensions.tablet}) {
+    .uShowOnTablet {
       margin: 0px 30px;
       opacity: 1;
       transition:
@@ -76,8 +59,24 @@ export const containerStyles: ContainerStyles = csjs`
         opacity 1s 0.5s,
         box-shadow 0.5s linear;
     }
+  }`,
+
+  // SPECIAL EFFECTS
+  /** elevate element using box-shadow */
+  eElevate: `.eElevate {
+    box-shadow: none;
+    transition: box-shadow 0.6s ease-out;
   }
+  .eElevate:hover {
+    box-shadow: 0 6px 20px 0 ${colors.shadowColor};
+  }`,
 
-`;
+}
 
-insertCss(csjs.getCss(containerStyles));
+const css = Object.values(Styles).reduce((accumulator, cssClass) => accumulator + cssClass, '');
+
+const styles: typeof Styles = csjs`${css}`;
+
+insertCss(csjs.getCss(styles));
+
+export default styles;
