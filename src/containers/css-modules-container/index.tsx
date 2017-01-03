@@ -9,25 +9,7 @@ export function CssModulesContainer() {
       <PageHeader>Typed CSS-Modules</PageHeader>
       <PageSection>
         <p style={{ textAlign: 'justify' }}>
-          Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components,
-          with capability to type-check CSS class-names in your components using interfaces
-          and leverage TypeScript IntelliSense features in Editor/IDE
-        </p>
-        <ul>
-          <li>
-            Define available CSS classes as interfaces in CSS-Modules to get className property
-            auto-completion, type-checking and easy refactoring in your entire codebase
-          </li>
-          <li>
-            Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces
-          </li>
-          <li>
-            Full CSS support - including pseudo classes, media queries & more...
-            (using <a href="https://github.com/rtsao/csjs#faq">csjs</a>)
-          </li>
-        </ul>
-        <p>
-
+          Local CSS styles (using <a href="https://github.com/rtsao/csjs#faq">csjs</a>), with capability to leverage TypeScript IntelliSense features in Editor/IDE, for autocompletion and easy refactoring of available class-names.
         </p>
       </PageSection>
       <br />

@@ -69,7 +69,7 @@ __Until then use an alternative solution covered below:__
 - Test harness using [jest](https://github.com/facebook/jest)
 
 ### - CSS-MODULES WITH TYPED CLASS-NAMES
-Local CSS styles (using [csjs](https://github.com/rtsao/csjs#faq)), with capability to leverage TypeScript IntelliSense features in Editor/IDE, for autocompletion and easy refactoring of available class-names:  
+Local CSS styles (using [csjs](https://github.com/rtsao/csjs#faq)), with capability to leverage TypeScript IntelliSense features in Editor/IDE, for autocompletion and easy refactoring of available class-names. 
 
 __EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and it's [CSS Module Styles in TypeScript Format with Class-Names Interface](src/containers/css-modules-container/container-styles.tsx)  
 __DEMO:__ http://piotrwitek.github.io/react-redux-typescript-starter-kit/#/css-modules

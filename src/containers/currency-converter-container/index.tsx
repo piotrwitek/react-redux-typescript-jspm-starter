@@ -32,7 +32,11 @@ export class CurrencyConverterContainer extends React.Component<IProps, IState> 
     return (
       <article>
         <PageHeader>Currency Converter</PageHeader>
-        <PageSection className="u-centered">(work in progress)</PageSection>
+        <PageSection className="u-centered">
+          <p>(work in progress)</p>
+          <p>Example application to showcase how to leverage TypeScript 2.1 Smarter Type Inference in React/Redux projects and get free of additional costs of typing and maintaining explicit type declarations.</p>
+          <p>Handling side effects in Redux using Observables and RxJS with redux-observable.</p>
+        </PageSection>
         <section className="u-letter-box--xlarge">
           <CurrencyConverter currencies={currencies}
             baseCurrency={baseCurrency} targetCurrency={targetCurrency}
