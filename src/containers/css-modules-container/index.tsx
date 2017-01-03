@@ -34,7 +34,7 @@ export function CssModulesContainer() {
       </PageSection>
       <br />
       <p className={styles.uCentered}>
-        Source code: <a
+        Source: <a
           href="https://github.com/piotrwitek/react-redux-typescript-starter-kit/tree/master/src/containers/css-modules-container">
           Link to GitHub
         </a>

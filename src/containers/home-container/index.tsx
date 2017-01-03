@@ -13,10 +13,10 @@ export function HomeContainer() {
         </p>
         <ul>
           <li>
-            <Link to="/currency-converter">Currency Converter App</Link> - (work in progress)
+            <Link to="/currency-converter">Currency Converter App - Demo</Link> - (work in progress)
           </li>
           <li>
-            <Link to="/css-modules">CSS Modules</Link> - <a href="https://youtu.be/67pPYqom2a0">Overview Video on Youtube</a>
+            <Link to="/css-modules">CSS Modules - Example</Link>
           </li>
         </ul>
         <br />
