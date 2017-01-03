@@ -9,7 +9,9 @@ export function CssModulesContainer() {
       <PageHeader>Typed CSS-Modules</PageHeader>
       <PageSection>
         <p style={{ textAlign: 'justify' }}>
-          Local CSS styles (using <a href="https://github.com/rtsao/csjs#faq">csjs</a>), with capability to leverage TypeScript IntelliSense features in Editor/IDE, for autocompletion and easy refactoring of available class-names.
+          Local CSS styles (using <a href="https://github.com/rtsao/csjs#faq">csjs</a>),
+          with capability to leverage TypeScript IntelliSense features in Editor/IDE,
+          for autocompletion and easy refactoring of available class-names.
         </p>
       </PageSection>
       <br />

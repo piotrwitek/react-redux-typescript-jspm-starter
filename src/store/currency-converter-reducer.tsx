@@ -4,11 +4,6 @@ const UPDATE_TARGET_CURRENCY = 'currencyConverter/UPDATE_TARGET_CURRENCY';
 const UPDATE_BASE_VALUE = 'currencyConverter/UPDATE_BASE_VALUE';
 const UPDATE_TARGET_VALUE = 'currencyConverter/UPDATE_TARGET_VALUE';
 
-// extract to react-redux-typescript
-declare interface ObjectConstructor {
-  assign<T>(target: {}, source: T, ...sources: Partial<T>[]): T;
-}
-declare const Object: ObjectConstructor;
 export function getAction<P, A>(actionCreator: (payload: P) => A): A {
   return {} as false || {} as A;
 }
@@ -38,24 +33,24 @@ const initialState: ICurrencyConverterReducer = {
   targetValue: '0',
 };
 
-export default function reducer(state = initialState, action: Actions) {
+export default function reducer(state = initialState, action: Actions): ICurrencyConverterReducer {
   switch (action.type) {
     case UPDATE_BASE_CURRENCY:
-      return Object.assign({}, state, {
-        baseCurrency: action.payload,
-      });
+      return {
+        ...state, baseCurrency: action.payload,
+      };
     case UPDATE_TARGET_CURRENCY:
-      return Object.assign({}, state, {
-        targetCurrency: action.payload,
-      });
+      return {
+        ...state, targetCurrency: action.payload,
+      };
     case UPDATE_BASE_VALUE:
-      return Object.assign({}, state, {
-        baseValue: action.payload,
-      });
+      return {
+        ...state, baseValue: action.payload,
+      };
     case UPDATE_TARGET_VALUE:
-      return Object.assign({}, state, {
-        targetValue: action.payload,
-      });
+      return {
+        ...state, targetValue: action.payload,
+      };
 
     default: return state;
   }

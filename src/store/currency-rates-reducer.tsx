@@ -1,6 +1,6 @@
-const RESPONSE_MOCK: IFixerServiceResponse = {
+const CACHED_RESPONSE: IFixerServiceResponse = {
   base: 'PLN',
-  date: Date.now().toString(),
+  date: new Date().toISOString(),
   rates: { 'PLN': 1, 'SEK': 2.1919 },
 };
 
@@ -22,37 +22,36 @@ export const loadCurrencyRatesError = (payload: string) => ({
 export interface ICurrencyRatesReducer {
   isLoading: boolean;
   errorMessage: string | null;
-  lastUpdated: Date | null;
+  lastUpdated: number | null;
   base: string;
   rates: any;
+  date: string;
 }
 const initialState: ICurrencyRatesReducer = {
   isLoading: false,
   errorMessage: null,
   lastUpdated: null,
-  base: 'PLN',
-  rates: RESPONSE_MOCK.rates,
+  base: CACHED_RESPONSE.base,
+  rates: CACHED_RESPONSE.rates,
+  date: CACHED_RESPONSE.date,
 };
 
-export default function reducer(state = initialState, action: any) {
+export default function reducer(state = initialState, action: any): ICurrencyRatesReducer {
   switch (action.type) {
     case LOAD_CURRENCY_RATES:
-      return Object.assign({}, state, {
-        isLoading: true,
-      });
+      return {
+        ...state, isLoading: true, errorMessage: null,
+      };
     case LOAD_CURRENCY_RATES_SUCCESS:
-      return Object.assign({}, state, {
-        isLoading: false,
-        errorMessage: null,
-        rates: action.payload && action.payload.rates,
-        lastUpdated: Date.now(),
-      });
+      const { base, rates, date} = action.payload;
+      return {
+        ...state, isLoading: false, lastUpdated: Date.now(), base, rates, date,
+      };
     case LOAD_CURRENCY_RATES_ERROR:
-      return Object.assign({}, state, {
-        isLoading: false,
-        errorMessage: action.payload,
-      });
+      return {
+        ...state, isLoading: false, errorMessage: action.payload,
+      };
 
     default: return state;
-  };
+  }
 }
