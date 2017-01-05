@@ -32,10 +32,10 @@ export const updateTargetValue = (payload: string): ActionsUnion => ({
 
 // State
 export interface ICurrencyConverterReducer {
-  baseCurrency: string;
-  targetCurrency: string;
-  baseValue: string;
-  targetValue: string;
+  readonly baseCurrency: string;
+  readonly targetCurrency: string;
+  readonly baseValue: string;
+  readonly targetValue: string;
 }
 export const initialState: ICurrencyConverterReducer = {
   baseCurrency: 'PLN',

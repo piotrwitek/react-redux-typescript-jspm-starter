@@ -20,12 +20,12 @@ export const loadCurrencyRatesError = (payload: string) => ({
 
 // Reducer
 export interface ICurrencyRatesReducer {
-  isLoading: boolean;
-  errorMessage: string | null;
-  lastUpdated: number | null;
-  base: string;
-  rates: any;
-  date: string;
+  readonly isLoading: boolean;
+  readonly errorMessage: string | null;
+  readonly lastUpdated: number | null;
+  readonly base: string;
+  readonly rates: any;
+  readonly date: string;
 }
 const initialState: ICurrencyRatesReducer = {
   isLoading: false,
