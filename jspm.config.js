@@ -105,6 +105,7 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.0",
     "react": "npm:react@15.3.2",
     "react-dom": "npm:react-dom@15.3.2",
+    "react-perfect-scrollbar": "npm:react-perfect-scrollbar@0.1.1",
     "react-redux": "npm:react-redux@4.4.6",
     "react-router": "npm:react-router@2.8.1",
     "react-router-redux": "npm:react-router-redux@4.0.7",
@@ -116,7 +117,7 @@ SystemJS.config({
     "url": "npm:jspm-nodelibs-url@0.2.0",
     "util": "npm:jspm-nodelibs-util@0.2.1",
     "vm": "npm:jspm-nodelibs-vm@0.2.0",
-    "whatwg-fetch": "npm:whatwg-fetch@1.1.0",
+    "whatwg-fetch": "npm:whatwg-fetch@1.1.1",
     "zlib": "npm:jspm-nodelibs-zlib@0.2.0"
   },
   packages: {
@@ -188,7 +189,7 @@ SystemJS.config({
         "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
         "pbkdf2": "npm:pbkdf2@3.0.9",
         "browserify-aes": "npm:browserify-aes@1.0.6",
-        "asn1.js": "npm:asn1.js@4.9.0"
+        "asn1.js": "npm:asn1.js@4.9.1"
       }
     },
     "npm:evp_bytestokey@1.0.0": {
@@ -268,12 +269,12 @@ SystemJS.config({
     "npm:isomorphic-fetch@2.2.1": {
       "map": {
         "node-fetch": "npm:node-fetch@1.6.3",
-        "whatwg-fetch": "npm:whatwg-fetch@1.1.0"
+        "whatwg-fetch": "npm:whatwg-fetch@1.1.1"
       }
     },
     "npm:encoding@0.1.12": {
       "map": {
-        "iconv-lite": "npm:iconv-lite@0.4.13"
+        "iconv-lite": "npm:iconv-lite@0.4.15"
       }
     },
     "npm:browserify-zlib@0.1.4": {
@@ -344,7 +345,7 @@ SystemJS.config({
     "npm:react@15.3.2": {
       "map": {
         "object-assign": "npm:object-assign@4.1.0",
-        "fbjs": "npm:fbjs@0.8.6",
+        "fbjs": "npm:fbjs@0.8.8",
         "loose-envify": "npm:loose-envify@1.3.0"
       }
     },
@@ -376,7 +377,7 @@ SystemJS.config({
     },
     "npm:jspm-nodelibs-http@0.2.0": {
       "map": {
-        "http-browserify": "npm:stream-http@2.5.0"
+        "http-browserify": "npm:stream-http@2.6.1"
       }
     },
     "npm:jspm-nodelibs-url@0.2.0": {
@@ -422,25 +423,6 @@ SystemJS.config({
         "loose-envify": "npm:loose-envify@1.3.0"
       }
     },
-    "npm:fbjs@0.8.6": {
-      "map": {
-        "loose-envify": "npm:loose-envify@1.3.0",
-        "object-assign": "npm:object-assign@4.1.0",
-        "core-js": "npm:core-js@1.2.7",
-        "promise": "npm:promise@7.1.1",
-        "ua-parser-js": "npm:ua-parser-js@0.7.12",
-        "isomorphic-fetch": "npm:isomorphic-fetch@2.2.1"
-      }
-    },
-    "npm:stream-http@2.5.0": {
-      "map": {
-        "builtin-status-codes": "npm:builtin-status-codes@2.0.0",
-        "inherits": "npm:inherits@2.0.3",
-        "to-arraybuffer": "npm:to-arraybuffer@1.0.1",
-        "readable-stream": "npm:readable-stream@2.2.2",
-        "xtend": "npm:xtend@4.0.1"
-      }
-    },
     "npm:readable-stream@2.2.2": {
       "map": {
         "inherits": "npm:inherits@2.0.3",
@@ -457,7 +439,32 @@ SystemJS.config({
         "inherits": "npm:inherits@2.0.3"
       }
     },
-    "npm:asn1.js@4.9.0": {
+    "npm:react-perfect-scrollbar@0.1.1": {
+      "map": {
+        "perfect-scrollbar": "npm:perfect-scrollbar@0.6.16"
+      }
+    },
+    "npm:fbjs@0.8.8": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.0",
+        "object-assign": "npm:object-assign@4.1.0",
+        "setimmediate": "npm:setimmediate@1.0.5",
+        "isomorphic-fetch": "npm:isomorphic-fetch@2.2.1",
+        "promise": "npm:promise@7.1.1",
+        "core-js": "npm:core-js@1.2.7",
+        "ua-parser-js": "npm:ua-parser-js@0.7.12"
+      }
+    },
+    "npm:stream-http@2.6.1": {
+      "map": {
+        "inherits": "npm:inherits@2.0.3",
+        "readable-stream": "npm:readable-stream@2.2.2",
+        "builtin-status-codes": "npm:builtin-status-codes@3.0.0",
+        "to-arraybuffer": "npm:to-arraybuffer@1.0.1",
+        "xtend": "npm:xtend@4.0.1"
+      }
+    },
+    "npm:asn1.js@4.9.1": {
       "map": {
         "bn.js": "npm:bn.js@4.11.6",
         "inherits": "npm:inherits@2.0.3",

@@ -2,33 +2,74 @@ import * as React from 'react';
 import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
 import { containerStyles } from './container-styles';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 export function CssModulesContainer() {
   return (
     <article>
       <PageHeader>Typed CSS-Modules</PageHeader>
-      <PageSection>
-        <p style={{ textAlign: 'justify' }}>
-          Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components,
+      <PageSection >
+        <div style={{ height: 300 }}>
+          <PerfectScrollbar>
+            <div style={{ backgroundColor: 'lightgrey', padding: 30 }}>
+              <p>THIS IS SCROLLABLE CONTAINER</p>
+              <p style={{ textAlign: 'justify' }}>
+                Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components,
           with capability to type-check CSS class-names in your components using interfaces
           and leverage TypeScript IntelliSense features in Editor/IDE
         </p>
-        <ul>
-          <li>
-            Define available CSS classes as interfaces in CSS-Modules to get className property
+              <ul>
+                <li>
+                  Define available CSS classes as interfaces in CSS-Modules to get className property
             auto-completion, type-checking and easy refactoring in your entire codebase
           </li>
-          <li>
-            Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces
+                <li>
+                  Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces
           </li>
-          <li>
-            Full CSS support - including pseudo classes, media queries & more...
+                <li>
+                  Full CSS support - including pseudo classes, media queries & more...
             (using <a href="https://github.com/rtsao/csjs#faq">csjs</a>)
           </li>
-        </ul>
-        <p>
-
+              </ul>
+              <p style={{ textAlign: 'justify' }}>
+                Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components,
+          with capability to type-check CSS class-names in your components using interfaces
+          and leverage TypeScript IntelliSense features in Editor/IDE
         </p>
+              <ul>
+                <li>
+                  Define available CSS classes as interfaces in CSS-Modules to get className property
+            auto-completion, type-checking and easy refactoring in your entire codebase
+          </li>
+                <li>
+                  Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces
+          </li>
+                <li>
+                  Full CSS support - including pseudo classes, media queries & more...
+            (using <a href="https://github.com/rtsao/csjs#faq">csjs</a>)
+          </li>
+              </ul>
+              <p style={{ textAlign: 'justify' }}>
+                Locally scoped CSS styles, encapsulated as ES6 Modules that can be imported in UI components,
+          with capability to type-check CSS class-names in your components using interfaces
+          and leverage TypeScript IntelliSense features in Editor/IDE
+        </p>
+              <ul>
+                <li>
+                  Define available CSS classes as interfaces in CSS-Modules to get className property
+            auto-completion, type-checking and easy refactoring in your entire codebase
+          </li>
+                <li>
+                  Auto-generate documentation for CSS styles leveraging JSDoc support in defined interfaces
+          </li>
+                <li>
+                  Full CSS support - including pseudo classes, media queries & more...
+            (using <a href="https://github.com/rtsao/csjs#faq">csjs</a>)
+          </li>
+              </ul>
+            </div>
+          </PerfectScrollbar>
+        </div>
       </PageSection>
       <br />
       <PageSection className={containerStyles.textCentered}>

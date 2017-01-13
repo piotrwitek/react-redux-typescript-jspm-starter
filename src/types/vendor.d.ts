@@ -18,3 +18,5 @@ declare module 'insert-css' {
   const lib: any;
   export default lib;
 }
+
+declare module 'react-perfect-scrollbar';
