@@ -62,7 +62,7 @@
       "classnames": "npm:classnames@^2.2.5",
       "csjs": "npm:csjs@^1.0.6",
       "insert-css": "npm:insert-css@^1.1.0",
-      "react-perfect-scrollbar": "npm:react-perfect-scrollbar@^0.1.1",
+      "react-perfect-scrollbar": "npm:react-perfect-scrollbar@^0.2.0",
       "react-redux": "npm:react-redux@^4.4.6",
       "react-router": "npm:react-router@^2.8.1",
       "react-router-redux": "npm:react-router-redux@^4.0.7",

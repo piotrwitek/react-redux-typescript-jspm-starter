@@ -105,7 +105,7 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.0",
     "react": "npm:react@15.3.2",
     "react-dom": "npm:react-dom@15.3.2",
-    "react-perfect-scrollbar": "npm:react-perfect-scrollbar@0.1.1",
+    "react-perfect-scrollbar": "npm:react-perfect-scrollbar@0.2.0",
     "react-redux": "npm:react-redux@4.4.6",
     "react-router": "npm:react-router@2.8.1",
     "react-router-redux": "npm:react-router-redux@4.0.7",
@@ -344,9 +344,9 @@ SystemJS.config({
     },
     "npm:react@15.3.2": {
       "map": {
-        "object-assign": "npm:object-assign@4.1.0",
+        "object-assign": "npm:object-assign@4.1.1",
         "fbjs": "npm:fbjs@0.8.8",
-        "loose-envify": "npm:loose-envify@1.3.0"
+        "loose-envify": "npm:loose-envify@1.3.1"
       }
     },
     "npm:pbkdf2@3.0.9": {
@@ -377,7 +377,7 @@ SystemJS.config({
     },
     "npm:jspm-nodelibs-http@0.2.0": {
       "map": {
-        "http-browserify": "npm:stream-http@2.6.1"
+        "http-browserify": "npm:stream-http@2.6.3"
       }
     },
     "npm:jspm-nodelibs-url@0.2.0": {
@@ -439,15 +439,10 @@ SystemJS.config({
         "inherits": "npm:inherits@2.0.3"
       }
     },
-    "npm:react-perfect-scrollbar@0.1.1": {
-      "map": {
-        "perfect-scrollbar": "npm:perfect-scrollbar@0.6.16"
-      }
-    },
     "npm:fbjs@0.8.8": {
       "map": {
-        "loose-envify": "npm:loose-envify@1.3.0",
-        "object-assign": "npm:object-assign@4.1.0",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "object-assign": "npm:object-assign@4.1.1",
         "setimmediate": "npm:setimmediate@1.0.5",
         "isomorphic-fetch": "npm:isomorphic-fetch@2.2.1",
         "promise": "npm:promise@7.1.1",
@@ -455,20 +450,30 @@ SystemJS.config({
         "ua-parser-js": "npm:ua-parser-js@0.7.12"
       }
     },
-    "npm:stream-http@2.6.1": {
-      "map": {
-        "inherits": "npm:inherits@2.0.3",
-        "readable-stream": "npm:readable-stream@2.2.2",
-        "builtin-status-codes": "npm:builtin-status-codes@3.0.0",
-        "to-arraybuffer": "npm:to-arraybuffer@1.0.1",
-        "xtend": "npm:xtend@4.0.1"
-      }
-    },
     "npm:asn1.js@4.9.1": {
       "map": {
         "bn.js": "npm:bn.js@4.11.6",
         "inherits": "npm:inherits@2.0.3",
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
+      }
+    },
+    "npm:react-perfect-scrollbar@0.2.0": {
+      "map": {
+        "perfect-scrollbar": "npm:perfect-scrollbar@0.6.16"
+      }
+    },
+    "npm:loose-envify@1.3.1": {
+      "map": {
+        "js-tokens": "npm:js-tokens@3.0.0"
+      }
+    },
+    "npm:stream-http@2.6.3": {
+      "map": {
+        "readable-stream": "npm:readable-stream@2.2.2",
+        "inherits": "npm:inherits@2.0.3",
+        "builtin-status-codes": "npm:builtin-status-codes@3.0.0",
+        "to-arraybuffer": "npm:to-arraybuffer@1.0.1",
+        "xtend": "npm:xtend@4.0.1"
       }
     }
   }

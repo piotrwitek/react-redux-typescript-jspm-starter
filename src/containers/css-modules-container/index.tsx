@@ -3,6 +3,7 @@ import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
 import { containerStyles } from './container-styles';
 import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.min.css!';
 
 export function CssModulesContainer() {
   return (
