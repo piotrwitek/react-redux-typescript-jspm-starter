@@ -56,6 +56,9 @@
   "jspm": {
     "name": "app",
     "main": "app.tsx",
+    "hooks": {
+      "postinstall": "scripts/postinstall.js"
+    },
     "dependencies": {
       "classnames": "npm:classnames@^2.2.5",
       "csjs": "npm:csjs@^1.0.6",
