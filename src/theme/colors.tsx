@@ -4,4 +4,4 @@ export default {
   backgroundColor: 'gold',
   shadowColor: '#000',
   shadowColorLight: '#888',
-}
+};

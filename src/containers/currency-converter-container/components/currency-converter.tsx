@@ -1,6 +1,5 @@
 // lib imports
 import * as React from 'react';
-import { Action } from 'redux-actions';
 
 import { CurrencySelect } from './currency-select';
 import { CurrencyInput } from './currency-input';
@@ -11,10 +10,10 @@ interface IProps {
   targetCurrency: string;
   baseValue: string;
   targetValue: string;
-  onBaseCurrencyChange: (payload: string) => Action<string>;
-  onTargetCurrencyChange: (payload: string) => Action<string>;
-  onBaseValueChange: (payload: string) => Action<string>;
-  onTargetValueChange: (payload: string) => Action<string>;
+  onBaseCurrencyChange: (payload: string) => void;
+  onTargetCurrencyChange: (payload: string) => void;
+  onBaseValueChange: (payload: string) => void;
+  onTargetValueChange: (payload: string) => void;
 }
 
 interface IState {
@@ -61,8 +60,8 @@ interface ICurrencyInputGroup {
   currencies: string[];
   currencyType: string;
   currencyValue: string;
-  onCurrencyTypeChange: (payload: string) => Action<string>;
-  onCurrencyValueChange: (payload: string) => Action<string>;
+  onCurrencyTypeChange: (payload: string) => void;
+  onCurrencyValueChange: (payload: string) => void;
 }
 function CurrencyInputGroup({currencies, currencyType, currencyValue,
   onCurrencyTypeChange, onCurrencyValueChange}: ICurrencyInputGroup) {

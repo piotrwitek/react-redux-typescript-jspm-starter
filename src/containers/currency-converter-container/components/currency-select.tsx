@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { Action } from 'redux-actions';
 
 interface IProps {
   currencies: string[];
   value: string;
-  onChange: (newValue: string) => Action<string>;
+  onChange: (newValue: string) => void;
 }
 
 export function CurrencySelect({currencies = [], value, onChange}: IProps) {

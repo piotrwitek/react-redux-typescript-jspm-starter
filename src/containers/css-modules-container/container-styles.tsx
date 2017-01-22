@@ -71,7 +71,7 @@ const Styles = {
     box-shadow: 0 6px 20px 0 ${colors.shadowColor};
   }`,
 
-}
+};
 
 const css = Object.values(Styles).reduce((accumulator, cssClass) => accumulator + cssClass, '');
 

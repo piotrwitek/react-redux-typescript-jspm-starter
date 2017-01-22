@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Action } from 'redux-actions';
 
 interface IProps {
   value: string;
-  onChange: (newValue: string) => Action<string>;
+  onChange: (newValue: string) => void;
 }
 
 export function CurrencyInput({value = 0, onChange}: IProps) {
