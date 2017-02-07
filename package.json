@@ -9,6 +9,7 @@
   "license": "MIT",
   "main": "server.js",
   "scripts": {
+    "dev": "node server.js",
     "clean": "shx rm -rf dist node_modules jspm_packages",
     "init": "jspm install && npm run build:dev",
     "init:deploy": "node scripts/init.js deploy",
