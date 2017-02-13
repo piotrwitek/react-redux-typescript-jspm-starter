@@ -21,6 +21,7 @@ function App() {
           <Route path="/" component={HomeContainer} />
           <Route path="/currency-converter" component={CurrencyConverterContainer} />
           <Route path="/css-modules" component={CssModulesContainer} />
+          <Route path="*" component={NotFoundContainer} />
         </Route>
       </Router>
     </Provider>
