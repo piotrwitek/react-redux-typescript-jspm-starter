@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="">
+  <meta name="description" content>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>React / Redux / TypeScript - starter-kit</title>
-  <link rel="stylesheet" href="assets/loader-styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/blaze@3.2.0">
+  <link href="assets/loader-styles.css" rel="stylesheet">
+  <link href="https://unpkg.com/blaze@3.2.0" rel="stylesheet">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
     // hot-reload config
     SystemJS.import('systemjs-hot-reloader').then(function(HotReloader) {
       // if you're running server on custom port please remember to update below
-      new HotReloader.default('http://localhost:8888');
+      new HotReloader.default('http://localhost:3000');
     });
     // load main module of your app with SystemJS
     SystemJS.trace = true;
