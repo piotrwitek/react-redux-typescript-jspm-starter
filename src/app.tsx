@@ -2,16 +2,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 // app imports
 import { MainLayout } from './layouts/main-layout';
 import { HomeContainer } from './containers/home-container/index';
 import { CssModulesContainer } from './containers/css-modules-container/index';
+import NotFoundContainer from './containers/not-found/index';
 import CurrencyConverterContainer from './containers/currency-converter-container/index';
 
 import { store } from './store/index';
-const history = syncHistoryWithStore(hashHistory, store) as any;
+const history = syncHistoryWithStore(browserHistory, store) as any;
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" component={HomeContainer} />
           <Route path="/currency-converter" component={CurrencyConverterContainer} />
           <Route path="/css-modules" component={CssModulesContainer} />
+          <Route path="*" component={NotFoundContainer} />
         </Route>
       </Router>
     </Provider>
