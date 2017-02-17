@@ -42,9 +42,9 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^15.0.1":
-  version "15.0.10"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.10.tgz#6b2a8a4d4965e8c0ade3a43192520da1570ea350"
+"@types/react@*", "@types/react@^15.0.11":
+  version "15.0.11"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.11.tgz#640d2e817dc6962cd31a1e05d8798b6604324f17"
 
 "@types/systemjs@^0.19.33":
   version "0.19.33"
@@ -1716,13 +1716,9 @@ husky@^0.13.0:
     is-ci "^1.0.9"
     normalize-path "^1.0.0"
 
-iconv-lite@0.4.13:
+iconv-lite@0.4.13, iconv-lite@^0.4.5:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
-
-iconv-lite@^0.4.5:
-  version "0.4.15"
-  resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -3136,6 +3132,10 @@ rc@^1.0.1, rc@^1.1.6, rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~1.0.4"
 
+react-redux-typescript@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-redux-typescript/-/react-redux-typescript-2.0.0.tgz#5f76095e9aa88d88b9ca98fcf6f7da29680508d8"
+
 read-all-stream@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/read-all-stream/-/read-all-stream-3.1.0.tgz#35c3e177f2078ef789ee4bfafa4373074eaef4fa"
@@ -3248,9 +3248,9 @@ regenerator-preset@^0.9.6:
     babel-plugin-transform-es2015-for-of "^6.18.0"
     regenerator-transform "^0.9.3"
 
-regenerator-runtime@^0.10.0:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.1.tgz#257f41961ce44558b18f7814af48c17559f9faeb"
+regenerator-runtime@^0.10.0, regenerator-runtime@^0.10.3:
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.3.tgz#8c4367a904b51ea62a908ac310bf99ff90a82a3e"
 
 regenerator-transform@^0.9.3:
   version "0.9.8"
@@ -3260,15 +3260,15 @@ regenerator-transform@^0.9.3:
     babel-types "^6.19.0"
     private "^0.1.6"
 
-regenerator@^0.9.5:
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/regenerator/-/regenerator-0.9.5.tgz#5fa424db69948c567d650c2a81c24731d78e70eb"
+regenerator@^0.9.7:
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/regenerator/-/regenerator-0.9.7.tgz#e0ba58ebbde23b896eac75ae7b93be2483ccf86f"
   dependencies:
     babel-core "^6.18.2"
     commoner "^0.10.8"
     recast "^0.11.17"
     regenerator-preset "^0.9.6"
-    regenerator-runtime "^0.10.0"
+    regenerator-runtime "^0.10.3"
     through "^2.3.8"
 
 regex-cache@^0.4.2:

@@ -106,6 +106,7 @@ SystemJS.config({
     "react": "npm:react@15.4.1",
     "react-dom": "npm:react-dom@15.4.1",
     "react-redux": "npm:react-redux@5.0.1",
+    "react-redux-typescript": "npm:react-redux-typescript@2.0.0",
     "react-router": "npm:react-router@2.8.1",
     "react-router-redux": "npm:react-router-redux@4.0.7",
     "redux": "npm:redux@3.6.0",

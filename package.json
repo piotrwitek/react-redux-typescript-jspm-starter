@@ -36,7 +36,7 @@
   "devDependencies": {
     "@types/classnames": "^0.0.32",
     "@types/jest": "^18.1.1",
-    "@types/react": "^15.0.1",
+    "@types/react": "^15.0.11",
     "@types/react-dom": "^0.14.20",
     "@types/react-redux": "^4.4.32",
     "@types/react-router": "^3.0.3",
@@ -47,7 +47,8 @@
     "jest": "^18.1.0",
     "jspm": "0.17.0-beta.32",
     "jspm-hmr": "^1.0.0-rc1",
-    "regenerator": "^0.9.5",
+    "react-redux-typescript": "^2.0.0",
+    "regenerator": "^0.9.7",
     "shelljs": "^0.7.6",
     "shx": "^0.2.2",
     "ts-jest": "^18.0.1",
@@ -66,6 +67,7 @@
       "insert-css": "npm:insert-css@^1.1.0",
       "react-dom": "npm:react-dom@^15.4.1",
       "react-redux": "npm:react-redux@^5.0.1",
+      "react-redux-typescript": "npm:react-redux-typescript@^2.0.0",
       "react-router": "npm:react-router@^2.8.1",
       "react-router-redux": "npm:react-router-redux@^4.0.7",
       "redux-observable": "npm:redux-observable@^0.12.2",
@@ -74,7 +76,7 @@
     "devDependencies": {
       "css": "github:systemjs/plugin-css@^0.1.32",
       "plugin-typescript": "github:frankwallis/plugin-typescript@^5.3.3",
-      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0",
+      "systemjs-hot-reloader": "github:alexisvincent/systemjs-hot-reloader@^0.6.0",
       "tslib": "npm:tslib@^1.4.0"
     },
     "peerDependencies": {
