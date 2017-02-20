@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
-import styles from './container-styles';
+
+import styles from './styles';
 
 export function CssModulesContainer() {
   return (
