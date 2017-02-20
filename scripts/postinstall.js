@@ -1,9 +1,11 @@
-console.log('Rebuilding development vendor bundle, please wait...');
+const devBundleCommand = 'npm run dev:bundle';
 
-const exec = require('child_process').execSync;
-const output = exec('npm run build:dev');
+// console.log('Rebuilding development vendor bundle, please wait...\n');
+// const exec = require('child_process').execSync;
+// const output = exec(devBundleCommand);
+// console.log(output);
 
-console.log();
-console.log(output);
-
-
+console.log(`
+     After installing dependencies consider rebuilding dev vendor bundle with "${devBundleCommand}" command.
+`
+);
