@@ -6,30 +6,11 @@ const CACHED_RESPONSE: IFixerServiceResponse = {
   rates: { 'PLN': 1, 'SEK': 2.1919 },
 };
 
-// State
-export type State = {
-  readonly isLoading: boolean;
-  readonly error: string | null;
-  readonly lastUpdated: number | null;
-  readonly base: string;
-  readonly rates: any;
-  readonly date: string;
-};
-export const initialState: State = {
-  isLoading: false,
-  error: null,
-  lastUpdated: null,
-  base: CACHED_RESPONSE.base,
-  rates: CACHED_RESPONSE.rates,
-  date: CACHED_RESPONSE.date,
-};
-
 // Action Creators
 export const LOAD_CURRENCY_RATES = 'currencyRates/LOAD_CURRENCY_RATES';
 export const loadCurrencyRates = () => ({
   type: LOAD_CURRENCY_RATES as typeof LOAD_CURRENCY_RATES,
 });
-
 
 export const LOAD_CURRENCY_RATES_SUCCESS = 'currencyRates/LOAD_CURRENCY_RATES_SUCCESS';
 export const loadCurrencyRatesSuccess = (payload: IFixerServiceResponse) => ({
@@ -50,6 +31,24 @@ const ActionTypes = {
   loadCurrencyRatesError: returntypeof(loadCurrencyRatesError),
 };
 type Action = typeof ActionTypes[keyof typeof ActionTypes];
+
+// State
+export type State = {
+  readonly isLoading: boolean;
+  readonly error: string | null;
+  readonly lastUpdated: number | null;
+  readonly base: string;
+  readonly rates: any;
+  readonly date: string;
+};
+export const initialState: State = {
+  isLoading: false,
+  error: null,
+  lastUpdated: null,
+  base: CACHED_RESPONSE.base,
+  rates: CACHED_RESPONSE.rates,
+  date: CACHED_RESPONSE.date,
+};
 
 // Reducer
 export default function reducer(state: State = initialState, action: Action): State {

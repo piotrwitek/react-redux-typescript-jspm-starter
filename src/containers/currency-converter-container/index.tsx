@@ -2,14 +2,14 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 // components imports
-import { IRootReducer } from '../../store';
+import { RootState } from '../../store';
 import { State } from '../../store/currency-rates-reducer';
 import { State as CurrencyConverterState, ActionCreators } from '../../store/currency-converter/reducer';
 import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
 import { CurrencyConverter } from './components/currency-converter';
 
-const mapStateToProps = (storeState: IRootReducer) => ({
+const mapStateToProps = (storeState: RootState) => ({
   currencyRates: storeState.currencyRates,
   currencyConverter: storeState.currencyConverter,
 });

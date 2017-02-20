@@ -1,29 +1,28 @@
 declare var window: Window & { devToolsExtension: any };
-import { combineReducers } from 'redux';
+import { combineReducers, createStore } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import { createStore } from 'redux';
 
 import {
-  default as currencyRatesReducer, State,
+  default as currencyRatesReducer, State as CurrencyRatesState,
 } from './currency-rates-reducer';
 import {
   default as currencyConverterReducer, State as CurrencyConverterState,
 } from './currency-converter/reducer';
 
-export interface IRootReducer {
+export type RootState = {
   routing: any;
-  currencyRates: State;
+  currencyRates: CurrencyRatesState;
   currencyConverter: CurrencyConverterState;
-}
+};
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers<RootState>({
   routing: routerReducer,
   currencyRates: currencyRatesReducer,
   currencyConverter: currencyConverterReducer,
 });
 
 // rehydrating state on app start: implement here...
-const recoverState = () => ({});
+const recoverState = (): RootState => ({} as RootState);
 
 export const store = createStore(
   rootReducer,

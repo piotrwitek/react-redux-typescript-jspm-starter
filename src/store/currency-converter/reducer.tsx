@@ -1,10 +1,19 @@
-class ActionCreator<T, P> {
+export class ActionCreator<T, P> {
   readonly type: T;
   readonly payload: P;
 
   constructor(type: T) { this.type = type; }
   create = (payload: P) => ({ type: this.type, payload });
 }
+
+// Action Creators
+export const ActionCreators = {
+  UpdateBaseCurrency: new ActionCreator<'UpdateBaseCurrency', string>('UpdateBaseCurrency'),
+  UpdateBaseValue: new ActionCreator<'UpdateBaseValue', string>('UpdateBaseValue'),
+};
+
+// Action Types
+type Action = typeof ActionCreators[keyof typeof ActionCreators];
 
 // State
 export type State = {
@@ -19,15 +28,6 @@ export const initialState: State = {
   baseValue: '0',
   targetValue: '0',
 };
-
-// Action Creators
-export const ActionCreators = {
-  UpdateBaseCurrency: new ActionCreator<'UpdateBaseCurrency', string>('UpdateBaseCurrency'),
-  UpdateBaseValue: new ActionCreator<'UpdateBaseValue', string>('UpdateBaseValue'),
-};
-
-// Action Types
-type Action = typeof ActionCreators[keyof typeof ActionCreators];
 
 // Reducer
 export default function reducer(state: State = initialState, action: Action): State {
