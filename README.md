@@ -62,7 +62,7 @@ TypeScript natively support "async & generator functions transpilation" when tar
 - Test harness using ([jest](https://github.com/facebook/jest))
 - Jest Snapshot Testing in TypeScript
 
-### - Optimized JSPM (SystemJS) loading speed
+### Optimized JSPM (SystemJS) loading speed
 Use "development vendor bundle" to speed up a full page reload by minimizing request count for external dependencies (in node_modules).  
 If not trying to leverage HTTP/2, it is a best practice to bundle all external dependencies together and load as a single bundle
 
