@@ -33,22 +33,24 @@ interface IState { }
 export class CurrencyConverterContainer extends React.Component<IProps, IState> {
   render() {
     const { baseCurrency, targetCurrency, baseValue, targetValue } = this.props.currencyConverter;
-    const { rates } = this.props.currencyRates;
-    const currencies = Object.keys(rates);
+    const { rates, base } = this.props.currencyRates;
+    const currencies = Object.keys(rates).concat(base);
+
     const { updateBaseCurrency, updateBaseValue, updateTargetCurrency, updateTargetValue } = this.props;
 
     return (
       <article>
         <PageHeader>Currency Converter</PageHeader>
         <PageSection className="u-centered">
-          <p>(work in progress)</p>
           <p>
-            Example application to showcase how to leverage Smarter Type Inference from TypeScript 2.1
-            in React/Redux projects and to minimize additional costs of writing and maintaining explicit type declarations.
+            Example application to showcase TypeScript patterns used in React & Redux projects.
           </p>
           <p>
-            Handling Async Side Effects using ES7 Observables and RxJS
-            with <a href="https://github.com/redux-observable/redux-observable/">redux-observable</a>
+            To learn more about usefull TypeScript Patterns in React & Redux Apps go here:<br />
+            <a href="https://github.com/piotrwitek/react-redux-typescript-patterns/">React / Redux / TypeScript Patterns</a>
+          </p>
+          <p>
+            Async Flows are handled using <a href="https://github.com/redux-observable/redux-observable/">redux-observable</a>
           </p>
         </PageSection>
         <section className="u-letter-box--xlarge">

@@ -1,3 +1,5 @@
+import { latestResponse } from '../../services/fixer/fixtures';
+
 export class ActionCreator<T, P> {
   readonly type: T;
   readonly payload: P;
@@ -23,10 +25,10 @@ export type State = {
   readonly targetValue: string;
 };
 export const initialState: State = {
-  baseCurrency: 'PLN',
-  targetCurrency: 'SEK',
-  baseValue: '0',
-  targetValue: '0',
+  baseCurrency: latestResponse.base,
+  targetCurrency: Object.entries(latestResponse.rates)[0][0],
+  baseValue: '100',
+  targetValue: (Object.entries(latestResponse.rates)[0][1] * 100).toString(),
 };
 
 // Reducer

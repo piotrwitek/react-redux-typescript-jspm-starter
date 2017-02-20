@@ -1,10 +1,6 @@
 import { returntypeof } from 'react-redux-typescript';
 
-const CACHED_RESPONSE: IFixerServiceResponse = {
-  base: 'PLN',
-  date: new Date().toISOString(),
-  rates: { 'PLN': 1, 'SEK': 2.1919 },
-};
+import { latestResponse } from '../services/fixer/fixtures';
 
 // Action Creators
 export const LOAD_CURRENCY_RATES = 'currencyRates/LOAD_CURRENCY_RATES';
@@ -45,9 +41,9 @@ export const initialState: State = {
   isLoading: false,
   error: null,
   lastUpdated: null,
-  base: CACHED_RESPONSE.base,
-  rates: CACHED_RESPONSE.rates,
-  date: CACHED_RESPONSE.date,
+  base: latestResponse.base,
+  rates: latestResponse.rates,
+  date: latestResponse.date,
 };
 
 // Reducer

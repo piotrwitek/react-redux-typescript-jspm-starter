@@ -34,22 +34,27 @@ export class CurrencyConverter extends React.Component<IProps, IState> {
     } = this.props;
 
     return (
-      <div className="o-grid o-grid--small-full o-grid--medium-full">
+      <div className="o-grid o-grid--xsmall-full o-grid--small-full o-grid--medium-full">
         <div className="o-grid__cell u-window-box--medium">
           <CurrencyInputGroup currencies={currencies}
             currencyType={baseCurrency}
             onCurrencyTypeChange={onBaseCurrencyChange}
             currencyValue={baseValue}
             onCurrencyValueChange={onBaseValueChange}
-            />
+          />
         </div>
+
+        <div className="o-grid__cell o-grid__cell--width-10 u-letter-box--xlarge u-centered">
+          =>
+        </div>
+
         <div className="o-grid__cell u-window-box--medium">
           <CurrencyInputGroup currencies={currencies}
             currencyType={targetCurrency}
             onCurrencyTypeChange={onTargetCurrencyChange}
             currencyValue={targetValue}
             onCurrencyValueChange={onTargetValueChange}
-            />
+          />
         </div>
       </div>
     );
@@ -63,22 +68,22 @@ interface ICurrencyInputGroup {
   onCurrencyTypeChange: (payload: string) => void;
   onCurrencyValueChange: (payload: string) => void;
 }
-function CurrencyInputGroup({currencies, currencyType, currencyValue,
-  onCurrencyTypeChange, onCurrencyValueChange}: ICurrencyInputGroup) {
+function CurrencyInputGroup({ currencies, currencyType, currencyValue,
+  onCurrencyTypeChange, onCurrencyValueChange }: ICurrencyInputGroup) {
   return (
     <div className="c-input-group">
-      <div className="o-field o-field--fixed" style={{ width: '80px' }}>
+      <div className="o-field o-field--fixed" style={{ width: '90px' }}>
         <CurrencySelect
           currencies={currencies}
           value={currencyType}
           onChange={onCurrencyTypeChange}
-          />
+        />
       </div>
       <div className="o-field">
         <CurrencyInput
           value={currencyValue}
           onChange={onCurrencyValueChange}
-          />
+        />
       </div>
     </div>
   );
