@@ -1,6 +1,6 @@
 import { returntypeof } from 'react-redux-typescript';
 
-import { latestResponse } from '../services/fixer/fixtures';
+import { latestResponse } from '../../services/fixer/fixtures';
 
 // Action Creators
 export const LOAD_CURRENCY_RATES = 'currencyRates/LOAD_CURRENCY_RATES';

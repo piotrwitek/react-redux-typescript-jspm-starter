@@ -111,6 +111,7 @@ SystemJS.config({
     "react-router-redux": "npm:react-router-redux@4.0.7",
     "redux": "npm:redux@3.6.0",
     "redux-observable": "npm:redux-observable@0.12.2",
+    "reselect": "npm:reselect@2.5.4",
     "rxjs": "npm:rxjs@5.0.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.0",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",

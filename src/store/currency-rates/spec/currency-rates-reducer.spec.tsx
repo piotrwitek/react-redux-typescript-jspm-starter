@@ -10,7 +10,7 @@ jest.mock('seamless-immutable', () => {
   };
 }, { virtual: true });
 
-import * as currencyRatesActions from '../currency-rates-reducer';
+import * as currencyRatesActions from '../reducer';
 
 // testing action creators
 

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 // components imports
 import { RootState } from '../../store';
-import { State } from '../../store/currency-rates-reducer';
+import { State } from '../../store/currency-rates/reducer';
 import { State as CurrencyConverterState, ActionCreators } from '../../store/currency-converter/reducer';
 import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
@@ -35,6 +35,7 @@ interface IState { }
 export class CurrencyConverterContainer extends React.Component<IProps, IState> {
   render() {
     const { baseCurrency, targetCurrency, baseValue, targetValue } = this.props.currencyConverter;
+
     const { rates, base } = this.props.currencyRates;
     const currencies = Object.keys(rates).concat(base);
 

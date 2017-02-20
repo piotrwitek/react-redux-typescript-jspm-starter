@@ -4,7 +4,7 @@ import { routerReducer } from 'react-router-redux';
 
 import {
   default as currencyRatesReducer, State as CurrencyRatesState,
-} from './currency-rates-reducer';
+} from './currency-rates/reducer';
 import {
   default as currencyConverterReducer, State as CurrencyConverterState,
 } from './currency-converter/reducer';

@@ -70,6 +70,7 @@
       "react-router": "npm:react-router@^2.8.1",
       "react-router-redux": "npm:react-router-redux@^4.0.7",
       "redux-observable": "npm:redux-observable@^0.12.2",
+      "reselect": "npm:reselect@^2.5.4",
       "whatwg-fetch": "npm:whatwg-fetch@^1.1.1"
     },
     "devDependencies": {
@@ -158,5 +159,8 @@
         }
       }
     }
+  },
+  "dependencies": {
+    "reselect": "^2.5.4"
   }
 }
