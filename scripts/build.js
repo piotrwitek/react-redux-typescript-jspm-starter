@@ -10,7 +10,6 @@ switch (command) {
     break;
   case 'app':
     cp('assets/*', 'dist');
-    cp('index.prod.html', 'dist/index.html');
     exec(
       'jspm build src/app - configs/vendor.config.prod.js dist/app.js --skip-source-maps --minify'
     );
