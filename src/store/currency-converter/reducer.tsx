@@ -11,7 +11,9 @@ export class ActionCreator<T, P> {
 // Action Creators
 export const ActionCreators = {
   UpdateBaseCurrency: new ActionCreator<'UpdateBaseCurrency', string>('UpdateBaseCurrency'),
+  UpdateTargetCurrency: new ActionCreator<'UpdateTargetCurrency', string>('UpdateTargetCurrency'),
   UpdateBaseValue: new ActionCreator<'UpdateBaseValue', string>('UpdateBaseValue'),
+  UpdateTargetValue: new ActionCreator<'UpdateTargetValue', string>('UpdateTargetValue'),
 };
 
 // Action Types
@@ -38,8 +40,14 @@ export default function reducer(state: State = initialState, action: Action): St
   if (action.type === ActionCreators.UpdateBaseCurrency.type) {
     partialState = { baseCurrency: action.payload };
   }
+  if (action.type === ActionCreators.UpdateTargetCurrency.type) {
+    partialState = { targetCurrency: action.payload };
+  }
   if (action.type === ActionCreators.UpdateBaseValue.type) {
     partialState = { baseValue: action.payload };
+  }
+  if (action.type === ActionCreators.UpdateTargetValue.type) {
+    partialState = { targetValue: action.payload };
   }
 
   return partialState != null ? { ...state, ...partialState } : state;

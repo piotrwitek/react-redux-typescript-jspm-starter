@@ -16,15 +16,17 @@ const mapStateToProps = (storeState: RootState) => ({
 
 const dispatchToProps = {
   updateBaseCurrency: ActionCreators.UpdateBaseCurrency.create,
+  updateTargetCurrency: ActionCreators.UpdateTargetCurrency.create,
   updateBaseValue: ActionCreators.UpdateBaseValue.create,
+  updateTargetValue: ActionCreators.UpdateTargetValue.create,
 };
 
 interface IProps {
   currencyRates: State;
   currencyConverter: CurrencyConverterState;
   updateBaseCurrency: (payload: string) => void;
-  updateBaseValue: (payload: string) => void;
   updateTargetCurrency: (payload: string) => void;
+  updateBaseValue: (payload: string) => void;
   updateTargetValue: (payload: string) => void;
 }
 
