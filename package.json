@@ -11,27 +11,25 @@
   "scripts": {
     "clean": "shx rm -rf dist node_modules jspm_packages",
     "init": "jspm install && npm run build:dev",
-    "init:deploy": "node scripts/init.js deploy",
-    "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push",
-    "precommit": "npm run lint && npm run tsc",
-    "prepush": "npm run precommit && npm test",
-    "preversion": "npm run lint && npm test",
-    "dev": "node server.js",
+    "dev": "jspm-hmr -FO",
     "dev:bundle": "node scripts/build.js dev",
     "dev:unbundle": "shx rm temp/vendor.dev.js",
+    "prod": "jspm-hmr dist --port 3001 -FO",
     "build": "npm run build:app && npm run build:vendor",
     "build:app": "node scripts/build.js app",
     "build:vendor": "node scripts/build.js vendor",
     "build:debug": "node scripts/build.js debug",
     "bad": "npm run build:app && npm run deploy",
     "bvd": "npm run build:vendor && npm run deploy",
-    "lint": "tslint 'src/**/*.ts[x]'",
     "tsc": "tsc -p src",
     "tsc:watch": "tsc -p src -w",
+    "lint": "tslint 'src/**/*.ts[x]'",
     "test": "jest --config ./jest.config.json",
     "test:update": "jest -u --config ./jest.config.json",
-    "regenerator": "node scripts/regenerator.js",
-    "build:regenerator": "npm run build:app && npm run regenerator"
+    "precommit": "npm run lint && npm run tsc",
+    "prepush": "npm run precommit && npm test",
+    "deploy:init": "node scripts/deploy.js init",
+    "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push"
   },
   "dependencies": {},
   "devDependencies": {
@@ -48,7 +46,7 @@
     "husky": "^0.13.0",
     "jest": "^18.1.0",
     "jspm": "0.17.0-beta.32",
-    "jspm-hmr": "^1.0.0-rc1",
+    "jspm-hmr": "^1.0.0-rc4",
     "react-redux-typescript": "^2.0.0",
     "regenerator": "^0.9.7",
     "reselect": "^2.5.4",
@@ -75,13 +73,13 @@
       "react-router-redux": "npm:react-router-redux@^4.0.7",
       "redux-observable": "npm:redux-observable@^0.12.2",
       "reselect": "npm:reselect@^2.5.4",
+      "tslib": "npm:tslib@^1.5.0",
       "whatwg-fetch": "npm:whatwg-fetch@^1.1.1"
     },
     "devDependencies": {
       "css": "github:systemjs/plugin-css@^0.1.32",
       "plugin-typescript": "github:frankwallis/plugin-typescript@^5.3.3",
-      "systemjs-hot-reloader": "github:alexisvincent/systemjs-hot-reloader@^0.6.0",
-      "tslib": "npm:tslib@^1.4.0"
+      "systemjs-hot-reloader": "github:alexisvincent/systemjs-hot-reloader@^0.6.0"
     },
     "peerDependencies": {
       "assert": "npm:jspm-nodelibs-assert@^0.2.0",

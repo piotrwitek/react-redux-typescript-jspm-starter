@@ -1,30 +1,34 @@
 require('shelljs/global');
 
+const package = require('../package.json');
+const dependencies = Object.keys(package.jspm.dependencies).join(' + ');
+const devDependencies = Object.keys(package.jspm.devDependencies).join(' + ');
+
 const command = process.argv[2];
 
 switch (command) {
   case 'dev':
     exec(
-      'jspm bundle configs/vendor.config.dev.js temp/vendor.dev.js -d'
-    );
-    break;
-  case 'app':
-    cp('assets/*', 'dist');
-    exec(
-      'jspm build src/app - configs/vendor.config.prod.js dist/app.js --skip-source-maps --minify'
+      `jspm bundle ${dependencies} + ${devDependencies} temp/vendor.dev.js -d`
     );
     break;
   case 'vendor':
     exec(
-      'jspm bundle configs/vendor.config.prod.js dist/vendor.prod.js -ms'
+      `jspm bundle ${dependencies} dist/vendor.prod.js -ms`
     );
     cp(
       '-R', ['jspm.config.js', 'jspm_packages/system.js'], 'dist'
     );
     break;
+  case 'app':
+    cp('assets/*', 'dist');
+    exec(
+      `jspm build src/app - ${dependencies} dist/app.js --skip-source-maps --minify`
+    );
+    break;
   case 'debug':
     exec(
-      'jspm build src/app - configs/vendor.config.prod.js dist/app.js'
+      `jspm build src/app - ${dependencies} dist/app.js`
     );
     break;
 

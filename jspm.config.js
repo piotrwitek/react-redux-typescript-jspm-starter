@@ -11,7 +11,6 @@ SystemJS.config({
     "map": {
       "plugin-typescript": "github:frankwallis/plugin-typescript@5.3.3",
       "css": "github:systemjs/plugin-css@0.1.32",
-      "tslib": "npm:tslib@1.4.0",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0"
     },
     "packages": {
@@ -115,6 +114,7 @@ SystemJS.config({
     "rxjs": "npm:rxjs@5.0.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.0",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",
+    "tslib": "npm:tslib@1.5.0",
     "url": "npm:jspm-nodelibs-url@0.2.0",
     "util": "npm:jspm-nodelibs-util@0.2.1",
     "vm": "npm:jspm-nodelibs-vm@0.2.0",
