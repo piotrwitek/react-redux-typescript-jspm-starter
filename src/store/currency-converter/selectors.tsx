@@ -1,11 +1,16 @@
-// import { createSelector } from 'reselect';
-// import { RootState } from '../index';
+import { createSelector } from 'reselect';
+import { RootState } from '../index';
 
-// const getCurrencyConverter = (state: RootState) => state.currencyConverter;
-// const getCurrencyRates = (state: RootState) => state.currencyRates;
+const getCurrencyConverter = (state: RootState) => state.currencyConverter;
 
-// export const getCurrencies = createSelector(
-//   getCurrencyConverter, getCurrencyRates, (currencyConverter, currencyRates) => {
-//     return Object.keys(currencyRates.rates).concat(currencyRates.base);
-//   },
-// );
+export const getBaseValue = createSelector(
+  getCurrencyConverter, (currencyConverter) => {
+    return currencyConverter.baseValue;
+  },
+);
+
+export const getTargetValue = createSelector(
+  getCurrencyConverter, (currencyConverter) => {
+    return currencyConverter.targetValue;
+  },
+);

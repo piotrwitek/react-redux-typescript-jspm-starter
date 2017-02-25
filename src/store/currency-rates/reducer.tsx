@@ -34,7 +34,7 @@ export type State = {
   readonly error: string | null;
   readonly lastUpdated: number | null;
   readonly base: string;
-  readonly rates: any;
+  readonly rates: { [key: string]: number };
   readonly date: string;
 };
 export const initialState: State = {

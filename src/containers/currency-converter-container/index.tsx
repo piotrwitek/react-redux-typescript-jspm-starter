@@ -1,10 +1,9 @@
-// lib imports
 import * as React from 'react';
 import { connect } from 'react-redux';
-// components imports
+import { returntypeof } from 'react-redux-typescript';
+
 import { RootState } from '../../store';
-import { State } from '../../store/currency-rates/reducer';
-import { State as CurrencyConverterState, ActionCreators } from '../../store/currency-converter/reducer';
+import { ActionCreators } from '../../store/currency-converter/reducer';
 import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
 import { CurrencyConverter } from './components/currency-converter';
@@ -15,31 +14,24 @@ const mapStateToProps = (storeState: RootState) => ({
 });
 
 const dispatchToProps = {
-  updateBaseCurrency: ActionCreators.UpdateBaseCurrency.create,
-  updateTargetCurrency: ActionCreators.UpdateTargetCurrency.create,
-  updateBaseValue: ActionCreators.UpdateBaseValue.create,
-  updateTargetValue: ActionCreators.UpdateTargetValue.create,
+  changeBaseCurrency: ActionCreators.ChangeBaseCurrency.create,
+  changeTargetCurrency: ActionCreators.ChangeTargetCurrency.create,
+  changeBaseValue: ActionCreators.ChangeBaseValue.create,
+  changeTargetValue: ActionCreators.ChangeTargetValue.create,
 };
 
-interface IProps {
-  currencyRates: State;
-  currencyConverter: CurrencyConverterState;
-  updateBaseCurrency: (payload: string) => void;
-  updateTargetCurrency: (payload: string) => void;
-  updateBaseValue: (payload: string) => void;
-  updateTargetValue: (payload: string) => void;
-}
+const stateProps = returntypeof(mapStateToProps);
+type IProps = typeof stateProps & typeof dispatchToProps;
+type IState = {};
 
-interface IState { }
-
-export class CurrencyConverterContainer extends React.Component<IProps, IState> {
+class CurrencyConverterContainer extends React.Component<IProps, IState> {
   render() {
     const { baseCurrency, targetCurrency, baseValue, targetValue } = this.props.currencyConverter;
 
     const { rates, base } = this.props.currencyRates;
     const currencies = Object.keys(rates).concat(base);
 
-    const { updateBaseCurrency, updateBaseValue, updateTargetCurrency, updateTargetValue } = this.props;
+    const { changeBaseCurrency, changeBaseValue, changeTargetCurrency, changeTargetValue } = this.props;
 
     return (
       <article>
@@ -60,10 +52,10 @@ export class CurrencyConverterContainer extends React.Component<IProps, IState> 
           <CurrencyConverter currencies={currencies}
             baseCurrency={baseCurrency} targetCurrency={targetCurrency}
             baseValue={baseValue} targetValue={targetValue}
-            onBaseCurrencyChange={updateBaseCurrency}
-            onTargetCurrencyChange={updateTargetCurrency}
-            onBaseValueChange={updateBaseValue}
-            onTargetValueChange={updateTargetValue}
+            onBaseCurrencyChange={changeBaseCurrency}
+            onTargetCurrencyChange={changeTargetCurrency}
+            onBaseValueChange={changeBaseValue}
+            onTargetValueChange={changeTargetValue}
           />
         </section>
       </article>

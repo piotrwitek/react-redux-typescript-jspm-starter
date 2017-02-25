@@ -1,23 +1,20 @@
+import { ActionCreator } from '../action-creator';
+
 import { latestResponse } from '../../services/fixer/fixtures';
-
-export class ActionCreator<T, P> {
-  readonly type: T;
-  readonly payload: P;
-
-  constructor(type: T) { this.type = type; }
-  create = (payload: P) => ({ type: this.type, payload });
-}
+const INITIAL_BASE_CURRENCY = latestResponse.base;
+const INITIAL_TARGET_CURRENCY = Object.entries(latestResponse.rates)[0][0];
 
 // Action Creators
 export const ActionCreators = {
-  UpdateBaseCurrency: new ActionCreator<'UpdateBaseCurrency', string>('UpdateBaseCurrency'),
-  UpdateTargetCurrency: new ActionCreator<'UpdateTargetCurrency', string>('UpdateTargetCurrency'),
-  UpdateBaseValue: new ActionCreator<'UpdateBaseValue', string>('UpdateBaseValue'),
-  UpdateTargetValue: new ActionCreator<'UpdateTargetValue', string>('UpdateTargetValue'),
+  ChangeBaseCurrency: new ActionCreator<'ChangeBaseCurrency', string>('ChangeBaseCurrency'),
+  ChangeTargetCurrency: new ActionCreator<'ChangeTargetCurrency', string>('ChangeTargetCurrency'),
+  ChangeBaseValue: new ActionCreator<'ChangeBaseValue', string>('ChangeBaseValue'),
+  ChangeTargetValue: new ActionCreator<'ChangeTargetValue', string>('ChangeTargetValue'),
+  UpdateCurrencyConverterState: new ActionCreator<'UpdateCurrencyConverterState', Partial<State>>('UpdateCurrencyConverterState'),
 };
 
 // Action Types
-type Action = typeof ActionCreators[keyof typeof ActionCreators];
+export type Action = typeof ActionCreators[keyof typeof ActionCreators];
 
 // State
 export type State = {
@@ -27,27 +24,24 @@ export type State = {
   readonly targetValue: string;
 };
 export const initialState: State = {
-  baseCurrency: latestResponse.base,
-  targetCurrency: Object.entries(latestResponse.rates)[0][0],
+  baseCurrency: INITIAL_BASE_CURRENCY,
+  targetCurrency: INITIAL_TARGET_CURRENCY,
   baseValue: '100',
-  targetValue: (Object.entries(latestResponse.rates)[0][1] * 100).toString(),
+  targetValue: (latestResponse.rates[INITIAL_TARGET_CURRENCY] * 100).toString(),
 };
 
 // Reducer
 export default function reducer(state: State = initialState, action: Action): State {
   let partialState: Partial<State> | undefined;
 
-  if (action.type === ActionCreators.UpdateBaseCurrency.type) {
+  if (action.type === ActionCreators.ChangeBaseCurrency.type) {
     partialState = { baseCurrency: action.payload };
   }
-  if (action.type === ActionCreators.UpdateTargetCurrency.type) {
+  if (action.type === ActionCreators.ChangeTargetCurrency.type) {
     partialState = { targetCurrency: action.payload };
   }
-  if (action.type === ActionCreators.UpdateBaseValue.type) {
-    partialState = { baseValue: action.payload };
-  }
-  if (action.type === ActionCreators.UpdateTargetValue.type) {
-    partialState = { targetValue: action.payload };
+  if (action.type === ActionCreators.UpdateCurrencyConverterState.type) {
+    partialState = action.payload;
   }
 
   return partialState != null ? { ...state, ...partialState } : state;
