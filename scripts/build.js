@@ -1,34 +1,38 @@
 require('shelljs/global');
 
 const package = require('../package.json');
-const dependencies = Object.keys(package.jspm.dependencies).join(' + ');
-const devDependencies = Object.keys(package.jspm.devDependencies).join(' + ');
+const prodDependencies = Object.keys(package.jspm.dependencies);
+const devDependencies = Object.keys(package.jspm.devDependencies);
+const allDependencies = prodDependencies.concat(devDependencies);
 
 const command = process.argv[2];
 
 switch (command) {
   case 'dev':
     exec(
-      `jspm bundle ${dependencies} + ${devDependencies} temp/vendor.dev.js -d`
+      `jspm bundle ${allDependencies.join(' + ')} temp/vendor.dev.js -d`
     );
     break;
+
   case 'vendor':
     exec(
-      `jspm bundle ${dependencies} dist/vendor.prod.js -ms`
+      `jspm bundle ${prodDependencies.join(' + ')} dist/vendor.prod.js -ms`
     );
     cp(
       '-R', ['jspm.config.js', 'jspm_packages/system.js'], 'dist'
     );
     break;
+
   case 'app':
     cp('assets/*', 'dist');
     exec(
-      `jspm build src/app - ${dependencies} dist/app.js --skip-source-maps --minify`
+      `jspm build src/app - ${prodDependencies.join(' - ')} dist/app.js --skip-source-maps --minify`
     );
     break;
+
   case 'debug':
     exec(
-      `jspm build src/app - ${dependencies} dist/app.js`
+      `jspm build src/app - ${prodDependencies.join(' - ')} dist/app.js`
     );
     break;
 
