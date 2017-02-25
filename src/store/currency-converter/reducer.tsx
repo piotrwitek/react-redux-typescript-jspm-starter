@@ -40,6 +40,12 @@ export default function reducer(state: State = initialState, action: Action): St
   if (action.type === ActionCreators.ChangeTargetCurrency.type) {
     partialState = { targetCurrency: action.payload };
   }
+  if (action.type === ActionCreators.ChangeBaseValue.type) {
+    partialState = { baseValue: action.payload };
+  }
+  if (action.type === ActionCreators.ChangeTargetValue.type) {
+    partialState = { targetValue: action.payload };
+  }
   if (action.type === ActionCreators.UpdateCurrencyConverterState.type) {
     partialState = action.payload;
   }

@@ -1,4 +1,3 @@
-
 import { combineEpics } from 'redux-observable';
 import 'rxjs/add/operator/map';
 
@@ -8,7 +7,7 @@ import { convertValueWithBaseRateToTargetRate } from './utils';
 import * as CurrencyConverterSelectors from './selectors';
 import * as CurrencyRatesSelectors from '../currency-rates/selectors';
 
-// Epics
+// Epics - handling side effects of actions
 const changeCurrencyEpic = (action$: any, store: Store) =>
   action$.ofType(
     ActionCreators.ChangeBaseCurrency.type,
@@ -24,13 +23,11 @@ const changeCurrencyEpic = (action$: any, store: Store) =>
     },
   } as Action));
 
-
 const changeBaseValueEpic = (action$: any, store: Store) =>
   action$.ofType(ActionCreators.ChangeBaseValue.type)
     .map((action: typeof ActionCreators.ChangeBaseValue) => ({
       type: ActionCreators.UpdateCurrencyConverterState.type,
       payload: {
-        baseValue: action.payload,
         targetValue: convertValueWithBaseRateToTargetRate(
           action.payload,
           CurrencyRatesSelectors.getBaseCurrencyRate(store.getState()),
@@ -44,7 +41,6 @@ const changeTargetValueEpic = (action$: any, store: Store) =>
     .map((action: typeof ActionCreators.ChangeTargetValue) => ({
       type: ActionCreators.UpdateCurrencyConverterState.type,
       payload: {
-        targetValue: action.payload,
         baseValue: convertValueWithBaseRateToTargetRate(
           action.payload,
           CurrencyRatesSelectors.getTargetCurrencyRate(store.getState()),
