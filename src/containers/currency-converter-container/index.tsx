@@ -4,13 +4,14 @@ import { returntypeof } from 'react-redux-typescript';
 
 import { RootState } from '../../store';
 import { ActionCreators } from '../../store/currency-converter/reducer';
+import * as CurrencyRatesSelectors from '../../store/currency-rates/selectors';
 import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
 import { CurrencyConverter } from './components/currency-converter';
 
-const mapStateToProps = (storeState: RootState) => ({
-  currencyRates: storeState.currencyRates,
-  currencyConverter: storeState.currencyConverter,
+const mapStateToProps = (state: RootState) => ({
+  currencies: CurrencyRatesSelectors.getCurrencies(state),
+  currencyConverter: state.currencyConverter,
 });
 
 const dispatchToProps = {
@@ -21,21 +22,19 @@ const dispatchToProps = {
 };
 
 const stateProps = returntypeof(mapStateToProps);
-type IProps = typeof stateProps & typeof dispatchToProps;
-type IState = {};
+type Props = typeof stateProps & typeof dispatchToProps;
+type State = {};
 
-class CurrencyConverterContainer extends React.Component<IProps, IState> {
+class CurrencyConverterContainer extends React.Component<Props, State> {
   render() {
     const { baseCurrency, targetCurrency, baseValue, targetValue } = this.props.currencyConverter;
 
-    const { rates, base } = this.props.currencyRates;
-    const currencies = Object.keys(rates).concat(base);
-
-    const { changeBaseCurrency, changeBaseValue, changeTargetCurrency, changeTargetValue } = this.props;
+    const { currencies, changeBaseCurrency, changeBaseValue, changeTargetCurrency, changeTargetValue } = this.props;
 
     return (
       <article>
         <PageHeader>Currency Converter</PageHeader>
+
         <PageSection className="u-centered">
           <p>
             Example application to showcase TypeScript patterns used in React & Redux projects.
@@ -48,7 +47,8 @@ class CurrencyConverterContainer extends React.Component<IProps, IState> {
             Async Flows are handled using <a href="https://github.com/redux-observable/redux-observable/">redux-observable</a>
           </p>
         </PageSection>
-        <section className="u-letter-box--xlarge">
+
+        <PageSection className="u-letter-box--xlarge">
           <CurrencyConverter currencies={currencies}
             baseCurrency={baseCurrency} targetCurrency={targetCurrency}
             baseValue={baseValue} targetValue={targetValue}
@@ -57,7 +57,7 @@ class CurrencyConverterContainer extends React.Component<IProps, IState> {
             onBaseValueChange={changeBaseValue}
             onTargetValueChange={changeTargetValue}
           />
-        </section>
+        </PageSection>
       </article>
     );
   }
