@@ -27,9 +27,12 @@ type State = {};
 
 class CurrencyConverterContainer extends React.Component<Props, State> {
   render() {
-    const { baseCurrency, targetCurrency, baseValue, targetValue } = this.props.currencyConverter;
-
-    const { currencies, changeBaseCurrency, changeBaseValue, changeTargetCurrency, changeTargetValue } = this.props;
+    const {
+      baseCurrency, targetCurrency, baseValue, targetValue,
+    } = this.props.currencyConverter;
+    const {
+      currencies, changeBaseCurrency, changeBaseValue, changeTargetCurrency, changeTargetValue,
+    } = this.props;
 
     return (
       <article>
