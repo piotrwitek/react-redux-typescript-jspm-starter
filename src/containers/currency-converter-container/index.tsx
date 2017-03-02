@@ -1,58 +1,69 @@
-// lib imports
 import * as React from 'react';
-import { Action } from 'redux-actions';
 import { connect } from 'react-redux';
-// components imports
-import { IRootReducer } from '../../store';
-import { ICurrencyRatesReducer } from '../../store/currency-rates-reducer';
-import { ICurrencyConverterReducer } from '../../store/currency-converter-reducer';
+import { returntypeof } from 'react-redux-typescript';
+
+import { RootState } from '../../store';
+import { ActionCreators } from '../../store/currency-converter/reducer';
+import * as CurrencyRatesSelectors from '../../store/currency-rates/selectors';
 import { PageHeader } from '../../components/page-header';
 import { PageSection } from '../../components/page-section';
-import * as currencyConverterActions from '../../store/currency-converter-reducer';
 import { CurrencyConverter } from './components/currency-converter';
 
-interface IProps {
-  currencyRates: ICurrencyRatesReducer;
-  currencyConverter: ICurrencyConverterReducer;
-  updateBaseCurrency: (payload: string) => Action<string>;
-  updateBaseValue: (payload: string) => Action<string>;
-  updateTargetCurrency: (payload: string) => Action<string>;
-  updateTargetValue: (payload: string) => Action<string>;
-}
-interface IState {
-}
+const mapStateToProps = (state: RootState) => ({
+  currencies: CurrencyRatesSelectors.getCurrencies(state),
+  currencyConverter: state.currencyConverter,
+});
 
-export class CurrencyConverterContainer extends React.Component<IProps, IState> {
+const dispatchToProps = {
+  changeBaseCurrency: ActionCreators.ChangeBaseCurrency.create,
+  changeTargetCurrency: ActionCreators.ChangeTargetCurrency.create,
+  changeBaseValue: ActionCreators.ChangeBaseValue.create,
+  changeTargetValue: ActionCreators.ChangeTargetValue.create,
+};
+
+const stateProps = returntypeof(mapStateToProps);
+type Props = typeof stateProps & typeof dispatchToProps;
+type State = {};
+
+class CurrencyConverterContainer extends React.Component<Props, State> {
   render() {
-    const { baseCurrency, targetCurrency, baseValue, targetValue } = this.props.currencyConverter;
-    const { rates } = this.props.currencyRates;
-    const currencies = Object.keys(rates);
-    const { updateBaseCurrency, updateBaseValue, updateTargetCurrency, updateTargetValue } = this.props;
+    const {
+      baseCurrency, targetCurrency, baseValue, targetValue,
+    } = this.props.currencyConverter;
+    const {
+      currencies, changeBaseCurrency, changeBaseValue, changeTargetCurrency, changeTargetValue,
+    } = this.props;
 
     return (
       <article>
         <PageHeader>Currency Converter</PageHeader>
-        <PageSection className="u-centered">(work in progress)</PageSection>
-        <section className="u-letter-box--xlarge">
+
+        <PageSection className="u-centered">
+          <p>
+            Example application to showcase TypeScript patterns used in React & Redux projects.
+          </p>
+          <p>
+            To learn more about usefull TypeScript Patterns in React & Redux Apps go here:<br />
+            <a href="https://github.com/piotrwitek/react-redux-typescript-patterns/">React / Redux / TypeScript Patterns</a>
+          </p>
+          <p>
+            Async Flows are handled using <a href="https://github.com/redux-observable/redux-observable/">redux-observable</a>
+          </p>
+        </PageSection>
+
+        <PageSection className="u-letter-box--xlarge">
           <CurrencyConverter currencies={currencies}
             baseCurrency={baseCurrency} targetCurrency={targetCurrency}
             baseValue={baseValue} targetValue={targetValue}
-            onBaseCurrencyChange={updateBaseCurrency}
-            onTargetCurrencyChange={updateTargetCurrency}
-            onBaseValueChange={updateBaseValue}
-            onTargetValueChange={updateTargetValue}
-            />
-        </section>
+            onBaseCurrencyChange={changeBaseCurrency}
+            onTargetCurrencyChange={changeTargetCurrency}
+            onBaseValueChange={changeBaseValue}
+            onTargetValueChange={changeTargetValue}
+          />
+        </PageSection>
       </article>
     );
   }
 }
 
-const stateToProps = (storeState: IRootReducer) => ({
-  currencyRates: storeState.currencyRates,
-  currencyConverter: storeState.currencyConverter,
-});
-
-const actionsToProps = Object.assign({}, currencyConverterActions);
-
-export default connect(stateToProps, actionsToProps)(CurrencyConverterContainer);
+export default connect(mapStateToProps, dispatchToProps)(CurrencyConverterContainer);

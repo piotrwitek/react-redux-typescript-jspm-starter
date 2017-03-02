@@ -18,7 +18,9 @@
       true,
       "spaces"
     ],
-    "interface-name": [false],
+    "interface-name": [
+      false
+    ],
     "jsdoc-format": true,
     "label-position": true,
     "max-line-length": [
@@ -52,10 +54,13 @@
     "no-require-imports": false,
     "no-string-literal": true,
     "no-switch-case-fall-through": true,
-    "trailing-comma": [true, {
-      "singleline": "never",
-      "multiline": "always"
-    }],
+    "trailing-comma": [
+      true,
+      {
+        "singleline": "never",
+        "multiline": "always"
+      }
+    ],
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
     "no-use-before-declare": true,
@@ -78,7 +83,7 @@
       true,
       "always"
     ],
-    "switch-default": true,
+    "switch-default": false,
     "triple-equals": [
       true,
       "allow-null-check"
@@ -91,7 +96,8 @@
       "member-variable-declaration"
     ],
     "typedef-whitespace": [
-      true, {
+      true,
+      {
         "call-signature": "nospace",
         "index-signature": "nospace",
         "parameter": "nospace",

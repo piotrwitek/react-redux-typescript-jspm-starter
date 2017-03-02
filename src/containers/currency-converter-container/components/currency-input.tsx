@@ -1,15 +1,18 @@
 import * as React from 'react';
-import { Action } from 'redux-actions';
 
-interface IProps {
+interface Props {
   value: string;
-  onChange: (newValue: string) => Action<string>;
+  onChange: (newValue: string) => void;
 }
 
-export function CurrencyInput({value = 0, onChange}: IProps) {
+export function CurrencyInput({ value = 0, onChange }: Props) {
 
   const handleChange = (ev: React.SyntheticEvent<HTMLInputElement>) => {
     onChange(ev.currentTarget.value);
+  };
+
+  const handleBlur = (ev: React.SyntheticEvent<HTMLInputElement>) => {
+    onChange(parseFloat(ev.currentTarget.value).toFixed(2));
   };
 
   return (
@@ -18,7 +21,7 @@ export function CurrencyInput({value = 0, onChange}: IProps) {
       type="text"
       value={value}
       onChange={handleChange}
-      onBlur={handleChange}
-      />
+      onBlur={handleBlur}
+    />
   );
 }

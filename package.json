@@ -9,73 +9,79 @@
   "license": "MIT",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js",
     "clean": "shx rm -rf dist node_modules jspm_packages",
     "init": "jspm install && npm run build:dev",
-    "init:deploy": "node scripts/init.js deploy",
-    "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push",
-    "precommit": "npm run lint && npm run tsc",
-    "prepush": "npm run precommit && npm test",
-    "preversion": "npm run lint && npm test",
-    "unbundle": "shx rm temp/vendor.dev.js",
+    "dev": "jspm-hmr -FO",
+    "dev:bundle": "node scripts/build.js dev",
+    "dev:unbundle": "shx rm temp/vendor.dev.js",
+    "prod": "jspm-hmr dist --port 3001 -FO",
     "build": "npm run build:app && npm run build:vendor",
     "build:app": "node scripts/build.js app",
     "build:vendor": "node scripts/build.js vendor",
-    "build:dev": "node scripts/build.js dev",
     "build:debug": "node scripts/build.js debug",
     "bad": "npm run build:app && npm run deploy",
     "bvd": "npm run build:vendor && npm run deploy",
-    "lint": "tslint 'src/**/*.ts[x]'",
     "tsc": "tsc -p src",
     "tsc:watch": "tsc -p src -w",
+    "lint": "tslint 'src/**/*.ts[x]'",
     "test": "jest --config ./jest.config.json",
-    "test:update": "jest -u --config ./jest.config.json",
-    "regenerator": "node scripts/regenerator.js",
-    "build:regenerator": "npm run build:app && npm run regenerator"
+    "test:update": "jest --config ./jest.config.json -u",
+    "test:redux": "jest --config ./jest.config.json   src/store/currency-converter/utils.spec.tsx",
+    "precommit": "npm run lint && npm run tsc",
+    "prepush": "npm run precommit && npm test",
+    "deploy:init": "node scripts/deploy.js init",
+    "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push"
   },
+  "dependencies": {},
   "devDependencies": {
     "@types/classnames": "^0.0.32",
-    "@types/jest": "^16.0.1",
-    "@types/react": "^0.14.43",
-    "@types/react-dom": "^0.14.11",
+    "@types/jest": "^18.1.1",
+    "@types/node": "^7.0.5",
+    "@types/react": "^15.0.12",
+    "@types/react-dom": "^0.14.20",
     "@types/react-redux": "^4.4.32",
-    "@types/react-router": "^2.0.39",
-    "@types/react-router-redux": "^4.0.34",
-    "@types/redux-actions": "^0.8.32",
-    "@types/seamless-immutable": "^6.1.2",
-    "@types/systemjs": "^0.19.32",
-    "@types/whatwg-fetch": "^0.0.32",
-    "husky": "^0.11.8",
-    "jest": "^17.0.3",
+    "@types/react-router": "^3.0.5",
+    "@types/react-router-redux": "^4.0.41",
+    "@types/systemjs": "^0.19.33",
+    "husky": "^0.13.0",
+    "jest": "^19.0.2",
     "jspm": "0.17.0-beta.32",
-    "jspm-hmr": "1.0.0-0",
-    "regenerator": "^0.9.5",
-    "shelljs": "^0.7.5",
-    "shx": "^0.2.1",
-    "ts-jest": "^17.0.3",
-    "tslint": "^4.0.2",
-    "typescript": "^2.1.4"
+    "jspm-hmr": "^1.0.0-rc4",
+    "react-redux-typescript": "^2.0.0",
+    "redux-observable": "^0.13.0",
+    "regenerator": "^0.9.7",
+    "reselect": "^2.5.4",
+    "rxjs": "^5.2.0",
+    "shelljs": "^0.7.6",
+    "shx": "^0.2.2",
+    "ts-jest": "^19.0.0",
+    "tslint": "^4.3.1",
+    "typescript": "^2.2.1"
   },
   "jspm": {
     "name": "app",
     "main": "app.tsx",
+    "hooks": {
+      "postinstall": "scripts/postinstall.js"
+    },
     "dependencies": {
       "classnames": "npm:classnames@^2.2.5",
       "csjs": "npm:csjs@^1.0.6",
       "insert-css": "npm:insert-css@^1.1.0",
-      "react-dom": "npm:react-dom@^15.3.2",
-      "react-redux": "npm:react-redux@^4.4.6",
+      "react-dom": "npm:react-dom@^15.4.1",
+      "react-redux": "npm:react-redux@^5.0.1",
+      "react-redux-typescript": "npm:react-redux-typescript@^2.0.0",
       "react-router": "npm:react-router@^2.8.1",
       "react-router-redux": "npm:react-router-redux@^4.0.7",
-      "redux-actions": "npm:redux-actions@^0.11.0",
-      "seamless-immutable": "npm:seamless-immutable@^6.3.0",
-      "whatwg-fetch": "npm:whatwg-fetch@^1.1.0"
+      "redux-observable": "npm:redux-observable@^0.13.0",
+      "reselect": "npm:reselect@^2.5.4",
+      "tslib": "npm:tslib@^1.5.0",
+      "whatwg-fetch": "npm:whatwg-fetch@^1.1.1"
     },
     "devDependencies": {
       "css": "github:systemjs/plugin-css@^0.1.32",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.2.9",
-      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0",
-      "tslib": "npm:tslib@^1.2.0"
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.3.3",
+      "systemjs-hot-reloader": "github:alexisvincent/systemjs-hot-reloader@^0.6.0"
     },
     "peerDependencies": {
       "assert": "npm:jspm-nodelibs-assert@^0.2.0",
@@ -93,8 +99,9 @@
       "os": "npm:jspm-nodelibs-os@^0.2.0",
       "path": "npm:jspm-nodelibs-path@^0.2.0",
       "process": "npm:jspm-nodelibs-process@^0.2.0",
-      "react": "npm:react@^15.3.2",
+      "react": "npm:react@^15.4.1",
       "redux": "npm:redux@^3.6.0",
+      "rxjs": "npm:rxjs@^5.2.0",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
       "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
       "url": "npm:jspm-nodelibs-url@^0.2.0",
@@ -103,8 +110,8 @@
       "zlib": "npm:jspm-nodelibs-zlib@^0.2.0"
     },
     "overrides": {
-      "github:socketio/socket.io-client@1.5.1": {
-        "main": "socket.io.js"
+      "github:socketio/socket.io-client@1.7.2": {
+        "main": "dist/socket.io.js"
       },
       "npm:browserify-zlib@0.1.4": {
         "dependencies": {
@@ -115,18 +122,15 @@
           "_stream_transform": "readable-stream/transform"
         }
       },
-      "npm:debug@2.3.2": {
-        "main": "browser.js",
+      "npm:debug@2.6.0": {
+        "main": "src/browser.js",
         "jspmNodeConversion": false,
         "format": "cjs",
         "map": {
-          "./browser.js": {
-            "node": "./node.js"
-          },
-          "fs": "@node/fs",
-          "net": "@node/net",
-          "tty": "@node/tty",
-          "util": "@node/util"
+          "fs": "@empty",
+          "net": "@empty",
+          "tty": "@empty",
+          "util": "@empty"
         }
       },
       "npm:inherits@2.0.3": {
@@ -134,7 +138,7 @@
           "test.js"
         ]
       },
-      "npm:lodash@4.17.1": {
+      "npm:lodash@4.17.4": {
         "map": {
           "buffer": "@empty",
           "process": "@empty"
@@ -144,7 +148,7 @@
         "jspmNodeConversion": false,
         "format": "cjs"
       },
-      "npm:typescript@2.1.1": {
+      "npm:typescript@2.1.4": {
         "browser": {},
         "map": {
           "buffer": "@empty",

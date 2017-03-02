@@ -4,7 +4,7 @@ const repository = require('../package.json').repository;
 const command = process.argv[2];
 
 switch (command) {
-  case 'deploy':
+  case 'init':
     rm('-rf', 'dist/.git');
     mkdir('-p', 'dist/.git')
     exec(
@@ -15,9 +15,9 @@ switch (command) {
     break;
 
   default:
-    console.log('\nUsage: node init.js <arg>');
+    console.log('\nUsage: node deploy.js <arg>');
     console.log('\nwhere <arg> is one of:');
-    console.log('    deploy\n');
+    console.log('    init\n');
     break;
 }
 
