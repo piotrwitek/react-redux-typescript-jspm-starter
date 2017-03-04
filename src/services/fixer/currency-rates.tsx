@@ -1,4 +1,3 @@
-import 'whatwg-fetch';
 import { validateStatusCode, logRejection } from '../../utils/index';
 
 // Get the latest foreign exchange reference rates in JSON format.

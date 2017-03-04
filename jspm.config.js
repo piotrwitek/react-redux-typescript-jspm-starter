@@ -107,7 +107,6 @@ SystemJS.config({
     "url": "npm:jspm-nodelibs-url@0.2.0",
     "util": "npm:jspm-nodelibs-util@0.2.1",
     "vm": "npm:jspm-nodelibs-vm@0.2.0",
-    "whatwg-fetch": "npm:whatwg-fetch@1.1.1",
     "zlib": "npm:jspm-nodelibs-zlib@0.2.2"
   },
   packages: {
@@ -377,7 +376,7 @@ SystemJS.config({
     "npm:isomorphic-fetch@2.2.1": {
       "map": {
         "node-fetch": "npm:node-fetch@1.6.3",
-        "whatwg-fetch": "npm:whatwg-fetch@1.1.1"
+        "whatwg-fetch": "npm:whatwg-fetch@2.0.3"
       }
     },
     "npm:node-fetch@1.6.3": {

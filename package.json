@@ -77,14 +77,13 @@
       "react-router-redux": "npm:react-router-redux@^4.0.7",
       "redux-observable": "npm:redux-observable@^0.13.0",
       "reselect": "npm:reselect@^2.5.4",
-      "tslib": "npm:tslib@^1.5.0",
-      "whatwg-fetch": "npm:whatwg-fetch@^1.1.1"
+      "tslib": "npm:tslib@^1.5.0"
     },
     "devDependencies": {
       "css": "github:systemjs/plugin-css@^0.1.32",
       "plugin-typescript": "github:frankwallis/plugin-typescript@^7.0.5",
       "systemjs-hot-reloader": "npm:systemjs-hot-reloader@^1.1.0",
-      "typescript": "npm:typescript@^2.0.0"
+      "typescript": "npm:typescript@^2.2.1"
     },
     "peerDependencies": {
       "assert": "npm:jspm-nodelibs-assert@^0.2.0",
