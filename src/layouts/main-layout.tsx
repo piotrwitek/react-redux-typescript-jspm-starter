@@ -1,5 +1,5 @@
 import './main-layout.css!';
-import * as React from 'react';
+import React from 'react';
 import { LayoutTopNav, LayoutTopNavLink } from './components/layout-top-nav';
 import { LayoutHeader } from './components/layout-header';
 import { LayoutMain } from './components/layout-main';

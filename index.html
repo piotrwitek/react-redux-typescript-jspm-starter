@@ -33,14 +33,14 @@
   <script src="jspm.config.js"></script>
   <script src="temp/vendor.dev.js"></script>
   <script>
-    // hot-reload config
-    SystemJS.import('systemjs-hot-reloader').then(function(HotReloader) {
-      // if you're running server on custom port please remember to update below
-      new HotReloader.default('http://localhost:3000');
-    });
-    // load main module of your app with SystemJS
     SystemJS.trace = true;
-    SystemJS.import('src/app');
+    // hot-reload config
+    SystemJS.import('systemjs-hot-reloader').then(function(connect) {
+      // if you're running server on custom port please remember to update below
+      connect({host:'http://localhost:3000'});
+      // load main module of your app with SystemJS
+      SystemJS.import('src/app');
+    });
   </script>
   <!-- loading-app:end -->
 </body>
