@@ -107,6 +107,7 @@ SystemJS.config({
     "url": "npm:jspm-nodelibs-url@0.2.0",
     "util": "npm:jspm-nodelibs-util@0.2.1",
     "vm": "npm:jspm-nodelibs-vm@0.2.0",
+    "whatwg-fetch": "npm:whatwg-fetch@2.0.3",
     "zlib": "npm:jspm-nodelibs-zlib@0.2.2"
   },
   packages: {
