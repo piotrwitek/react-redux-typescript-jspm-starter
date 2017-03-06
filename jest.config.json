@@ -12,6 +12,8 @@
     "<rootDir>/node_modules/react-addons-test-utils",
     "<rootDir>/node_modules/fbjs"
   ],
+  "moduleNameMapper": {
+  },
   "transform": {
     "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
   },
