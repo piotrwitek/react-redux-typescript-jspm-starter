@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import RRT from 'react-redux-typescript';
+import { returntypeof } from 'react-redux-typescript';
 
 import { RootState } from '../../store';
 import { ActionCreators } from '../../store/currency-converter/reducer';
@@ -21,7 +21,7 @@ const dispatchToProps = {
   changeTargetValue: ActionCreators.ChangeTargetValue.create,
 };
 
-const stateProps =  RRT.returntypeof(mapStateToProps);
+const stateProps =  returntypeof(mapStateToProps);
 type Props = typeof stateProps & typeof dispatchToProps;
 type State = {};
 
