@@ -10,7 +10,7 @@
   "main": "server.js",
   "scripts": {
     "clean": "shx rm -rf dist node_modules jspm_packages",
-    "init": "jspm install && npm run build:dev",
+    "init": "jspm install && npm run dev:bundle",
     "dev": "jspm-hmr -FO",
     "dev:bundle": "node scripts/build.js dev",
     "dev:unbundle": "shx rm temp/vendor.dev.js",
