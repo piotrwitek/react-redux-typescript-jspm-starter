@@ -1,4 +1,4 @@
-import RRT from 'react-redux-typescript';
+import { returntypeof } from 'react-redux-typescript';
 
 import { latestResponse } from '../../services/fixer/fixtures';
 
@@ -22,9 +22,9 @@ export const loadCurrencyRatesError = (payload: string) => ({
 
 // Action Types
 const ActionTypes = {
-  loadCurrencyRates: RRT.returntypeof(loadCurrencyRates),
-  loadCurrencyRatesSuccess: RRT.returntypeof(loadCurrencyRatesSuccess),
-  loadCurrencyRatesError: RRT.returntypeof(loadCurrencyRatesError),
+  loadCurrencyRates: returntypeof(loadCurrencyRates),
+  loadCurrencyRatesSuccess: returntypeof(loadCurrencyRatesSuccess),
+  loadCurrencyRatesError: returntypeof(loadCurrencyRatesError),
 };
 type Action = typeof ActionTypes[keyof typeof ActionTypes];
 
