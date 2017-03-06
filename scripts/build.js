@@ -24,10 +24,10 @@ switch (command) {
     break;
 
   case 'app':
-    cp('assets/*', 'dist');
     exec(
       `jspm build src/app - ${prodDependencies.join(' - ')} dist/app.js --skip-source-maps --minify`
     );
+    cp('assets/*', 'dist');
     break;
 
   case 'debug':
