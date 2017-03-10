@@ -117,6 +117,7 @@ __EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx
 #### Prerequisites
 - Node.js `>=4.0.0`
 - Optional: Global [JSPM](http://jspm.io/) installation for CLI commands - `npm i -g jspm`
+- you can use Yarn
 
 ```
 // Clone repo
@@ -129,7 +130,7 @@ npm install
 npm run init
 
 // Run development server with HMR
-npm start
+npm run dev
 ```
 
 ---
