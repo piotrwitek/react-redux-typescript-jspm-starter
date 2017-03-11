@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router';
 
 // const inlineStyles = {};
 
-export function LayoutTopNav({className = '', children = undefined}) {
+export function LayoutTopNav({ className = '', children = undefined }) {
 
   const mainClass = classNames(
     className.toString(),
@@ -18,8 +18,8 @@ export function LayoutTopNav({className = '', children = undefined}) {
   );
 }
 
-export function LayoutTopNavLink({className = '', children = undefined,
-  href = '/', isRight = false, isPrimary = false}) {
+export function LayoutTopNavLink({ className = '', children = undefined,
+  href = '/', isRight = false, isPrimary = false }) {
 
   const mainClass = classNames(className, 'c-nav__item', {
     'c-nav__item--info': isPrimary,
