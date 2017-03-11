@@ -9,36 +9,25 @@ SystemJS.config({
   },
   devConfig: {
     "map": {
-      "plugin-typescript": "github:frankwallis/plugin-typescript@5.3.3",
       "css": "github:systemjs/plugin-css@0.1.32",
-      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0"
+      "systemjs-hot-reloader": "npm:systemjs-hot-reloader@1.1.0",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@7.0.5",
+      "typescript": "npm:typescript@2.2.1"
     },
     "packages": {
-      "github:frankwallis/plugin-typescript@5.3.3": {
+      "npm:systemjs-hot-reloader@1.1.0": {
         "map": {
-          "typescript": "npm:typescript@2.1.4"
+          "systemjs-hmr": "npm:systemjs-hmr@2.0.9"
         }
       },
-      "npm:typescript@2.1.4": {
+      "npm:typescript@2.2.1": {
         "map": {
-          "source-map-support": "npm:source-map-support@0.4.8"
+          "source-map-support": "npm:source-map-support@0.4.11"
         }
       },
-      "npm:source-map-support@0.4.8": {
+      "npm:source-map-support@0.4.11": {
         "map": {
           "source-map": "npm:source-map@0.5.6"
-        }
-      },
-      "github:capaj/systemjs-hot-reloader@0.6.0": {
-        "map": {
-          "debug": "npm:debug@2.6.0",
-          "weakee": "npm:weakee@1.0.0",
-          "socket.io-client": "github:socketio/socket.io-client@1.7.2"
-        }
-      },
-      "npm:debug@2.6.0": {
-        "map": {
-          "ms": "npm:ms@0.7.2"
         }
       }
     }
@@ -55,9 +44,8 @@ SystemJS.config({
     "moduleResolution": "node",
     "preserveConstEnums": true,
     "removeComments": true,
-    "noEmitHelpers": false,
-    "importHelpers": false,
-    "allowSyntheticDefaultImports": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
     "sourceMap": true
   },
   packages: {
@@ -105,7 +93,7 @@ SystemJS.config({
     "react": "npm:react@15.4.1",
     "react-dom": "npm:react-dom@15.4.1",
     "react-redux": "npm:react-redux@5.0.1",
-    "react-redux-typescript": "npm:react-redux-typescript@2.0.0",
+    "react-redux-typescript": "npm:react-redux-typescript@2.1.0",
     "react-router": "npm:react-router@2.8.1",
     "react-router-redux": "npm:react-router-redux@4.0.7",
     "redux": "npm:redux@3.6.0",
