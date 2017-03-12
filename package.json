@@ -66,17 +66,17 @@
     },
     "dependencies": {
       "classnames": "npm:classnames@^2.2.5",
-      "csjs": "npm:csjs@^1.0.6",
+      "csjs": "npm:csjs@^1.1.0",
       "insert-css": "npm:insert-css@^1.1.0",
       "react-dom": "npm:react-dom@^15.4.2",
-      "react-redux": "npm:react-redux@^5.0.1",
+      "react-redux": "npm:react-redux@^5.0.3",
       "react-redux-typescript": "npm:react-redux-typescript@^2.1.0",
       "react-router": "npm:react-router@^2.8.1",
-      "react-router-redux": "npm:react-router-redux@^4.0.7",
+      "react-router-redux": "npm:react-router-redux@^4.0.8",
       "redux-observable": "npm:redux-observable@^0.14.1",
       "reselect": "npm:reselect@^2.5.4",
       "tslib": "npm:tslib@^1.6.0",
-      "whatwg-fetch": "npm:whatwg-fetch@^1.1.1"
+      "whatwg-fetch": "npm:whatwg-fetch@^2.0.3"
     },
     "devDependencies": {
       "css": "github:systemjs/plugin-css@^0.1.32",

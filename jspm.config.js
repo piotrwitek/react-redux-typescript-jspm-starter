@@ -78,7 +78,7 @@ SystemJS.config({
     "classnames": "npm:classnames@2.2.5",
     "constants": "npm:jspm-nodelibs-constants@0.2.0",
     "crypto": "npm:jspm-nodelibs-crypto@0.2.0",
-    "csjs": "npm:csjs@1.0.6",
+    "csjs": "npm:csjs@1.1.0",
     "domain": "npm:jspm-nodelibs-domain@0.2.0",
     "events": "npm:jspm-nodelibs-events@0.2.0",
     "fs": "npm:jspm-nodelibs-fs@0.2.0",
@@ -92,10 +92,10 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.0",
     "react": "npm:react@15.4.2",
     "react-dom": "npm:react-dom@15.4.2",
-    "react-redux": "npm:react-redux@5.0.1",
+    "react-redux": "npm:react-redux@5.0.3",
     "react-redux-typescript": "npm:react-redux-typescript@2.1.0",
     "react-router": "npm:react-router@2.8.1",
-    "react-router-redux": "npm:react-router-redux@4.0.7",
+    "react-router-redux": "npm:react-router-redux@4.0.8",
     "redux": "npm:redux@3.6.0",
     "redux-observable": "npm:redux-observable@0.14.1",
     "reselect": "npm:reselect@2.5.4",
@@ -106,7 +106,7 @@ SystemJS.config({
     "url": "npm:jspm-nodelibs-url@0.2.0",
     "util": "npm:jspm-nodelibs-util@0.2.1",
     "vm": "npm:jspm-nodelibs-vm@0.2.0",
-    "whatwg-fetch": "npm:whatwg-fetch@1.1.1",
+    "whatwg-fetch": "npm:whatwg-fetch@2.0.3",
     "zlib": "npm:jspm-nodelibs-zlib@0.2.2"
   },
   packages: {
@@ -340,7 +340,7 @@ SystemJS.config({
     },
     "npm:invariant@2.2.2": {
       "map": {
-        "loose-envify": "npm:loose-envify@1.3.0"
+        "loose-envify": "npm:loose-envify@1.3.1"
       }
     },
     "npm:sha.js@2.4.8": {
@@ -373,15 +373,6 @@ SystemJS.config({
         "lodash": "npm:lodash@4.17.4"
       }
     },
-    "npm:react-redux@5.0.1": {
-      "map": {
-        "lodash-es": "npm:lodash-es@4.17.4",
-        "loose-envify": "npm:loose-envify@1.3.0",
-        "lodash": "npm:lodash@4.17.4",
-        "invariant": "npm:invariant@2.2.2",
-        "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0"
-      }
-    },
     "npm:promise@7.1.1": {
       "map": {
         "asap": "npm:asap@2.0.5"
@@ -390,7 +381,7 @@ SystemJS.config({
     "npm:isomorphic-fetch@2.2.1": {
       "map": {
         "node-fetch": "npm:node-fetch@1.6.3",
-        "whatwg-fetch": "npm:whatwg-fetch@1.1.1"
+        "whatwg-fetch": "npm:whatwg-fetch@2.0.3"
       }
     },
     "npm:node-fetch@1.6.3": {
@@ -479,6 +470,15 @@ SystemJS.config({
         "builtin-status-codes": "npm:builtin-status-codes@3.0.0",
         "to-arraybuffer": "npm:to-arraybuffer@1.0.1",
         "xtend": "npm:xtend@4.0.1"
+      }
+    },
+    "npm:react-redux@5.0.3": {
+      "map": {
+        "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
+        "lodash": "npm:lodash@4.17.4",
+        "lodash-es": "npm:lodash-es@4.17.4",
+        "invariant": "npm:invariant@2.2.2",
+        "loose-envify": "npm:loose-envify@1.3.1"
       }
     }
   }
