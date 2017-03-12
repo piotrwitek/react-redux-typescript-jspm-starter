@@ -45,7 +45,7 @@ SystemJS.config({
     "moduleResolution": "node",
     "preserveConstEnums": true,
     "removeComments": true,
-    "importHelpers": true,
+    "importHelpers": false,
     "sourceMap": true
   },
   packages: {
