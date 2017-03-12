@@ -74,7 +74,7 @@
       "react-router-redux": "npm:react-router-redux@^4.0.7",
       "redux-observable": "npm:redux-observable@^0.13.0",
       "reselect": "npm:reselect@^2.5.4",
-      "tslib": "npm:tslib@^1.5.0",
+      "tslib": "npm:tslib@^1.6.0",
       "whatwg-fetch": "npm:whatwg-fetch@^1.1.1"
     },
     "devDependencies": {
@@ -130,7 +130,7 @@
           "process": "@empty"
         }
       },
-      "npm:tslib@1.5.0": {
+      "npm:tslib@1.6.0": {
         "format": "cjs"
       },
       "npm:typescript@2.2.1": {

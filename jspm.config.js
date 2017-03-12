@@ -1,4 +1,5 @@
 SystemJS.config({
+  warning: true,
   paths: {
     "github:": "jspm_packages/github/",
     "npm:": "jspm_packages/npm/",
@@ -44,9 +45,8 @@ SystemJS.config({
     "moduleResolution": "node",
     "preserveConstEnums": true,
     "removeComments": true,
-    "noEmitHelpers": true,
     "importHelpers": true,
-    "sourceMap": true
+    "sourceMap": true,
   },
   packages: {
     "app": {
@@ -102,7 +102,7 @@ SystemJS.config({
     "rxjs": "npm:rxjs@5.2.0",
     "stream": "npm:jspm-nodelibs-stream@0.2.0",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",
-    "tslib": "npm:tslib@1.5.0",
+    "tslib": "npm:tslib@1.6.0",
     "url": "npm:jspm-nodelibs-url@0.2.0",
     "util": "npm:jspm-nodelibs-util@0.2.1",
     "vm": "npm:jspm-nodelibs-vm@0.2.0",
@@ -487,6 +487,7 @@ SystemJS.config({
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0",
         "minimalistic-crypto-utils": "npm:minimalistic-crypto-utils@1.0.1"
       }
-    }
+    },
+    "npm:tslib@1.6.0": { main: 'tslib.es6.js', format: 'esm' },
   }
 });
