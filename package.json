@@ -133,6 +133,9 @@
           "process": "@empty"
         }
       },
+      "npm:tslib@1.6.0": {
+        "format": "cjs"
+      },
       "npm:typescript@2.2.1": {
         "browser": {},
         "map": {

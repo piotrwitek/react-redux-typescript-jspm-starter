@@ -2,8 +2,7 @@ require('shelljs/global');
 
 const package = require('../package.json');
 const prodDependencies = Object.keys(package.jspm.dependencies);
-const devDependencies = Object.keys(package.jspm.devDependencies)
-  .filter((package) => package !== "systemjs-hot-reloader");
+const devDependencies = Object.keys(package.jspm.devDependencies);
 const allDependencies = prodDependencies.concat(devDependencies);
 
 const command = process.argv[2];
