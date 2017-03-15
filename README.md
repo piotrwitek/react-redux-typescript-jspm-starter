@@ -1,4 +1,4 @@
-## _React v15.3 / Redux v3.6 / TypeScript v2.1_ - starter-kit
+## _React v15.4 / Redux v3.6 / TypeScript v2.2_ - starter-kit
 #### __React-Router v2.8 / Seamless-Immutable / JSPM (SystemJS & Rollup with tree-shaking)__
 
 > ##### Futuristic, bundle-free development environment for building _Component-Driven SPA with React, Redux and TypeScript_ - utilizing power of Static Type-checking, ES.Next, CSS-Modules, Hot-reload, in-browser transpilation, tree-shaking - powered by JSPM (SystemJS & Rollup with tree-shaking)
