@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 const inlineStyles = {
@@ -7,7 +7,7 @@ const inlineStyles = {
   },
 };
 
-export function LayoutFooter({className = '', children = undefined}) {
+export function LayoutFooter({ className = '', children = undefined }) {
 
   const mainClass = classNames(
     className.toString(),

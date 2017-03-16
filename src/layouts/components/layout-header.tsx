@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 // const inlineStyles = {};
 
-export function LayoutHeader({className = '', children = undefined}) {
+export function LayoutHeader({ className = '', children = undefined }) {
 
   const mainClass = classNames(
     className.toString(),

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 // const inlineStyles = {};
 
-export function PageHero({className = '', children = undefined,
-  title = '', subtitle = ''}) {
+export function PageHero({ className = '', children = undefined,
+  title = '', subtitle = '' }) {
 
   const mainClass = classNames(
     className.toString(),

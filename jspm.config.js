@@ -1,4 +1,5 @@
 SystemJS.config({
+  warning: true,
   paths: {
     "github:": "jspm_packages/github/",
     "npm:": "jspm_packages/npm/",
@@ -9,36 +10,25 @@ SystemJS.config({
   },
   devConfig: {
     "map": {
-      "plugin-typescript": "github:frankwallis/plugin-typescript@5.3.3",
       "css": "github:systemjs/plugin-css@0.1.32",
-      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0"
+      "systemjs-hot-reloader": "npm:systemjs-hot-reloader@1.1.0",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@7.0.5",
+      "typescript": "npm:typescript@2.2.1"
     },
     "packages": {
-      "github:frankwallis/plugin-typescript@5.3.3": {
+      "npm:systemjs-hot-reloader@1.1.0": {
         "map": {
-          "typescript": "npm:typescript@2.1.4"
+          "systemjs-hmr": "npm:systemjs-hmr@2.0.9"
         }
       },
-      "npm:typescript@2.1.4": {
+      "npm:typescript@2.2.1": {
         "map": {
-          "source-map-support": "npm:source-map-support@0.4.8"
+          "source-map-support": "npm:source-map-support@0.4.11"
         }
       },
-      "npm:source-map-support@0.4.8": {
+      "npm:source-map-support@0.4.11": {
         "map": {
           "source-map": "npm:source-map@0.5.6"
-        }
-      },
-      "github:capaj/systemjs-hot-reloader@0.6.0": {
-        "map": {
-          "debug": "npm:debug@2.6.0",
-          "weakee": "npm:weakee@1.0.0",
-          "socket.io-client": "github:socketio/socket.io-client@1.7.2"
-        }
-      },
-      "npm:debug@2.6.0": {
-        "map": {
-          "ms": "npm:ms@0.7.2"
         }
       }
     }
@@ -55,9 +45,7 @@ SystemJS.config({
     "moduleResolution": "node",
     "preserveConstEnums": true,
     "removeComments": true,
-    "noEmitHelpers": false,
     "importHelpers": false,
-    "allowSyntheticDefaultImports": true,
     "sourceMap": true
   },
   packages: {
@@ -90,7 +78,7 @@ SystemJS.config({
     "classnames": "npm:classnames@2.2.5",
     "constants": "npm:jspm-nodelibs-constants@0.2.0",
     "crypto": "npm:jspm-nodelibs-crypto@0.2.0",
-    "csjs": "npm:csjs@1.0.6",
+    "csjs": "npm:csjs@1.1.0",
     "domain": "npm:jspm-nodelibs-domain@0.2.0",
     "events": "npm:jspm-nodelibs-events@0.2.0",
     "fs": "npm:jspm-nodelibs-fs@0.2.0",
@@ -102,23 +90,23 @@ SystemJS.config({
     "os": "npm:jspm-nodelibs-os@0.2.0",
     "path": "npm:jspm-nodelibs-path@0.2.1",
     "process": "npm:jspm-nodelibs-process@0.2.0",
-    "react": "npm:react@15.4.1",
-    "react-dom": "npm:react-dom@15.4.1",
-    "react-redux": "npm:react-redux@5.0.1",
-    "react-redux-typescript": "npm:react-redux-typescript@2.0.0",
+    "react": "npm:react@15.4.2",
+    "react-dom": "npm:react-dom@15.4.2",
+    "react-redux": "npm:react-redux@5.0.3",
+    "react-redux-typescript": "npm:react-redux-typescript@2.1.0",
     "react-router": "npm:react-router@2.8.1",
-    "react-router-redux": "npm:react-router-redux@4.0.7",
+    "react-router-redux": "npm:react-router-redux@4.0.8",
     "redux": "npm:redux@3.6.0",
-    "redux-observable": "npm:redux-observable@0.13.0",
+    "redux-observable": "npm:redux-observable@0.14.1",
     "reselect": "npm:reselect@2.5.4",
     "rxjs": "npm:rxjs@5.2.0",
     "stream": "npm:jspm-nodelibs-stream@0.2.0",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",
-    "tslib": "npm:tslib@1.5.0",
+    "tslib": "npm:tslib@1.6.0",
     "url": "npm:jspm-nodelibs-url@0.2.0",
     "util": "npm:jspm-nodelibs-util@0.2.1",
     "vm": "npm:jspm-nodelibs-vm@0.2.0",
-    "whatwg-fetch": "npm:whatwg-fetch@1.1.1",
+    "whatwg-fetch": "npm:whatwg-fetch@2.0.3",
     "zlib": "npm:jspm-nodelibs-zlib@0.2.2"
   },
   packages: {
@@ -264,7 +252,7 @@ SystemJS.config({
     },
     "npm:browserify-zlib@0.1.4": {
       "map": {
-        "readable-stream": "npm:readable-stream@2.2.2",
+        "readable-stream": "npm:readable-stream@2.2.3",
         "pako": "npm:pako@0.2.9"
       }
     },
@@ -322,7 +310,7 @@ SystemJS.config({
     },
     "npm:jspm-nodelibs-http@0.2.0": {
       "map": {
-        "http-browserify": "npm:stream-http@2.5.0"
+        "http-browserify": "npm:stream-http@2.6.3"
       }
     },
     "npm:jspm-nodelibs-url@0.2.0": {
@@ -352,27 +340,7 @@ SystemJS.config({
     },
     "npm:invariant@2.2.2": {
       "map": {
-        "loose-envify": "npm:loose-envify@1.3.0"
-      }
-    },
-    "npm:stream-http@2.5.0": {
-      "map": {
-        "builtin-status-codes": "npm:builtin-status-codes@2.0.0",
-        "inherits": "npm:inherits@2.0.3",
-        "to-arraybuffer": "npm:to-arraybuffer@1.0.1",
-        "readable-stream": "npm:readable-stream@2.2.2",
-        "xtend": "npm:xtend@4.0.1"
-      }
-    },
-    "npm:readable-stream@2.2.2": {
-      "map": {
-        "inherits": "npm:inherits@2.0.3",
-        "string_decoder": "npm:string_decoder@0.10.31",
-        "isarray": "npm:isarray@1.0.0",
-        "buffer-shims": "npm:buffer-shims@1.0.0",
-        "core-util-is": "npm:core-util-is@1.0.2",
-        "process-nextick-args": "npm:process-nextick-args@1.0.7",
-        "util-deprecate": "npm:util-deprecate@1.0.2"
+        "loose-envify": "npm:loose-envify@1.3.1"
       }
     },
     "npm:sha.js@2.4.8": {
@@ -405,40 +373,6 @@ SystemJS.config({
         "lodash": "npm:lodash@4.17.4"
       }
     },
-    "npm:react-redux@5.0.1": {
-      "map": {
-        "lodash-es": "npm:lodash-es@4.17.4",
-        "loose-envify": "npm:loose-envify@1.3.0",
-        "lodash": "npm:lodash@4.17.4",
-        "invariant": "npm:invariant@2.2.2",
-        "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0"
-      }
-    },
-    "npm:react@15.4.1": {
-      "map": {
-        "loose-envify": "npm:loose-envify@1.3.0",
-        "object-assign": "npm:object-assign@4.1.0",
-        "fbjs": "npm:fbjs@0.8.8"
-      }
-    },
-    "npm:react-dom@15.4.1": {
-      "map": {
-        "loose-envify": "npm:loose-envify@1.3.0",
-        "object-assign": "npm:object-assign@4.1.0",
-        "fbjs": "npm:fbjs@0.8.8"
-      }
-    },
-    "npm:fbjs@0.8.8": {
-      "map": {
-        "loose-envify": "npm:loose-envify@1.3.0",
-        "object-assign": "npm:object-assign@4.1.0",
-        "promise": "npm:promise@7.1.1",
-        "setimmediate": "npm:setimmediate@1.0.5",
-        "isomorphic-fetch": "npm:isomorphic-fetch@2.2.1",
-        "ua-parser-js": "npm:ua-parser-js@0.7.12",
-        "core-js": "npm:core-js@1.2.7"
-      }
-    },
     "npm:promise@7.1.1": {
       "map": {
         "asap": "npm:asap@2.0.5"
@@ -447,7 +381,7 @@ SystemJS.config({
     "npm:isomorphic-fetch@2.2.1": {
       "map": {
         "node-fetch": "npm:node-fetch@1.6.3",
-        "whatwg-fetch": "npm:whatwg-fetch@1.1.1"
+        "whatwg-fetch": "npm:whatwg-fetch@2.0.3"
       }
     },
     "npm:node-fetch@1.6.3": {
@@ -498,6 +432,53 @@ SystemJS.config({
         "hash.js": "npm:hash.js@1.0.3",
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0",
         "minimalistic-crypto-utils": "npm:minimalistic-crypto-utils@1.0.1"
+      }
+    },
+    "npm:tslib@1.6.0": {
+      "main": "tslib.es6.js",
+      "format": "esm"
+    },
+    "npm:react@15.4.2": {
+      "map": {
+        "object-assign": "npm:object-assign@4.1.1",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "fbjs": "npm:fbjs@0.8.9"
+      }
+    },
+    "npm:react-dom@15.4.2": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "fbjs": "npm:fbjs@0.8.9",
+        "object-assign": "npm:object-assign@4.1.1"
+      }
+    },
+    "npm:fbjs@0.8.9": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "object-assign": "npm:object-assign@4.1.1",
+        "core-js": "npm:core-js@1.2.7",
+        "promise": "npm:promise@7.1.1",
+        "isomorphic-fetch": "npm:isomorphic-fetch@2.2.1",
+        "setimmediate": "npm:setimmediate@1.0.5",
+        "ua-parser-js": "npm:ua-parser-js@0.7.12"
+      }
+    },
+    "npm:stream-http@2.6.3": {
+      "map": {
+        "inherits": "npm:inherits@2.0.3",
+        "readable-stream": "npm:readable-stream@2.2.3",
+        "builtin-status-codes": "npm:builtin-status-codes@3.0.0",
+        "to-arraybuffer": "npm:to-arraybuffer@1.0.1",
+        "xtend": "npm:xtend@4.0.1"
+      }
+    },
+    "npm:react-redux@5.0.3": {
+      "map": {
+        "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
+        "lodash": "npm:lodash@4.17.4",
+        "lodash-es": "npm:lodash-es@4.17.4",
+        "invariant": "npm:invariant@2.2.2",
+        "loose-envify": "npm:loose-envify@1.3.1"
       }
     }
   }
