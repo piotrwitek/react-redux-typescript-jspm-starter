@@ -1,5 +1,5 @@
 // lib imports
-import * as React from 'react';
+import React from 'react';
 
 import { CurrencySelect } from './currency-select';
 import { CurrencyInput } from './currency-input';

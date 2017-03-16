@@ -1,6 +1,6 @@
 // example external React Module declaration
 declare module 'example-react-module' {
-  import * as React from 'react';
+  import React from 'react';
 
   // public components
   interface ReactComponentProps extends React.Props<ReactComponent> {

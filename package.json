@@ -30,7 +30,9 @@
     "precommit": "npm run lint && npm run tsc",
     "prepush": "npm run precommit && npm test",
     "deploy:init": "node scripts/deploy.js init",
-    "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push"
+    "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push",
+    "jspm:version": "jspm --version",
+    "jspm:update": "jspm update"
   },
   "dependencies": {},
   "devDependencies": {
@@ -45,7 +47,7 @@
     "@types/systemjs": "^0.19.33",
     "husky": "^0.13.0",
     "jest": "^19.0.2",
-    "jspm": "0.17.0-beta.32",
+    "jspm": "0.17.0-beta.40",
     "jspm-hmr": "^1.0.0-rc4",
     "react-redux-typescript": "^2.0.0",
     "redux-observable": "^0.13.0",
@@ -76,12 +78,13 @@
       "redux-observable": "npm:redux-observable@^0.13.0",
       "reselect": "npm:reselect@^2.5.4",
       "tslib": "npm:tslib@^1.5.0",
-      "whatwg-fetch": "npm:whatwg-fetch@^1.1.1"
+      "whatwg-fetch": "npm:whatwg-fetch@^2.0.3"
     },
     "devDependencies": {
       "css": "github:systemjs/plugin-css@^0.1.32",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.3.3",
-      "systemjs-hot-reloader": "github:alexisvincent/systemjs-hot-reloader@^0.6.0"
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^7.0.5",
+      "systemjs-hot-reloader": "npm:systemjs-hot-reloader@^1.1.0",
+      "typescript": "npm:typescript@^2.2.1"
     },
     "peerDependencies": {
       "assert": "npm:jspm-nodelibs-assert@^0.2.0",
@@ -99,7 +102,7 @@
       "os": "npm:jspm-nodelibs-os@^0.2.0",
       "path": "npm:jspm-nodelibs-path@^0.2.0",
       "process": "npm:jspm-nodelibs-process@^0.2.0",
-      "react": "npm:react@^15.4.1",
+      "react": "npm:react@^15.4.2",
       "redux": "npm:redux@^3.6.0",
       "rxjs": "npm:rxjs@^5.2.0",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
@@ -110,9 +113,6 @@
       "zlib": "npm:jspm-nodelibs-zlib@^0.2.0"
     },
     "overrides": {
-      "github:socketio/socket.io-client@1.7.2": {
-        "main": "dist/socket.io.js"
-      },
       "npm:browserify-zlib@0.1.4": {
         "dependencies": {
           "readable-stream": "^2.0.2",
@@ -120,17 +120,6 @@
         },
         "map": {
           "_stream_transform": "readable-stream/transform"
-        }
-      },
-      "npm:debug@2.6.0": {
-        "main": "src/browser.js",
-        "jspmNodeConversion": false,
-        "format": "cjs",
-        "map": {
-          "fs": "@empty",
-          "net": "@empty",
-          "tty": "@empty",
-          "util": "@empty"
         }
       },
       "npm:inherits@2.0.3": {
@@ -144,11 +133,10 @@
           "process": "@empty"
         }
       },
-      "npm:ms@0.7.2": {
-        "jspmNodeConversion": false,
+      "npm:tslib@1.6.0": {
         "format": "cjs"
       },
-      "npm:typescript@2.1.4": {
+      "npm:typescript@2.2.1": {
         "browser": {},
         "map": {
           "buffer": "@empty",

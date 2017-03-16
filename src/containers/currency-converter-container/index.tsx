@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { returntypeof } from 'react-redux-typescript';
 
@@ -21,7 +21,7 @@ const dispatchToProps = {
   changeTargetValue: ActionCreators.ChangeTargetValue.create,
 };
 
-const stateProps = returntypeof(mapStateToProps);
+const stateProps =  returntypeof(mapStateToProps);
 type Props = typeof stateProps & typeof dispatchToProps;
 type State = {};
 
