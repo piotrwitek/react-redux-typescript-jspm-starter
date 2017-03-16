@@ -27,7 +27,7 @@ No module bundling during development, instead loading source files (.ts/.tsx) d
 
 ### DELEGATED TYPE-CHECKING
 Type-checking is delegated to a seperate process using following options:
-- **CLI** - TypeScript compiler running in CLI: [instructions](#cli-workflow)  
+- **CLI** - TypeScript compiler running in CLI ([instructions](#cli-workflow))  
 - **Editor/IDE** - TypeScript Language Service providing Intellisense (e.g. Webstorm, VS Code, Atom, Sublime Text, alm.tools and more...)
 
 **NOTE:** There are two seperate **tsconfig** needed - one for type-checking during development and the other for sources compilation to create production bundle:
@@ -35,7 +35,7 @@ Type-checking is delegated to a seperate process using following options:
 - [tsconfig for building production bundle](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129)  
 
 ### STRICT NULL CHECKS
-Enable strictNullChecks with noImplicitAny (compiler flags), to get Non-nullable Types (v2.0) and Smarter Type Inference (v2.1) [Source](https://blogs.msdn.microsoft.com/typescript/2016/11/08/typescript-2-1-rc-better-inference-async-functions-and-more/) which greatly increase your TypeScript experience.
+Enable strictNullChecks with noImplicitAny (compiler flags), to get Non-nullable Types (v2.0) and Smarter Type Inference (v2.1) ([Source](https://blogs.msdn.microsoft.com/typescript/2016/11/08/typescript-2-1-rc-better-inference-async-functions-and-more/)) which greatly increase your TypeScript experience.
 
 ### HOT-RELOAD THAT SCALE
 Local dev-server with hot-reload out-of-the-box (using [systemjs-hot-reloader](https://github.com/capaj/systemjs-hot-reloader)).
@@ -81,7 +81,7 @@ Test reload speed improvement using following simple test procedure:
 - IMMUTABLE-STORE - `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` leaking to your components)
 - BEM & ITCSS - BEM with Inverted Triangle conventions to give meaning and context to CSS classes
 - CSS-MODULES - locally scoped CSS, encapsulated as ES6 Modules (using [csjs](https://github.com/rtsao/csjs#faq))
-__EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and [CSS Module in TypeScript](src/containers/css-modules-container/container-styles.tsx)  
+> __EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and [CSS Module in TypeScript](src/containers/css-modules-container/styles.tsx)  
 
 #### React Best Practices & Optimizations
 - no mixins -> use ES6 style PureRenderMixin with PureComponent
