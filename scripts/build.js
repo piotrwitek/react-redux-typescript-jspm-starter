@@ -1,8 +1,8 @@
 require('shelljs/global');
 
-const package = require('../package.json');
-const prodDependencies = Object.keys(package.jspm.dependencies);
-const devDependencies = Object.keys(package.jspm.devDependencies);
+const packageJson = require('../package.json');
+const prodDependencies = Object.keys(packageJson.jspm.dependencies);
+const devDependencies = Object.keys(packageJson.jspm.devDependencies);
 const allDependencies = prodDependencies.concat(devDependencies);
 
 const command = process.argv[2];
