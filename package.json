@@ -26,9 +26,9 @@
     "tsc:watch": "tsc -p src/ --noEmit -w",
     "test": "jest --config jest.json",
     "test:update": "jest --config jest.json -u",
-    "test:redux": "jest --config jest.json   src/store/currency-converter/utils.spec.tsx",
+    "test:redux": "jest --config jest.json src/store/currency-converter/utils.spec.tsx",
     "precommit": "yarn run lint",
-    "prepush": "yarn run tsc && yarn run test",
+    "prepush": "yarn run tsc & yarn run test",
     "deploy:init": "node scripts/deploy.js init",
     "deploy": "git checkout gh-pages && cd dist && git add --all && git commit -m \"New Release\" && git push"
   },
