@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="">
+  <meta name="description" content>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>React / Redux / TypeScript - starter-kit</title>
-  <link rel="stylesheet" href="loader-styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/blaze@3.2.0">
+  <link href="/loader-styles.css" rel="stylesheet">
+  <link href="https://unpkg.com/blaze@3.2.0" rel="stylesheet">
 </head>
 
 <body>
@@ -28,14 +28,14 @@
   </div>
   <!-- body bottom scripts -->
   <!-- loading-app:start -->
-  <script src="shim.min.js"></script>
-  <script src="system.js"></script>
-  <script src="jspm.config.js"></script>
-  <script src="vendor.prod.js"></script>
+  <script src="/shim.min.js"></script>
+  <script src="/system.js"></script>
+  <script src="/jspm.config.js"></script>
+  <script src="/vendor.prod.js"></script>
   <script>
     // load main module of your app with SystemJS
     SystemJS.production = true;
-    SystemJS.import('app.js');
+    SystemJS.import('/app.js');
   </script>
   <!-- loading-app:end -->
 </body>
