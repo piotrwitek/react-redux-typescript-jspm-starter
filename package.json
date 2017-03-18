@@ -35,27 +35,27 @@
   "dependencies": {},
   "devDependencies": {
     "@types/classnames": "^0.0.32",
-    "@types/jest": "^18.1.1",
-    "@types/node": "^7.0.5",
-    "@types/react": "^15.0.12",
+    "@types/jest": "^19.2.2",
+    "@types/node": "^7.0.8",
+    "@types/react": "^15.0.16",
     "@types/react-dom": "^0.14.20",
-    "@types/react-redux": "^4.4.32",
+    "@types/react-redux": "^4.4.37",
     "@types/react-router": "^3.0.5",
     "@types/react-router-redux": "^4.0.41",
     "@types/systemjs": "^0.19.33",
-    "husky": "^0.13.0",
+    "husky": "^0.13.2",
     "jest": "^19.0.2",
     "jspm": "0.17.0-beta.32",
-    "jspm-hmr": "^1.0.0-rc4",
-    "react-redux-typescript": "^2.0.0",
-    "redux-observable": "^0.13.0",
+    "jspm-hmr": "^1.0.0-rc6",
+    "react-redux-typescript": "^2.2.0",
+    "redux-observable": "^0.14.1",
     "regenerator": "^0.9.7",
     "reselect": "^2.5.4",
     "rxjs": "^5.2.0",
-    "shelljs": "^0.7.6",
+    "shelljs": "^0.7.7",
     "shx": "^0.2.2",
-    "ts-jest": "^19.0.0",
-    "tslint": "^4.3.1",
+    "ts-jest": "^19.0.1",
+    "tslint": "^4.5.1",
     "typescript": "^2.2.1"
   },
   "jspm": {
@@ -146,6 +146,9 @@
       },
       "npm:ms@0.7.2": {
         "jspmNodeConversion": false,
+        "format": "cjs"
+      },
+      "npm:tslib@1.5.0": {
         "format": "cjs"
       },
       "npm:typescript@2.1.4": {
