@@ -5,7 +5,7 @@ SystemJS.config({
     "app/": "src/"
   },
   browserConfig: {
-    "baseURL": "."
+    "baseURL": "/"
   },
   devConfig: {
     "map": {
