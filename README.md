@@ -1,5 +1,5 @@
 ## _React v15.4 / Redux v3.6 / TypeScript v2.2_ - starter-kit
-#### __React-Router v2.8 / Seamless-Immutable / JSPM (SystemJS & Rollup with tree-shaking)__
+#### __React-Router v3.0 / JSPM (SystemJS & Rollup with tree-shaking)__
 
 > ##### Futuristic, bundle-free development environment for building _Component-Driven SPA with React, Redux and TypeScript_ - utilizing power of Static Type-checking, ES.Next, CSS-Modules, Hot-reload, in-browser transpilation, tree-shaking - powered by JSPM (SystemJS & Rollup with tree-shaking)
 
@@ -61,7 +61,7 @@ TypeScript natively support "async & generator functions" transformations withou
 - Jest Snapshot Testing in TypeScript
 
 ### AUTOMATIC BUILD SCRIPTS
-Automatic build script will generate seperate "vendor bundle" based on JSPM dependencies extracted from package.json.
+Fully automatic build script will generate your "vendor bundle" by parsing and extracting JSPM dependencies from package.json. No manual configuration.
 
 ### OPTIMIZED JSPM LOADING SPEED
 When trying to load multiple external dependencies as seperate calls it can slow down page reload in the browsers.
@@ -78,7 +78,6 @@ Test reload speed improvement using following simple test procedure:
 - TYPESAFE-API-CALLS - type safety of HTTP API calls (responses/requests) - stop checking for API docs and let your tools guide you
 - REACT-ROUTER - `react-router-redux` to store routing history in redux state (Time-Travel Debugging)
 - REDUX-DEV-TOOLS - Redux DevTools with [chrome-extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
-- IMMUTABLE-STORE - `seamless-immutable` for simplicity and backwards-compatibility with vanilla JS (no hassle with `toJS()`, `get()`, `getIn()` leaking to your components)
 - BEM & ITCSS - BEM with Inverted Triangle conventions to give meaning and context to CSS classes
 - CSS-MODULES - locally scoped CSS, encapsulated as ES6 Modules (using [csjs](https://github.com/rtsao/csjs#faq))
 > __EXAMPLE:__ [Consumer Component](src/containers/css-modules-container/index.tsx) and [CSS Module in TypeScript](src/containers/css-modules-container/styles.tsx)  

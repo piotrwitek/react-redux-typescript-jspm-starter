@@ -11,6 +11,7 @@
   "scripts": {
     "clean": "shx rm -rf dist node_modules jspm_packages",
     "init": "jspm install && npm run dev:bundle",
+    "update": "jspm update && npm run dev:bundle",
     "dev": "jspm-hmr -FO",
     "dev:bundle": "node scripts/build.js dev",
     "dev:unbundle": "shx rm temp/vendor.dev.js",
@@ -66,20 +67,20 @@
     },
     "dependencies": {
       "classnames": "npm:classnames@^2.2.5",
-      "csjs": "npm:csjs@^1.0.6",
+      "csjs": "npm:csjs@^1.1.0",
       "insert-css": "npm:insert-css@^1.1.0",
-      "react-dom": "npm:react-dom@^15.4.1",
-      "react-redux": "npm:react-redux@^5.0.1",
-      "react-redux-typescript": "npm:react-redux-typescript@^2.0.0",
-      "react-router": "npm:react-router@^2.8.1",
-      "react-router-redux": "npm:react-router-redux@^4.0.7",
+      "react-dom": "npm:react-dom@^15.4.2",
+      "react-redux": "npm:react-redux@^5.0.3",
+      "react-redux-typescript": "npm:react-redux-typescript@^2.2.0",
+      "react-router": "npm:react-router@3.0.2",
+      "react-router-redux": "npm:react-router-redux@^4.0.8",
       "redux-observable": "npm:redux-observable@^0.13.0",
       "reselect": "npm:reselect@^2.5.4",
-      "tslib": "npm:tslib@^1.5.0",
+      "tslib": "npm:tslib@^1.6.0",
       "whatwg-fetch": "npm:whatwg-fetch@^1.1.1"
     },
     "devDependencies": {
-      "css": "github:systemjs/plugin-css@^0.1.32",
+      "css": "github:systemjs/plugin-css@^0.1.33",
       "plugin-typescript": "github:frankwallis/plugin-typescript@^5.3.3",
       "systemjs-hot-reloader": "github:alexisvincent/systemjs-hot-reloader@^0.6.0"
     },
@@ -99,7 +100,7 @@
       "os": "npm:jspm-nodelibs-os@^0.2.0",
       "path": "npm:jspm-nodelibs-path@^0.2.0",
       "process": "npm:jspm-nodelibs-process@^0.2.0",
-      "react": "npm:react@^15.4.1",
+      "react": "npm:react@^15.4.2",
       "redux": "npm:redux@^3.6.0",
       "rxjs": "npm:rxjs@^5.2.0",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
@@ -122,7 +123,7 @@
           "_stream_transform": "readable-stream/transform"
         }
       },
-      "npm:debug@2.6.0": {
+      "npm:debug@2.6.3": {
         "main": "src/browser.js",
         "jspmNodeConversion": false,
         "format": "cjs",
@@ -148,10 +149,10 @@
         "jspmNodeConversion": false,
         "format": "cjs"
       },
-      "npm:tslib@1.5.0": {
+      "npm:tslib@1.6.0": {
         "format": "cjs"
       },
-      "npm:typescript@2.1.4": {
+      "npm:typescript@2.2.1": {
         "browser": {},
         "map": {
           "buffer": "@empty",
