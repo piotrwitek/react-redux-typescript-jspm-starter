@@ -5,10 +5,10 @@
 
 ### Learn more about using "React & Redux in TypeScript" from Static Typing Guide:
 > A comprehensive guide to static typing "React & Redux" apps using TypeScript.  
-*- https://github.com/piotrwitek/react-redux-typescript-guide*
+> *https://github.com/piotrwitek/react-redux-typescript-guide*
 
 ### Demo Page:  
-*- http://piotrwitek.github.io/react-redux-typescript-starter-kit/*
+> *http://piotrwitek.github.io/react-redux-typescript-starter-kit/*
 
 ### Table of Contents  
 1. [Innovations](#innovations)  
