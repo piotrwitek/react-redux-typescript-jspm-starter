@@ -7,7 +7,7 @@
 > A comprehensive guide to static typing "React & Redux" apps using TypeScript  
 > *https://github.com/piotrwitek/react-redux-typescript-guide*
 
-### Alternative Webpack-2 Starter with react-hot-loader v3 & hot-reload performance optimizations
+### Alternative Webpack-2 Starter with react-hot-loader & hot-reload performance optimizations
 > *https://github.com/piotrwitek/react-redux-typescript-webpack-starter*
 
 ### Demo:  
