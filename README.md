@@ -1,4 +1,4 @@
-## _React v15.4 / Redux v3.6 / TypeScript v2.2_ - starter-kit
+# _React / Redux / TypeScript / JSPM - Starter_
 #### __based on JSPM (SystemJS - ES module loader + bundling with Rollup)__
 
 > ##### Futuristic, bundle-free development environment for building _Component-Driven SPA with React, Redux and TypeScript_ - utilizing power of Static Type-checking, ES.Next, CSS-Modules, Hot-reload, in-browser transpilation, tree-shaking - powered by JSPM (SystemJS & Rollup with tree-shaking)
@@ -10,10 +10,12 @@
 ### Alternative Webpack-2 Starter with react-hot-loader v3 & hot-reload performance optimizations
 > *https://github.com/piotrwitek/react-redux-typescript-webpack-starter*
 
-### Demo Page:  
+### Demo:  
 > *http://piotrwitek.github.io/react-redux-typescript-starter-kit/*
 
-### Table of Contents  
+---
+
+## Table of Contents  
 1. [Innovations](#innovations)  
 2. [Features](#features)  
 3. [Roadmap](#roadmap)  
