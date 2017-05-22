@@ -14,8 +14,9 @@ import CurrencyConverterContainer from './containers/currency-converter-containe
 import { store } from './store/index';
 
 // switch between browser history or hash history
-import { browserHistory } from 'react-router';
-const history = syncHistoryWithStore(browserHistory, store) as any;
+import { useRouterHistory } from 'react-router';
+import { createHistory } from 'history';
+const history = syncHistoryWithStore(useRouterHistory(createHistory)({basename: '/'}), store) as any;
 // import { hashHistory } from 'react-router';
 // const history = syncHistoryWithStore(hashHistory, store) as any;
 
