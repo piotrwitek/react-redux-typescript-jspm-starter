@@ -102,11 +102,11 @@ SystemJS.config({
     "os": "npm:jspm-nodelibs-os@0.2.0",
     "path": "npm:jspm-nodelibs-path@0.2.1",
     "process": "npm:jspm-nodelibs-process@0.2.0",
-    "react": "npm:react@15.4.2",
-    "react-dom": "npm:react-dom@15.4.2",
-    "react-redux": "npm:react-redux@5.0.3",
+    "react": "npm:react@16.1.1",
+    "react-dom": "npm:react-dom@16.1.1",
+    "react-redux": "npm:react-redux@5.0.4",
     "react-redux-typescript": "npm:react-redux-typescript@2.2.0",
-    "react-router": "npm:react-router@3.0.2",
+    "react-router": "npm:react-router@3.2.0",
     "react-router-redux": "npm:react-router-redux@4.0.8",
     "redux": "npm:redux@3.6.0",
     "redux-observable": "npm:redux-observable@0.13.0",
@@ -389,27 +389,31 @@ SystemJS.config({
         "minimalistic-crypto-utils": "npm:minimalistic-crypto-utils@1.0.1"
       }
     },
-    "npm:react-redux@5.0.3": {
+    "npm:react-redux@5.0.4": {
       "map": {
         "lodash": "npm:lodash@4.17.4",
         "lodash-es": "npm:lodash-es@4.17.4",
         "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
         "invariant": "npm:invariant@2.2.2",
-        "loose-envify": "npm:loose-envify@1.3.1"
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "prop-types": "npm:prop-types@15.6.0",
+        "create-react-class": "npm:create-react-class@15.6.2"
       }
     },
-    "npm:react-dom@15.4.2": {
+    "npm:react-dom@16.1.1": {
       "map": {
         "fbjs": "npm:fbjs@0.8.9",
         "loose-envify": "npm:loose-envify@1.3.1",
-        "object-assign": "npm:object-assign@4.1.1"
+        "object-assign": "npm:object-assign@4.1.1",
+        "prop-types": "npm:prop-types@15.6.0"
       }
     },
-    "npm:react@15.4.2": {
+    "npm:react@16.1.1": {
       "map": {
         "fbjs": "npm:fbjs@0.8.9",
         "loose-envify": "npm:loose-envify@1.3.1",
-        "object-assign": "npm:object-assign@4.1.1"
+        "object-assign": "npm:object-assign@4.1.1",
+        "prop-types": "npm:prop-types@15.6.0"
       }
     },
     "npm:fbjs@0.8.9": {
@@ -452,13 +456,15 @@ SystemJS.config({
         "asn1.js": "npm:asn1.js@4.9.1"
       }
     },
-    "npm:react-router@3.0.2": {
+    "npm:react-router@3.2.0": {
       "map": {
         "warning": "npm:warning@3.0.0",
         "loose-envify": "npm:loose-envify@1.3.1",
         "history": "npm:history@3.3.0",
         "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
-        "invariant": "npm:invariant@2.2.2"
+        "invariant": "npm:invariant@2.2.2",
+        "prop-types": "npm:prop-types@15.6.0",
+        "create-react-class": "npm:create-react-class@15.6.2"
       }
     },
     "npm:warning@3.0.0": {
@@ -478,6 +484,31 @@ SystemJS.config({
       "map": {
         "object-assign": "npm:object-assign@4.1.1",
         "strict-uri-encode": "npm:strict-uri-encode@1.1.0"
+      }
+    },
+    "npm:create-react-class@15.6.2": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "fbjs": "npm:fbjs@0.8.9",
+        "object-assign": "npm:object-assign@4.1.1"
+      }
+    },
+    "npm:prop-types@15.6.0": {
+      "map": {
+        "fbjs": "npm:fbjs@0.8.16",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "object-assign": "npm:object-assign@4.1.1"
+      }
+    },
+    "npm:fbjs@0.8.16": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "object-assign": "npm:object-assign@4.1.1",
+        "core-js": "npm:core-js@1.2.7",
+        "isomorphic-fetch": "npm:isomorphic-fetch@2.2.1",
+        "promise": "npm:promise@7.1.1",
+        "setimmediate": "npm:setimmediate@1.0.5",
+        "ua-parser-js": "npm:ua-parser-js@0.7.12"
       }
     }
   }
