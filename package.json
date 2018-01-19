@@ -1,11 +1,11 @@
 {
-  "name": "react-redux-typescript-starter-kit",
+  "name": "react-redux-typescript-jspm-starter",
   "version": "0.12.0",
   "description": "Futuristic, production-ready development environment for building Component-Driven, Flux Single Page Applications with React, Redux and TypeScript - powered by JSPM (SystemJS with Hot-Reload & Rollup).",
   "author": "Piotr Witek <piotrek.witek@gmail.com> (http://piotrwitek.github.io/)",
-  "homepage": "http://piotrwitek.github.io/react-redux-typescript-starter-kit/",
-  "repository": "https://github.com/piotrwitek/react-redux-typescript-starter-kit.git",
-  "bugs": "https://github.com/piotrwitek/react-redux-typescript-starter-kit/issues",
+  "homepage": "https://piotrwitek.github.io/react-redux-typescript-jspm-starter/",
+  "repository": "https://github.com/piotrwitek/react-redux-typescript-jspm-starter/",
+  "bugs": "https://github.com/piotrwitek/react-redux-typescript-jspm-starter/issues/",
   "license": "MIT",
   "main": "server.js",
   "scripts": {

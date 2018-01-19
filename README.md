@@ -11,7 +11,7 @@
 > *https://github.com/piotrwitek/react-redux-typescript-webpack-starter*
 
 ### Demo:  
-> *http://piotrwitek.github.io/react-redux-typescript-starter-kit/*
+> *http://piotrwitek.github.io/react-redux-typescript-jspm-starter/*
 
 ---
 
@@ -37,8 +37,8 @@ Type-checking is delegated to a seperate process using following options:
 - **Editor/IDE** - TypeScript Language Service providing Intellisense (e.g. Webstorm, VS Code, Atom, Sublime Text, alm.tools and more...)
 
 **NOTE:** There are two seperate **tsconfig** needed - one for type-checking during development and the other for sources compilation to create production bundle:
-- [tsconfig for development type-checking](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/src/tsconfig.json)  
-- [tsconfig for building production bundle](https://github.com/piotrwitek/react-redux-typescript-starter-kit/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129)  
+- [tsconfig for development type-checking](https://github.com/piotrwitek/react-redux-typescript-jspm-starter/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/src/tsconfig.json)  
+- [tsconfig for building production bundle](https://github.com/piotrwitek/react-redux-typescript-jspm-starter/blob/a00c1b5854c36ea4d31fa1255ce920134bfc3855/jspm.config.js#L129)  
 
 ### STRICT NULL CHECKS
 Enable strictNullChecks with noImplicitAny (compiler flags), to get Non-nullable Types (v2.0) and Smarter Type Inference (v2.1) ([Source](https://blogs.msdn.microsoft.com/typescript/2016/11/08/typescript-2-1-rc-better-inference-async-functions-and-more/)) which greatly increase your TypeScript experience.
@@ -126,7 +126,7 @@ Test reload speed improvement using following simple test procedure:
 
 ```
 // Clone repo
-git clone https://github.com/piotrwitek/react-redux-typescript-starter-kit.git my-project-folder
+git clone https://github.com/piotrwitek/react-redux-typescript-jspm-starter.git
 
 // Install dependencies
 npm install

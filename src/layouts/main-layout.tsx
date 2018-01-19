@@ -7,7 +7,7 @@ import { LayoutFooter } from './components/layout-footer';
 
 export class MainLayout extends React.Component<{}, {}> {
   render() {
-    const {children} = this.props;
+    const { children } = this.props;
 
     return (
       <div className="c-text">
@@ -25,7 +25,7 @@ export class MainLayout extends React.Component<{}, {}> {
 
         <LayoutFooter>
           2016 &copy; Piotr Witek<br />
-          <a href="https://github.com/piotrwitek/react-redux-typescript-starter-kit">Back to GitHub Repo</a>
+          <a href="https://github.com/piotrwitek/react-redux-typescript-jspm-starter">Back to GitHub Repo</a>
         </LayoutFooter>
       </div>
     );

@@ -6,10 +6,10 @@ import { PageHero } from '../../components/page-hero';
 export function HomeContainer() {
   return (
     <article>
-      <PageHero title="Welcome to" subtitle="React / Redux / TypeScript - starter-kit" />
+      <PageHero title="Welcome to" subtitle="React / Redux / TypeScript / JSPM - Starter" />
       <PageSection className="o-container o-container--small">
         <p>
-          Below you can find a few examples created using concepts of this starter-kit:
+          Below you can find a few examples created using this project starter:
         </p>
         <ul>
           <li>
