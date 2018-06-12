@@ -1,6 +1,6 @@
 declare var window: Window & { devToolsExtension: any, __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any };
 import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import { routerReducer, RouterState } from 'react-router-redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
 import {
@@ -12,7 +12,7 @@ import {
 import { epics as currencyConverterEpics } from './currency-converter/epics';
 
 export type RootState = {
-  routing: any;
+  routing: RouterState;
   currencyRates: CurrencyRatesState;
   currencyConverter: CurrencyConverterState;
 };
